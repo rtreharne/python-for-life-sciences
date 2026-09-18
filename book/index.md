@@ -1,17 +1,22 @@
 # Python for Life Sciences
 
-Welcome. This book teaches Python through small biological data problems. It is designed for students who are new to programming. You do not need previous coding experience.
+Welcome to Python for Life Sciences. This book accompanies the first five weeks of LIFE733 and introduces Python through examples drawn from biological data. It is written for students who are new to programming, so you can begin without previous coding experience.
 
-Each weekly chapter introduces a few ideas, walks through working examples, and gives you activities to try. The code examples run when the book is built, so you can see their output here. To experiment, copy a code example into a Python file or notebook on your computer.
+The book is organized week by week. Follow one chapter each week alongside the course: each chapter introduces the ideas for that stage, explains them with worked examples, and gives you activities to practise. The topics build gradually, from strings and variables to small programs that read and analyse sequence files.
+
+You will get the most from the book by writing and testing code as you go. Read each explanation, study the worked example, and try the activities yourself before looking at the solutions. Once you have completed the weekly chapters, take on the extended projects to bring several skills together. These activities and projects are for practice and learning.
+
+The code examples run when the book is built, so their output is shown on the page. To experiment, copy an example into a Python file or notebook on your computer and change it. There is no single pace for learning to code: make time to test ideas, notice what happens, and learn from errors along the way.
 
 ## How to use the book
 
-1. Read the explanation before running or changing the example.
-2. Predict what the code will print, then compare your prediction with the displayed output.
-3. Change one thing at a time and run the code again.
-4. Try the activities before opening the [solutions](solutions.md).
+1. Work through the chapter for the current week.
+2. Read the explanation and trace each line in the worked examples.
+3. Before checking the displayed output, predict what the code will do.
+4. Attempt the chapter activities, then use the [solutions](solutions.md) to review your approach.
+5. After Week 5, complete the [extended practice projects](projects.md).
 
-The chapters build on one another: strings and variables (Week 1), decisions and numbers (Week 2), lists and loops (Week 3), functions and files (Week 4), then dictionaries, regular expressions, and modules (Week 5).
+The five chapters cover strings and variables (Week 1), decisions and numbers (Week 2), lists and loops (Week 3), functions and files (Week 4), then dictionaries, regular expressions, and modules (Week 5).
 
 ## Course setup
 
