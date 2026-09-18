@@ -10,16 +10,114 @@ Try the activity first, then use these examples to compare the approach and outp
 
 ## Week 1
 
-```{code-cell} python
-dna = "ACTG"
-complement = {"A": "T", "T": "A", "C": "G", "G": "C"}
-reverse_complement = "".join(complement[base] for base in dna[::-1])
-print(reverse_complement)  # CAGT
+These scripts correspond to Questions 1–8 in the [Week 1 chapter](chapters/week-1.md). Save each interactive answer in its own `.py` file and run it in your VS Code terminal. Input prompts wait for your response, so these blocks are intended to run on your computer. Compare the approach with your attempt and test a second input before moving on.
+
+### Question 1 — Hello, Python
+
+```python
+name = input("Enter your name: ")  # Save the user's response as text.
+print(f"Hello, {name}!")           # Insert that text into the greeting.
 ```
 
-The source worksheet's acceptance check said `ACTG` should produce `CAG`; that omits the final base. The correct reverse complement is `CAGT`.
+`input` returns a string. Assignment associates it with `name`, and the f-string inserts its value between `Hello, ` and `!`. Entering `Alex` produces `Hello, Alex!`.
 
-For interactive string exercises, collect each input with `input`, normalize with `.upper()` or `.lower()`, and print lengths with `len`. For RNA plus tail, use `dna.replace("T", "U") + "A" * 7`.
+### Question 2 — DNA Case & Length
+
+```python
+dna = input("Enter a DNA sequence: ")  # Preserve the entered sequence.
+upper_dna = dna.upper()                # Create an uppercase copy.
+lower_dna = dna.lower()                # Create a lowercase copy.
+print(upper_dna)
+print(lower_dna)
+print("Length:", len(dna))             # Count all characters in the input.
+```
+
+The method calls return new strings, so `dna` retains its original case. `len` returns the character count, and the comma in `print` separates the label from that number. Input `aCgTtg` gives `ACGTTG`, `acgttg`, and `Length: 6` on separate lines.
+
+### Question 3 — Concatenate Two Sequences
+
+```python
+seq1 = input("Enter seq1: ")     # Collect the first fragment.
+seq2 = input("Enter seq2: ")     # Collect the second fragment.
+dna = (seq1 + seq2).upper()      # Join in order, then uppercase both.
+print(dna)
+print("Length:", len(dna))      # Measure the joined sequence.
+```
+
+Parentheses ensure the method applies to the complete concatenation. No space is inserted by `+`. Inputs `actg` and `tta` give `ACTGTTA` and `Length: 7`.
+
+### Question 4 — Reverse Sequence
+
+```python
+dna = input("Enter a DNA sequence: ")  # Collect text to reverse.
+reversed_dna = dna[::-1]                # Traverse the entire string backwards.
+print(reversed_dna)
+```
+
+The slice's step is `-1`. Its omitted endpoints select the full string in that direction. Input `ACTG` produces `GTCA`; no base substitution is performed.
+
+### Question 5 — RNA + polyA
+
+```python
+seq1 = input("Enter seq1: ")      # Each script collects its own input.
+seq2 = input("Enter seq2: ")
+dna = (seq1 + seq2).upper()       # Normalise before matching uppercase T.
+rna = dna.replace("T", "U")      # Return RNA with every T replaced.
+rna_with_tail = rna + "A" * 7    # Append exactly seven additional As.
+print(rna_with_tail)
+print("Length:", len(rna_with_tail))
+```
+
+String repetition constructs the tail and concatenation appends it. For `actg` and `tta`, the result is `ACUGUUAAAAAAAA`, with length 14. One terminal A belongs to the original RNA and seven belong to the added tail.
+
+### Question 6 — Fix the Reverse Complement
+
+```{code-cell} python
+dna = "ACTG"  # Change this to AATTCC for the second acceptance check.
+comp = {"A": "T", "T": "A", "C": "G", "G": "C"}  # Base partners.
+result = ""   # Accumulate the output from an empty string.
+
+for base in dna[::-1]:  # Visit the original bases from right to left.
+    result = result + comp.get(base, "?")  # Append each base's complement.
+
+print(result)  # Print once, after all bases have been processed.
+```
+
+The repair is to iterate over `dna[::-1]`. For `ACTG`, the loop visits `G`, `T`, `C`, `A`, whose complements are `C`, `A`, `G`, `T`. Thus the result is `CAGT`. Changing the test sequence to `AATTCC` gives `GGAATT`. The dictionary describes pairing; the slice determines visiting order. Neither operation alone performs both jobs.
+
+### Question 7 — Numeric Input
+
+```python
+text = input("Enter a number: ")  # Input is always text initially.
+value = float(text)               # Convert suitable text into a number.
+result = value * 2                # Multiply numerically, rather than repeat text.
+print("Result:", result)
+```
+
+For `3.5`, the output is `Result: 7.0`. For `3`, it is `Result: 6.0`; for `-2`, it is `Result: -4.0`. Conversion determines which meaning of `*` applies. These examples assume valid numeric input.
+
+### Question 8 — DNA Mystery Message
+
+```python
+original_dna = input("Enter DNA sequence: ")  # Preserve exactly what was entered.
+key_text = input("Enter key number: ")       # Read the position as text.
+key = int(key_text)                          # Convert to a whole-number index.
+
+dna = original_dna.upper()             # Normalise a separate working copy.
+trimmed_dna = dna[key:]                # Keep the key position through the end.
+trimmed_rna = trimmed_dna.replace("T", "U")  # Convert the selected region.
+poly_a_rna = trimmed_rna + "A" * 10    # This question requires ten added As.
+
+print("Original DNA:", original_dna)
+print("Trimmed RNA:", trimmed_rna)
+print("Poly-A RNA:", poly_a_rna)
+print("Length:", len(poly_a_rna))      # Include the tail in the reported length.
+```
+
+The integer key uses zero-based indexing. For `ATGCTTACGGTAC` and key `4`, the trimmed DNA is `TTACGGTAC`, the trimmed RNA is `UUACGGUAC`, and the final RNA is `UUACGGUACAAAAAAAAAA`. Its length is **19**: nine selected bases plus ten added As. The original worksheet's displayed trimmed RNA and total length were inconsistent with these operations; the values here follow the code.
+
+Lowercase input works because the working copy is uppercased before replacement. The original report preserves the entered case. A key of zero keeps the full sequence; a key equal to the sequence length leaves only the ten-base tail. This version assumes valid DNA and a key within that range. For the extension, plan checks that every character is an allowed base and that the integer key lies between zero and the sequence length, then implement those checks as you learn decisions and loops.
+
 
 ## Week 2
 
