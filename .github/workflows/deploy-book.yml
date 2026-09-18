@@ -30,7 +30,7 @@ jobs:
         run: python -m pip install -r requirements-book.txt
       - name: Build the static book
         env:
-          BASE_URL: /python-for-life-sciences/
+          BASE_URL: /python-for-life-sciences
           JB_ALLOW_NODEENV: "yes"
         working-directory: book
         run: jupyter book build --html --strict --execute

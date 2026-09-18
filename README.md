@@ -66,7 +66,7 @@ python3 -m venv .venv
 Build and check all examples and internal references:
 
 ```bash
-(cd book && PATH="../.venv/bin:$PATH" JB_ALLOW_NODEENV=yes ../.venv/bin/jupyter book build --html --strict --execute)
+(cd book && PATH="../.venv/bin:$PATH" BASE_URL=/python-for-life-sciences JB_ALLOW_NODEENV=yes ../.venv/bin/jupyter book build --html --strict --execute)
 ```
 
 The static site is written to `book/_build/html/`. GitHub Actions builds and deploys it to GitHub Pages when changes are pushed to `main`. In the repository settings, configure Pages to use **GitHub Actions** as its source.
