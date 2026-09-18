@@ -1,0 +1,288 @@
+Kind: captions Language: en
+Right, week two. Hello everybody. Uh,
+Right, week two. Hello everybody. Uh,
+Right, week two. Hello everybody. Uh, thanks for joining me in my garage this
+thanks for joining me in my garage this
+thanks for joining me in my garage this week.
+week.
+week. So, I am on the week two workshop
+So, I am on the week two workshop
+So, I am on the week two workshop questions
+questions
+questions and I'm going to work through these one
+and I'm going to work through these one
+and I'm going to work through these one by one. Uh, let's uh let's take them in
+by one. Uh, let's uh let's take them in
+by one. Uh, let's uh let's take them in order. Let's fire up the
+order. Let's fire up the
+order. Let's fire up the Visual Studio Code to begin with. I
+Visual Studio Code to begin with. I
+Visual Studio Code to begin with. I ignore that.
+ignore that.
+ignore that. Let's have a look at um something. Where
+Let's have a look at um something. Where
+Let's have a look at um something. Where was I working before?
+was I working before?
+was I working before? 733.
+733.
+733. There's week one. I'm actually going to
+There's week one. I'm actually going to
+There's week one. I'm actually going to create a new folder, I think. H.
+create a new folder, I think. H.
+create a new folder, I think. H. So,
+I'm going to open where I was working
+I'm going to open where I was working
+I'm going to open where I was working last time, which was in um 733.
+So, I'm going to open that.
+Um,
+Um,
+Um, there we go.
+there we go.
+there we go. And yeah, I've got some PI files in
+And yeah, I've got some PI files in
+And yeah, I've got some PI files in there. Great. I'm going to create a new
+there. Great. I'm going to create a new
+there. Great. I'm going to create a new folder in here called week two.
+folder in here called week two.
+folder in here called week two. I'm going to keep it consistent with how
+I'm going to keep it consistent with how
+I'm going to keep it consistent with how I've labeled it with capitals down
+I've labeled it with capitals down
+I've labeled it with capitals down below.
+below.
+below. And I'm going to hop into that folder
+And I'm going to hop into that folder
+And I'm going to hop into that folder and then right click on it, create a new
+and then right click on it, create a new
+and then right click on it, create a new file. Let's do it. Let's call it
+file. Let's do it. Let's call it
+file. Let's do it. Let's call it question q1.py.
+There we go. I'm ready to go. I think I
+There we go. I'm ready to go. I think I
+There we go. I'm ready to go. I think I better
+better
+better uh make the settings. I always forget
+uh make the settings. I always forget
+uh make the settings. I always forget how to do this.
+how to do this.
+how to do this. Preferences settings
+editor. Oh, that was right. Commonly
+editor. Oh, that was right. Commonly
+editor. Oh, that was right. Commonly used. Yeah, let's make that up to 24.
+used. Yeah, let's make that up to 24.
+used. Yeah, let's make that up to 24. Okay. Go back. Right. There we go. Get
+Okay. Go back. Right. There we go. Get
+Okay. Go back. Right. There we go. Get rid of that over there. Let's go back to
+rid of that over there. Let's go back to
+rid of that over there. Let's go back to the question. Simple calculator.
+the question. Simple calculator.
+the question. Simple calculator. Question one.
+Question one.
+Question one. Ask the user for two numbers and print.
+Ask the user for two numbers and print.
+Ask the user for two numbers and print. One, their sum, two, their difference,
+One, their sum, two, their difference,
+One, their sum, two, their difference, three, their product, and see their
+three, their product, and see their
+three, their product, and see their quotient. And this should be the output
+quotient. And this should be the output
+quotient. And this should be the output I'm expecting. So, um, just so I don't
+I'm expecting. So, um, just so I don't
+I'm expecting. So, um, just so I don't have to keep flicking back and forth to
+have to keep flicking back and forth to
+have to keep flicking back and forth to this page, I'm going to copy this in
+this page, I'm going to copy this in
+this page, I'm going to copy this in here. Right. So, if you haven't seen
+here. Right. So, if you haven't seen
+here. Right. So, if you haven't seen this before, anything with a hash in
+this before, anything with a hash in
+this before, anything with a hash in front of it is a comment. Now, I've
+front of it is a comment. Now, I've
+front of it is a comment. Now, I've pasted this into here. It's given me a
+pasted this into here. It's given me a
+pasted this into here. It's given me a load of red because it doesn't like it
+load of red because it doesn't like it
+load of red because it doesn't like it cuz actually, I want to keep this as a
+cuz actually, I want to keep this as a
+cuz actually, I want to keep this as a comment, too.
+comment, too.
+comment, too. So, I could go through here and I could
+So, I could go through here and I could
+So, I could go through here and I could put a hash in front of all of these just
+put a hash in front of all of these just
+put a hash in front of all of these just so I can refer back to what my output
+so I can refer back to what my output
+so I can refer back to what my output should look like afterwards. or I can
+should look like afterwards. or I can
+should look like afterwards. or I can highlight everything
+highlight everything
+highlight everything and I can hold control and press forward
+and I can hold control and press forward
+and I can hold control and press forward slash and that will do it all in one go.
+slash and that will do it all in one go.
+slash and that will do it all in one go. Isn't that brilliant? Right. So the
+Isn't that brilliant? Right. So the
+Isn't that brilliant? Right. So the first thing I'm going to do is uh I'm
+first thing I'm going to do is uh I'm
+first thing I'm going to do is uh I'm going to take in a variable called
+going to take in a variable called
+going to take in a variable called number one or num one and I'm going to
+number one or num one and I'm going to
+number one or num one and I'm going to use an input
+use an input
+use an input and I'm going to ask the user please
+and I'm going to ask the user please
+and I'm going to ask the user please input first number. Okay.
+input first number. Okay.
+input first number. Okay. And I'm going to put a colon space so it
+And I'm going to put a colon space so it
+And I'm going to put a colon space so it reads a bit better in my terminal. Then
+reads a bit better in my terminal. Then
+reads a bit better in my terminal. Then I'm going to ask for number two.
+Second number.
+Okay. Right now I'm just going to print
+Okay. Right now I'm just going to print
+Okay. Right now I'm just going to print out the following things. So I'm going
+out the following things. So I'm going
+out the following things. So I'm going to print out the sum.
+to print out the sum.
+to print out the sum. So the first thing I'm going to I'm
+So the first thing I'm going to I'm
+So the first thing I'm going to I'm going to have a print statement which is
+going to have a print statement which is
+going to have a print statement which is simply
+simply
+simply um sum colon space comma and then num 1
+um sum colon space comma and then num 1
+um sum colon space comma and then num 1 + num 2. Okay. Now if I run this I
++ num 2. Okay. Now if I run this I
++ num 2. Okay. Now if I run this I should get an error and then we'll
+should get an error and then we'll
+should get an error and then we'll explain that error.
+explain that error.
+explain that error. So uh let's call it um let's do 10 + 2.
+So uh let's call it um let's do 10 + 2.
+So uh let's call it um let's do 10 + 2. Aha.
+There we go. Right. So, I've got a sum
+There we go. Right. So, I've got a sum
+There we go. Right. So, I've got a sum of 102, which doesn't make any sense,
+of 102, which doesn't make any sense,
+of 102, which doesn't make any sense, does it? Cuz 10 + 2 is not 102. And
+does it? Cuz 10 + 2 is not 102. And
+does it? Cuz 10 + 2 is not 102. And what's actually happened there is it's
+what's actually happened there is it's
+what's actually happened there is it's treated both of those inputs as strings.
+treated both of those inputs as strings.
+treated both of those inputs as strings. And you know, you can add two strings
+And you know, you can add two strings
+And you know, you can add two strings together. Hello, Rob. And it will
+together. Hello, Rob. And it will
+together. Hello, Rob. And it will happily put them together. So, what it's
+happily put them together. So, what it's
+happily put them together. So, what it's done there is it's just treated the 10
+done there is it's just treated the 10
+done there is it's just treated the 10 as a string and added the two on the
+as a string and added the two on the
+as a string and added the two on the end. So what I really need to do in
+end. So what I really need to do in
+end. So what I really need to do in order for for me to do some actual maths
+order for for me to do some actual maths
+order for for me to do some actual maths on this on these inputs is I need to
+on this on these inputs is I need to
+on this on these inputs is I need to convert them to integers or floats
+convert them to integers or floats
+convert them to integers or floats um beforehand. So I'm actually going to
+um beforehand. So I'm actually going to
+um beforehand. So I'm actually going to convert them now because I'm going to do
+convert them now because I'm going to do
+convert them now because I'm going to do a quotient here at some point.
+a quotient here at some point.
+a quotient here at some point. It's likely that whatever ratio I take
+It's likely that whatever ratio I take
+It's likely that whatever ratio I take of two numbers is not going to be an
+of two numbers is not going to be an
+of two numbers is not going to be an integer. So I actually want to handle my
+integer. So I actually want to handle my
+integer. So I actually want to handle my inputs as floats. Okay. So, I'm going to
+inputs as floats. Okay. So, I'm going to
+inputs as floats. Okay. So, I'm going to I'm going to wrap a float function
+I'm going to wrap a float function
+I'm going to wrap a float function around my input. And what that will do,
+around my input. And what that will do,
+around my input. And what that will do, it will take that input from the user
+it will take that input from the user
+it will take that input from the user and it will immediately call it to a clo
+and it will immediately call it to a clo
+and it will immediately call it to a clo uh convert to a float. If you're not
+uh convert to a float. If you're not
+uh convert to a float. If you're not sure what a float is, a float is any
+sure what a float is, a float is any
+sure what a float is, a float is any number with a decimal place after it.
+number with a decimal place after it.
+number with a decimal place after it. Um, for example, 1.2 is a float. Okay.
+Um, for example, 1.2 is a float. Okay.
+Um, for example, 1.2 is a float. Okay. Um, so this time, if I run my script and
+Um, so this time, if I run my script and
+Um, so this time, if I run my script and I give it 10 and I give it two, it gives
+I give it 10 and I give it two, it gives
+I give it 10 and I give it two, it gives me 12. And actually you can see it also
+me 12. And actually you can see it also
+me 12. And actually you can see it also outputs the number as a float as well.
+outputs the number as a float as well.
+outputs the number as a float as well. That's fine. Okay. So I'm going to go
+That's fine. Okay. So I'm going to go
+That's fine. Okay. So I'm going to go through these. Let's do let's do the
+through these. Let's do let's do the
+through these. Let's do let's do the second one which was I think the
+second one which was I think the
+second one which was I think the difference.
+difference.
+difference. Oops.
+Oops.
+Oops. Difference
+is num one minus num two.
+is num one minus num two.
+is num one minus num two. The third one was the product.
+The third one was the product.
+The third one was the product. Is that right? Yep. product
+is num
+is num
+is num 1 * num 2. I'm going to try and just for
+1 * num 2. I'm going to try and just for
+1 * num 2. I'm going to try and just for aesthetic purposes and I keep spaces
+aesthetic purposes and I keep spaces
+aesthetic purposes and I keep spaces between my operators. I spelled printer
+between my operators. I spelled printer
+between my operators. I spelled printer wrong, guys. Come on.
+wrong, guys. Come on.
+wrong, guys. Come on. And then finally, I'm going to take the
+And then finally, I'm going to take the
+And then finally, I'm going to take the quotient or the ratio of one and two.
+Um, num one over num two. Let's print
+Um, num one over num two. Let's print
+Um, num one over num two. Let's print all that out. Let's uh give me a 10. A
+all that out. Let's uh give me a 10. A
+all that out. Let's uh give me a 10. A two. Oh, no. 10. Then two.
+two. Oh, no. 10. Then two.
+two. Oh, no. 10. Then two. There we go.
+There we go.
+There we go. 10 + 2 is 12. 10 - 2 is 8. 10 * 2 is 20.
+10 + 2 is 12. 10 - 2 is 8. 10 * 2 is 20.
+10 + 2 is 12. 10 - 2 is 8. 10 * 2 is 20. 10 shared by 2 is 5. Um, let's give it
+10 shared by 2 is 5. Um, let's give it
+10 shared by 2 is 5. Um, let's give it another example where I might get a
+another example where I might get a
+another example where I might get a decimal place for the quotient. So let's
+decimal place for the quotient. So let's
+decimal place for the quotient. So let's do
+do
+do
+/ 3. Yeah, there you go. Okay. So by
+/ 3. Yeah, there you go. Okay. So by
+/ 3. Yeah, there you go. Okay. So by default, Python will give quite a large
+default, Python will give quite a large
+default, Python will give quite a large number of decimal places. We can format
+number of decimal places. We can format
+number of decimal places. We can format that. We'll cover that later. Okay.
+that. We'll cover that later. Okay.
+that. We'll cover that later. Okay. Brilliant. Let's move on to Q2.

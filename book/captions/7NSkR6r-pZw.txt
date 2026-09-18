@@ -1,0 +1,114 @@
+Kind: captions Language: en
+Okay, welcome to week 4733.
+Okay, welcome to week 4733.
+Okay, welcome to week 4733. This is quite an exciting week, isn't
+This is quite an exciting week, isn't
+This is quite an exciting week, isn't it? Because we're going to take all of
+it? Because we're going to take all of
+it? Because we're going to take all of that lovely stuff that you've done in
+that lovely stuff that you've done in
+that lovely stuff that you've done in the first couple of weeks, um, you know,
+the first couple of weeks, um, you know,
+the first couple of weeks, um, you know, lists, list slicing, strings, reversing
+lists, list slicing, strings, reversing
+lists, list slicing, strings, reversing strings, um, logic, loops, and we're
+strings, um, logic, loops, and we're
+strings, um, logic, loops, and we're going to start to to build real stuff
+going to start to to build real stuff
+going to start to to build real stuff out of this. And probably the biggest
+out of this. And probably the biggest
+out of this. And probably the biggest conceptual addition that we're going to
+conceptual addition that we're going to
+conceptual addition that we're going to make this week or the two two key things
+make this week or the two two key things
+make this week or the two two key things I really want to discuss with you are
+I really want to discuss with you are
+I really want to discuss with you are going to be functions,
+going to be functions,
+going to be functions, okay? And file input and output. So
+okay? And file input and output. So
+okay? And file input and output. So after this week, you will almost be
+after this week, you will almost be
+after this week, you will almost be fully armed as coders to pretty much
+fully armed as coders to pretty much
+fully armed as coders to pretty much tackle any set of data that we might
+tackle any set of data that we might
+tackle any set of data that we might give you. Okay? There'll be more to
+give you. Okay? There'll be more to
+give you. Okay? There'll be more to learn, but I would say reading a file
+learn, but I would say reading a file
+learn, but I would say reading a file and then doing something with the data,
+and then doing something with the data,
+and then doing something with the data, then putting into another file is a
+then putting into another file is a
+then putting into another file is a pretty strong staple for coding, right?
+pretty strong staple for coding, right?
+pretty strong staple for coding, right? Uh because it really means you can get
+Uh because it really means you can get
+Uh because it really means you can get your fingers on very real data sets that
+your fingers on very real data sets that
+your fingers on very real data sets that are out there in the wild right now,
+are out there in the wild right now,
+are out there in the wild right now, guys. Go and have a look at them. Um so,
+guys. Go and have a look at them. Um so,
+guys. Go and have a look at them. Um so, this is quite an exciting week for me,
+this is quite an exciting week for me,
+this is quite an exciting week for me, right? I hope I' hope I've got you
+right? I hope I' hope I've got you
+right? I hope I' hope I've got you jazzed for this. Let's start. And I've
+jazzed for this. Let's start. And I've
+jazzed for this. Let's start. And I've got Where's my canvas gone? It's over
+got Where's my canvas gone? It's over
+got Where's my canvas gone? It's over here. Let's take a look at questions.
+here. Let's take a look at questions.
+here. Let's take a look at questions. Zoom in a little bit. Right. So, the
+Zoom in a little bit. Right. So, the
+Zoom in a little bit. Right. So, the first couple of um problems here are
+first couple of um problems here are
+first couple of um problems here are just really to get the fingers moving
+just really to get the fingers moving
+just really to get the fingers moving and uh get the juices flowing and then
+and uh get the juices flowing and then
+and uh get the juices flowing and then we're going to start looking at these
+we're going to start looking at these
+we're going to start looking at these mini project. I'm not going to give you
+mini project. I'm not going to give you
+mini project. I'm not going to give you videos for all of these. I'm going to
+videos for all of these. I'm going to
+videos for all of these. I'm going to make you sweat. I've got to kind of
+make you sweat. I've got to kind of
+make you sweat. I've got to kind of balance um the work that I'm giving you
+balance um the work that I'm giving you
+balance um the work that I'm giving you uh with the fact that
+uh with the fact that
+uh with the fact that um there are also assessments for this
+um there are also assessments for this
+um there are also assessments for this module ongoing. So, you may not have
+module ongoing. So, you may not have
+module ongoing. So, you may not have submitted to your first assignment yet.
+submitted to your first assignment yet.
+submitted to your first assignment yet. I will be shortly releasing the second
+I will be shortly releasing the second
+I will be shortly releasing the second assignment as well. So, I do want you to
+assignment as well. So, I do want you to
+assignment as well. So, I do want you to prioritize your assignments, but at the
+prioritize your assignments, but at the
+prioritize your assignments, but at the same time, you've got to kind of engage
+same time, you've got to kind of engage
+same time, you've got to kind of engage with this in order to be able to do the
+with this in order to be able to do the
+with this in order to be able to do the second assignment. So, all I've got to
+second assignment. So, all I've got to
+second assignment. So, all I've got to do here is just make sure I don't melt
+do here is just make sure I don't melt
+do here is just make sure I don't melt your brains. Okay. Um, if you get uh any
+your brains. Okay. Um, if you get uh any
+your brains. Okay. Um, if you get uh any problems then make sure you're at the
+problems then make sure you're at the
+problems then make sure you're at the workshops and make sure you speak to
+workshops and make sure you speak to
+workshops and make sure you speak to myself or one of the demonstrators to
+myself or one of the demonstrators to
+myself or one of the demonstrators to really get these key concepts into your
+really get these key concepts into your
+really get these key concepts into your minds this week. Okay.

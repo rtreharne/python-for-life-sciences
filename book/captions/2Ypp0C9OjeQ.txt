@@ -1,0 +1,393 @@
+Kind: captions Language: en
+Okay, here we are. It's week three. I am
+Okay, here we are. It's week three. I am
+Okay, here we are. It's week three. I am in the garage again where I like to do
+in the garage again where I like to do
+in the garage again where I like to do all of my coding.
+all of my coding.
+all of my coding. Right.
+Right.
+Right. So, this week if you have a look on
+So, this week if you have a look on
+So, this week if you have a look on canvas, we are going to encounter a few
+canvas, we are going to encounter a few
+canvas, we are going to encounter a few new
+new
+new important coding concepts. uh the main
+important coding concepts. uh the main
+important coding concepts. uh the main one
+one
+one uh being loops
+uh being loops
+uh being loops and there are a couple of different
+and there are a couple of different
+and there are a couple of different types of loops
+types of loops
+types of loops and we'll discuss each in turn
+and we'll discuss each in turn
+and we'll discuss each in turn and all we're really going to do is
+and all we're really going to do is
+and all we're really going to do is use them in conjunction with the
+use them in conjunction with the
+use them in conjunction with the knowledge we've already gained on lists
+knowledge we've already gained on lists
+knowledge we've already gained on lists and logic. Uh, in fact, we haven't
+and logic. Uh, in fact, we haven't
+and logic. Uh, in fact, we haven't really covered lists.
+really covered lists.
+really covered lists. Um, but I'm I think they'll be
+Um, but I'm I think they'll be
+Um, but I'm I think they'll be reasonably intuitive for you. Um, we've
+reasonably intuitive for you. Um, we've
+reasonably intuitive for you. Um, we've treated some strings like lists.
+treated some strings like lists.
+treated some strings like lists. So, we can do things like pick out
+So, we can do things like pick out
+So, we can do things like pick out characters from a list, choose items.
+characters from a list, choose items.
+characters from a list, choose items. Um, or we can reverse a list. A list
+Um, or we can reverse a list. A list
+Um, or we can reverse a list. A list doesn't have to just be a list of
+doesn't have to just be a list of
+doesn't have to just be a list of characters. It can be anything, numbers,
+characters. It can be anything, numbers,
+characters. It can be anything, numbers, it can be boolean variables. It can be a
+it can be boolean variables. It can be a
+it can be boolean variables. It can be a mix of different elements as well with
+mix of different elements as well with
+mix of different elements as well with with different data types. So let's work
+with different data types. So let's work
+with different data types. So let's work through these questions one by one.
+through these questions one by one.
+through these questions one by one. Uh we'll start with number one. It's a
+Uh we'll start with number one. It's a
+Uh we'll start with number one. It's a simple one to begin with. It's called
+simple one to begin with. It's called
+simple one to begin with. It's called sum list. So we're going to take a list
+sum list. So we're going to take a list
+sum list. So we're going to take a list of numbers and here they are. I'm going
+of numbers and here they are. I'm going
+of numbers and here they are. I'm going to copy these.
+to copy these.
+to copy these. I'm going to head on over to my Visual
+I'm going to head on over to my Visual
+I'm going to head on over to my Visual Studio Code which I've got running. And
+Studio Code which I've got running. And
+Studio Code which I've got running. And I've got a weak folder I've created
+I've got a weak folder I've created
+I've got a weak folder I've created here.
+here.
+here. And I'm going to click new file question
+And I'm going to click new file question
+And I'm going to click new file question one.py.
+Okay. And you'll see here that I'm in my
+Okay. And you'll see here that I'm in my
+Okay. And you'll see here that I'm in my command line. I have
+command line. I have
+command line. I have um cded into that folder. So I'm in my
+um cded into that folder. So I'm in my
+um cded into that folder. So I'm in my week three folder. Otherwise, it won't
+week three folder. Otherwise, it won't
+week three folder. Otherwise, it won't run if I do python q1.py
+run if I do python q1.py
+run if I do python q1.py um or if I click run. There we go.
+um or if I click run. There we go.
+um or if I click run. There we go. That's doing that now. actually. Um,
+That's doing that now. actually. Um,
+That's doing that now. actually. Um, yeah, that worked. That that worked fine
+yeah, that worked. That that worked fine
+yeah, that worked. That that worked fine anyway, so it's fine. Um, so, okay. So,
+anyway, so it's fine. Um, so, okay. So,
+anyway, so it's fine. Um, so, okay. So, I'm I've got a list. Let's call it list.
+I'm I've got a list. Let's call it list.
+I'm I've got a list. Let's call it list. In fact, I'm not going to use list
+In fact, I'm not going to use list
+In fact, I'm not going to use list because you notice if I type the word
+because you notice if I type the word
+because you notice if I type the word list, it goes green. And the reason it
+list, it goes green. And the reason it
+list, it goes green. And the reason it goes green is because the word list is
+goes green is because the word list is
+goes green is because the word list is actually a function in Python. So I
+actually a function in Python. So I
+actually a function in Python. So I don't want to
+don't want to
+don't want to use a variable name which is has already
+use a variable name which is has already
+use a variable name which is has already been dedicated to a function name in
+been dedicated to a function name in
+been dedicated to a function name in Python. So I'm going to call it
+Python. So I'm going to call it
+Python. So I'm going to call it something else. I'm going to call it my
+something else. I'm going to call it my
+something else. I'm going to call it my my list just to be really specific and
+my list just to be really specific and
+my list just to be really specific and I'm going to paste that in. Okay. And
+I'm going to paste that in. Okay. And
+I'm going to paste that in. Okay. And what I want to do is I want to Oops.
+what I want to do is I want to Oops.
+what I want to do is I want to Oops. I want to add every number in that list.
+I want to add every number in that list.
+I want to add every number in that list. Now that's that's trivial, right? In
+Now that's that's trivial, right? In
+Now that's that's trivial, right? In this case, I could do that probably in
+this case, I could do that probably in
+this case, I could do that probably in my head just about.
+my head just about.
+my head just about. But you might not have a five item list
+But you might not have a five item list
+But you might not have a five item list numbers. You might have a 50,000 or a 50
+numbers. You might have a 50,000 or a 50
+numbers. You might have a 50,000 or a 50 million list and you might have to add
+million list and you might have to add
+million list and you might have to add them all up. So there are a couple of
+them all up. So there are a couple of
+them all up. So there are a couple of ways to do that. I'm going to really
+ways to do that. I'm going to really
+ways to do that. I'm going to really show you this from first principles.
+show you this from first principles.
+show you this from first principles. We're going to use a a loop to do it.
+We're going to use a a loop to do it.
+We're going to use a a loop to do it. And now there are two types of loops I'm
+And now there are two types of loops I'm
+And now there are two types of loops I'm going to talk about this week. One is
+going to talk about this week. One is
+going to talk about this week. One is called the for loop and one is called
+called the for loop and one is called
+called the for loop and one is called the while loop. And my general
+the while loop. And my general
+the while loop. And my general philosophy on loops is you can pretty
+philosophy on loops is you can pretty
+philosophy on loops is you can pretty much do everything with a for loop. Um a
+much do everything with a for loop. Um a
+much do everything with a for loop. Um a while loop can sometimes
+while loop can sometimes
+while loop can sometimes be very very useful but in my experience
+be very very useful but in my experience
+be very very useful but in my experience they cause a lot of trouble as well
+they cause a lot of trouble as well
+they cause a lot of trouble as well because if you get a while loop wrong
+because if you get a while loop wrong
+because if you get a while loop wrong you end up in a situation where you
+you end up in a situation where you
+you end up in a situation where you might be looping forever and your
+might be looping forever and your
+might be looping forever and your computer will just crash. It's quite
+computer will just crash. It's quite
+computer will just crash. It's quite easy to crash things with a while loop,
+easy to crash things with a while loop,
+easy to crash things with a while loop, less so with a for loop. Okay, but let
+less so with a for loop. Okay, but let
+less so with a for loop. Okay, but let me let let's let's stick with for loops
+me let let's let's stick with for loops
+me let let's let's stick with for loops for now. I want to create a loop and I'm
+for now. I want to create a loop and I'm
+for now. I want to create a loop and I'm I'm going to do this and I'm going to
+I'm going to do this and I'm going to
+I'm going to do this and I'm going to start my loop with the word for. Okay,
+start my loop with the word for. Okay,
+start my loop with the word for. Okay, you see it's gone purple, which means
+you see it's gone purple, which means
+you see it's gone purple, which means Python knows something's going on. Um,
+Python knows something's going on. Um,
+Python knows something's going on. Um, and then what I want to do, I'm going to
+and then what I want to do, I'm going to
+and then what I want to do, I'm going to I'm going to create a new variable here,
+I'm going to create a new variable here,
+I'm going to create a new variable here, which is just going to be a placeholder
+which is just going to be a placeholder
+which is just going to be a placeholder for for each element in my list in turn.
+for for each element in my list in turn.
+for for each element in my list in turn. So, I'm just going to call it numbum,
+So, I'm just going to call it numbum,
+So, I'm just going to call it numbum, right? For numbum in my list. Okay.
+right? For numbum in my list. Okay.
+right? For numbum in my list. Okay. Colon. And that's this that colon the
+Colon. And that's this that colon the
+Colon. And that's this that colon the end of that line is really, really
+end of that line is really, really
+end of that line is really, really important. Um, and then I'm going to hit
+important. Um, and then I'm going to hit
+important. Um, and then I'm going to hit enter. And you'll notice Python has
+enter. And you'll notice Python has
+enter. And you'll notice Python has automatically indented
+automatically indented
+automatically indented my code just as I would have done for a
+my code just as I would have done for a
+my code just as I would have done for a conditional statement. If this then that
+conditional statement. If this then that
+conditional statement. If this then that or if if colon, it would have indented
+or if if colon, it would have indented
+or if if colon, it would have indented it. It does it for the loops as well.
+it. It does it for the loops as well.
+it. It does it for the loops as well. And again, this is a key feature of the
+And again, this is a key feature of the
+And again, this is a key feature of the Python language. It uses that tab to one
+Python language. It uses that tab to one
+Python language. It uses that tab to one make your code a bit more um accessible
+make your code a bit more um accessible
+make your code a bit more um accessible and a bit more readable, but also to
+and a bit more readable, but also to
+and a bit more readable, but also to decide what to do and when. So, it's
+decide what to do and when. So, it's
+decide what to do and when. So, it's really important you have that tab in
+really important you have that tab in
+really important you have that tab in there. Otherwise, you're going to get an
+there. Otherwise, you're going to get an
+there. Otherwise, you're going to get an indentation error. Um what do I want to
+indentation error. Um what do I want to
+indentation error. Um what do I want to do now? I want to add these numbers up.
+do now? I want to add these numbers up.
+do now? I want to add these numbers up. Okay. Okay. So, I think what I should
+Okay. Okay. So, I think what I should
+Okay. Okay. So, I think what I should have done first is I should have just
+have done first is I should have just
+have done first is I should have just created an empty variable called total.
+created an empty variable called total.
+created an empty variable called total. Oops. Total. And I'm going to set it to
+Oops. Total. And I'm going to set it to
+Oops. Total. And I'm going to set it to zero. So, I'm going to count and I'm
+zero. So, I'm going to count and I'm
+zero. So, I'm going to count and I'm going to Oh, I'm going to loop through
+going to Oh, I'm going to loop through
+going to Oh, I'm going to loop through these items. And every time
+these items. And every time
+these items. And every time I encounter a new element, I want to add
+I encounter a new element, I want to add
+I encounter a new element, I want to add it to my running total. So, there's a
+it to my running total. So, there's a
+it to my running total. So, there's a couple of ways I could do that. I'll
+couple of ways I could do that. I'll
+couple of ways I could do that. I'll show you the long way. total um equals
+show you the long way. total um equals
+show you the long way. total um equals total plus num. Um, and what that's
+total plus num. Um, and what that's
+total plus num. Um, and what that's going to do is it's going to take my
+going to do is it's going to take my
+going to do is it's going to take my first total. So, the first time on the
+first total. So, the first time on the
+first total. So, the first time on the list, it's going to get this three, and
+list, it's going to get this three, and
+list, it's going to get this three, and it's going to take my total, which is
+it's going to take my total, which is
+it's going to take my total, which is set to zero, and it's going to say I
+set to zero, and it's going to say I
+set to zero, and it's going to say I want to define a new total, which is 0 +
+want to define a new total, which is 0 +
+want to define a new total, which is 0 + 3. So, then my total becomes three. And
+3. So, then my total becomes three. And
+3. So, then my total becomes three. And then I loop again, and this time it's a
+then I loop again, and this time it's a
+then I loop again, and this time it's a seven. So, I've got a three plus a
+seven. So, I've got a three plus a
+seven. So, I've got a three plus a seven. That gives me 10. and so on and
+seven. That gives me 10. and so on and
+seven. That gives me 10. and so on and so on till I get to the end of the list.
+so on till I get to the end of the list.
+so on till I get to the end of the list. Then once I've done that, um I can print
+Then once I've done that, um I can print
+Then once I've done that, um I can print out the total.
+And you'll notice that
+And you'll notice that
+And you'll notice that I have
+I have
+I have finished with this indent and I've come
+finished with this indent and I've come
+finished with this indent and I've come back over to the left here. So I don't
+back over to the left here. So I don't
+back over to the left here. So I don't want to do this within the loop. I can
+want to do this within the loop. I can
+want to do this within the loop. I can do it within the loop, but what it will
+do it within the loop, but what it will
+do it within the loop, but what it will do is it will print out the running
+do is it will print out the running
+do is it will print out the running total as it scans through the loop.
+total as it scans through the loop.
+total as it scans through the loop. Okay. Um let me just run this. See what
+Okay. Um let me just run this. See what
+Okay. Um let me just run this. See what happens. There we go. I get a total of
+happens. There we go. I get a total of
+happens. There we go. I get a total of 26, which is correct. Let me show you
+26, which is correct. Let me show you
+26, which is correct. Let me show you what would happen if I had done this
+what would happen if I had done this
+what would happen if I had done this inside the loop.
+inside the loop.
+inside the loop. There you go. It would have output the
+There you go. It would have output the
+There you go. It would have output the the new total every time I iterated
+the new total every time I iterated
+the new total every time I iterated through my loop. Okay. So, I don't want
+through my loop. Okay. So, I don't want
+through my loop. Okay. So, I don't want to do that. I could do it. It's all
+to do that. I could do it. It's all
+to do that. I could do it. It's all right, but um really I printing things
+right, but um really I printing things
+right, but um really I printing things out takes a bit of energy in Python. So,
+out takes a bit of energy in Python. So,
+out takes a bit of energy in Python. So, I only want to do it at the end. Okay.
+I only want to do it at the end. Okay.
+I only want to do it at the end. Okay. Um there's a there's a there's a
+Um there's a there's a there's a
+Um there's a there's a there's a shortcut to be had here. And often
+shortcut to be had here. And often
+shortcut to be had here. And often you'll see a symbol that looks like
+you'll see a symbol that looks like
+you'll see a symbol that looks like this. Um, plus equals
+this. Um, plus equals
+this. Um, plus equals num.
+num.
+num. So if I run that, I get the same answer.
+So if I run that, I get the same answer.
+So if I run that, I get the same answer. So this plus equals is a kind of
+So this plus equals is a kind of
+So this plus equals is a kind of shorthand for total equals total plus
+shorthand for total equals total plus
+shorthand for total equals total plus num. It's simply saying I just want to
+num. It's simply saying I just want to
+num. It's simply saying I just want to add the number to the existing total
+add the number to the existing total
+add the number to the existing total variable. Um, there's a minus as well. I
+variable. Um, there's a minus as well. I
+variable. Um, there's a minus as well. I could have if I wanted to subtract
+could have if I wanted to subtract
+could have if I wanted to subtract um or I could have multiplied as well.
+um or I could have multiplied as well.
+um or I could have multiplied as well. So your operator followed by the equals
+So your operator followed by the equals
+So your operator followed by the equals um is a kind of nice little shortand.
+um is a kind of nice little shortand.
+um is a kind of nice little shortand. Okay. Right. So that's question one
+Okay. Right. So that's question one
+Okay. Right. So that's question one done. Before I move on um I've made you
+done. Before I move on um I've made you
+done. Before I move on um I've made you use a for loop to answer this question
+use a for loop to answer this question
+use a for loop to answer this question because I wanted to show you what a for
+because I wanted to show you what a for
+because I wanted to show you what a for loop looks like. However, there is a
+loop looks like. However, there is a
+loop looks like. However, there is a much easier way of doing all of this.
+much easier way of doing all of this.
+much easier way of doing all of this. Print some my list.
+Print some my list.
+Print some my list. Put total in there.
+There we go. Does the same thing. So,
+There we go. Does the same thing. So,
+There we go. Does the same thing. So, there is an existing function in Python
+there is an existing function in Python
+there is an existing function in Python that will do exactly what we did. And I
+that will do exactly what we did. And I
+that will do exactly what we did. And I I suspect if we were to inspect that
+I suspect if we were to inspect that
+I suspect if we were to inspect that function, I'm not going to do it now. It
+function, I'm not going to do it now. It
+function, I'm not going to do it now. It will look suspiciously like what we
+will look suspiciously like what we
+will look suspiciously like what we coded. Okay. So, there's always more
+coded. Okay. So, there's always more
+coded. Okay. So, there's always more than one way to do something in Python,
+than one way to do something in Python,
+than one way to do something in Python, right? We'll go and take a look at
+right? We'll go and take a look at
+right? We'll go and take a look at question two next.

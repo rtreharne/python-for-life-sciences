@@ -1,0 +1,182 @@
+Kind: captions Language: en
+Let's move on to the next question.
+Let's have a look. Okay. DNA case and
+Let's have a look. Okay. DNA case and
+Let's have a look. Okay. DNA case and length. So, the next thing you're going
+length. So, the next thing you're going
+length. So, the next thing you're going to do is let's have a think. Okay. We're
+to do is let's have a think. Okay. We're
+to do is let's have a think. Okay. We're going to prompt you for a DNA sequence.
+going to prompt you for a DNA sequence.
+going to prompt you for a DNA sequence. So, that's any letters
+So, that's any letters
+So, that's any letters um A, C, G, and T. Then, we're going to
+um A, C, G, and T. Then, we're going to
+um A, C, G, and T. Then, we're going to print an uppercase version and then a
+print an uppercase version and then a
+print an uppercase version and then a lowerase version. So, before I tell you
+lowerase version. So, before I tell you
+lowerase version. So, before I tell you how to do this, go and figure it out.
+how to do this, go and figure it out.
+how to do this, go and figure it out. see if you can do it. And we're also
+see if you can do it. And we're also
+see if you can do it. And we're also going to print the length. So there's
+going to print the length. So there's
+going to print the length. So there's going to be a useful function we're
+going to be a useful function we're
+going to be a useful function we're going to add to this which will tell you
+going to add to this which will tell you
+going to add to this which will tell you how long a string is. Right. So the
+how long a string is. Right. So the
+how long a string is. Right. So the first thing I'm going to do, I'm going
+first thing I'm going to do, I'm going
+first thing I'm going to do, I'm going to go back here. I'm going to create a
+to go back here. I'm going to create a
+to go back here. I'm going to create a new file.
+new file.
+new file. Yes, it's going to be I could have done
+Yes, it's going to be I could have done
+Yes, it's going to be I could have done that. I sometimes prefer to do it from
+that. I sometimes prefer to do it from
+that. I sometimes prefer to do it from here.
+here.
+here. Yeah. So Q2.py.
+Yeah. So Q2.py.
+Yeah. So Q2.py. Okay.
+Okay.
+Okay. And I'm going to What have we done
+And I'm going to What have we done
+And I'm going to What have we done there? I'm going to ask the user
+there? I'm going to ask the user
+there? I'm going to ask the user uh I'm going to define a variable called
+uh I'm going to define a variable called
+uh I'm going to define a variable called sequence. I'm going to ask for an input
+sequence. I'm going to ask for an input
+sequence. I'm going to ask for an input and uh please input
+and uh please input
+and uh please input a DNA sequence.
+Right.
+Okay.
+Okay.
+Okay. And that if I run that, let me if I do
+And that if I run that, let me if I do
+And that if I run that, let me if I do control and L on my terminal here, it
+control and L on my terminal here, it
+control and L on my terminal here, it will clear that. So if I just run it,
+will clear that. So if I just run it,
+will clear that. So if I just run it, it'll just ask me for for this. So
+let's do actg.
+let's do actg.
+let's do actg. Okay. But nothing happens because I
+Okay. But nothing happens because I
+Okay. But nothing happens because I haven't told it to do anything else. So
+haven't told it to do anything else. So
+haven't told it to do anything else. So what I want to do is I want to I want to
+what I want to do is I want to I want to
+what I want to do is I want to I want to print out three things. First thing I
+print out three things. First thing I
+print out three things. First thing I want to print out is the sequence in
+want to print out is the sequence in
+want to print out is the sequence in lower case. So I need to convert it to
+lower case. So I need to convert it to
+lower case. So I need to convert it to lower. Then I want to do it in
+lower. Then I want to do it in
+lower. Then I want to do it in uppercase. And then the last thing I
+uppercase. And then the last thing I
+uppercase. And then the last thing I want to do is print out the length of
+want to do is print out the length of
+want to do is print out the length of the sequence. Okay. I'm going to use
+the sequence. Okay. I'm going to use
+the sequence. Okay. I'm going to use print statements for all of these.
+print statements for all of these.
+print statements for all of these. Prints open bracket.
+Prints open bracket.
+Prints open bracket. I'm going to do sequence.
+I'm going to do sequence.
+I'm going to do sequence. Can you guess what I'm going to do next?
+Can you guess what I'm going to do next?
+Can you guess what I'm going to do next? It's going to be a dot
+It's going to be a dot
+It's going to be a dot lower
+lower
+lower open bracket close bracket. And that is
+open bracket close bracket. And that is
+open bracket close bracket. And that is a method that I can apply to the
+a method that I can apply to the
+a method that I can apply to the variable sequence which has been stored
+variable sequence which has been stored
+variable sequence which has been stored as a string. Okay. So the anything with
+as a string. Okay. So the anything with
+as a string. Okay. So the anything with a dot dot on it and then something
+a dot dot on it and then something
+a dot dot on it and then something afterwards we call that a method. Okay.
+afterwards we call that a method. Okay.
+afterwards we call that a method. Okay. And because I it is essentially a
+And because I it is essentially a
+And because I it is essentially a function I have to include an open
+function I have to include an open
+function I have to include an open bracket close bracket afterwards. But
+bracket close bracket afterwards. But
+bracket close bracket afterwards. But because I don't need to feed it any
+because I don't need to feed it any
+because I don't need to feed it any additional parameters or information it
+additional parameters or information it
+additional parameters or information it there's nothing in there. Okay. If I run
+there's nothing in there. Okay. If I run
+there's nothing in there. Okay. If I run that again and then do um let's do A C T
+that again and then do um let's do A C T
+that again and then do um let's do A C T G. So I'll mix up my cases there. There
+G. So I'll mix up my cases there. There
+G. So I'll mix up my cases there. There we go. It'll print that out. Uh let's
+we go. It'll print that out. Uh let's
+we go. It'll print that out. Uh let's print out it in lower case. Uh sorry,
+print out it in lower case. Uh sorry,
+print out it in lower case. Uh sorry, uppercase. Can you guess what that is?
+uppercase. Can you guess what that is?
+uppercase. Can you guess what that is? Yeah, you got it. And then the last
+Yeah, you got it. And then the last
+Yeah, you got it. And then the last thing I want to do is print out the
+thing I want to do is print out the
+thing I want to do is print out the length of the string. So there is a
+length of the string. So there is a
+length of the string. So there is a function
+function
+function called len open bracket
+called len open bracket
+called len open bracket that I can put my sequence into and
+that I can put my sequence into and
+that I can put my sequence into and it will essentially count the number of
+it will essentially count the number of
+it will essentially count the number of characters and then print that out. Now
+characters and then print that out. Now
+characters and then print that out. Now you notice I couldn't do sequence.len.
+you notice I couldn't do sequence.len.
+you notice I couldn't do sequence.len. Okay, it's a slightly different way. So
+Okay, it's a slightly different way. So
+Okay, it's a slightly different way. So this is a this is a a function which I
+this is a this is a a function which I
+this is a this is a a function which I apply to the string but these are
+apply to the string but these are
+apply to the string but these are methods that are intr intrinsically
+methods that are intr intrinsically
+methods that are intr intrinsically associated with the string. Don't don't
+associated with the string. Don't don't
+associated with the string. Don't don't worry too much about the terminology.
+worry too much about the terminology.
+worry too much about the terminology. What should happen once I run these four
+What should happen once I run these four
+What should happen once I run these four lines
+lines
+lines is
+is
+is I'll put in uh at CCC GD.
+I put some capitals in there as well.
+I put some capitals in there as well.
+I put some capitals in there as well. Okay.
+Run that. And there we go. It's giving
+Run that. And there we go. It's giving
+Run that. And there we go. It's giving me a lower case, uppercase, and there
+me a lower case, uppercase, and there
+me a lower case, uppercase, and there were 19 characters in there. Okay.
+were 19 characters in there. Okay.
+were 19 characters in there. Okay. Right.

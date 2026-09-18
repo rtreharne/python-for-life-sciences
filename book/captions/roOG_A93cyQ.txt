@@ -1,0 +1,449 @@
+Kind: captions Language: en
+Okay, back in the garage. Question
+Okay, back in the garage. Question
+Okay, back in the garage. Question three. We are going to write to a file.
+three. We are going to write to a file.
+three. We are going to write to a file. This is exciting. Um, so we're going to
+This is exciting. Um, so we're going to
+This is exciting. Um, so we're going to do that with a function as well. And
+do that with a function as well. And
+do that with a function as well. And we're going to discuss
+we're going to discuss
+we're going to discuss another function
+another function
+another function called
+called
+called open which is going to open a file. And
+open which is going to open a file. And
+open which is going to open a file. And also there's a a what we call a context
+also there's a a what we call a context
+also there's a a what we call a context manager in Python. Um, and that's called
+manager in Python. Um, and that's called
+manager in Python. Um, and that's called a a width statement. I'll explain that
+a a width statement. I'll explain that
+a a width statement. I'll explain that in a second. Uh, but the objective here
+in a second. Uh, but the objective here
+in a second. Uh, but the objective here is to take some texts. Hello, my name is
+is to take some texts. Hello, my name is
+is to take some texts. Hello, my name is Rob. That's some text. I'll write that.
+Rob. That's some text. I'll write that.
+Rob. That's some text. I'll write that. And we're going to save it into a new
+And we're going to save it into a new
+And we're going to save it into a new text file, which is great because it
+text file, which is great because it
+text file, which is great because it allows us to permanently store the
+allows us to permanently store the
+allows us to permanently store the output of whatever we do. So let's um
+output of whatever we do. So let's um
+output of whatever we do. So let's um let's let's go for it. So
+let's let's go for it. So
+let's let's go for it. So um
+um
+um write a function
+write a function
+write a function to save a message. Okay, so it's a
+to save a message. Okay, so it's a
+to save a message. Okay, so it's a function. So the first thing we got to
+function. So the first thing we got to
+function. So the first thing we got to do is defaf. Um I think what did I what
+do is defaf. Um I think what did I what
+do is defaf. Um I think what did I what did I say the function was going to be
+did I say the function was going to be
+did I say the function was going to be called? Save message, right? And it's
+called? Save message, right? And it's
+called? Save message, right? And it's going to take two parameters, msg and
+going to take two parameters, msg and
+going to take two parameters, msg and file name. Okay, let's do that then.
+file name. Okay, let's do that then.
+file name. Okay, let's do that then. Save message
+Save message
+Save message msg. That's our first parameter. That's
+msg. That's our first parameter. That's
+msg. That's our first parameter. That's when we use this function. We we'll feed
+when we use this function. We we'll feed
+when we use this function. We we'll feed in the text there. We also want to feed
+in the text there. We also want to feed
+in the text there. We also want to feed it a file name and we'll call it uh
+it a file name and we'll call it uh
+it a file name and we'll call it uh message. Ah, no, hang on. Yeah, file
+message. Ah, no, hang on. Yeah, file
+message. Ah, no, hang on. Yeah, file name. Do that next. File name. Okay.
+name. Do that next. File name. Okay.
+name. Do that next. File name. Okay. Colon because it's a function. And we'll
+Colon because it's a function. And we'll
+Colon because it's a function. And we'll open up a a new indentation there. Now,
+open up a a new indentation there. Now,
+open up a a new indentation there. Now, I'm going to put a comment in here, and
+I'm going to put a comment in here, and
+I'm going to put a comment in here, and it's going to look slightly different
+it's going to look slightly different
+it's going to look slightly different from
+from
+from um what we usually do. We usually do a
+um what we usually do. We usually do a
+um what we usually do. We usually do a hash, don't we? But I'm going to do a
+hash, don't we? But I'm going to do a
+hash, don't we? But I'm going to do a triple quotes. And this in Python in and
+triple quotes. And this in Python in and
+triple quotes. And this in Python in and in fact in many other languages as well,
+in fact in many other languages as well,
+in fact in many other languages as well, is called a a dock string. And you
+is called a a dock string. And you
+is called a a dock string. And you typically see them on the first line uh
+typically see them on the first line uh
+typically see them on the first line uh and when you've when you've started
+and when you've when you've started
+and when you've when you've started defining a function, and it will just
+defining a function, and it will just
+defining a function, and it will just tell the user what the function does. So
+tell the user what the function does. So
+tell the user what the function does. So this function
+this function
+this function will um save a message to a file. Okay,
+will um save a message to a file. Okay,
+will um save a message to a file. Okay, that's pretty much all I have to
+that's pretty much all I have to
+that's pretty much all I have to describe there.
+describe there.
+describe there. Okay, so here we go. Here's our first
+Okay, so here we go. Here's our first
+Okay, so here we go. Here's our first business line of code. Um I'm going to
+business line of code. Um I'm going to
+business line of code. Um I'm going to use the word with and we'll talk through
+use the word with and we'll talk through
+use the word with and we'll talk through this in a second. Open. Now that's a
+this in a second. Open. Now that's a
+this in a second. Open. Now that's a function. So I'm going to have an open
+function. So I'm going to have an open
+function. So I'm going to have an open bracket there. And then
+bracket there. And then
+bracket there. And then uh what I'm going to do is I'm going to
+uh what I'm going to do is I'm going to
+uh what I'm going to do is I'm going to put in the file name
+put in the file name
+put in the file name and then a comma
+and then a comma
+and then a comma and then
+and then
+and then this is the important bit in quotation
+this is the important bit in quotation
+this is the important bit in quotation marks I'm going to put a W. And what the
+marks I'm going to put a W. And what the
+marks I'm going to put a W. And what the W signifies is that I'm opening a file
+W signifies is that I'm opening a file
+W signifies is that I'm opening a file to write to it. So a couple of things
+to write to it. So a couple of things
+to write to it. So a couple of things might happen. Um, if the file doesn't
+might happen. Um, if the file doesn't
+might happen. Um, if the file doesn't exist, it will create it and then write.
+exist, it will create it and then write.
+exist, it will create it and then write. If the file does exist,
+If the file does exist,
+If the file does exist, it won't create a new one, but it will
+it won't create a new one, but it will
+it won't create a new one, but it will overwrite what was in the file
+overwrite what was in the file
+overwrite what was in the file originally. So, there's a couple of
+originally. So, there's a couple of
+originally. So, there's a couple of other um characters we can do. We could
+other um characters we can do. We could
+other um characters we can do. We could we could have done an R to read a file
+we could have done an R to read a file
+we could have done an R to read a file without writing to it. Um, and there's a
+without writing to it. Um, and there's a
+without writing to it. Um, and there's a couple more. I forget what they are.
+couple more. I forget what they are.
+couple more. I forget what they are. We'll cover those in turn probably.
+We'll cover those in turn probably.
+We'll cover those in turn probably. Okay. Now, the last thing here is what I
+Okay. Now, the last thing here is what I
+Okay. Now, the last thing here is what I want to have an as statement here as
+want to have an as statement here as
+want to have an as statement here as well. Um, I'm just going to call it as
+well. Um, I'm just going to call it as
+well. Um, I'm just going to call it as f, right? And that
+f, right? And that
+f, right? And that is going to give me a variable into
+is going to give me a variable into
+is going to give me a variable into which I can store that file object to do
+which I can store that file object to do
+which I can store that file object to do stuff with.
+stuff with.
+stuff with. Uh, okay.
+Uh, okay.
+Uh, okay. Uh, so
+Uh, so
+Uh, so that is going that with statement is
+that is going that with statement is
+that is going that with statement is going to require a colon again. Uh, and
+going to require a colon again. Uh, and
+going to require a colon again. Uh, and now what we're going to do is we're
+now what we're going to do is we're
+now what we're going to do is we're going to we're going to write whatever
+going to we're going to write whatever
+going to we're going to write whatever it is we've got stored in message to the
+it is we've got stored in message to the
+it is we've got stored in message to the file. So f dot write
+msg. Okay. And now this with
+msg. Okay. And now this with
+msg. Okay. And now this with statement here it's actually doing a lot
+statement here it's actually doing a lot
+statement here it's actually doing a lot of lot of things under the hood here.
+of lot of things under the hood here.
+of lot of things under the hood here. It's opening the file. But once we once
+It's opening the file. But once we once
+It's opening the file. But once we once we come out of this it's going to
+we come out of this it's going to
+we come out of this it's going to close the file as well. That's really
+close the file as well. That's really
+close the file as well. That's really important. There are a couple of other
+important. There are a couple of other
+important. There are a couple of other ways you could have done this without a
+ways you could have done this without a
+ways you could have done this without a width statement but it would have been
+width statement but it would have been
+width statement but it would have been important to close the file too. Um,
+important to close the file too. Um,
+important to close the file too. Um, it's important you close your files
+it's important you close your files
+it's important you close your files because if you for whatever reason want
+because if you for whatever reason want
+because if you for whatever reason want to edit the file somewhere else, it
+to edit the file somewhere else, it
+to edit the file somewhere else, it might not let you. You'll get an error
+might not let you. You'll get an error
+might not let you. You'll get an error because it's already open. You certainly
+because it's already open. You certainly
+because it's already open. You certainly won't be able to delete the file if it's
+won't be able to delete the file if it's
+won't be able to delete the file if it's already open. Uh, and you get you'll get
+already open. Uh, and you get you'll get
+already open. Uh, and you get you'll get errors basically, especially if you're
+errors basically, especially if you're
+errors basically, especially if you're running longwinded scripts. Okay, so I
+running longwinded scripts. Okay, so I
+running longwinded scripts. Okay, so I think that's um that's my defaf my
+think that's um that's my defaf my
+think that's um that's my defaf my function defined. You'll notice that
+function defined. You'll notice that
+function defined. You'll notice that um I haven't got a return on this. Um,
+um I haven't got a return on this. Um,
+um I haven't got a return on this. Um, it doesn't really need one. Um, so all
+it doesn't really need one. Um, so all
+it doesn't really need one. Um, so all that means is by default it will return
+that means is by default it will return
+that means is by default it will return none. But actually what what I needed it
+none. But actually what what I needed it
+none. But actually what what I needed it to do would have would have been done.
+to do would have would have been done.
+to do would have would have been done. So it would have written this message.
+So it would have written this message.
+So it would have written this message. So I'm just going to I'm going to leave
+So I'm just going to I'm going to leave
+So I'm just going to I'm going to leave this function without a return statement
+this function without a return statement
+this function without a return statement this time. Okay, let's um let's compile.
+this time. Okay, let's um let's compile.
+this time. Okay, let's um let's compile. Nothing should happen. Yep, that's
+Nothing should happen. Yep, that's
+Nothing should happen. Yep, that's correct. Right, how are we going to use
+correct. Right, how are we going to use
+correct. Right, how are we going to use this now? So let's have uh some
+this now? So let's have uh some
+this now? So let's have uh some examples.
+examples.
+examples. Um, let's save our first message. Save
+Um, let's save our first message. Save
+Um, let's save our first message. Save message.
+message.
+message. Okay. And hello,
+Okay. And hello,
+Okay. And hello, my name is Rob. Okay, that's my message.
+my name is Rob. Okay, that's my message.
+my name is Rob. Okay, that's my message. And I'm going to save it as um message
+And I'm going to save it as um message
+And I'm going to save it as um message 1.txt.
+1.txt.
+1.txt. Now, it's important you put the
+Now, it's important you put the
+Now, it's important you put the extension on these files as well because
+extension on these files as well because
+extension on these files as well because if you don't,
+if you don't,
+if you don't, it will create the file, but the next
+it will create the file, but the next
+it will create the file, but the next time you try to open it, it won't know
+time you try to open it, it won't know
+time you try to open it, it won't know how to handle it. Okay? So, you'll have
+how to handle it. Okay? So, you'll have
+how to handle it. Okay? So, you'll have to put your extension. It could have
+to put your extension. It could have
+to put your extension. It could have been a txt. If you're dealing with a bit
+been a txt. If you're dealing with a bit
+been a txt. If you're dealing with a bit of data, the most likely thing you're
+of data, the most likely thing you're
+of data, the most likely thing you're going to do there is a CSV. So, let's
+going to do there is a CSV. So, let's
+going to do there is a CSV. So, let's run this and see what happens. Okay?
+run this and see what happens. Okay?
+run this and see what happens. Okay? Nothing's come out in the terminal, but
+Nothing's come out in the terminal, but
+Nothing's come out in the terminal, but you'll see in my project on the left
+you'll see in my project on the left
+you'll see in my project on the left here, I've now got a message one.ext
+here, I've now got a message one.ext
+here, I've now got a message one.ext text file and stored in it is some text.
+text file and stored in it is some text.
+text file and stored in it is some text. Isn't that fantastic?
+Isn't that fantastic?
+Isn't that fantastic? So, just to to prove to you I could have
+So, just to to prove to you I could have
+So, just to to prove to you I could have done some other stuff. How about let's
+done some other stuff. How about let's
+done some other stuff. How about let's think about this. How about we create a
+think about this. How about we create a
+think about this. How about we create a really long string full of numbers? So,
+really long string full of numbers? So,
+really long string full of numbers? So, I'm actually going to
+I'm actually going to
+I'm actually going to h let's have a think about this. Let's
+h let's have a think about this. Let's
+h let's have a think about this. Let's um let's import random.
+um let's import random.
+um let's import random. This is just I've completed the exercise
+This is just I've completed the exercise
+This is just I've completed the exercise now. By the way, I'm just doing this for
+now. By the way, I'm just doing this for
+now. By the way, I'm just doing this for fun, right? And we'll import random and
+fun, right? And we'll import random and
+fun, right? And we'll import random and we will uh create a loop for
+we will uh create a loop for
+we will uh create a loop for i in range.
+i in range.
+i in range. Let's do 100 numbers. Okay, we're going
+Let's do 100 numbers. Okay, we're going
+Let's do 100 numbers. Okay, we're going to create um a random number
+to create um a random number
+to create um a random number using my rand int function.
+using my rand int function.
+using my rand int function. Um, I'll do it between
+Um, I'll do it between
+Um, I'll do it between zero and a th00and.
+zero and a th00and.
+zero and a th00and. And then I'm going to do that a thousand
+And then I'm going to do that a thousand
+And then I'm going to do that a thousand times. So, actually I want to I'm going
+times. So, actually I want to I'm going
+times. So, actually I want to I'm going to create a message
+to create a message
+to create a message um
+message string.
+message string.
+message string. And every time I create a number, I'm
+And every time I create a number, I'm
+And every time I create a number, I'm going to append um to that. So, I'm
+going to append um to that. So, I'm
+going to append um to that. So, I'm going to do message string plus or
+going to do message string plus or
+going to do message string plus or equals um num. I'm also going to
+equals um num. I'm also going to
+equals um num. I'm also going to add
+add
+add a What am I going to do here? Yeah, I'm
+a What am I going to do here? Yeah, I'm
+a What am I going to do here? Yeah, I'm going to add this character. So, that
+going to add this character. So, that
+going to add this character. So, that back slashn signifies
+back slashn signifies
+back slashn signifies a hang on. I've done this wrong, haven't
+a hang on. I've done this wrong, haven't
+a hang on. I've done this wrong, haven't I? No, that's right. Signifies a new
+I? No, that's right. Signifies a new
+I? No, that's right. Signifies a new line.
+line.
+line. And then
+And then
+And then let me just check my silences. I'm going
+let me just check my silences. I'm going
+let me just check my silences. I'm going to print out that message string to see
+to print out that message string to see
+to print out that message string to see if it's worked. I should get a list of a
+if it's worked. I should get a list of a
+if it's worked. I should get a list of a th00and numbers. Oh, hang on. I can't
+th00and numbers. Oh, hang on. I can't
+th00and numbers. Oh, hang on. I can't add that together. Uh because I need to
+add that together. Uh because I need to
+add that together. Uh because I need to convert this to a string.
+Okay, so I've generated a random number.
+Okay, so I've generated a random number.
+Okay, so I've generated a random number. I've converted into a string. I've added
+I've converted into a string. I've added
+I've converted into a string. I've added a new line character and I've appended
+a new line character and I've appended
+a new line character and I've appended it to my empty string message. Will that
+it to my empty string message. Will that
+it to my empty string message. Will that work? Yes. Yes, it will. And I want to
+work? Yes. Yes, it will. And I want to
+work? Yes. Yes, it will. And I want to So now I want to save that to some sort
+So now I want to save that to some sort
+So now I want to save that to some sort of data file. So I can use my save
+of data file. So I can use my save
+of data file. So I can use my save message again. This time I'm not going
+message again. This time I'm not going
+message again. This time I'm not going to type a message in here. I'm going to
+to type a message in here. I'm going to
+to type a message in here. I'm going to use that message string that I've
+use that message string that I've
+use that message string that I've created above.
+created above.
+created above. And I'm going to create a new file
+And I'm going to create a new file
+And I'm going to create a new file called data dot and this time I'm going
+called data dot and this time I'm going
+called data dot and this time I'm going to do CSV and it should handle that.
+to do CSV and it should handle that.
+to do CSV and it should handle that. Okay. Ah sorry this is wrong. Data not
+Okay. Ah sorry this is wrong. Data not
+Okay. Ah sorry this is wrong. Data not data view data string. Okay. Message
+data view data string. Okay. Message
+data view data string. Okay. Message string. So this time when I run this,
+string. So this time when I run this,
+string. So this time when I run this, it's created me another
+it's created me another
+it's created me another um file which is called data.csv. And
+um file which is called data.csv. And
+um file which is called data.csv. And there it is. There's my lovely data. Now
+there it is. There's my lovely data. Now
+there it is. There's my lovely data. Now in Visual Studio Code, I have a little
+in Visual Studio Code, I have a little
+in Visual Studio Code, I have a little package that handles CSVs.
+package that handles CSVs.
+package that handles CSVs. Let me just take a look at it. Um I
+Let me just take a look at it. Um I
+Let me just take a look at it. Um I think it's in the extensions manager. If
+think it's in the extensions manager. If
+think it's in the extensions manager. If I type CSV here,
+I type CSV here,
+I type CSV here, yeah, it's the rainbow CSV I like to
+yeah, it's the rainbow CSV I like to
+yeah, it's the rainbow CSV I like to use. So, you may want to add this
+use. So, you may want to add this
+use. So, you may want to add this extension u because otherwise your CSVs
+extension u because otherwise your CSVs
+extension u because otherwise your CSVs will look pretty boring. Um it gives you
+will look pretty boring. Um it gives you
+will look pretty boring. Um it gives you a bit of even though I haven't really
+a bit of even though I haven't really
+a bit of even though I haven't really done much in my CSV
+done much in my CSV
+done much in my CSV in the future when I've got multiple
+in the future when I've got multiple
+in the future when I've got multiple columns, multiple things going on, it
+columns, multiple things going on, it
+columns, multiple things going on, it will make it a bit easier to read in
+will make it a bit easier to read in
+will make it a bit easier to read in your um your viewer here. Right, I think
+your um your viewer here. Right, I think
+your um your viewer here. Right, I think that's the end of that question. Um
+that's the end of that question. Um
+that's the end of that question. Um let's move on to question four.

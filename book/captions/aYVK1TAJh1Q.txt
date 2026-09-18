@@ -1,0 +1,240 @@
+Kind: captions Language: en
+Right, let's keep going. Question three,
+Right, let's keep going. Question three,
+Right, let's keep going. Question three, new file. Question three.py.
+Here we go. Even or odd. Oh, right.
+Here we go. Even or odd. Oh, right.
+Here we go. Even or odd. Oh, right. Exciting stuff. So, we are going to
+Exciting stuff. So, we are going to
+Exciting stuff. So, we are going to start looking at conditional statements
+start looking at conditional statements
+start looking at conditional statements now.
+now.
+now. So a conditional statement is anything
+So a conditional statement is anything
+So a conditional statement is anything where I need to compare two things to to
+where I need to compare two things to to
+where I need to compare two things to to each other and make a decision on what
+each other and make a decision on what
+each other and make a decision on what to do next based on the result. So for
+to do next based on the result. So for
+to do next based on the result. So for example I could say if this number is
+example I could say if this number is
+example I could say if this number is odd do this or if this number is even do
+odd do this or if this number is even do
+odd do this or if this number is even do this. Um so what we're going to do is
+this. Um so what we're going to do is
+this. Um so what we're going to do is simply in this case
+simply in this case
+simply in this case decide whether it is odd or even and
+decide whether it is odd or even and
+decide whether it is odd or even and then print that to the user whether it's
+then print that to the user whether it's
+then print that to the user whether it's odd or even. Okay. So, let me just um
+odd or even. Okay. So, let me just um
+odd or even. Okay. So, let me just um let me just copy and paste this into a
+let me just copy and paste this into a
+let me just copy and paste this into a new script here. Here we go. Comment it
+new script here. Here we go. Comment it
+new script here. Here we go. Comment it all. Control and forward slash will
+all. Control and forward slash will
+all. Control and forward slash will comment everything.
+comment everything.
+comment everything. Right. So, I'm going to take another
+Right. So, I'm going to take another
+Right. So, I'm going to take another input from the user and I'm just going
+input from the user and I'm just going
+input from the user and I'm just going to let's just call it input. Actually,
+to let's just call it input. Actually,
+to let's just call it input. Actually, I'm not going to call it input um
+I'm not going to call it input um
+I'm not going to call it input um because that is a function input.
+because that is a function input.
+because that is a function input. Let's call it even
+Let's call it even
+Let's call it even or odd
+or odd
+or odd equals input.
+And
+I'm going to
+I'm going to
+I'm going to do please
+do please
+do please input an even or odd number
+and I want it to be an integer in this
+and I want it to be an integer in this
+and I want it to be an integer in this case. So I'm going to wrap this in an
+case. So I'm going to wrap this in an
+case. So I'm going to wrap this in an integer
+integer
+integer statement so that it will convert that
+statement so that it will convert that
+statement so that it will convert that input to an integer. So, right. Okay.
+input to an integer. So, right. Okay.
+input to an integer. So, right. Okay. So, let me let me just think about this
+So, let me let me just think about this
+So, let me let me just think about this for a second. So, how are we going to
+for a second. So, how are we going to
+for a second. So, how are we going to decide if the number is even or odd?
+decide if the number is even or odd?
+decide if the number is even or odd? Well, what do we know about even
+Well, what do we know about even
+Well, what do we know about even numbers? H I know that if I divide any
+numbers? H I know that if I divide any
+numbers? H I know that if I divide any even number by two,
+even number by two,
+even number by two, then I won't have anything left over.
+then I won't have anything left over.
+then I won't have anything left over. two will always go into an even number
+two will always go into an even number
+two will always go into an even number an an integer number of times. Okay. So,
+an an integer number of times. Okay. So,
+an an integer number of times. Okay. So, how do I translate that into code? Well,
+how do I translate that into code? Well,
+how do I translate that into code? Well, I'm going to use what's called an if
+I'm going to use what's called an if
+I'm going to use what's called an if statement. Okay. So, if
+statement. Okay. So, if
+statement. Okay. So, if even
+even
+even or odd
+or odd
+or odd and now I kind of want to say is
+and now I kind of want to say is
+and now I kind of want to say is divisible by two. Now, there's a very
+divisible by two. Now, there's a very
+divisible by two. Now, there's a very form formal way of doing that in Python.
+form formal way of doing that in Python.
+form formal way of doing that in Python. And I'm going to show you a new operator
+And I'm going to show you a new operator
+And I'm going to show you a new operator now. So we've done plus, minus, divise,
+now. So we've done plus, minus, divise,
+now. So we've done plus, minus, divise, and um and multiply. But I'm going to
+and um and multiply. But I'm going to
+and um and multiply. But I'm going to show you the modulo operator, which is
+show you the modulo operator, which is
+show you the modulo operator, which is actually a percentage sign.
+actually a percentage sign.
+actually a percentage sign. And what this is going to do, if I
+And what this is going to do, if I
+And what this is going to do, if I modulo 2, that is going to simply give
+modulo 2, that is going to simply give
+modulo 2, that is going to simply give me the remainder. So if I if I did if I
+me the remainder. So if I if I did if I
+me the remainder. So if I if I did if I entered a number of 10
+entered a number of 10
+entered a number of 10 my 10 modulo2 should be zero because
+my 10 modulo2 should be zero because
+my 10 modulo2 should be zero because there are there's nothing left over okay
+there are there's nothing left over okay
+there are there's nothing left over okay if I did seven
+if I did seven
+if I did seven I should have a a response of seven
+I should have a a response of seven
+I should have a a response of seven modulo 2 as one okay because 10 two
+modulo 2 as one okay because 10 two
+modulo 2 as one okay because 10 two doesn't go into seven an even number of
+doesn't go into seven an even number of
+doesn't go into seven an even number of times there'll be one left over okay so
+times there'll be one left over okay so
+times there'll be one left over okay so okay so If even or odd modul 2 two is
+okay so If even or odd modul 2 two is
+okay so If even or odd modul 2 two is equal
+equal
+equal or identical to zero. In other words, it
+or identical to zero. In other words, it
+or identical to zero. In other words, it does go in an even number of times.
+does go in an even number of times.
+does go in an even number of times. Then oops,
+Then oops,
+Then oops, didn't want to do that. Get rid of that.
+I accidentally ran my Python interpreter
+I accidentally ran my Python interpreter
+I accidentally ran my Python interpreter there.
+there.
+there. Then I want to print
+Then I want to print
+Then I want to print even or odd
+even or odd
+even or odd is even and that's going to be in
+is even and that's going to be in
+is even and that's going to be in quotes. Okay.
+quotes. Okay.
+quotes. Okay. Right now there's only there's only one
+Right now there's only there's only one
+Right now there's only there's only one other alternative here and that is if
+other alternative here and that is if
+other alternative here and that is if it's not even it must be odd. So I'm
+it's not even it must be odd. So I'm
+it's not even it must be odd. So I'm going to finish off this if statement
+going to finish off this if statement
+going to finish off this if statement with something you'll see all over the
+with something you'll see all over the
+with something you'll see all over the place. Um it's an else statement. Okay.
+place. Um it's an else statement. Okay.
+place. Um it's an else statement. Okay. So else colon enter and then I'm going
+So else colon enter and then I'm going
+So else colon enter and then I'm going to print even or print
+to print even or print
+to print even or print ah
+ah
+ah even or odds
+is odd. Okay. Now a couple of things to
+is odd. Okay. Now a couple of things to
+is odd. Okay. Now a couple of things to note here. Firstly in this if statement
+note here. Firstly in this if statement
+note here. Firstly in this if statement where I've compared the modulo of your
+where I've compared the modulo of your
+where I've compared the modulo of your input number to two and sorry the modulo
+input number to two and sorry the modulo
+input number to two and sorry the modulo of the input number um to zero.
+of the input number um to zero.
+of the input number um to zero. You'll notice I've used a double equal
+You'll notice I've used a double equal
+You'll notice I've used a double equal sign. That is critical. Okay. If you
+sign. That is critical. Okay. If you
+sign. That is critical. Okay. If you don't use a double equal sign when
+don't use a double equal sign when
+don't use a double equal sign when you're comparing things, you will get an
+you're comparing things, you will get an
+you're comparing things, you will get an error because if you don't use a double
+error because if you don't use a double
+error because if you don't use a double equal sign, essentially you're trying to
+equal sign, essentially you're trying to
+equal sign, essentially you're trying to assign the number zero to this bit of
+assign the number zero to this bit of
+assign the number zero to this bit of logic here in the same way you'd use an
+logic here in the same way you'd use an
+logic here in the same way you'd use an equal a single equal sign to assign a
+equal a single equal sign to assign a
+equal a single equal sign to assign a number to a variable. Okay? When you're
+number to a variable. Okay? When you're
+number to a variable. Okay? When you're comparing things, you have to use the
+comparing things, you have to use the
+comparing things, you have to use the double equal sign. So be be on the
+double equal sign. So be be on the
+double equal sign. So be be on the lookout for bugs associated with that.
+lookout for bugs associated with that.
+lookout for bugs associated with that. In fact, I'm going I'm going to do that
+In fact, I'm going I'm going to do that
+In fact, I'm going I'm going to do that now. I'm going to generate the bug so
+now. I'm going to generate the bug so
+now. I'm going to generate the bug so you can see it. Let's run it. There we
+you can see it. Let's run it. There we
+you can see it. Let's run it. There we go. So I got a syntax error. cannot
+go. So I got a syntax error. cannot
+go. So I got a syntax error. cannot assign to expression here and it does
+assign to expression here and it does
+assign to expression here and it does say maybe you want double equals instead
+say maybe you want double equals instead
+say maybe you want double equals instead of equals. Okay, so Python is is quite
+of equals. Okay, so Python is is quite
+of equals. Okay, so Python is is quite helpful sometimes. Um let's run it.
+helpful sometimes. Um let's run it.
+helpful sometimes. Um let's run it. Um let's put an even number in of 10. 10
+Um let's put an even number in of 10. 10
+Um let's put an even number in of 10. 10 is even. Let's try again.
+is even. Let's try again.
+is even. Let's try again. Let's put seven in. It's odd. Okay, so I
+Let's put seven in. It's odd. Okay, so I
+Let's put seven in. It's odd. Okay, so I have now completed question three.

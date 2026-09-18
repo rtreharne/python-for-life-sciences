@@ -1,0 +1,381 @@
+Kind: captions Language: en
+Question eight,
+Question eight,
+Question eight, guess the number. Write a script where
+guess the number. Write a script where
+guess the number. Write a script where the computer picks a number between 1
+the computer picks a number between 1
+the computer picks a number between 1 and 20.
+and 20.
+and 20. The user keeps guessing until they get
+The user keeps guessing until they get
+The user keeps guessing until they get it right. Oh, this is a good one. After
+it right. Oh, this is a good one. After
+it right. Oh, this is a good one. After each guess, print too low or too high.
+each guess, print too low or too high.
+each guess, print too low or too high. Right now,
+Right now,
+Right now, at this point, I'm going to introduce
+at this point, I'm going to introduce
+at this point, I'm going to introduce you to our second
+you to our second
+you to our second loop construct, which is called the
+loop construct, which is called the
+loop construct, which is called the while loop. Now, I might have mentioned
+while loop. Now, I might have mentioned
+while loop. Now, I might have mentioned this already, but I'm not a huge fan of
+this already, but I'm not a huge fan of
+this already, but I'm not a huge fan of while loops while loops because they get
+while loops while loops because they get
+while loops while loops because they get me into trouble. However, I think in
+me into trouble. However, I think in
+me into trouble. However, I think in this case, a while loop would be a
+this case, a while loop would be a
+this case, a while loop would be a really great
+really great
+really great uh way to solve this problem. Okay,
+uh way to solve this problem. Okay,
+uh way to solve this problem. Okay, let's think about it.
+let's think about it.
+let's think about it. Question number
+Question number
+Question number eight.
+Right. So, first of all, I'm going to
+Right. So, first of all, I'm going to
+Right. So, first of all, I'm going to pick a number between 1 and 20. Okay,
+pick a number between 1 and 20. Okay,
+pick a number between 1 and 20. Okay, that's great. So,
+that's great. So,
+that's great. So, pick a number between 1 and 20. Okay.
+pick a number between 1 and 20. Okay.
+pick a number between 1 and 20. Okay. Now, we haven't um we haven't come
+Now, we haven't um we haven't come
+Now, we haven't um we haven't come across imports yet. I think we did
+across imports yet. I think we did
+across imports yet. I think we did import math in the first week. So, I'm
+import math in the first week. So, I'm
+import math in the first week. So, I'm going to use a
+going to use a
+going to use a a library in Python that is not
+a library in Python that is not
+a library in Python that is not preloaded. So, it does exist in in your
+preloaded. So, it does exist in in your
+preloaded. So, it does exist in in your codebase, but I need to import it. I'm
+codebase, but I need to import it. I'm
+codebase, but I need to import it. I'm going to import
+going to import
+going to import uh random
+uh random
+uh random um and there's a couple of ways I can do
+um and there's a couple of ways I can do
+um and there's a couple of ways I can do this.
+Let's just get that number out first. So
+Let's just get that number out first. So
+Let's just get that number out first. So random random
+random random
+random random int I'm going to call that right. So
+int I'm going to call that right. So
+int I'm going to call that right. So what I'm going to do is I'm going to use
+what I'm going to do is I'm going to use
+what I'm going to do is I'm going to use this random module that I've imported
+this random module that I've imported
+this random module that I've imported random
+random
+random and I know that on the random module
+and I know that on the random module
+and I know that on the random module there is a method called rand int. Okay.
+there is a method called rand int. Okay.
+there is a method called rand int. Okay. And if I do
+And if I do
+And if I do 20 in there, it should pick a number
+20 in there, it should pick a number
+20 in there, it should pick a number between 1 and 20. I think it will also
+between 1 and 20. I think it will also
+between 1 and 20. I think it will also pick zero. That's okay for now. Let me
+pick zero. That's okay for now. Let me
+pick zero. That's okay for now. Let me just run it.
+Okay.
+And I've got an error. Does it say
+And I've got an error. Does it say
+And I've got an error. Does it say missing one required positional? Ah, so
+missing one required positional? Ah, so
+missing one required positional? Ah, so I do need to do between one
+I do need to do between one
+I do need to do between one and 20.
+and 20.
+and 20. There we go. It's giving me 13. Oh,
+There we go. It's giving me 13. Oh,
+There we go. It's giving me 13. Oh, that's unlucky, isn't it? I hope you're
+that's unlucky, isn't it? I hope you're
+that's unlucky, isn't it? I hope you're not superstitious. Um, okay. So, I can
+not superstitious. Um, okay. So, I can
+not superstitious. Um, okay. So, I can generate a random number. If I keep if I
+generate a random number. If I keep if I
+generate a random number. If I keep if I keep doing it, you can see I get lots
+keep doing it, you can see I get lots
+keep doing it, you can see I get lots and lots of different random numbers.
+and lots of different random numbers.
+and lots of different random numbers. Did it ever give me a 20? Yes, it did
+Did it ever give me a 20? Yes, it did
+Did it ever give me a 20? Yes, it did give me a 20. So, it will go to 20 as
+give me a 20. So, it will go to 20 as
+give me a 20. So, it will go to 20 as well. I've seen a one in there as well,
+well. I've seen a one in there as well,
+well. I've seen a one in there as well, so I know it's going to do that. Right.
+so I know it's going to do that. Right.
+so I know it's going to do that. Right. Okay. Brilliant. Now, the game is
+I want to ask the user for a guess.
+I want to ask the user for a guess.
+I want to ask the user for a guess. Okay. So, guess.
+Okay. So, guess.
+Okay. So, guess. Okay. And I need to do this in a way
+Okay. And I need to do this in a way
+Okay. And I need to do this in a way that it keeps asking me until I get it
+that it keeps asking me until I get it
+that it keeps asking me until I get it right. Here comes the while loop.
+right. Here comes the while loop.
+right. Here comes the while loop. While
+While
+While No, I could just put a colon here. I'm
+No, I could just put a colon here. I'm
+No, I could just put a colon here. I'm pretty sure. No. Um,
+I think I do while true.
+Okay.
+The second thing I'm going to do is I'm
+The second thing I'm going to do is I'm
+The second thing I'm going to do is I'm going to create a placeholder variable
+going to create a placeholder variable
+going to create a placeholder variable for my guess. I'm just going now I need
+for my guess. I'm just going now I need
+for my guess. I'm just going now I need to make sure that
+to make sure that
+to make sure that whatever I store in here can't be
+whatever I store in here can't be
+whatever I store in here can't be between 1 and 20. Okay, otherwise I
+between 1 and 20. Okay, otherwise I
+between 1 and 20. Okay, otherwise I might accidentally guess it before I
+might accidentally guess it before I
+might accidentally guess it before I even start. So I'm just going to use
+even start. So I'm just going to use
+even start. So I'm just going to use um a none variable. Now that's fine.
+um a none variable. Now that's fine.
+um a none variable. Now that's fine. Okay, that just means that Python knows
+Okay, that just means that Python knows
+Okay, that just means that Python knows that nothing is stored in that variable.
+that nothing is stored in that variable.
+that nothing is stored in that variable. Okay, here comes my while function, my
+Okay, here comes my while function, my
+Okay, here comes my while function, my while loop. So the way I'm going to use
+while loop. So the way I'm going to use
+while loop. So the way I'm going to use this while loop, I'm going to write the
+this while loop, I'm going to write the
+this while loop, I'm going to write the word while. Then I'm going to give it a
+word while. Then I'm going to give it a
+word while. Then I'm going to give it a conditional statement. Okay? And I'm
+conditional statement. Okay? And I'm
+conditional statement. Okay? And I'm going to say while
+going to say while
+going to say while um I haven't got the right number. So
+um I haven't got the right number. So
+um I haven't got the right number. So while guess is not equal to random
+while guess is not equal to random
+while guess is not equal to random int.
+int.
+int. Okay. And um I think we've come across
+Okay. And um I think we've come across
+Okay. And um I think we've come across this a couple of times, but anything
+this a couple of times, but anything
+this a couple of times, but anything where you have an exclamation mark and
+where you have an exclamation mark and
+where you have an exclamation mark and an equals instead of
+an equals instead of
+an equals instead of equals equals when you're comparing
+equals equals when you're comparing
+equals equals when you're comparing things, that means it's not equal to.
+things, that means it's not equal to.
+things, that means it's not equal to. Okay, so while guess is not equal to
+Okay, so while guess is not equal to
+Okay, so while guess is not equal to random int, I'm going to ask the user
+random int, I'm going to ask the user
+random int, I'm going to ask the user for a guess and I'm going to update my
+for a guess and I'm going to update my
+for a guess and I'm going to update my guess variable with whatever they input.
+guess variable with whatever they input.
+guess variable with whatever they input. Don't forget, I'm going to ask for an
+Don't forget, I'm going to ask for an
+Don't forget, I'm going to ask for an integer. So I'm going to convert it to
+integer. So I'm going to convert it to
+integer. So I'm going to convert it to an integer first. input.
+an integer first. input.
+an integer first. input. Please
+Please
+Please uh
+guess the number
+guess the number
+guess the number between 1 and 20. Okay.
+Okay. Okay. So, I'm going to get the gas
+Okay. Okay. So, I'm going to get the gas
+Okay. Okay. So, I'm going to get the gas and then
+Okay. And I need to I need to go back
+Okay. And I need to I need to go back
+Okay. And I need to I need to go back and read the question now to remember
+and read the question now to remember
+and read the question now to remember what I'm doing.
+what I'm doing.
+what I'm doing. Uh, okay.
+Uh, okay.
+Uh, okay. After each guess, print too low or too
+After each guess, print too low or too
+After each guess, print too low or too high. And that's good because it will
+high. And that's good because it will
+high. And that's good because it will let the user kind of zone in on what
+let the user kind of zone in on what
+let the user kind of zone in on what they need to guess, right? Um, okay. So
+if
+if
+if the guess is
+the guess is
+the guess is bigger than random
+bigger than random
+bigger than random int
+int
+int I need to print
+I need to print
+I need to print too high
+an L if
+an L if
+an L if Yes.
+Is less than random int
+Is less than random int
+Is less than random int print
+print
+print to Oh. Um what? Because we're in a while
+to Oh. Um what? Because we're in a while
+to Oh. Um what? Because we're in a while loop here.
+loop here.
+loop here. If
+If
+If if guess is not random int, it will keep
+if guess is not random int, it will keep
+if guess is not random int, it will keep going. Okay. So, it'll ask the So, let's
+going. Okay. So, it'll ask the So, let's
+going. Okay. So, it'll ask the So, let's let's just go through this line by line.
+let's just go through this line by line.
+let's just go through this line by line. Right. I've got a random number and
+Right. I've got a random number and
+Right. I've got a random number and defined that store that in random int.
+defined that store that in random int.
+defined that store that in random int. I've set up an empty guess variable.
+I've set up an empty guess variable.
+I've set up an empty guess variable. I've started a while loop and because my
+I've started a while loop and because my
+I've started a while loop and because my initial guess has got none in it. It's
+initial guess has got none in it. It's
+initial guess has got none in it. It's not equal to random in. So this is true.
+not equal to random in. So this is true.
+not equal to random in. So this is true. So I'm going to do the next line. I'm
+So I'm going to do the next line. I'm
+So I'm going to do the next line. I'm going to ask the user to input a number
+going to ask the user to input a number
+going to ask the user to input a number between 1 and 20. Okay. Once I've got
+between 1 and 20. Okay. Once I've got
+between 1 and 20. Okay. Once I've got that number, I'm going to compare it to
+that number, I'm going to compare it to
+that number, I'm going to compare it to my random int. If it's too big, I'll say
+my random int. If it's too big, I'll say
+my random int. If it's too big, I'll say too high. If it's too low, I'll say too
+too high. If it's too low, I'll say too
+too high. If it's too low, I'll say too low.
+low.
+low. and then I'll go around again. That's
+and then I'll go around again. That's
+and then I'll go around again. That's what the wild does, right? It'll ask me
+what the wild does, right? It'll ask me
+what the wild does, right? It'll ask me for another number. Okay. Now, there's
+for another number. Okay. Now, there's
+for another number. Okay. Now, there's only one other possibility here
+only one other possibility here
+only one other possibility here and that is I've got the number correct.
+and that is I've got the number correct.
+and that is I've got the number correct. So,
+So,
+So, if that happens, I will jump out of this
+if that happens, I will jump out of this
+if that happens, I will jump out of this while loop because this statement is not
+while loop because this statement is not
+while loop because this statement is not true. So, it won't do it anymore. Okay.
+true. So, it won't do it anymore. Okay.
+true. So, it won't do it anymore. Okay. And at that point, I just need to print
+And at that point, I just need to print
+And at that point, I just need to print well done.
+well done.
+well done. Excellent guess.
+The number
+The number
+The number is
+is
+is random in. And I need to put my f in
+random in. And I need to put my f in
+random in. And I need to put my f in there for an S string.
+there for an S string.
+there for an S string. We'll stop there. Now, let's see what
+We'll stop there. Now, let's see what
+We'll stop there. Now, let's see what happens if I run this.
+Okay, let's guess a number. Let's go.
+Okay, let's guess a number. Let's go.
+Okay, let's guess a number. Let's go. Middle mid table 10. Too high. So, let's
+Middle mid table 10. Too high. So, let's
+Middle mid table 10. Too high. So, let's go five. Too low. Maybe seven.
+go five. Too low. Maybe seven.
+go five. Too low. Maybe seven. Too low. Eight. Then it must be a nine
+Too low. Eight. Then it must be a nine
+Too low. Eight. Then it must be a nine then. Yes. Okay. Job done. And that is
+then. Yes. Okay. Job done. And that is
+then. Yes. Okay. Job done. And that is the while. Now you can see there's a bit
+the while. Now you can see there's a bit
+the while. Now you can see there's a bit of extra thinking to be done here when
+of extra thinking to be done here when
+of extra thinking to be done here when dealing with whiles.
+dealing with whiles.
+dealing with whiles. So
+So
+So just be very very careful when you use
+just be very very careful when you use
+just be very very careful when you use them because if I done something silly
+them because if I done something silly
+them because if I done something silly like asked or compared numbers to ranges
+like asked or compared numbers to ranges
+like asked or compared numbers to ranges beyond here it may well have looped
+beyond here it may well have looped
+beyond here it may well have looped forever. Okay. Um or for example if I
+forever. Okay. Um or for example if I
+forever. Okay. Um or for example if I did if I did this
+did if I did this
+did if I did this um I got this wrong.
+Okay. I could end up in an infinite
+Okay. I could end up in an infinite
+Okay. I could end up in an infinite loop.
+loop.
+loop. 10. Too high. Uh, so I'll go lower.
+10. Too high. Uh, so I'll go lower.
+10. Too high. Uh, so I'll go lower. Five. Too high. One. Too high.
+Five. Too high. One. Too high.
+Five. Too high. One. Too high. Yeah, that's no good, is it? So, if you
+Yeah, that's no good, is it? So, if you
+Yeah, that's no good, is it? So, if you make a mistake while while using a
+make a mistake while while using a
+make a mistake while while using a while,
+while,
+while, that can uh cause a bit of pain. So,
+that can uh cause a bit of pain. So,
+that can uh cause a bit of pain. So, just be very careful when you're using
+just be very careful when you're using
+just be very careful when you're using them. Okay.
+them. Okay.
+them. Okay. Right. I'm going to let you take care of
+Right. I'm going to let you take care of
+Right. I'm going to let you take care of the remaining challenges in the workshop
+the remaining challenges in the workshop
+the remaining challenges in the workshop this week.
+this week.
+this week. Any problems, let me know.

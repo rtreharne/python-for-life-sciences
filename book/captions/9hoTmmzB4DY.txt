@@ -1,0 +1,352 @@
+Kind: captions Language: en
+All right, let's have a look at question
+All right, let's have a look at question
+All right, let's have a look at question one. Um, we're going to write our first
+one. Um, we're going to write our first
+one. Um, we're going to write our first function and we're going to define a
+function and we're going to define a
+function and we're going to define a function. Uh, so I'll show you the
+function. Uh, so I'll show you the
+function. Uh, so I'll show you the syntax for that very very shortly. And
+syntax for that very very shortly. And
+syntax for that very very shortly. And I'll explain what a function actually is
+I'll explain what a function actually is
+I'll explain what a function actually is as well. um and why there were a couple
+as well. um and why there were a couple
+as well. um and why there were a couple of subtle differences between what we
+of subtle differences between what we
+of subtle differences between what we would usually do when we're outputting
+would usually do when we're outputting
+would usually do when we're outputting stuff
+stuff
+stuff uh or we're interrogating our scripts
+uh or we're interrogating our scripts
+uh or we're interrogating our scripts using something like a print statement
+using something like a print statement
+using something like a print statement and what on earth is this return
+and what on earth is this return
+and what on earth is this return statement which we're actually going to
+statement which we're actually going to
+statement which we're actually going to use to replace the print statement. So
+use to replace the print statement. So
+use to replace the print statement. So we'll cover that as well very very
+we'll cover that as well very very
+we'll cover that as well very very quickly. Um let's write this function. I
+quickly. Um let's write this function. I
+quickly. Um let's write this function. I want a function called triple number and
+want a function called triple number and
+want a function called triple number and it's going to take in an input which is
+it's going to take in an input which is
+it's going to take in an input which is a number and it's simply going to
+a number and it's simply going to
+a number and it's simply going to calculate
+calculate
+calculate three times that number and spit it back
+three times that number and spit it back
+three times that number and spit it back out. Okay. And we're going to test that
+out. Okay. And we're going to test that
+out. Okay. And we're going to test that on a few different inputs here. Okay. So
+on a few different inputs here. Okay. So
+on a few different inputs here. Okay. So just a quick um comment on the syntax.
+just a quick um comment on the syntax.
+just a quick um comment on the syntax. So this is whenever I see anything like
+So this is whenever I see anything like
+So this is whenever I see anything like this with the brackets and a value
+this with the brackets and a value
+this with the brackets and a value inside the brackets. You should probably
+inside the brackets. You should probably
+inside the brackets. You should probably recognize that by now as
+recognize that by now as
+recognize that by now as something which does something in
+something which does something in
+something which does something in Python. And
+Python. And
+Python. And increasingly we're going to start
+increasingly we're going to start
+increasingly we're going to start calling things that do something
+calling things that do something
+calling things that do something functions, right? And we can write our
+functions, right? And we can write our
+functions, right? And we can write our own functions as well. Isn't that great?
+own functions as well. Isn't that great?
+own functions as well. Isn't that great? So I know you've used things like print
+So I know you've used things like print
+So I know you've used things like print that's a function. Um if you use the
+that's a function. Um if you use the
+that's a function. Um if you use the math module, you did math mean or
+math module, you did math mean or
+math module, you did math mean or something like that. Open brackets
+something like that. Open brackets
+something like that. Open brackets close. That's a function. Actually,
+close. That's a function. Actually,
+close. That's a function. Actually, confusingly, they sometimes call that
+confusingly, they sometimes call that
+confusingly, they sometimes call that method if it's associated with um
+method if it's associated with um
+method if it's associated with um another class or something like that. I
+another class or something like that. I
+another class or something like that. I don't want to get into that right now.
+don't want to get into that right now.
+don't want to get into that right now. We'll call them functions for now. Okay.
+We'll call them functions for now. Okay.
+We'll call them functions for now. Okay. So, anytime you've got open brackets,
+So, anytime you've got open brackets,
+So, anytime you've got open brackets, chuck in a value and this placeholder
+chuck in a value and this placeholder
+chuck in a value and this placeholder for what we're putting in this x, we
+for what we're putting in this x, we
+for what we're putting in this x, we call them parameters. Okay? So, it
+call them parameters. Okay? So, it
+call them parameters. Okay? So, it doesn't have to take just a one. It can
+doesn't have to take just a one. It can
+doesn't have to take just a one. It can be 1, 2, 3, 4. It can take in lots and
+be 1, 2, 3, 4. It can take in lots and
+be 1, 2, 3, 4. It can take in lots and lots of different parameters. They don't
+lots of different parameters. They don't
+lots of different parameters. They don't just have to be numbers. They can be
+just have to be numbers. They can be
+just have to be numbers. They can be strings, booleans. There can be other
+strings, booleans. There can be other
+strings, booleans. There can be other functions as well. Okay. Um, well,
+functions as well. Okay. Um, well,
+functions as well. Okay. Um, well, that'll blow your minds later. Okay,
+that'll blow your minds later. Okay,
+that'll blow your minds later. Okay, let's answer this question. Let me get
+let's answer this question. Let me get
+let's answer this question. Let me get up the Visual Studio Code here. So, I'm
+up the Visual Studio Code here. So, I'm
+up the Visual Studio Code here. So, I'm going to write I'll comment this. Write
+going to write I'll comment this. Write
+going to write I'll comment this. Write a function that takes
+a function that takes
+a function that takes a numerical input X
+a numerical input X
+a numerical input X and
+and
+and returns. Return is a keyword here. I'll
+returns. Return is a keyword here. I'll
+returns. Return is a keyword here. I'll come back to that in a second.
+come back to that in a second.
+come back to that in a second. um a value three times x. Okay. Right.
+um a value three times x. Okay. Right.
+um a value three times x. Okay. Right. So, here's the most important thing I'm
+So, here's the most important thing I'm
+So, here's the most important thing I'm going to tell you in this video and that
+going to tell you in this video and that
+going to tell you in this video and that is the syntax for creating your own
+is the syntax for creating your own
+is the syntax for creating your own functions. Can any of you guess def
+functions. Can any of you guess def
+functions. Can any of you guess def right? And you can see it's immediately
+right? And you can see it's immediately
+right? And you can see it's immediately gone blue. Anytime I use those three
+gone blue. Anytime I use those three
+gone blue. Anytime I use those three characters, def Python knows I'm about
+characters, def Python knows I'm about
+characters, def Python knows I'm about to give it some knowledge, right? So I'm
+to give it some knowledge, right? So I'm
+to give it some knowledge, right? So I'm about to create something that I'm going
+about to create something that I'm going
+about to create something that I'm going to be able to use over and over again if
+to be able to use over and over again if
+to be able to use over and over again if I want to by calling the name of the
+I want to by calling the name of the
+I want to by calling the name of the function that I define. So let's define
+function that I define. So let's define
+function that I define. So let's define the name of this function. Let's call it
+the name of this function. Let's call it
+the name of this function. Let's call it triple
+triple
+triple number. Now uh a note on naming
+number. Now uh a note on naming
+number. Now uh a note on naming conventions for functions in Python.
+conventions for functions in Python.
+conventions for functions in Python. They need to be reasonably descriptive.
+They need to be reasonably descriptive.
+They need to be reasonably descriptive. So I've used a two a two-word term to
+So I've used a two a two-word term to
+So I've used a two a two-word term to describe this. Um, don't call it
+describe this. Um, don't call it
+describe this. Um, don't call it function one or function two or
+function one or function two or
+function one or function two or something like that. That's not very
+something like that. That's not very
+something like that. That's not very helpful for anyone else trying to read
+helpful for anyone else trying to read
+helpful for anyone else trying to read your code. Triple number is what I've
+your code. Triple number is what I've
+your code. Triple number is what I've called it. And if they are two words or
+called it. And if they are two words or
+called it. And if they are two words or more than two words,
+more than two words,
+more than two words, don't use spaces,
+don't use spaces,
+don't use spaces, excuse me, you should use the underscore
+excuse me, you should use the underscore
+excuse me, you should use the underscore character. Okay. Um, right. So, the next
+character. Okay. Um, right. So, the next
+character. Okay. Um, right. So, the next thing I need to do is actually have an
+thing I need to do is actually have an
+thing I need to do is actually have an open bracket and I'm going to put an X
+open bracket and I'm going to put an X
+open bracket and I'm going to put an X in there. And that's going to tell my
+in there. And that's going to tell my
+in there. And that's going to tell my function
+function
+function that when I use it, I'm expecting
+that when I use it, I'm expecting
+that when I use it, I'm expecting the user to put an X in there. Okay. And
+the user to put an X in there. Okay. And
+the user to put an X in there. Okay. And then I'm going to do something
+then I'm going to do something
+then I'm going to do something um a bit different. Normally, if you
+um a bit different. Normally, if you
+um a bit different. Normally, if you doing this scripting up to now, I would
+doing this scripting up to now, I would
+doing this scripting up to now, I would have done print X or three * X. Okay.
+have done print X or three * X. Okay.
+have done print X or three * X. Okay. And that would work, but it's not what
+And that would work, but it's not what
+And that would work, but it's not what we want. Okay? Instead, I'm going to do
+we want. Okay? Instead, I'm going to do
+we want. Okay? Instead, I'm going to do return.
+return.
+return. And you can see it's gone a special
+And you can see it's gone a special
+And you can see it's gone a special shade of purple there. 3 * x. Right now,
+shade of purple there. 3 * x. Right now,
+shade of purple there. 3 * x. Right now, it's pro to show you the difference
+it's pro to show you the difference
+it's pro to show you the difference between what I've just done there. It's
+between what I've just done there. It's
+between what I've just done there. It's probably easier for me to show you um
+probably easier for me to show you um
+probably easier for me to show you um because if I run this now,
+because if I run this now,
+because if I run this now, nothing will happen. All right. And the
+nothing will happen. All right. And the
+nothing will happen. All right. And the reason it hasn't happened because even
+reason it hasn't happened because even
+reason it hasn't happened because even though I've defined the function, I
+though I've defined the function, I
+though I've defined the function, I haven't called it anywhere in my script.
+haven't called it anywhere in my script.
+haven't called it anywhere in my script. So if I want to use my my own function
+So if I want to use my my own function
+So if I want to use my my own function now I want I'm going to call triple
+now I want I'm going to call triple
+now I want I'm going to call triple number and let's just give it let's just
+number and let's just give it let's just
+number and let's just give it let's just throw in a number now let's call it 10.
+throw in a number now let's call it 10.
+throw in a number now let's call it 10. So I'm expecting 30 to be returned. Um
+So I'm expecting 30 to be returned. Um
+So I'm expecting 30 to be returned. Um let's put that there you go. Now you'll
+let's put that there you go. Now you'll
+let's put that there you go. Now you'll notice that still nothing has happened
+notice that still nothing has happened
+notice that still nothing has happened and that's because I'm using this return
+and that's because I'm using this return
+and that's because I'm using this return rather than um a print statement. So it
+rather than um a print statement. So it
+rather than um a print statement. So it has done this but because I haven't
+has done this but because I haven't
+has done this but because I haven't stored what I've returned anywhere let's
+stored what I've returned anywhere let's
+stored what I've returned anywhere let's call let's create a new variable called
+call let's create a new variable called
+call let's create a new variable called answer equals
+answer equals
+answer equals and then I'm going to print out the
+and then I'm going to print out the
+and then I'm going to print out the answer
+answer
+answer then it will work and you see I get the
+then it will work and you see I get the
+then it will work and you see I get the 30 there. Now, that seems a bit long-
+30 there. Now, that seems a bit long-
+30 there. Now, that seems a bit long- winded. Um, okay. I could have perhaps
+winded. Um, okay. I could have perhaps
+winded. Um, okay. I could have perhaps done print
+done print
+done print triple number. That would have done the
+triple number. That would have done the
+triple number. That would have done the same thing. Okay.
+same thing. Okay.
+same thing. Okay. Yeah. So, it seems a bit longwinded, but
+Yeah. So, it seems a bit longwinded, but
+Yeah. So, it seems a bit longwinded, but actually it's not because truthfully, we
+actually it's not because truthfully, we
+actually it's not because truthfully, we very rarely print stuff out in our code
+very rarely print stuff out in our code
+very rarely print stuff out in our code when we start to get multiple lines of
+when we start to get multiple lines of
+when we start to get multiple lines of code because we don't really care as
+code because we don't really care as
+code because we don't really care as long we we care that it does the
+long we we care that it does the
+long we we care that it does the calculation and we're satisfied that it
+calculation and we're satisfied that it
+calculation and we're satisfied that it will do that in the background and then
+will do that in the background and then
+will do that in the background and then we'll go and do something else. So what
+we'll go and do something else. So what
+we'll go and do something else. So what the most important thing is the
+the most important thing is the
+the most important thing is the difference between the return and the
+difference between the return and the
+difference between the return and the print statement is the return allows it
+print statement is the return allows it
+print statement is the return allows it to be saved to another variable. Uh
+to be saved to another variable. Uh
+to be saved to another variable. Uh answer equals triple number x. Okay. And
+answer equals triple number x. Okay. And
+answer equals triple number x. Okay. And you know I could run that. Doesn't
+you know I could run that. Doesn't
+you know I could run that. Doesn't matter. Oh made a mistake. Um I got
+matter. Oh made a mistake. Um I got
+matter. Oh made a mistake. Um I got rather than use x got put 10 in there.
+rather than use x got put 10 in there.
+rather than use x got put 10 in there. Okay. So there's a slight nuance there
+Okay. So there's a slight nuance there
+Okay. So there's a slight nuance there between print and and return. Um you're
+between print and and return. Um you're
+between print and and return. Um you're going to use return with your functions.
+going to use return with your functions.
+going to use return with your functions. Okay. If I were to do something like
+Okay. If I were to do something like
+Okay. If I were to do something like this, print
+this, print
+this, print um three times uh there three times x
+um three times uh there three times x
+um three times uh there three times x instead, what do you think would happen?
+instead, what do you think would happen?
+instead, what do you think would happen? It would give you the same thing.
+It would give you the same thing.
+It would give you the same thing. However, if I were to print out answer
+However, if I were to print out answer
+However, if I were to print out answer afterwards,
+it would do nothing. It won't have added
+it would do nothing. It won't have added
+it would do nothing. It won't have added anything into my new variable. Okay?
+anything into my new variable. Okay?
+anything into my new variable. Okay? Okay, so even though it's actually done
+Okay, so even though it's actually done
+Okay, so even though it's actually done the print statement, it's returned none.
+the print statement, it's returned none.
+the print statement, it's returned none. Okay, so you can still print within the
+Okay, so you can still print within the
+Okay, so you can still print within the function, but you still have to return
+function, but you still have to return
+function, but you still have to return the value.
+the value.
+the value. I'll return.
+Okay. Right. So I'm really laboring this
+Okay. Right. So I'm really laboring this
+Okay. Right. So I'm really laboring this point about using the return statement
+point about using the return statement
+point about using the return statement here. Okay. All right. I have solved
+here. Okay. All right. I have solved
+here. Okay. All right. I have solved question one. Let's go and take a look
+question one. Let's go and take a look
+question one. Let's go and take a look at question two.

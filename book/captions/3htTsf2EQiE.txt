@@ -1,0 +1,157 @@
+Kind: captions Language: en
+characters in there. Okay. Right. I'm
+characters in there. Okay. Right. I'm
+characters in there. Okay. Right. I'm going to pause it there and we're going
+going to pause it there and we're going
+going to pause it there and we're going to go take a look at the next question
+to go take a look at the next question
+to go take a look at the next question shortly.
+Okay. Question three. Concatenate two
+Okay. Question three. Concatenate two
+Okay. Question three. Concatenate two sequences. So this time I've got or I
+sequences. So this time I've got or I
+sequences. So this time I've got or I need a script that asks for two strings
+need a script that asks for two strings
+need a script that asks for two strings and
+and
+and I want to print the uppercase
+I want to print the uppercase
+I want to print the uppercase concatenation. concatenation is just a
+concatenation. concatenation is just a
+concatenation. concatenation is just a posh word for joining stuff together.
+posh word for joining stuff together.
+posh word for joining stuff together. Okay, so I want to join them together
+Okay, so I want to join them together
+Okay, so I want to join them together and then I still want to print out the
+and then I still want to print out the
+and then I still want to print out the length of the concatenated string as
+length of the concatenated string as
+length of the concatenated string as well. Okay, so we're we're flying
+well. Okay, so we're we're flying
+well. Okay, so we're we're flying through these now. Let's take a look.
+through these now. Let's take a look.
+through these now. Let's take a look. Um, let's go back here. Where am I
+Um, let's go back here. Where am I
+Um, let's go back here. Where am I going? Come on, Rob. Uh, let's start a
+going? Come on, Rob. Uh, let's start a
+going? Come on, Rob. Uh, let's start a new file. Q3.
+new file. Q3.
+new file. Q3. I'm hopefully going to speed up as we go
+I'm hopefully going to speed up as we go
+I'm hopefully going to speed up as we go along here. Um, so I want to ask for the
+along here. Um, so I want to ask for the
+along here. Um, so I want to ask for the first sequence.
+first sequence.
+first sequence. Oops. Sequence. Let's call it sequence
+Oops. Sequence. Let's call it sequence
+Oops. Sequence. Let's call it sequence one. And you can see my autofill is come
+one. And you can see my autofill is come
+one. And you can see my autofill is come back on here. I don't want that. I'm
+back on here. I don't want that. I'm
+back on here. I don't want that. I'm going to turn this off.
+going to turn this off.
+going to turn this off. Um, let's just
+Um, let's just
+Um, let's just all files.
+all files.
+all files. Okay. Sequence one. Uh, and I'm going to
+Okay. Sequence one. Uh, and I'm going to
+Okay. Sequence one. Uh, and I'm going to use an input. I've done it again. Hang
+use an input. I've done it again. Hang
+use an input. I've done it again. Hang on. Hang on.
+Python. Yeah. Okay. Uncheck the Python
+Python. Yeah. Okay. Uncheck the Python
+Python. Yeah. Okay. Uncheck the Python one if that affects you. Sequence one.
+one if that affects you. Sequence one.
+one if that affects you. Sequence one. Input. Um, please input
+Input. Um, please input
+Input. Um, please input your first sequence.
+And then I'm going to do sequence two.
+Oops. Okay. So, you see what I did
+Oops. Okay. So, you see what I did
+Oops. Okay. So, you see what I did there? I put a space. If you put a space
+there? I put a space. If you put a space
+there? I put a space. If you put a space in a variable name, it won't work. Um,
+in a variable name, it won't work. Um,
+in a variable name, it won't work. Um, if you do want a space, the the
+if you do want a space, the the
+if you do want a space, the the conventional thing to do is an
+conventional thing to do is an
+conventional thing to do is an underscore. Uh, but I'm going to be lazy
+underscore. Uh, but I'm going to be lazy
+underscore. Uh, but I'm going to be lazy today and just do sequence two. In fact,
+today and just do sequence two. In fact,
+today and just do sequence two. In fact, I'm going to be really lazy. And I'm
+I'm going to be really lazy. And I'm
+I'm going to be really lazy. And I'm going to do seek one and see two. You
+going to do seek one and see two. You
+going to do seek one and see two. You can I generally like to make them pretty
+can I generally like to make them pretty
+can I generally like to make them pretty short, but they should still be
+short, but they should still be
+short, but they should still be reasonably descriptive. Okay, very
+reasonably descriptive. Okay, very
+reasonably descriptive. Okay, very important for naming variables. You need
+important for naming variables. You need
+important for naming variables. You need to understand what they are um later or
+to understand what they are um later or
+to understand what they are um later or someone else needs to understand what
+someone else needs to understand what
+someone else needs to understand what they are. Input.
+they are. Input.
+they are. Input. Please input your second sequence.
+Right.
+Right.
+Right. What were we doing? We were going to
+What were we doing? We were going to
+What were we doing? We were going to concatenate these.
+concatenate these.
+concatenate these. So
+So
+So concat
+concat
+concat sequence. Okay. So that's really easy to
+sequence. Okay. So that's really easy to
+sequence. Okay. So that's really easy to do in Python assuming your variables are
+do in Python assuming your variables are
+do in Python assuming your variables are strings. I can just do seek one plus
+strings. I can just do seek one plus
+strings. I can just do seek one plus seek two. Oops.
+seek two. Oops.
+seek two. Oops. And then I can print the mouse. Print
+And then I can print the mouse. Print
+And then I can print the mouse. Print concat sequence. Let me just run that
+concat sequence. Let me just run that
+concat sequence. Let me just run that quick.
+quick.
+quick. Uh let's do acg
+Uh let's do acg
+Uh let's do acg gaca.
+gaca.
+gaca. There we go. That's done that. Now
+There we go. That's done that. Now
+There we go. That's done that. Now remember, I also wanted to give me the
+remember, I also wanted to give me the
+remember, I also wanted to give me the uppercase of this and I wanted to print
+uppercase of this and I wanted to print
+uppercase of this and I wanted to print out the length. So, we've already done
+out the length. So, we've already done
+out the length. So, we've already done that. So, I'm just going to do um
+that. So, I'm just going to do um
+that. So, I'm just going to do um print.uper
+print.uper
+print.uper in that original print statement and
+in that original print statement and
+in that original print statement and finish it off with another statement for
+finish it off with another statement for
+finish it off with another statement for printing len concat sequence. Right. And
+printing len concat sequence. Right. And
+printing len concat sequence. Right. And if we do that,
+if we do that,
+if we do that, ac g a t
+ac g a t
+ac g a t a tac.
+a tac.
+a tac. There we go. Done. Let's see what's
+There we go. Done. Let's see what's
+There we go. Done. Let's see what's happening in the next

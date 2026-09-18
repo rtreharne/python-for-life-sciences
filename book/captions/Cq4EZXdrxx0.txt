@@ -1,0 +1,242 @@
+Kind: captions Language: en
+Okay, let's move on to question four.
+Let's flick back and see what we're
+Let's flick back and see what we're
+Let's flick back and see what we're doing. A grade classifier. Okay,
+doing. A grade classifier. Okay,
+doing. A grade classifier. Okay, so let me read the question. Prompt for
+so let me read the question. Prompt for
+so let me read the question. Prompt for a student mark between zero and 100 and
+a student mark between zero and 100 and
+a student mark between zero and 100 and then use if l if or else. We've already
+then use if l if or else. We've already
+then use if l if or else. We've already we've already encountered if and else
+we've already encountered if and else
+we've already encountered if and else previously. Um we've got this lf to
+previously. Um we've got this lf to
+previously. Um we've got this lf to worry about now. uh to print the grade
+worry about now. uh to print the grade
+worry about now. uh to print the grade bands. H and I've been given my bands
+bands. H and I've been given my bands
+bands. H and I've been given my bands there. 70 or above is distinction. 60 to
+there. 70 or above is distinction. 60 to
+there. 70 or above is distinction. 60 to 69 merits. 50 to 59 pass. Anything below
+69 merits. 50 to 59 pass. Anything below
+69 merits. 50 to 59 pass. Anything below 50 is a fail. Um incidentally, they are
+50 is a fail. Um incidentally, they are
+50 is a fail. Um incidentally, they are the same bands um that we apply to you
+the same bands um that we apply to you
+the same bands um that we apply to you guys when we mark your assessments. And
+guys when we mark your assessments. And
+guys when we mark your assessments. And our example output there is if you get
+our example output there is if you get
+our example output there is if you get if you if they enter a mark of 65, they
+if you if they enter a mark of 65, they
+if you if they enter a mark of 65, they should get the merit. Okay. So, let's um
+should get the merit. Okay. So, let's um
+should get the merit. Okay. So, let's um let's copy that into here.
+let's copy that into here.
+let's copy that into here. And
+And
+And oh, there we go. Commented out. Right,
+oh, there we go. Commented out. Right,
+oh, there we go. Commented out. Right, let's think about the logic for this
+let's think about the logic for this
+let's think about the logic for this one. Well, let's let's get our grade
+one. Well, let's let's get our grade
+one. Well, let's let's get our grade first. Um, it's going to be again a
+first. Um, it's going to be again a
+first. Um, it's going to be again a float input.
+float input.
+float input. Please input students grade.
+Please input students grade.
+Please input students grade. Okay. So, I'm going to take the grade
+Okay. So, I'm going to take the grade
+Okay. So, I'm going to take the grade from the user and I'm going to convert
+from the user and I'm going to convert
+from the user and I'm going to convert it to a float. So, the next thing I need
+it to a float. So, the next thing I need
+it to a float. So, the next thing I need to do, so previously when we did odd or
+to do, so previously when we did odd or
+to do, so previously when we did odd or even, there were only two cases. So I
+even, there were only two cases. So I
+even, there were only two cases. So I only needed if or else. This time I need
+only needed if or else. This time I need
+only needed if or else. This time I need a couple of extra statements um so that
+a couple of extra statements um so that
+a couple of extra statements um so that I can apply all of these criteria in
+I can apply all of these criteria in
+I can apply all of these criteria in turn. Okay. So first I'm going to start
+turn. Okay. So first I'm going to start
+turn. Okay. So first I'm going to start my if statement to begin with. So if
+my if statement to begin with. So if
+my if statement to begin with. So if grade is equal uh sorry now I' got to be
+grade is equal uh sorry now I' got to be
+grade is equal uh sorry now I' got to be careful now is 70 or above. Right. So to
+careful now is 70 or above. Right. So to
+careful now is 70 or above. Right. So to do 70 or above is actually the greater
+do 70 or above is actually the greater
+do 70 or above is actually the greater than symbol and equals. Okay. And the
+than symbol and equals. Okay. And the
+than symbol and equals. Okay. And the equals is important because that will
+equals is important because that will
+equals is important because that will include the 70. If I wanted just above
+include the 70. If I wanted just above
+include the 70. If I wanted just above 70, it would just be greater than. Okay,
+70, it would just be greater than. Okay,
+70, it would just be greater than. Okay, greater than or equal to
+greater than or equal to
+greater than or equal to uh 70
+colon. Then I'm going to print out
+colon. Then I'm going to print out
+colon. Then I'm going to print out uh what was the example? Grade.
+Yeah, I'm just going to print grade
+and it's going to be a distinction.
+Okay.
+Okay.
+Okay. Right now, I want to look at my 60- 69,
+Right now, I want to look at my 60- 69,
+Right now, I want to look at my 60- 69, my merits. So,
+my merits. So,
+my merits. So, I need to use something a bit different
+I need to use something a bit different
+I need to use something a bit different here. And this is where the LF comes in.
+here. And this is where the LF comes in.
+here. And this is where the LF comes in. So, LF,
+So, LF,
+So, LF, sorry, LF grade,
+sorry, LF grade,
+sorry, LF grade, um, how are we going to do this?
+LF grade is greater than or equal to
+LF grade is greater than or equal to
+LF grade is greater than or equal to in this case
+in this case
+in this case 60.
+I'm going to print
+I'm going to print
+I'm going to print great
+great
+great merit
+merit
+merit and I'm going to keep going. L if great
+and I'm going to keep going. L if great
+and I'm going to keep going. L if great greater than or equal to 50.
+greater than or equal to 50.
+greater than or equal to 50. I'll get my pass. Colon
+I'll get my pass. Colon
+I'll get my pass. Colon print
+print
+print grades.
+I don't know why I've done it like this.
+I don't know why I've done it like this.
+I don't know why I've done it like this. I can just I can just do this as a full
+I can just I can just do this as a full
+I can just I can just do this as a full string. uh grade distinction
+string. uh grade distinction
+string. uh grade distinction merit
+merit
+merit pass. Okay.
+And then finally, I'm going to use that
+And then finally, I'm going to use that
+And then finally, I'm going to use that else statement. So else if if everything
+else statement. So else if if everything
+else statement. So else if if everything above doesn't apply or hasn't met that
+above doesn't apply or hasn't met that
+above doesn't apply or hasn't met that logic, that conditional, then the grade
+logic, that conditional, then the grade
+logic, that conditional, then the grade is going to be a fail. Print
+is going to be a fail. Print
+is going to be a fail. Print grade fail. Okay.
+grade fail. Okay.
+grade fail. Okay. And it's really important that I've done
+And it's really important that I've done
+And it's really important that I've done this in the descending order because it
+this in the descending order because it
+this in the descending order because it has to try each one of these in turn.
+has to try each one of these in turn.
+has to try each one of these in turn. Um, but if I run this now, let's have a
+Um, but if I run this now, let's have a
+Um, but if I run this now, let's have a go. Let's say, let's try that 65. Oh,
+go. Let's say, let's try that 65. Oh,
+go. Let's say, let's try that 65. Oh, where did that go? 65 that we had as an
+where did that go? 65 that we had as an
+where did that go? 65 that we had as an example. I get my merit my merit. Let's
+example. I get my merit my merit. Let's
+example. I get my merit my merit. Let's try a fail. Yeah. Okay. So, make sure
+try a fail. Yeah. Okay. So, make sure
+try a fail. Yeah. Okay. So, make sure you can do that. Um, I haven't talked
+you can do that. Um, I haven't talked
+you can do that. Um, I haven't talked about indentation yet. I'm sure you've
+about indentation yet. I'm sure you've
+about indentation yet. I'm sure you've you've experienced it already. Every
+you've experienced it already. Every
+you've experienced it already. Every time I use a colon in Python,
+time I use a colon in Python,
+time I use a colon in Python, my next line is going to look for an
+my next line is going to look for an
+my next line is going to look for an indent. Now, that is it. That that
+indent. Now, that is it. That that
+indent. Now, that is it. That that feature, that kind of whites space
+feature, that kind of whites space
+feature, that kind of whites space indentation is unique to Python. Uh it's
+indentation is unique to Python. Uh it's
+indentation is unique to Python. Uh it's really really important. So, really get
+really really important. So, really get
+really really important. So, really get used to indenting when you start these
+used to indenting when you start these
+used to indenting when you start these structures. If statements later, you'll
+structures. If statements later, you'll
+structures. If statements later, you'll see that we use it for functions as
+see that we use it for functions as
+see that we use it for functions as well. Uh is unique to Python. And the
+well. Uh is unique to Python. And the
+well. Uh is unique to Python. And the idea really is it it it gives you a
+idea really is it it it gives you a
+idea really is it it it gives you a nicely formatted set of code that you
+nicely formatted set of code that you
+nicely formatted set of code that you can you can really read quite easily. It
+can you can really read quite easily. It
+can you can really read quite easily. It it really does increase the readability
+it really does increase the readability
+it really does increase the readability compared to something like Rh or
+compared to something like Rh or
+compared to something like Rh or JavaScript um where there are curly
+JavaScript um where there are curly
+JavaScript um where there are curly brackets everywhere. Okay, so that's how
+brackets everywhere. Okay, so that's how
+brackets everywhere. Okay, so that's how we do it. You'll also notice that if you
+we do it. You'll also notice that if you
+we do it. You'll also notice that if you get if you do something like this,
+get if you do something like this,
+get if you do something like this, you'll get a horrible
+you'll get a horrible
+you'll get a horrible Let's have a go. Oh, it's worked. Um let
+Let's have a go. Oh, it's worked. Um let
+Let's have a go. Oh, it's worked. Um let me let me make sure it hits this line.
+me let me make sure it hits this line.
+me let me make sure it hits this line. So I'll do 75.
+That worked as well. Oh, it still
+That worked as well. Oh, it still
+That worked as well. Oh, it still recognized it.
+recognized it.
+recognized it. Let me do it like that. There we go. We
+Let me do it like that. There we go. We
+Let me do it like that. There we go. We got an This time I've thrown an
+got an This time I've thrown an
+got an This time I've thrown an indentation error. So, anytime you see
+indentation error. So, anytime you see
+indentation error. So, anytime you see an indentation error, it will tell you
+an indentation error, it will tell you
+an indentation error, it will tell you the line to go and look at. And um it
+the line to go and look at. And um it
+the line to go and look at. And um it says expected an indented block after
+says expected an indented block after
+says expected an indented block after the if statements. Um so, I've I've been
+the if statements. Um so, I've I've been
+the if statements. Um so, I've I've been using tabs. Oops.
+using tabs. Oops.
+using tabs. Oops. But you can also use four spaces.
+But you can also use four spaces.
+But you can also use four spaces. They're equivalent. Okay. Right. Let's
+They're equivalent. Okay. Right. Let's
+They're equivalent. Okay. Right. Let's move on to question five.

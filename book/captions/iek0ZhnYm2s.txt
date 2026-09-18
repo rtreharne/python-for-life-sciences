@@ -1,0 +1,515 @@
+Kind: captions Language: en
+Let's go and do the next question.
+Okay, question four. This is where the
+Okay, question four. This is where the
+Okay, question four. This is where the real fun begins. We are now going to
+real fun begins. We are now going to
+real fun begins. We are now going to start creating our own modules that we
+start creating our own modules that we
+start creating our own modules that we can import.
+can import.
+can import. And that's really interesting and useful
+And that's really interesting and useful
+And that's really interesting and useful because
+we're going to probably write lots of
+we're going to probably write lots of
+we're going to probably write lots of code at some point for one of our own
+code at some point for one of our own
+code at some point for one of our own projects. And we're going to want to
+projects. And we're going to want to
+projects. And we're going to want to separate the kind of the logic from the
+separate the kind of the logic from the
+separate the kind of the logic from the the run. Um just so it's a bit tidier.
+the run. Um just so it's a bit tidier.
+the run. Um just so it's a bit tidier. So the reason we're doing this is really
+So the reason we're doing this is really
+So the reason we're doing this is really just so we can make our code a bit more
+just so we can make our code a bit more
+just so we can make our code a bit more compartmentalized
+compartmentalized
+compartmentalized and a bit easier to interpret later. Um
+and a bit easier to interpret later. Um
+and a bit easier to interpret later. Um so basically as our code grows we we
+so basically as our code grows we we
+so basically as our code grows we we really do want to separate our logic
+really do want to separate our logic
+really do want to separate our logic into modules. Okay, it's probably not
+into modules. Okay, it's probably not
+into modules. Okay, it's probably not terribly important right now, but in the
+terribly important right now, but in the
+terribly important right now, but in the future again, you will thank me for
+future again, you will thank me for
+future again, you will thank me for this, I hope. So, we're going to create
+this, I hope. So, we're going to create
+this, I hope. So, we're going to create a file called uh seek utils. So,
+a file called uh seek utils. So,
+a file called uh seek utils. So, basically um um utilities for sequences.
+basically um um utilities for sequences.
+basically um um utilities for sequences. Um and we're going to again do our
+Um and we're going to again do our
+Um and we're going to again do our reversed complement and transcribe. I'm
+reversed complement and transcribe. I'm
+reversed complement and transcribe. I'm going to write them as functions. And
+going to write them as functions. And
+going to write them as functions. And then we're going to write a second
+then we're going to write a second
+then we're going to write a second script called main.py pi that uses
+script called main.py pi that uses
+script called main.py pi that uses those, right? In fact, I'm not going to
+those, right? In fact, I'm not going to
+those, right? In fact, I'm not going to um call it main.py. I'm probably going
+um call it main.py. I'm probably going
+um call it main.py. I'm probably going to call it question what are we on?
+to call it question what are we on?
+to call it question what are we on? 4.py. Okay. So, let's let's take a look.
+4.py. Okay. So, let's let's take a look.
+4.py. Okay. So, let's let's take a look. Um let's go over to
+Um let's go over to
+Um let's go over to our
+our
+our yeah visual code. I'm going to create a
+yeah visual code. I'm going to create a
+yeah visual code. I'm going to create a new file. I'm going to create two new
+new file. I'm going to create two new
+new file. I'm going to create two new files. One called Q4.py pi and another
+files. One called Q4.py pi and another
+files. One called Q4.py pi and another one called s e q u t i ls. Okay, so
+one called s e q u t i ls. Okay, so
+one called s e q u t i ls. Okay, so they're separate files.
+they're separate files.
+they're separate files. And the first thing I'm going to do is
+And the first thing I'm going to do is
+And the first thing I'm going to do is I'm going to write all of the the code
+I'm going to write all of the the code
+I'm going to write all of the the code that I need to do my reverse complements
+that I need to do my reverse complements
+that I need to do my reverse complements and my transcription.
+and my transcription.
+and my transcription. And I'm going to do that as two
+And I'm going to do that as two
+And I'm going to do that as two functions. One called rev comp and the
+functions. One called rev comp and the
+functions. One called rev comp and the other one called transcribe. Oh, um
+other one called transcribe. Oh, um
+other one called transcribe. Oh, um let's just have
+let's just have
+let's just have um a bit of a descriptor at the top
+um a bit of a descriptor at the top
+um a bit of a descriptor at the top here. Utils utility
+here. Utils utility
+here. Utils utility functions for working with DNA
+functions for working with DNA
+functions for working with DNA sequences. And that's always good
+sequences. And that's always good
+sequences. And that's always good practice to put at the top of any file.
+practice to put at the top of any file.
+practice to put at the top of any file. Get rid of that.
+Get rid of that.
+Get rid of that. Um just so whoever opens the file knows
+Um just so whoever opens the file knows
+Um just so whoever opens the file knows what that file is relating to. I am
+what that file is relating to. I am
+what that file is relating to. I am going to create two functions here. The
+going to create two functions here. The
+going to create two functions here. The first one is going to be reverse or
+first one is going to be reverse or
+first one is going to be reverse or rev_mp.
+rev_mp.
+rev_mp. That's going to take a sequence which
+That's going to take a sequence which
+That's going to take a sequence which will be a string. And I am just going to
+will be a string. And I am just going to
+will be a string. And I am just going to return
+return
+return none right now. That that will just give
+none right now. That that will just give
+none right now. That that will just give me nothing. Um and then I'll write the
+me nothing. Um and then I'll write the
+me nothing. Um and then I'll write the code in a sec. I want a second function
+code in a sec. I want a second function
+code in a sec. I want a second function called defaf transcribe.
+called defaf transcribe.
+called defaf transcribe. And that is going to take again a
+And that is going to take again a
+And that is going to take again a sequence
+sequence
+sequence and again return none to begin with.
+and again return none to begin with.
+and again return none to begin with. Right.
+Right.
+Right. So nothing is going to happen if I run
+So nothing is going to happen if I run
+So nothing is going to happen if I run this. Nothing at all. Okay.
+this. Nothing at all. Okay.
+this. Nothing at all. Okay. Um I haven't done anything yet. I've
+Um I haven't done anything yet. I've
+Um I haven't done anything yet. I've just created the skeleton of my file and
+just created the skeleton of my file and
+just created the skeleton of my file and my function. So let's do a reverse
+my function. So let's do a reverse
+my function. So let's do a reverse complement function. Um first thing I'm
+complement function. Um first thing I'm
+complement function. Um first thing I'm going to do is put a dock string in
+going to do is put a dock string in
+going to do is put a dock string in there to say what the function is going
+there to say what the function is going
+there to say what the function is going to do. This is simply going to return
+to do. This is simply going to return
+to do. This is simply going to return um the reverse complement
+um the reverse complement
+um the reverse complement of a DNA sequence.
+of a DNA sequence.
+of a DNA sequence. Right? How do we do that? Um, we've done
+Right? How do we do that? Um, we've done
+Right? How do we do that? Um, we've done this before. I'm going to define a
+this before. I'm going to define a
+this before. I'm going to define a variable called sequence.
+variable called sequence.
+variable called sequence. Um, actually I'm feeding the sequence
+Um, actually I'm feeding the sequence
+Um, actually I'm feeding the sequence in, but I want to update it. I just want
+in, but I want to update it. I just want
+in, but I want to update it. I just want to make sure it's completely uppercase
+to make sure it's completely uppercase
+to make sure it's completely uppercase to begin with. And then um
+to begin with. And then um
+to begin with. And then um here's the bit where I want to
+here's the bit where I want to
+here's the bit where I want to um
+create mapping of base complements.
+create mapping of base complements.
+create mapping of base complements. So remember I want to convert um A's to
+So remember I want to convert um A's to
+So remember I want to convert um A's to T's and C's to G's. Now I can't remember
+T's and C's to G's. Now I can't remember
+T's and C's to G's. Now I can't remember how I did this last time but I'm going
+how I did this last time but I'm going
+how I did this last time but I'm going to do it in a slightly different way.
+to do it in a slightly different way.
+to do it in a slightly different way. Okay. So, I'm going to create a vehicle
+Okay. So, I'm going to create a vehicle
+Okay. So, I'm going to create a vehicle called complement
+equals um str make trans. We'll discuss
+equals um str make trans. We'll discuss
+equals um str make trans. We'll discuss this function in a second.
+this function in a second.
+this function in a second. And I'm going to basically map a t c and
+And I'm going to basically map a t c and
+And I'm going to basically map a t c and g to let me figure this out. T a g and
+g to let me figure this out. T a g and
+g to let me figure this out. T a g and c. Okay. Um right. Let's just discuss um
+c. Okay. Um right. Let's just discuss um
+c. Okay. Um right. Let's just discuss um this make trans table. Um so these are
+this make trans table. Um so these are
+this make trans table. Um so these are quite powerful string tools.
+quite powerful string tools.
+quite powerful string tools. um which is why they're on the the
+um which is why they're on the the
+um which is why they're on the the string um module. So all it's doing
+string um module. So all it's doing
+string um module. So all it's doing is in one line rather than having to
+is in one line rather than having to
+is in one line rather than having to look some sort of lookup table, it's
+look some sort of lookup table, it's
+look some sort of lookup table, it's just mapping every character in turn
+just mapping every character in turn
+just mapping every character in turn onto this one. Okay, we don't really
+onto this one. Okay, we don't really
+onto this one. Okay, we don't really need to go any deeper here. Just
+need to go any deeper here. Just
+need to go any deeper here. Just remember that this is how you do it. And
+remember that this is how you do it. And
+remember that this is how you do it. And what that will do is we it will it will
+what that will do is we it will it will
+what that will do is we it will it will create
+create
+create um a variable called complement which
+um a variable called complement which
+um a variable called complement which basically contains a lookup table that
+basically contains a lookup table that
+basically contains a lookup table that we're going to use rather than having to
+we're going to use rather than having to
+we're going to use rather than having to have to define one explicitly.
+have to define one explicitly.
+have to define one explicitly. Um the last thing we're going to do here
+Um the last thing we're going to do here
+Um the last thing we're going to do here is we're going to use another string. Um
+is we're going to use another string. Um
+is we're going to use another string. Um so we're going to yeah another string
+so we're going to yeah another string
+so we're going to yeah another string function called translate. Um so I'm
+function called translate. Um so I'm
+function called translate. Um so I'm going to create uh actually I'm just
+going to create uh actually I'm just
+going to create uh actually I'm just going to return it. I'm just going to
+going to return it. I'm just going to
+going to return it. I'm just going to return this now. So what I'm going to
+return this now. So what I'm going to
+return this now. So what I'm going to return here is my reverse complement
+return here is my reverse complement
+return here is my reverse complement which will be the sequence.
+Um and then I'm going to put in
+Um and then I'm going to put in
+Um and then I'm going to put in compliment.
+compliment.
+compliment. Right now let me just unpack that. So
+Right now let me just unpack that. So
+Right now let me just unpack that. So what I'm doing here is I'm calling my
+what I'm doing here is I'm calling my
+what I'm doing here is I'm calling my sequence. I'm hitting it with an inbuilt
+sequence. I'm hitting it with an inbuilt
+sequence. I'm hitting it with an inbuilt function inbuilt string function called
+function inbuilt string function called
+function inbuilt string function called translate.
+translate.
+translate. And I'm going to feed this complement
+And I'm going to feed this complement
+And I'm going to feed this complement table of my mappings into it. So it
+table of my mappings into it. So it
+table of my mappings into it. So it knows how to change all of the
+knows how to change all of the
+knows how to change all of the characters in my sequence. Okay. So that
+characters in my sequence. Okay. So that
+characters in my sequence. Okay. So that will essentially give me the complement.
+will essentially give me the complement.
+will essentially give me the complement. Um but I also want to reverse it. So for
+Um but I also want to reverse it. So for
+Um but I also want to reverse it. So for me that is a no-brainer. I always use uh
+me that is a no-brainer. I always use uh
+me that is a no-brainer. I always use uh col minus one to reverse. And this
+col minus one to reverse. And this
+col minus one to reverse. And this function now will reverse the um
+function now will reverse the um
+function now will reverse the um will return the reverse component. And
+will return the reverse component. And
+will return the reverse component. And let me just return the um okay let's do
+let me just return the um okay let's do
+let me just return the um okay let's do it. apply mapping and return
+it. apply mapping and return
+it. apply mapping and return reverse. Okay. Right. So there's my
+reverse. Okay. Right. So there's my
+reverse. Okay. Right. So there's my reverse complement uh function. I need
+reverse complement uh function. I need
+reverse complement uh function. I need another function uh for transcribe.
+another function uh for transcribe.
+another function uh for transcribe. Um now the transcribe function is even
+Um now the transcribe function is even
+Um now the transcribe function is even simpler than that. All all we were doing
+simpler than that. All all we were doing
+simpler than that. All all we were doing with transcribe was we're converting DNA
+with transcribe was we're converting DNA
+with transcribe was we're converting DNA to RNA. Right? Let me write that in.
+to RNA. Right? Let me write that in.
+to RNA. Right? Let me write that in. Convert um DNA to RNA. So, I've actually
+Convert um DNA to RNA. So, I've actually
+Convert um DNA to RNA. So, I've actually started with a harder function
+started with a harder function
+started with a harder function um because all I need to do when I just
+um because all I need to do when I just
+um because all I need to do when I just transcribe is simply return seek upper
+transcribe is simply return seek upper
+transcribe is simply return seek upper umreplace. Now, because I'm only
+umreplace. Now, because I'm only
+umreplace. Now, because I'm only replacing flipping two characters around
+replacing flipping two characters around
+replacing flipping two characters around or one character round, I'm converting
+or one character round, I'm converting
+or one character round, I'm converting all T's to use.
+all T's to use.
+all T's to use. That's it. I could have I could have
+That's it. I could have I could have
+That's it. I could have I could have done something like this, but it would
+done something like this, but it would
+done something like this, but it would have been a hammer to crack a nut. Okay.
+have been a hammer to crack a nut. Okay.
+have been a hammer to crack a nut. Okay. Um, so that's just going to with a
+Um, so that's just going to with a
+Um, so that's just going to with a single line return
+single line return
+single line return um the sequence which has been converted
+um the sequence which has been converted
+um the sequence which has been converted to uppercase and it's had all of its t's
+to uppercase and it's had all of its t's
+to uppercase and it's had all of its t's replaced with use.
+replaced with use.
+replaced with use. And that's it. That's all I wanted to do
+And that's it. That's all I wanted to do
+And that's it. That's all I wanted to do in my cqills.py.
+And again, if I run it, nothing will
+And again, if I run it, nothing will
+And again, if I run it, nothing will happen. Here's the fun bit. Here's the
+happen. Here's the fun bit. Here's the
+happen. Here's the fun bit. Here's the um the bit we're going to actually
+um the bit we're going to actually
+um the bit we're going to actually solve our problem. And I need to need to
+solve our problem. And I need to need to
+solve our problem. And I need to need to remind myself what the problem was.
+remind myself what the problem was.
+remind myself what the problem was. um
+um
+um write a script that imports cqills and
+write a script that imports cqills and
+write a script that imports cqills and calls post functions. Right? So I
+calls post functions. Right? So I
+calls post functions. Right? So I haven't called it main.py. I've called
+haven't called it main.py. I've called
+haven't called it main.py. I've called it um question four. So what I want to
+it um question four. So what I want to
+it um question four. So what I want to do here is um I want to demonstrate
+do here is um I want to demonstrate
+do here is um I want to demonstrate in this file
+in this file
+in this file um using functions from cutills.
+um using functions from cutills.
+um using functions from cutills. take utils.py
+and I'm going to create a variable
+and I'm going to create a variable
+and I'm going to create a variable called DNA which will be my DNA
+called DNA which will be my DNA
+called DNA which will be my DNA sequence. Uh a t g a ccta doesn't matter
+sequence. Uh a t g a ccta doesn't matter
+sequence. Uh a t g a ccta doesn't matter what it's called. And what I want to do
+what it's called. And what I want to do
+what it's called. And what I want to do now is import. In fact, what I should
+now is import. In fact, what I should
+now is import. In fact, what I should do, you should import, you should make
+do, you should import, you should make
+do, you should import, you should make all of your import statements at the
+all of your import statements at the
+all of your import statements at the very top. So I'm going to import
+very top. So I'm going to import
+very top. So I'm going to import seek utils. There it is. And if you've
+seek utils. There it is. And if you've
+seek utils. There it is. And if you've done it right and it's in the same
+done it right and it's in the same
+done it right and it's in the same folder that you're working in, it should
+folder that you're working in, it should
+folder that you're working in, it should find it. Now, there's a couple of ways I
+find it. Now, there's a couple of ways I
+find it. Now, there's a couple of ways I can do this. As I showed you in the last
+can do this. As I showed you in the last
+can do this. As I showed you in the last video, I could have done it um as
+video, I could have done it um as
+video, I could have done it um as su cqls. Um and I I can then use su as
+su cqls. Um and I I can then use su as
+su cqls. Um and I I can then use su as my module name with a dot afterwards to
+my module name with a dot afterwards to
+my module name with a dot afterwards to call any methods or functions that are
+call any methods or functions that are
+call any methods or functions that are in there. I am
+in there. I am
+in there. I am going to just leave it like that. Okay.
+going to just leave it like that. Okay.
+going to just leave it like that. Okay. So, we'll call it explicitly. So the
+So, we'll call it explicitly. So the
+So, we'll call it explicitly. So the first thing I wanted to do is I I'm
+first thing I wanted to do is I I'm
+first thing I wanted to do is I I'm going to print out the original sequence
+and that's just DNA.
+and that's just DNA.
+and that's just DNA. Then I'm going to print
+Then I'm going to print
+Then I'm going to print uh reverse
+uh reverse
+uh reverse complement
+complement
+complement complement.
+complement.
+complement. Correct. Okay. At this point I'm going
+Correct. Okay. At this point I'm going
+Correct. Okay. At this point I'm going to call CQLs
+to call CQLs
+to call CQLs dot and if I've done this right
+dot and if I've done this right
+dot and if I've done this right uh I spelled utils wrong.
+uh I spelled utils wrong.
+uh I spelled utils wrong. Z U TI. There it is. Dot. There you are.
+Z U TI. There it is. Dot. There you are.
+Z U TI. There it is. Dot. There you are. If I put the dot in, it immediately
+If I put the dot in, it immediately
+If I put the dot in, it immediately recommends the functions that are in
+recommends the functions that are in
+recommends the functions that are in that module. So, I'm going to call Rev
+that module. So, I'm going to call Rev
+that module. So, I'm going to call Rev Comp. I'm going put my DNA in. And then
+Comp. I'm going put my DNA in. And then
+Comp. I'm going put my DNA in. And then the last one, I'm going to print the RNA
+the last one, I'm going to print the RNA
+the last one, I'm going to print the RNA transcript as well.
+transcript as well.
+transcript as well. Uh, okay.
+Uh, seek utils dot transcribe.
+Uh, seek utils dot transcribe.
+Uh, seek utils dot transcribe. throw my DNA in there. Let's just tidy
+throw my DNA in there. Let's just tidy
+throw my DNA in there. Let's just tidy this up a bit.
+Don't think I need spaces.
+Let's run it. See what happens. There we
+Let's run it. See what happens. There we
+Let's run it. See what happens. There we go. Right. So, you now know how to
+go. Right. So, you now know how to
+go. Right. So, you now know how to create a completely separate Python file
+create a completely separate Python file
+create a completely separate Python file which will store useful functions and
+which will store useful functions and
+which will store useful functions and then use them in
+then use them in
+then use them in um some other script file. And what I've
+um some other script file. And what I've
+um some other script file. And what I've got, what you I hope you'll appreciate
+got, what you I hope you'll appreciate
+got, what you I hope you'll appreciate here is this file looks pretty simple,
+here is this file looks pretty simple,
+here is this file looks pretty simple, right? It's just four lines, but I'm
+right? It's just four lines, but I'm
+right? It's just four lines, but I'm doing a lot. Um I haven't got this and
+doing a lot. Um I haven't got this and
+doing a lot. Um I haven't got this and where is it? This all in one. Okay. And
+where is it? This all in one. Okay. And
+where is it? This all in one. Okay. And that's really really nice when you're
+that's really really nice when you're
+that's really really nice when you're writing extended code because you don't
+writing extended code because you don't
+writing extended code because you don't want to be having to scroll through or
+want to be having to scroll through or
+want to be having to scroll through or get distracted by all of the code you've
+get distracted by all of the code you've
+get distracted by all of the code you've already written. you want to look at the
+already written. you want to look at the
+already written. you want to look at the business end of what you're trying to
+business end of what you're trying to
+business end of what you're trying to achieve, which is this. Um, furthermore,
+achieve, which is this. Um, furthermore,
+achieve, which is this. Um, furthermore, for anyone that you're trying to pass on
+for anyone that you're trying to pass on
+for anyone that you're trying to pass on your code to, you don't want them really
+your code to, you don't want them really
+your code to, you don't want them really um to get frustrated and confused by all
+um to get frustrated and confused by all
+um to get frustrated and confused by all of the the logic stuff that you've
+of the the logic stuff that you've
+of the the logic stuff that you've written. You just want them to be able
+written. You just want them to be able
+written. You just want them to be able to use these functions and not worry
+to use these functions and not worry
+to use these functions and not worry about it like we do for everything
+about it like we do for everything
+about it like we do for everything pretty much. Um,
+pretty much. Um,
+pretty much. Um, so if you import CQills, they're not
+so if you import CQills, they're not
+so if you import CQills, they're not really going to go and dive into that
+really going to go and dive into that
+really going to go and dive into that and question everything you've done.
+and question everything you've done.
+and question everything you've done. They're just going to trust that your
+They're just going to trust that your
+They're just going to trust that your script's going to run. Um, provided
+script's going to run. Um, provided
+script's going to run. Um, provided you've told them how to use it. Anyway,
+you've told them how to use it. Anyway,
+you've told them how to use it. Anyway, I'm ranting. So, that's an important
+I'm ranting. So, that's an important
+I'm ranting. So, that's an important concept that I need you to learn.
+concept that I need you to learn.
+concept that I need you to learn. Let's go on to the next question.

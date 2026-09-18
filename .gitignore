@@ -3,3 +3,5 @@
 __pycache__/
 *.py[cod]
 canvas_export/
+_build/
+.jupyter_cache/

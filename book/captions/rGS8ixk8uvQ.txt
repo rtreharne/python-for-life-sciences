@@ -1,0 +1,313 @@
+Kind: captions Language: en
+see what's happening in the next
+see what's happening in the next
+see what's happening in the next question.
+Question four, reverse sequence.
+Question four, reverse sequence.
+Question four, reverse sequence. H. So, we're going to ask for a DNA
+H. So, we're going to ask for a DNA
+H. So, we're going to ask for a DNA string and print its reverse.
+string and print its reverse.
+string and print its reverse. Okay. And it says no translation yet cuz
+Okay. And it says no translation yet cuz
+Okay. And it says no translation yet cuz we're going to do uh some sort of
+we're going to do uh some sort of
+we're going to do uh some sort of translation later.
+translation later.
+translation later. Um, we just want to reverse the
+Um, we just want to reverse the
+Um, we just want to reverse the characters. Okay.
+How do we do that? I know how to do
+How do we do that? I know how to do
+How do we do that? I know how to do that. Let me show you. This is a This is
+that. Let me show you. This is a This is
+that. Let me show you. This is a This is the way I do this.
+the way I do this.
+the way I do this. Uh Q.
+Uh Q.
+Uh Q. So again, sequence equals input.
+So again, sequence equals input.
+So again, sequence equals input. Please input a sequence.
+Please input a sequence.
+Please input a sequence. Uh okay.
+Uh okay.
+Uh okay. Colon space.
+Then I want to
+Then I want to
+Then I want to I'm going to I'm actually going to
+I'm going to I'm actually going to
+I'm going to I'm actually going to create another variable for reverse
+create another variable for reverse
+create another variable for reverse or reverse sequence.
+or reverse sequence.
+or reverse sequence. Um
+Um
+Um now input
+now input
+now input oh no sorry sequence. Now the way I do
+oh no sorry sequence. Now the way I do
+oh no sorry sequence. Now the way I do this and we're going to get to string
+this and we're going to get to string
+this and we're going to get to string slicing um in a little while
+slicing um in a little while
+slicing um in a little while but you'll just have to trust me for
+but you'll just have to trust me for
+but you'll just have to trust me for this one. I use colon colon minus one.
+this one. I use colon colon minus one.
+this one. I use colon colon minus one. Okay. Now, we'll discuss um string
+Okay. Now, we'll discuss um string
+Okay. Now, we'll discuss um string slicing in a few further exercises as we
+slicing in a few further exercises as we
+slicing in a few further exercises as we go along. But what we're essentially
+go along. But what we're essentially
+go along. But what we're essentially trying to do here is tell it that
+trying to do here is tell it that
+trying to do here is tell it that um you want
+um you want
+um you want to ignore where we're starting from,
+to ignore where we're starting from,
+to ignore where we're starting from, which is why there's a black before the
+which is why there's a black before the
+which is why there's a black before the first colon. Ignore where we're
+first colon. Ignore where we're
+first colon. Ignore where we're finishing.
+finishing.
+finishing. And then we want to cycle in steps of
+And then we want to cycle in steps of
+And then we want to cycle in steps of one, but we want to go in the opposite
+one, but we want to go in the opposite
+one, but we want to go in the opposite direction.
+direction.
+direction. Okay. So, we're going to just print the
+Okay. So, we're going to just print the
+Okay. So, we're going to just print the whole thing backwards. And then we're
+whole thing backwards. And then we're
+whole thing backwards. And then we're going to print
+going to print
+going to print reverse seek. I can't remember if it
+reverse seek. I can't remember if it
+reverse seek. I can't remember if it needed to be up or lower, but I'm going
+needed to be up or lower, but I'm going
+needed to be up or lower, but I'm going to hit it with the upper method as well.
+to hit it with the upper method as well.
+to hit it with the upper method as well. And then I'm going to print it out. So,
+And then I'm going to print it out. So,
+And then I'm going to print it out. So, actga.
+actga.
+actga. Okay. Um
+Okay. Um
+Okay. Um let me just talk about um slicing in a
+let me just talk about um slicing in a
+let me just talk about um slicing in a bit more detail here
+bit more on slicing.
+bit more on slicing.
+bit more on slicing. So let's say I took that sequence and I
+So let's say I took that sequence and I
+So let's say I took that sequence and I only let's say I only wanted to print
+only let's say I only wanted to print
+only let's say I only wanted to print the the first character in the sequence,
+the the first character in the sequence,
+the the first character in the sequence, right?
+right?
+right? First character
+First character
+First character I would have done print
+I would have done print
+I would have done print sequence
+sequence
+sequence zero. Okay. And if I do that again, I
+zero. Okay. And if I do that again, I
+zero. Okay. And if I do that again, I can see acg
+can see acg
+can see acg I just get the A there. Brilliant.
+I just get the A there. Brilliant.
+I just get the A there. Brilliant. And the reason I did that is because you
+And the reason I did that is because you
+And the reason I did that is because you can think of this actg
+can think of this actg
+can think of this actg even though it's a string you can think
+even though it's a string you can think
+even though it's a string you can think of it as a list of things. Okay? And
+of it as a list of things. Okay? And
+of it as a list of things. Okay? And we'll come on to lists in a couple of
+we'll come on to lists in a couple of
+we'll come on to lists in a couple of weeks time. Um now Python
+weeks time. Um now Python
+weeks time. Um now Python always starts labeling or numbering or
+always starts labeling or numbering or
+always starts labeling or numbering or indexing is the word I want to use its
+indexing is the word I want to use its
+indexing is the word I want to use its lists from zero. So if you have a load
+lists from zero. So if you have a load
+lists from zero. So if you have a load of stuff in a list, the first index will
+of stuff in a list, the first index will
+of stuff in a list, the first index will always be zero. That's different to
+always be zero. That's different to
+always be zero. That's different to other coding languages. And if you come
+other coding languages. And if you come
+other coding languages. And if you come and do R with me later on, you'll know
+and do R with me later on, you'll know
+and do R with me later on, you'll know that in R they start at one. Okay, so
+that in R they start at one. Okay, so
+that in R they start at one. Okay, so just be very very mindful of that. Um,
+just be very very mindful of that. Um,
+just be very very mindful of that. Um, if I wanted the last item in the list, I
+if I wanted the last item in the list, I
+if I wanted the last item in the list, I could have done 0 1 2 3. So I would have
+could have done 0 1 2 3. So I would have
+could have done 0 1 2 3. So I would have put three in there. So let's do the last
+put three in there. So let's do the last
+put three in there. So let's do the last character.
+Uh, and I would have put a Oh, it's got
+Uh, and I would have put a Oh, it's got
+Uh, and I would have put a Oh, it's got to be a square bracket. That's really
+to be a square bracket. That's really
+to be a square bracket. That's really important.
+important.
+important. If I run that
+If I run that
+If I run that AC, oops, oopsy daisy.
+AC, oops, oopsy daisy.
+AC, oops, oopsy daisy. ACTG.
+ACTG.
+ACTG. And I got a G on the end of it, which is
+And I got a G on the end of it, which is
+And I got a G on the end of it, which is the last character. Okay.
+the last character. Okay.
+the last character. Okay. Right. Um, I can do a few other things.
+Right. Um, I can do a few other things.
+Right. Um, I can do a few other things. I can print a range of characters. So
+I can print a range of characters. So
+I can print a range of characters. So let's say I want to print um all
+let's say I want to print um all
+let's say I want to print um all characters
+between first and last. Okay.
+between first and last. Okay.
+between first and last. Okay. So to do that,
+So to do that,
+So to do that, I want to start at
+I want to start at
+I want to start at one. So that's the first one after the
+one. So that's the first one after the
+one. So that's the first one after the zeroth one. And then I'm going to use a
+zeroth one. And then I'm going to use a
+zeroth one. And then I'm going to use a colon. And I want to
+colon. And I want to
+colon. And I want to go
+go
+go all the way to the end. Is that going to
+all the way to the end. Is that going to
+all the way to the end. Is that going to be work? Let's just see what happens
+be work? Let's just see what happens
+be work? Let's just see what happens here. So if I did three, the second
+here. So if I did three, the second
+here. So if I did three, the second integer in this one colon 3 is not
+integer in this one colon 3 is not
+integer in this one colon 3 is not inclusive. So I actually need to go to
+inclusive. So I actually need to go to
+inclusive. So I actually need to go to four. So what it'll do, it'll start at
+four. So what it'll do, it'll start at
+four. So what it'll do, it'll start at one and go one, two, three, but won't
+one and go one, two, three, but won't
+one and go one, two, three, but won't print the fourth. Okay. So if I show you
+print the fourth. Okay. So if I show you
+print the fourth. Okay. So if I show you how that works, we will do actg. There
+how that works, we will do actg. There
+how that works, we will do actg. There we go. And it's done. Oh, it has printed
+we go. And it's done. Oh, it has printed
+we go. And it's done. Oh, it has printed the file. I've got that wrong. So
+the file. I've got that wrong. So
+the file. I've got that wrong. So actually I need to go to
+actually I need to go to
+actually I need to go to three there. Okay, my bad. Um
+three there. Okay, my bad. Um
+three there. Okay, my bad. Um ACG.
+ACG.
+ACG. There we go. It's just pres printed C
+There we go. It's just pres printed C
+There we go. It's just pres printed C and T. Okay. Um there's another So say I
+and T. Okay. Um there's another So say I
+and T. Okay. Um there's another So say I get um a really long string and I don't
+get um a really long string and I don't
+get um a really long string and I don't know how long it is but I still know I
+know how long it is but I still know I
+know how long it is but I still know I want to print all the characters between
+want to print all the characters between
+want to print all the characters between the first and the last. Then I can do
+the first and the last. Then I can do
+the first and the last. Then I can do something a a bit interesting with my
+something a a bit interesting with my
+something a a bit interesting with my last character because I can actually
+last character because I can actually
+last character because I can actually use a minus one to get the last
+use a minus one to get the last
+use a minus one to get the last character. Now what the minus one is
+character. Now what the minus one is
+character. Now what the minus one is essentially telling your indexer is okay
+essentially telling your indexer is okay
+essentially telling your indexer is okay don't worry about how long it is let's
+don't worry about how long it is let's
+don't worry about how long it is let's just go back to the end and that is my
+just go back to the end and that is my
+just go back to the end and that is my last character. So you can go you can
+last character. So you can go you can
+last character. So you can go you can cycle through strings and lists in both
+cycle through strings and lists in both
+cycle through strings and lists in both directions. Okay. So if I want to do the
+directions. Okay. So if I want to do the
+directions. Okay. So if I want to do the same thing I would do minus one here and
+same thing I would do minus one here and
+same thing I would do minus one here and hopefully I'll prove to you that I can
+hopefully I'll prove to you that I can
+hopefully I'll prove to you that I can do that.
+do that.
+do that. There we go. Okay. One last thing, I can
+There we go. Okay. One last thing, I can
+There we go. Okay. One last thing, I can um
+um
+um print every second
+print every second
+print every second uh
+uh
+uh every second character.
+every second character.
+every second character. So I want to only print. So I would I
+So I want to only print. So I would I
+So I want to only print. So I would I only want to print
+only want to print
+only want to print um C and G in this case. So if I wanted
+um C and G in this case. So if I wanted
+um C and G in this case. So if I wanted to do that, I would do
+to do that, I would do
+to do that, I would do sequence. I still want to start at zero
+sequence. I still want to start at zero
+sequence. I still want to start at zero and I want to finish on the last one.
+and I want to finish on the last one.
+and I want to finish on the last one. Uh actually I'm going to put four there
+Uh actually I'm going to put four there
+Uh actually I'm going to put four there to make it more cleaner. But I want to
+to make it more cleaner. But I want to
+to make it more cleaner. But I want to jump through in steps of two. Okay. So I
+jump through in steps of two. Okay. So I
+jump through in steps of two. Okay. So I can put another colon and the value here
+can put another colon and the value here
+can put another colon and the value here will will specify
+will will specify
+will will specify how many characters I want to jump in
+how many characters I want to jump in
+how many characters I want to jump in between. Okay. Let's run that. Act G and
+between. Okay. Let's run that. Act G and
+between. Okay. Let's run that. Act G and there you go. It's done A and T. So it's
+there you go. It's done A and T. So it's
+there you go. It's done A and T. So it's actually done the zeroth and the
+actually done the zeroth and the
+actually done the zeroth and the seconds index. So if I started one, it
+seconds index. So if I started one, it
+seconds index. So if I started one, it should do C and G here. Now
+there we go. All right. So there that's
+there we go. All right. So there that's
+there we go. All right. So there that's a bit more on string slicing. Um that is
+a bit more on string slicing. Um that is
+a bit more on string slicing. Um that is something which you are going to need to
+something which you are going to need to
+something which you are going to need to know. Let's go on to the next question.

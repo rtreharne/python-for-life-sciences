@@ -1,0 +1,111 @@
+Kind: captions Language: en
+like that. We'll cover that later. Okay,
+like that. We'll cover that later. Okay,
+like that. We'll cover that later. Okay, brilliant. Let's move on to Q2.
+brilliant. Let's move on to Q2.
+brilliant. Let's move on to Q2. Let's create a file Q2.py
+Let's create a file Q2.py
+Let's create a file Q2.py in that week 2 folder. Let's flick back.
+in that week 2 folder. Let's flick back.
+in that week 2 folder. Let's flick back. Temperature converter.
+Temperature converter.
+Temperature converter. So,
+So,
+So, I'm going to ask for a prompt in Celsius
+I'm going to ask for a prompt in Celsius
+I'm going to ask for a prompt in Celsius and I'm going to convert it to
+and I'm going to convert it to
+and I'm going to convert it to Fahrenheit.
+Fahrenheit.
+Fahrenheit. And I've given a formula here for the
+And I've given a formula here for the
+And I've given a formula here for the conversion of
+Celsius to Fahrenheits. Right. So I'm
+Celsius to Fahrenheits. Right. So I'm
+Celsius to Fahrenheits. Right. So I'm actually going to I'm actually going to
+actually going to I'm actually going to
+actually going to I'm actually going to copy this straight into a new script.
+copy this straight into a new script.
+copy this straight into a new script. Comment a lot
+Comment a lot
+Comment a lot and I'm going to work on that from here.
+and I'm going to work on that from here.
+and I'm going to work on that from here. Okay.
+Right. Let's do this then. Let's get an
+Right. Let's do this then. Let's get an
+Right. Let's do this then. Let's get an input. Um
+input. Um
+input. Um I'm going to do temp temperature
+I'm going to do temp temperature
+I'm going to do temp temperature in Celsius
+in Celsius
+in Celsius input
+input
+input equal. Now I want a float again. Okay.
+equal. Now I want a float again. Okay.
+equal. Now I want a float again. Okay. Then my input
+please input a temperature
+please input a temperature
+please input a temperature in
+in
+in Celsius
+colon. Okay,
+then I'm going to calculate the
+then I'm going to calculate the
+then I'm going to calculate the temperature in Fahrenheit using that
+temperature in Fahrenheit using that
+temperature in Fahrenheit using that equation above. Where's it gone?
+equation above. Where's it gone?
+equation above. Where's it gone? Bring this down here.
+Equals. Right. So to do that, I'm going
+Equals. Right. So to do that, I'm going
+Equals. Right. So to do that, I'm going to use C, which is temperature in
+to use C, which is temperature in
+to use C, which is temperature in Celsius, which I call temp.
+Celsius, which I call temp.
+Celsius, which I call temp. I'm going to multiply it by 9 over5 and
+I'm going to multiply it by 9 over5 and
+I'm going to multiply it by 9 over5 and I'm going to add 32.
+I'm going to add 32.
+I'm going to add 32. Now, just to make sure that this is
+Now, just to make sure that this is
+Now, just to make sure that this is actually going to work, I'm going to put
+actually going to work, I'm going to put
+actually going to work, I'm going to put some brackets in here. So, I'm going to
+some brackets in here. So, I'm going to
+some brackets in here. So, I'm going to make sure it does that quotient first.
+make sure it does that quotient first.
+make sure it does that quotient first. Then, I'm going to make sure it
+Then, I'm going to make sure it
+Then, I'm going to make sure it multiplies those two things together
+multiplies those two things together
+multiplies those two things together before it adds. Okay. So, I think it
+before it adds. Okay. So, I think it
+before it adds. Okay. So, I think it would have worked without the brackets,
+would have worked without the brackets,
+would have worked without the brackets, but just to be sure, I'm going to put
+but just to be sure, I'm going to put
+but just to be sure, I'm going to put some brackets in. Then I'm going to
+some brackets in. Then I'm going to
+some brackets in. Then I'm going to print out the answer. Print
+print out the answer. Print
+print out the answer. Print out the answer.
+Temperature
+in Fahrenheit
+is going to be temp F.
+Okay.
+No, I'm going to leave the unit off it.
+No, I'm going to leave the unit off it.
+No, I'm going to leave the unit off it. Okay, let's run this.
+Okay, let's run this.
+Okay, let's run this. Let's have a look. Let's do 32°
+Let's have a look. Let's do 32°
+Let's have a look. Let's do 32° 89.6. I know that's about right. So, I
+89.6. I know that's about right. So, I
+89.6. I know that's about right. So, I think I'm right there. If you're not
+think I'm right there. If you're not
+think I'm right there. If you're not sure, just Google it. Make sure it's
+sure, just Google it. Make sure it's
+sure, just Google it. Make sure it's giving you roughly the right answer. And
+giving you roughly the right answer. And
+giving you roughly the right answer. And that is question two, right?

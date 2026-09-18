@@ -1,5 +1,7 @@
 # Canvas course exporter
 
+This repository also contains a public, static Jupyter Book for the first five weeks of LIFE733. See the **Build the teaching book** section below.
+
 Export a Canvas course's pages and assignments into folders named and ordered by module. The exporter uses only Python's standard library.
 
 ## Setup
@@ -49,3 +51,22 @@ After exporting a course, extract available English captions from YouTube videos
 ```
 
 The script saves readable `.txt` transcripts and timestamped `.vtt` captions under the course's `Transcripts` folder, grouped by the page that linked each video. It does not download video or audio. Videos without captions or with access restrictions are recorded in `youtube_transcripts.json`.
+
+## Build the teaching book
+
+The `book/` folder contains five teaching chapters, two optional integrated projects, and worked solutions. Examples in the book use Python's standard library and execute during the build.
+
+Create or activate the project virtual environment, then install the book tool:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-book.txt
+```
+
+Build and check all examples and internal references:
+
+```bash
+(cd book && PATH="../.venv/bin:$PATH" JB_ALLOW_NODEENV=yes ../.venv/bin/jupyter book build --html --strict --execute)
+```
+
+The static site is written to `book/_build/html/`. GitHub Actions builds and deploys it to GitHub Pages when changes are pushed to `main`. In the repository settings, configure Pages to use **GitHub Actions** as its source.

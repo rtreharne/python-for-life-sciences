@@ -1,0 +1,444 @@
+Kind: captions Language: en
+Okay, question two. Um, I'm going to
+Okay, question two. Um, I'm going to
+Okay, question two. Um, I'm going to introduce you now to something um almost
+introduce you now to something um almost
+introduce you now to something um almost completely different um called reax. Um
+completely different um called reax. Um
+completely different um called reax. Um now reax is almost like another coding
+now reax is almost like another coding
+now reax is almost like another coding language
+language
+language um in its own right. The reject stands
+um in its own right. The reject stands
+um in its own right. The reject stands for regular expressions.
+for regular expressions.
+for regular expressions. And what this is, it's a kind of um it's
+And what this is, it's a kind of um it's
+And what this is, it's a kind of um it's a very consistent way, I say consistent,
+a very consistent way, I say consistent,
+a very consistent way, I say consistent, I mean all across all programming
+I mean all across all programming
+I mean all across all programming languages of identifying um matches to
+languages of identifying um matches to
+languages of identifying um matches to strings
+strings
+strings uh in any language. And it's really
+uh in any language. And it's really
+uh in any language. And it's really really useful. Super duper useful. Um
+really useful. Super duper useful. Um
+really useful. Super duper useful. Um because up to this point we have
+because up to this point we have
+because up to this point we have actually been doing things like looping
+actually been doing things like looping
+actually been doing things like looping over a string and checking each
+over a string and checking each
+over a string and checking each character one by one and then saying oh
+character one by one and then saying oh
+character one by one and then saying oh if it is there keep it or if it isn't
+if it is there keep it or if it isn't
+if it is there keep it or if it isn't there we'll ignore it. Um or if it's got
+there we'll ignore it. Um or if it's got
+there we'll ignore it. Um or if it's got an X in it we'll throw an error. So what
+an X in it we'll throw an error. So what
+an X in it we'll throw an error. So what a reject allows us to do is basically
+a reject allows us to do is basically
+a reject allows us to do is basically not to have to loop. Um we can validate
+not to have to loop. Um we can validate
+not to have to loop. Um we can validate a string just with a single bit of code
+a string just with a single bit of code
+a string just with a single bit of code um by matching what we call a pattern.
+um by matching what we call a pattern.
+um by matching what we call a pattern. Um now this is this is not really um for
+Um now this is this is not really um for
+Um now this is this is not really um for the faint-hearted and there's so much
+the faint-hearted and there's so much
+the faint-hearted and there's so much more um that you could learn about reax
+more um that you could learn about reax
+more um that you could learn about reax but I I want to introduce it to you here
+but I I want to introduce it to you here
+but I I want to introduce it to you here simply because
+simply because
+simply because it it will undoubtedly be of use to you
+it it will undoubtedly be of use to you
+it it will undoubtedly be of use to you in the the near future. Right? Even if
+in the the near future. Right? Even if
+in the the near future. Right? Even if it so even if you don't really get
+it so even if you don't really get
+it so even if you don't really get what's going on here, don't worry about
+what's going on here, don't worry about
+what's going on here, don't worry about it. We are going to have a go and
+it. We are going to have a go and
+it. We are going to have a go and hopefully I'll be able to show you um
+hopefully I'll be able to show you um
+hopefully I'll be able to show you um something you've probably already done
+something you've probably already done
+something you've probably already done before but in a slightly different way.
+before but in a slightly different way.
+before but in a slightly different way. Okay, so let me just read out this
+Okay, so let me just read out this
+Okay, so let me just read out this question. We're going to write a reax to
+question. We're going to write a reax to
+question. We're going to write a reax to test whether a string is a valid DNA
+test whether a string is a valid DNA
+test whether a string is a valid DNA sequence, i.e. only contains a cgt. We
+sequence, i.e. only contains a cgt. We
+sequence, i.e. only contains a cgt. We did this we've done this already in a
+did this we've done this already in a
+did this we've done this already in a previous workshop. Um, we're going to
+previous workshop. Um, we're going to
+previous workshop. Um, we're going to use a function called re.f full match to
+use a function called re.f full match to
+use a function called re.f full match to check sequences
+check sequences
+check sequences um like ATC GT. I've got a couple of
+um like ATC GT. I've got a couple of
+um like ATC GT. I've got a couple of examples I'm going to throw at you um
+examples I'm going to throw at you um
+examples I'm going to throw at you um and then determine whether they are
+and then determine whether they are
+and then determine whether they are valid or invalid. Okay.
+valid or invalid. Okay.
+valid or invalid. Okay. Right. So, let me go back to Visual
+Right. So, let me go back to Visual
+Right. So, let me go back to Visual Studio. I'm going to create a new file
+Studio. I'm going to create a new file
+Studio. I'm going to create a new file called Q2.py
+and I'm going to start um writing some
+and I'm going to start um writing some
+and I'm going to start um writing some code. So question two
+um what we're going to do check
+um what we're going to do check
+um what we're going to do check whether
+whether
+whether check check if a string is a valid
+check check if a string is a valid
+check check if a string is a valid DNA sequence
+DNA sequence
+DNA sequence using reax. Okay. So the first important
+using reax. Okay. So the first important
+using reax. Okay. So the first important thing uh is that I need to import a new
+thing uh is that I need to import a new
+thing uh is that I need to import a new module here. Um so the I'll just write
+module here. Um so the I'll just write
+module here. Um so the I'll just write it import
+it import
+it import if you're going to use reax you need to
+if you're going to use reax you need to
+if you're going to use reax you need to import this in Python. Now it's already
+import this in Python. Now it's already
+import this in Python. Now it's already stored in your interpreter somewhere. So
+stored in your interpreter somewhere. So
+stored in your interpreter somewhere. So you don't need to install it as an
+you don't need to install it as an
+you don't need to install it as an additional package like you do some but
+additional package like you do some but
+additional package like you do some but you're going to need to bring it into
+you're going to need to bring it into
+you're going to need to bring it into your current environment for use. So you
+your current environment for use. So you
+your current environment for use. So you need to use an import function and that
+need to use an import function and that
+need to use an import function and that is actually something I really want um
+is actually something I really want um
+is actually something I really want um to show you how to do this week. You've
+to show you how to do this week. You've
+to show you how to do this week. You've kind of done it already in some
+kind of done it already in some
+kind of done it already in some instances. For example, you might have
+instances. For example, you might have
+instances. For example, you might have used math. Um so it's the same thing
+used math. Um so it's the same thing
+used math. Um so it's the same thing really. We're going to use um a module
+really. We're going to use um a module
+really. We're going to use um a module called reax
+called reax
+called reax um to do something. Right. The next
+um to do something. Right. The next
+um to do something. Right. The next thing I'm going to do is I'm going to
+thing I'm going to do is I'm going to
+thing I'm going to do is I'm going to define um what I call a pattern. A reax
+define um what I call a pattern. A reax
+define um what I call a pattern. A reax pattern. Okay. Okay. And I'm actually
+pattern. Okay. Okay. And I'm actually
+pattern. Okay. Okay. And I'm actually going to give it a variable name called
+going to give it a variable name called
+going to give it a variable name called pattern. Okay. And I'm going to store it
+pattern. Okay. And I'm going to store it
+pattern. Okay. And I'm going to store it in there. Now, this is the fun bit.
+in there. Now, this is the fun bit.
+in there. Now, this is the fun bit. Right now, um I'm going to start my
+Right now, um I'm going to start my
+Right now, um I'm going to start my pattern with an R. And I'm going to hit
+pattern with an R. And I'm going to hit
+pattern with an R. And I'm going to hit it with a
+it with a
+it with a uh quotation mark. So, that is how all
+uh quotation mark. So, that is how all
+uh quotation mark. So, that is how all of your reax pattern should start in
+of your reax pattern should start in
+of your reax pattern should start in Python. Um so, the R is really kind of
+Python. Um so, the R is really kind of
+Python. Um so, the R is really kind of indicating there
+indicating there
+indicating there um that it is
+um that it is
+um that it is without going into too much detail, it's
+without going into too much detail, it's
+without going into too much detail, it's what we call a raw string literal. And
+what we call a raw string literal. And
+what we call a raw string literal. And what the R will make sure happens is it
+what the R will make sure happens is it
+what the R will make sure happens is it doesn't if I put another um if I if I
+doesn't if I put another um if I if I
+doesn't if I put another um if I if I put a character in here like a a
+put a character in here like a a
+put a character in here like a a backslash um or forward slash, it
+backslash um or forward slash, it
+backslash um or forward slash, it shouldn't escape that character um and
+shouldn't escape that character um and
+shouldn't escape that character um and do something else that we're not
+do something else that we're not
+do something else that we're not anticipating. Anyway, I'm not going to
+anticipating. Anyway, I'm not going to
+anticipating. Anyway, I'm not going to talk anymore about that. Just make sure
+talk anymore about that. Just make sure
+talk anymore about that. Just make sure you put the R in. That's important.
+you put the R in. That's important.
+you put the R in. That's important. And then the next thing I'm going to do
+And then the next thing I'm going to do
+And then the next thing I'm going to do is I'm going to use this character. For
+is I'm going to use this character. For
+is I'm going to use this character. For me, it's shift and six. It might be
+me, it's shift and six. It might be
+me, it's shift and six. It might be different for you depending on what
+different for you depending on what
+different for you depending on what keyboard you're using. Um, but that what
+keyboard you're using. Um, but that what
+keyboard you're using. Um, but that what we call I think it's called a carrot.
+we call I think it's called a carrot.
+we call I think it's called a carrot. Um, is to indicate that I'm starting my
+Um, is to indicate that I'm starting my
+Um, is to indicate that I'm starting my pattern. Okay, this is the start of my
+pattern. Okay, this is the start of my
+pattern. Okay, this is the start of my string. Um, I'm just going to type some
+string. Um, I'm just going to type some
+string. Um, I'm just going to type some stuff now. I'm going to do this. open
+stuff now. I'm going to do this. open
+stuff now. I'm going to do this. open square bracket ACGT
+square bracket ACGT
+square bracket ACGT close bracket and then I'm going to put
+close bracket and then I'm going to put
+close bracket and then I'm going to put a plus and then I'm going to put a
+a plus and then I'm going to put a
+a plus and then I'm going to put a dollar sign. Now, this is ugly, I know.
+dollar sign. Now, this is ugly, I know.
+dollar sign. Now, this is ugly, I know. Let me just explain exactly what I'm
+Let me just explain exactly what I'm
+Let me just explain exactly what I'm doing here. Um, so I'm going to put it
+doing here. Um, so I'm going to put it
+doing here. Um, so I'm going to put it in a comments, right? So, I'm basically
+in a comments, right? So, I'm basically
+in a comments, right? So, I'm basically going to start my pattern
+going to start my pattern
+going to start my pattern um with here. Okay. And I'm looking for
+um with here. Okay. And I'm looking for
+um with here. Okay. And I'm looking for one or more
+one or more
+one or more um AS's, C's, G's and T's.
+um AS's, C's, G's and T's.
+um AS's, C's, G's and T's. Um and then
+Um and then
+Um and then the dollar sign
+the dollar sign
+the dollar sign to end, right? So that means that's the
+to end, right? So that means that's the
+to end, right? So that means that's the end of my reex. So
+end of my reex. So
+end of my reex. So let's just unpack that. So I'm basically
+let's just unpack that. So I'm basically
+let's just unpack that. So I'm basically the square bracket indicates I can find
+the square bracket indicates I can find
+the square bracket indicates I can find any of these A, C, G's or T's. They're
+any of these A, C, G's or T's. They're
+any of these A, C, G's or T's. They're all uppercase. That's important.
+all uppercase. That's important.
+all uppercase. That's important. The plus indicates that there might be
+The plus indicates that there might be
+The plus indicates that there might be more than one and the dollar sign just
+more than one and the dollar sign just
+more than one and the dollar sign just indicates that I don't want anything
+indicates that I don't want anything
+indicates that I don't want anything else. Okay, there can't be anything else
+else. Okay, there can't be anything else
+else. Okay, there can't be anything else in that sequence, right? Um
+in that sequence, right? Um
+in that sequence, right? Um okay. Uh let's let's this is let's just
+okay. Uh let's let's this is let's just
+okay. Uh let's let's this is let's just run this and I'll show you how it works.
+run this and I'll show you how it works.
+run this and I'll show you how it works. Right, let's let's create some tests. Um
+Right, let's let's create some tests. Um
+Right, let's let's create some tests. Um I'm going to create I'm just going to
+I'm going to create I'm just going to
+I'm going to create I'm just going to create some random stuff now. Um at CGT,
+create some random stuff now. Um at CGT,
+create some random stuff now. Um at CGT, that's one. Um, let's do um, so that
+that's one. Um, let's do um, so that
+that's one. Um, let's do um, so that should be a valid one because it's all
+should be a valid one because it's all
+should be a valid one because it's all A's, C's and C's and G's. Let's do an A
+A's, C's and C's and G's. Let's do an A
+A's, C's and C's and G's. Let's do an A XTG. That will give me that should be
+XTG. That will give me that should be
+XTG. That will give me that should be invalid because it's got an X in it. Um,
+invalid because it's got an X in it. Um,
+invalid because it's got an X in it. Um, let's do another one. A gat. Oh, look at
+let's do another one. A gat. Oh, look at
+let's do another one. A gat. Oh, look at that. Gatka. Okay. Um,
+that. Gatka. Okay. Um,
+that. Gatka. Okay. Um, uh, and then I'll do AGCT, but I'm going
+uh, and then I'll do AGCT, but I'm going
+uh, and then I'll do AGCT, but I'm going to do it in lower case. Okay. Right. And
+to do it in lower case. Okay. Right. And
+to do it in lower case. Okay. Right. And remember what we're trying to do here is
+remember what we're trying to do here is
+remember what we're trying to do here is we are trying
+we are trying
+we are trying um we are determine
+okay we're going to use
+okay we're going to use
+okay we're going to use ah use our pattern
+ah use our pattern
+ah use our pattern to determine
+to determine
+to determine if
+if
+if um tests are valid invalid okay so I'm
+um tests are valid invalid okay so I'm
+um tests are valid invalid okay so I'm going to loop over these tests now for
+going to loop over these tests now for
+going to loop over these tests now for um sequence in tests.
+um sequence in tests.
+um sequence in tests. And of course, if I was to print that
+And of course, if I was to print that
+And of course, if I was to print that out, oops, I always do that.
+Um, if I just do print seek, of course,
+Um, if I just do print seek, of course,
+Um, if I just do print seek, of course, and run this, should just print those
+and run this, should just print those
+and run this, should just print those out. There we go. Um, so I'm going to go
+out. There we go. Um, so I'm going to go
+out. There we go. Um, so I'm going to go through each of these sequences by turn.
+through each of these sequences by turn.
+through each of these sequences by turn. And now I'm going to use my pattern to
+And now I'm going to use my pattern to
+And now I'm going to use my pattern to determine whether this sequence is valid
+determine whether this sequence is valid
+determine whether this sequence is valid or invalid. Right. Now, if I was doing
+or invalid. Right. Now, if I was doing
+or invalid. Right. Now, if I was doing that sequence by sequence, previously I
+that sequence by sequence, previously I
+that sequence by sequence, previously I would have had another for loop in here
+would have had another for loop in here
+would have had another for loop in here for each sequence to go through it
+for each sequence to go through it
+for each sequence to go through it character by character and then do um if
+character by character and then do um if
+character by character and then do um if I don't know what I do um
+I don't know what I do um
+I don't know what I do um if a then continue or if c continue
+if a then continue or if c continue
+if a then continue or if c continue until it got to something it didn't
+until it got to something it didn't
+until it got to something it didn't like. That's really inefficient. Okay.
+like. That's really inefficient. Okay.
+like. That's really inefficient. Okay. So, I'm going to use um this re
+So, I'm going to use um this re
+So, I'm going to use um this re match. Okay, pattern
+match. Okay, pattern
+match. Okay, pattern seek upper. Okay, so let me just unpack
+seek upper. Okay, so let me just unpack
+seek upper. Okay, so let me just unpack this here. This full match is what we're
+this here. This full match is what we're
+this here. This full match is what we're doing here. And that's if it's an if
+doing here. And that's if it's an if
+doing here. And that's if it's an if statement as well, by the way, so I need
+statement as well, by the way, so I need
+statement as well, by the way, so I need the colon. It's using this function
+the colon. It's using this function
+the colon. It's using this function called F match.
+called F match.
+called F match. And what that does is essentially looks
+And what that does is essentially looks
+And what that does is essentially looks at the full string in each false string
+at the full string in each false string
+at the full string in each false string in turn and it uses the pattern um to
+in turn and it uses the pattern um to
+in turn and it uses the pattern um to see if there is a match. Okay.
+see if there is a match. Okay.
+see if there is a match. Okay. And
+And
+And if so, then I'm going to print out
+if so, then I'm going to print out
+if so, then I'm going to print out that the sequence
+that the sequence
+that the sequence is valid.
+is valid.
+is valid. Put a space.
+Put a space.
+Put a space. Put that there as well. Um, if it's not
+Put that there as well. Um, if it's not
+Put that there as well. Um, if it's not else print
+else print
+else print sequence
+invalid.
+invalid.
+invalid. Don't actually think I need the space
+Don't actually think I need the space
+Don't actually think I need the space there. Let's have a look.
+there. Let's have a look.
+there. Let's have a look. So, what that's going to do is going to
+So, what that's going to do is going to
+So, what that's going to do is going to go through each one of these in turns.
+go through each one of these in turns.
+go through each one of these in turns. Um, it's going to actually up it's going
+Um, it's going to actually up it's going
+Um, it's going to actually up it's going to make everything uppercase. In fact,
+to make everything uppercase. In fact,
+to make everything uppercase. In fact, I'm going to take that off. So, I get I
+I'm going to take that off. So, I get I
+I'm going to take that off. So, I get I should get an error on my last one
+should get an error on my last one
+should get an error on my last one there. And then it's going to use this
+there. And then it's going to use this
+there. And then it's going to use this function which is going to compare my
+function which is going to compare my
+function which is going to compare my pattern against the sequence. And if it
+pattern against the sequence. And if it
+pattern against the sequence. And if it matches then it'll say valid otherwise
+matches then it'll say valid otherwise
+matches then it'll say valid otherwise it won't it'll say invalid. So you can
+it won't it'll say invalid. So you can
+it won't it'll say invalid. So you can see here it should work for this one not
+see here it should work for this one not
+see here it should work for this one not for this one. It should work for this
+for this one. It should work for this
+for this one. It should work for this one. And because I haven't got dotupper
+one. And because I haven't got dotupper
+one. And because I haven't got dotupper it should work for that one as well.
+it should work for that one as well.
+it should work for that one as well. Actually because I haven't got dotupper
+Actually because I haven't got dotupper
+Actually because I haven't got dotupper it shouldn't work for this one because
+it shouldn't work for this one because
+it shouldn't work for this one because it's case sensitive. Let's run it.
+it's case sensitive. Let's run it.
+it's case sensitive. Let's run it. There we go. Valid. Invalid. Valid.
+There we go. Valid. Invalid. Valid.
+There we go. Valid. Invalid. Valid. Invalid. If I were to have done dot
+Invalid. If I were to have done dot
+Invalid. If I were to have done dot upper
+and ran that, it actually tells me that
+and ran that, it actually tells me that
+and ran that, it actually tells me that AGCT is also valid. Okay.

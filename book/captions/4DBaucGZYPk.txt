@@ -1,0 +1,382 @@
+Kind: captions Language: en
+Right. Question five.
+Right. Question five.
+Right. Question five. DNA base count. Ask the user for a DNA
+DNA base count. Ask the user for a DNA
+DNA base count. Ask the user for a DNA string. Count how many A, T, C, and G
+string. Count how many A, T, C, and G
+string. Count how many A, T, C, and G bases it contains using a loop. Print
+bases it contains using a loop. Print
+bases it contains using a loop. Print the results clearly.
+the results clearly.
+the results clearly. Okay.
+Okay. So, the first thing I'm going to
+Okay. So, the first thing I'm going to
+Okay. So, the first thing I'm going to do here is I'm going to ask the user to
+do here is I'm going to ask the user to
+do here is I'm going to ask the user to input
+input
+input a DNA base string.
+a DNA base string.
+a DNA base string. Okay. And I'm going to create a variable
+Okay. And I'm going to create a variable
+Okay. And I'm going to create a variable called DNA string.
+called DNA string.
+called DNA string. And I'm going to say equals input
+And I'm going to say equals input
+And I'm going to say equals input please
+please
+please input
+input
+input a DNA string base string weather.
+a DNA string base string weather.
+a DNA string base string weather. Okay.
+Okay.
+Okay. Right.
+Right.
+Right. So the user will be able to put a whole
+So the user will be able to put a whole
+So the user will be able to put a whole lot of A's, C's, T's, and G's in there.
+lot of A's, C's, T's, and G's in there.
+lot of A's, C's, T's, and G's in there. I think what I might do on the fly or I
+I think what I might do on the fly or I
+I think what I might do on the fly or I might do it here actually is I'm going
+might do it here actually is I'm going
+might do it here actually is I'm going to do a little bit of
+to do a little bit of
+to do a little bit of um handling here. I'm just going to say
+um handling here. I'm just going to say
+um handling here. I'm just going to say DNA string. I'm going to convert it all
+DNA string. I'm going to convert it all
+DNA string. I'm going to convert it all to upper
+to upper
+to upper and I'm going to strip
+and I'm going to strip
+and I'm going to strip any white space. So if they put any any
+any white space. So if they put any any
+any white space. So if they put any any spaces in I'll get rid of those as well.
+spaces in I'll get rid of those as well.
+spaces in I'll get rid of those as well. Okay. Right. So the aim of the game here
+Okay. Right. So the aim of the game here
+Okay. Right. So the aim of the game here is to count how many characters of each
+is to count how many characters of each
+is to count how many characters of each type A, C, T or G are in the string and
+type A, C, T or G are in the string and
+type A, C, T or G are in the string and then output that. Okay,
+then output that. Okay,
+then output that. Okay, let's have a think. Well,
+let's have a think. Well,
+let's have a think. Well, let's start with the for loop for and I
+let's start with the for loop for and I
+let's start with the for loop for and I want I want to loop through every
+want I want to loop through every
+want I want to loop through every character in my DNA string. So for
+character in my DNA string. So for
+character in my DNA string. So for um base in DNA string.
+um base in DNA string.
+um base in DNA string. Okay, I am going
+Okay, I am going
+Okay, I am going Okay, the first thing I'm going to do is
+Okay, the first thing I'm going to do is
+Okay, the first thing I'm going to do is just print it out. Let's get a sanity
+just print it out. Let's get a sanity
+just print it out. Let's get a sanity check.
+check.
+check. Make sure my code works.
+Make sure my code works.
+Make sure my code works. Excuse me. Um let's let's give a string
+Excuse me. Um let's let's give a string
+Excuse me. Um let's let's give a string ac GT G t a a c a t.
+ac GT G t a a c a t.
+ac GT G t a a c a t. And actually, I'm going to copy that so
+And actually, I'm going to copy that so
+And actually, I'm going to copy that so I don't ever have to
+I don't ever have to
+I don't ever have to type that in again because I'm lazy.
+type that in again because I'm lazy.
+type that in again because I'm lazy. Okay. And it's just printed out
+Okay. And it's just printed out
+Okay. And it's just printed out character by character within the loop.
+character by character within the loop.
+character by character within the loop. You notice when we do that in the
+You notice when we do that in the
+You notice when we do that in the console, it starts a new line. Okay.
+console, it starts a new line. Okay.
+console, it starts a new line. Okay. That's kind of how you know it's
+That's kind of how you know it's
+That's kind of how you know it's looping.
+looping.
+looping. But I don't want to do this. I want it
+But I don't want to do this. I want it
+But I don't want to do this. I want it to count this. So, I've got one, two
+to count this. So, I've got one, two
+to count this. So, I've got one, two T's, one, two, two C's, one two, three,
+T's, one, two, two C's, one two, three,
+T's, one, two, two C's, one two, three, four A's, and one, two, three G's. So, I
+four A's, and one, two, three G's. So, I
+four A's, and one, two, three G's. So, I want that summary somewhere. But first,
+want that summary somewhere. But first,
+want that summary somewhere. But first, I got to count the things. Okay, so
+I got to count the things. Okay, so
+I got to count the things. Okay, so let's create a couple of variables in
+let's create a couple of variables in
+let's create a couple of variables in here.
+here.
+here. So
+So
+So the first thing I'm going to do
+the first thing I'm going to do
+the first thing I'm going to do is
+is
+is before my loop actually I'm going to
+before my loop actually I'm going to
+before my loop actually I'm going to create some variables called
+create some variables called
+create some variables called um
+a
+a
+a equals z b sorry c equals 0
+t equals z and G equals Z. That's really
+t equals z and G equals Z. That's really
+t equals z and G equals Z. That's really now that's really bad coding, right?
+now that's really bad coding, right?
+now that's really bad coding, right? Because if this code was buried in a
+Because if this code was buried in a
+Because if this code was buried in a much bigger script, I would have very
+much bigger script, I would have very
+much bigger script, I would have very little idea what these variable names
+little idea what these variable names
+little idea what these variable names referred to. So, I'm going to be a bit
+referred to. So, I'm going to be a bit
+referred to. So, I'm going to be a bit more specific.
+more specific.
+more specific. I'm going to put a count. And it's a bit
+I'm going to put a count. And it's a bit
+I'm going to put a count. And it's a bit longwinded,
+longwinded,
+longwinded, but
+but
+but it will help me if I'm writing extended
+it will help me if I'm writing extended
+it will help me if I'm writing extended piece of code. It's a bit overkill in
+piece of code. It's a bit overkill in
+piece of code. It's a bit overkill in this case because it's going to be very
+this case because it's going to be very
+this case because it's going to be very obvious what I'm going to need to do.
+obvious what I'm going to need to do.
+obvious what I'm going to need to do. Right? So, I've defined some empty
+Right? So, I've defined some empty
+Right? So, I've defined some empty variables or some variables that start
+variables or some variables that start
+variables or some variables that start at zero for all of my A C's, T's, and
+at zero for all of my A C's, T's, and
+at zero for all of my A C's, T's, and G's. Now, I want to use a bit of logic.
+G's. Now, I want to use a bit of logic.
+G's. Now, I want to use a bit of logic. Okay? So, as I loop through my DNA
+Okay? So, as I loop through my DNA
+Okay? So, as I loop through my DNA string, if base is equal to,
+string, if base is equal to,
+string, if base is equal to, and remember I've used uppercase
+and remember I've used uppercase
+and remember I've used uppercase characters,
+characters,
+characters, then I'm going to do a count. Remember I
+then I'm going to do a count. Remember I
+then I'm going to do a count. Remember I used the plus equal sign to add stuff to
+used the plus equal sign to add stuff to
+used the plus equal sign to add stuff to it? Well, I'm just going to increment it
+it? Well, I'm just going to increment it
+it? Well, I'm just going to increment it by one. Okay. And then I'm going to do l
+by one. Okay. And then I'm going to do l
+by one. Okay. And then I'm going to do l iff base equals c
+iff base equals c
+iff base equals c a count plus equals 1.
+a count plus equals 1.
+a count plus equals 1. Oh, mistake.
+Oh, mistake.
+Oh, mistake. C count.
+L if base equals t.
+And you can see I made a deliberate
+And you can see I made a deliberate
+And you can see I made a deliberate mistake on line 15 with a colon there.
+mistake on line 15 with a colon there.
+mistake on line 15 with a colon there. It shouldn't be uh t counts equals
+It shouldn't be uh t counts equals
+It shouldn't be uh t counts equals oops come on plus equals 1. And then
+oops come on plus equals 1. And then
+oops come on plus equals 1. And then finally
+finally
+finally base.
+Actually, I want to finish this with an
+Actually, I want to finish this with an
+Actually, I want to finish this with an else
+else
+else base base
+base base
+base base G.
+And I got to be careful here because the
+And I got to be careful here because the
+And I got to be careful here because the base is the else statement is slightly
+base is the else statement is slightly
+base is the else statement is slightly different. So I put the colon after the
+different. So I put the colon after the
+different. So I put the colon after the else
+else
+else and do gc count
+and do gc count
+and do gc count equals one. Okay. So don't get caught
+equals one. Okay. So don't get caught
+equals one. Okay. So don't get caught out with the with the colon at the end
+out with the with the colon at the end
+out with the with the colon at the end of your else statements.
+of your else statements.
+of your else statements. Okay. Then I think I could still have
+Okay. Then I think I could still have
+Okay. Then I think I could still have used an l if. That would have been fine
+used an l if. That would have been fine
+used an l if. That would have been fine if you're wondering.
+if you're wondering.
+if you're wondering. Then once I've counted everything, I'm
+Then once I've counted everything, I'm
+Then once I've counted everything, I'm going to simply print out an F string
+going to simply print out an F string
+going to simply print out an F string using all of these counts in um
+using all of these counts in um
+using all of these counts in um I'm going to be careful here
+I'm going to be careful here
+I'm going to be careful here because
+this will work, but if I give you a
+this will work, but if I give you a
+this will work, but if I give you a string with any other characters in,
+string with any other characters in,
+string with any other characters in, what will happen?
+what will happen?
+what will happen? It will add them to the G count. So,
+It will add them to the G count. So,
+It will add them to the G count. So, actually, this is a bit naughty. I'm not
+actually, this is a bit naughty. I'm not
+actually, this is a bit naughty. I'm not going to do this because if if for some
+going to do this because if if for some
+going to do this because if if for some reason there was an X or an N or
+reason there was an X or an N or
+reason there was an X or an N or something slipped in there, it would
+something slipped in there, it would
+something slipped in there, it would count them as G. So, I am going to use
+count them as G. So, I am going to use
+count them as G. So, I am going to use an L if. Come on, brain, wake up.
+an L if. Come on, brain, wake up.
+an L if. Come on, brain, wake up. Base
+Base
+Base equals
+equals
+equals G
+G
+G G count plus equals.
+G count plus equals.
+G count plus equals. Okay, now let's print all this out. And
+Okay, now let's print all this out. And
+Okay, now let's print all this out. And I am going to use my good friend, the F
+I am going to use my good friend, the F
+I am going to use my good friend, the F string
+string
+string here. I'm going to put an a colon and
+here. I'm going to put an a colon and
+here. I'm going to put an a colon and I'm going to put open open curly
+I'm going to put open open curly
+I'm going to put open open curly brackets a count. Put my a count
+brackets a count. Put my a count
+brackets a count. Put my a count variable in there and then comma
+variable in there and then comma
+variable in there and then comma um oh no c colon count
+um oh no c colon count
+um oh no c colon count t colon curly bracket t count
+t colon curly bracket t count
+t colon curly bracket t count and then finally
+and then finally
+and then finally g colon gc count. Don't forget to close
+g colon gc count. Don't forget to close
+g colon gc count. Don't forget to close your parenthesis. Not parenthesis.
+Quotation mark. Go on. I think for that
+Quotation mark. Go on. I think for that
+Quotation mark. Go on. I think for that one. Let's run it again now. Um, I'm
+one. Let's run it again now. Um, I'm
+one. Let's run it again now. Um, I'm going to paste that in.
+going to paste that in.
+going to paste that in. There we go. And did it do it right? I
+There we go. And did it do it right? I
+There we go. And did it do it right? I think that's right.
+Should have been six A's. One,
+Should have been six A's. One,
+Should have been six A's. One, two, three,
+two, three,
+two, three, four, five, six. Yes, that's right.
+four, five, six. Yes, that's right.
+four, five, six. Yes, that's right. So,
+So,
+So, there you go. Um, I've got a for loop
+there you go. Um, I've got a for loop
+there you go. Um, I've got a for loop with an if and a series of l ifs. I
+with an if and a series of l ifs. I
+with an if and a series of l ifs. I didn't use the else.
+didn't use the else.
+didn't use the else. Okay. I could have done something like
+Oops.
+Oops.
+Oops. I could do something like this very
+I could do something like this very
+I could do something like this very quickly.
+Let me just bring this down a bit.
+Let me just bring this down a bit.
+Let me just bring this down a bit. I could have done something like
+I could have done something like
+I could have done something like Oh, come on, Rob. I'm pressing the wrong
+Oh, come on, Rob. I'm pressing the wrong
+Oh, come on, Rob. I'm pressing the wrong but I'm used to using I've been writing
+but I'm used to using I've been writing
+but I'm used to using I've been writing R all week. So, I'm using shift and
+R all week. So, I'm using shift and
+R all week. So, I'm using shift and enter to run my code. Um, else I could
+enter to run my code. Um, else I could
+enter to run my code. Um, else I could have used
+have used
+have used um I could have another variable. Let's
+um I could have another variable. Let's
+um I could have another variable. Let's put it in here. is called error count
+put it in here. is called error count
+put it in here. is called error count equals zero.
+equals zero.
+equals zero. I could have put
+I could have put
+I could have put error plus equal one.
+I got a bug here. Okay. And then I could
+I got a bug here. Okay. And then I could
+I got a bug here. Okay. And then I could have just put
+have just put
+have just put um error
+counts.
+counts.
+counts. And then if I run this,
+And then if I run this,
+And then if I run this, hang on. Let me run it this way.
+hang on. Let me run it this way.
+hang on. Let me run it this way. Oh, I got a bug on line 10. Let's have a
+Oh, I got a bug on line 10. Let's have a
+Oh, I got a bug on line 10. Let's have a look at that one. That should have been
+look at that one. That should have been
+look at that one. That should have been a zero. My fault.
+a zero. My fault.
+a zero. My fault. This time if I put that string in and I
+This time if I put that string in and I
+This time if I put that string in and I put like xxx at the end of it.
+put like xxx at the end of it.
+put like xxx at the end of it. Ah,
+got error on line 23. That's because
+got error on line 23. That's because
+got error on line 23. That's because I've used the wrong variable name. Come
+I've used the wrong variable name. Come
+I've used the wrong variable name. Come on, Rob.
+on, Rob.
+on, Rob. Let's run it again.
+There we go. I got six errors there.
+There we go. I got six errors there.
+There we go. I got six errors there. Right. Took my time with that one.

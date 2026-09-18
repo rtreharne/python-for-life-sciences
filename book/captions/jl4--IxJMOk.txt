@@ -1,0 +1,510 @@
+Kind: captions Language: en
+Right, week five, everybody. Um, here I
+Right, week five, everybody. Um, here I
+Right, week five, everybody. Um, here I am again in the garage. It's a Sunday
+am again in the garage. It's a Sunday
+am again in the garage. It's a Sunday and this week,
+and this week,
+and this week, um, I'm going to make a video for every
+um, I'm going to make a video for every
+um, I'm going to make a video for every single one of these. You're welcome. Um,
+single one of these. You're welcome. Um,
+single one of these. You're welcome. Um, the reason I'm going to do that is
+the reason I'm going to do that is
+the reason I'm going to do that is because this
+because this
+because this this week will almost totally prepare
+this week will almost totally prepare
+this week will almost totally prepare you for the second assignment, which I'm
+you for the second assignment, which I'm
+you for the second assignment, which I'm probably going to release very soon if I
+probably going to release very soon if I
+probably going to release very soon if I haven't done so already.
+haven't done so already.
+haven't done so already. and it's really marking the the
+and it's really marking the the
+and it's really marking the the culmination of every you everything
+culmination of every you everything
+culmination of every you everything you've done over the last four weeks
+you've done over the last four weeks
+you've done over the last four weeks with a little bit of extra thrown in.
+with a little bit of extra thrown in.
+with a little bit of extra thrown in. We're going to talk about dictionaries
+We're going to talk about dictionaries
+We're going to talk about dictionaries and we're also going to talk about um
+and we're also going to talk about um
+and we're also going to talk about um file types that are associated with kind
+file types that are associated with kind
+file types that are associated with kind of biioinformatics genetics data sets.
+of biioinformatics genetics data sets.
+of biioinformatics genetics data sets. Um so those are faster and GFF. And if
+Um so those are faster and GFF. And if
+Um so those are faster and GFF. And if you haven't seen it yet, go and read it
+you haven't seen it yet, go and read it
+you haven't seen it yet, go and read it now. There's a primer in Canvas
+now. There's a primer in Canvas
+now. There's a primer in Canvas um in the week five module which you
+um in the week five module which you
+um in the week five module which you should go and read now. Um full
+should go and read now. Um full
+should go and read now. Um full disclosure for our second assignment,
+disclosure for our second assignment,
+disclosure for our second assignment, I'm only really going to need you to
+I'm only really going to need you to
+I'm only really going to need you to handle faster files. So that GFF data um
+handle faster files. So that GFF data um
+handle faster files. So that GFF data um it's for interest at the moment. Um we
+it's for interest at the moment. Um we
+it's for interest at the moment. Um we don't need to handle those. You you can
+don't need to handle those. You you can
+don't need to handle those. You you can this will hopefully this will make a lot
+this will hopefully this will make a lot
+this will hopefully this will make a lot more sense as we go through here and
+more sense as we go through here and
+more sense as we go through here and start answering these questions. So I'm
+start answering these questions. So I'm
+start answering these questions. So I'm going to dive in right now. We're going
+going to dive in right now. We're going
+going to dive in right now. We're going to start answering these questions. Um,
+to start answering these questions. Um,
+to start answering these questions. Um, question one. So, the first first five
+question one. So, the first first five
+question one. So, the first first five are kind of just introductory and then
+are kind of just introductory and then
+are kind of just introductory and then we'll go as usual look at some more kind
+we'll go as usual look at some more kind
+we'll go as usual look at some more kind of project based stuff afterwards. Bit
+of project based stuff afterwards. Bit
+of project based stuff afterwards. Bit longer. Um, so question one, I have got
+longer. Um, so question one, I have got
+longer. Um, so question one, I have got my
+my
+my um I've got I'm ready. I've got my
+um I've got I'm ready. I've got my
+um I've got I'm ready. I've got my Visual Studio Code running. Now, what
+Visual Studio Code running. Now, what
+Visual Studio Code running. Now, what I've done this week is I've actually
+I've done this week is I've actually
+I've done this week is I've actually created a folder called week five on my
+created a folder called week five on my
+created a folder called week five on my computer and then I've done file, open,
+computer and then I've done file, open,
+computer and then I've done file, open, and I'm in 733, but I've specifically
+and I'm in 733, but I've specifically
+and I'm in 733, but I've specifically opened up that file. Now, um I recommend
+opened up that file. Now, um I recommend
+opened up that file. Now, um I recommend you do that right now.
+you do that right now.
+you do that right now. And what I've done in here is I've added
+And what I've done in here is I've added
+And what I've done in here is I've added a couple of extra files. So, I've got my
+a couple of extra files. So, I've got my
+a couple of extra files. So, I've got my first problem file. That's great. I'm
+first problem file. That's great. I'm
+first problem file. That's great. I'm ready to go. And I've also got these
+ready to go. And I've also got these
+ready to go. And I've also got these two. So, there's a uh generate faster
+two. So, there's a uh generate faster
+two. So, there's a uh generate faster and GFF. And that is on Canvas right
+and GFF. And that is on Canvas right
+and GFF. And that is on Canvas right now. I'm just going to update that
+now. I'm just going to update that
+now. I'm just going to update that slightly.
+slightly.
+slightly. Um because this is not for the
+Um because this is not for the
+Um because this is not for the assignment. I've got another one of
+assignment. I've got another one of
+assignment. I've got another one of those.
+Um and what these files will be doing is
+Um and what these files will be doing is
+Um and what these files will be doing is generating
+generating
+generating your own personal um faster file and GFF
+your own personal um faster file and GFF
+your own personal um faster file and GFF file for this workshop which you'll
+file for this workshop which you'll
+file for this workshop which you'll need.
+need.
+need. And um I want you to do this at some
+And um I want you to do this at some
+And um I want you to do this at some point during the workshop. I don't think
+point during the workshop. I don't think
+point during the workshop. I don't think we're doing it till question six, but
+we're doing it till question six, but
+we're doing it till question six, but you're going to need this file in your
+you're going to need this file in your
+you're going to need this file in your project now. So, I would I would get
+project now. So, I would I would get
+project now. So, I would I would get that ready to go. There's also a
+that ready to go. There's also a
+that ready to go. There's also a codeodon table which we're going to so
+codeodon table which we're going to so
+codeodon table which we're going to so we're going to do some um protein
+we're going to do some um protein
+we're going to do some um protein transcription. Um so, we're going to use
+transcription. Um so, we're going to use
+transcription. Um so, we're going to use this table as well. Um this is um you
+this table as well. Um this is um you
+this table as well. Um this is um you know, this is common knowledge, right?
+know, this is common knowledge, right?
+know, this is common knowledge, right? This is some this is this is something
+This is some this is this is something
+This is some this is this is something which I've got off the internet, but I
+which I've got off the internet, but I
+which I've got off the internet, but I put it into a Python file for now. Okay,
+put it into a Python file for now. Okay,
+put it into a Python file for now. Okay, let's have a look at the question.
+let's have a look at the question.
+let's have a look at the question. Question one,
+Question one,
+Question one, where is it? Hang on. Right. So firstly,
+where is it? Hang on. Right. So firstly,
+where is it? Hang on. Right. So firstly, we're going to um take a look at a
+we're going to um take a look at a
+we're going to um take a look at a dictionary. Um now we we have done some
+dictionary. Um now we we have done some
+dictionary. Um now we we have done some dictionary stuff already. Um but it
+dictionary stuff already. Um but it
+dictionary stuff already. Um but it hasn't I haven't explicitly explained
+hasn't I haven't explicitly explained
+hasn't I haven't explicitly explained how they work, I don't think. So I'm
+how they work, I don't think. So I'm
+how they work, I don't think. So I'm going to do that. Um let me read this
+going to do that. Um let me read this
+going to do that. Um let me read this question. Create a dictionary mapping
+question. Create a dictionary mapping
+question. Create a dictionary mapping three DNA codons and their amino acids.
+three DNA codons and their amino acids.
+three DNA codons and their amino acids. And I'm going to write code to uh look
+And I'm going to write code to uh look
+And I'm going to write code to uh look up the amino acid for a codon
+up the amino acid for a codon
+up the amino acid for a codon and
+and
+and add a new codeodon and amino acid pair.
+add a new codeodon and amino acid pair.
+add a new codeodon and amino acid pair. And then I want to loop through the
+And then I want to loop through the
+And then I want to loop through the dictionary and print all keys and
+dictionary and print all keys and
+dictionary and print all keys and values.
+values.
+values. Okay. Um let's take a look at that.
+Okay. Um let's take a look at that.
+Okay. Um let's take a look at that. So bear with me.
+So bear with me.
+So bear with me. I've got an example.
+I've got an example.
+I've got an example. Right. So,
+Right. So,
+Right. So, question one, we are going to um
+question one, we are going to um
+question one, we are going to um demonstrate
+um creating and using a diction
+um creating and using a diction
+um creating and using a diction dictionary and in this case it's for DNA
+dictionary and in this case it's for DNA
+dictionary and in this case it's for DNA codons. Okay. Right. So, I'm going to
+codons. Okay. Right. So, I'm going to
+codons. Okay. Right. So, I'm going to I'm going to create a very small
+I'm going to create a very small
+I'm going to create a very small dictionary to begin with. create a uh
+dictionary to begin with. create a uh
+dictionary to begin with. create a uh dictionary.
+dictionary.
+dictionary. Right? So I'm going to create a
+Right? So I'm going to create a
+Right? So I'm going to create a dictionary called codons. Now codons is
+dictionary called codons. Now codons is
+dictionary called codons. Now codons is a variable name that I'm going to use
+a variable name that I'm going to use
+a variable name that I'm going to use again. And this is how I create a
+again. And this is how I create a
+again. And this is how I create a dictionary from scratch. Um curly
+dictionary from scratch. Um curly
+dictionary from scratch. Um curly bracket. Uh and I could start typing
+bracket. Uh and I could start typing
+bracket. Uh and I could start typing here, but because I like to be neat and
+here, but because I like to be neat and
+here, but because I like to be neat and tidy, I'm going to hit enter right
+tidy, I'm going to hit enter right
+tidy, I'm going to hit enter right there. Okay. And what that will do is
+there. Okay. And what that will do is
+there. Okay. And what that will do is will give me a nice um line space
+will give me a nice um line space
+will give me a nice um line space between my start and my finish bracket.
+between my start and my finish bracket.
+between my start and my finish bracket. And I can put multiple entries into this
+And I can put multiple entries into this
+And I can put multiple entries into this code on um and it'll look a bit neater.
+code on um and it'll look a bit neater.
+code on um and it'll look a bit neater. I can do this with a list as well, by
+I can do this with a list as well, by
+I can do this with a list as well, by the way, if I was using square brackets.
+the way, if I was using square brackets.
+the way, if I was using square brackets. Um let's just create a couple of um
+Um let's just create a couple of um
+Um let's just create a couple of um codeons here. So I'm going to have an
+codeons here. So I'm going to have an
+codeons here. So I'm going to have an ATG,
+ATG,
+ATG, which I know is um an M, capital M.
+which I know is um an M, capital M.
+which I know is um an M, capital M. I'm going to have a TT
+and
+and
+and an F capital F. I'm going to use
+an F capital F. I'm going to use
+an F capital F. I'm going to use capitals for everything and I'm going to
+capitals for everything and I'm going to
+capitals for everything and I'm going to have a
+have a
+have a GGC
+GGC
+GGC for edgy.
+for edgy.
+for edgy. Okay. Um, right. So, a couple of talking
+Okay. Um, right. So, a couple of talking
+Okay. Um, right. So, a couple of talking points here. You'll notice I've got
+points here. You'll notice I've got
+points here. You'll notice I've got everything in this dictionary is a
+everything in this dictionary is a
+everything in this dictionary is a string. Okay. That's not always the
+string. Okay. That's not always the
+string. Okay. That's not always the case, but it is it is here. Um, this
+case, but it is it is here. Um, this
+case, but it is it is here. Um, this value here is what I call a key.
+value here is what I call a key.
+value here is what I call a key. So that is kind of the lookup key for my
+So that is kind of the lookup key for my
+So that is kind of the lookup key for my codon. I'll show you how that works in a
+codon. I'll show you how that works in a
+codon. I'll show you how that works in a second. And then I've got a colon and
+second. And then I've got a colon and
+second. And then I've got a colon and then everything after that is what we
+then everything after that is what we
+then everything after that is what we call the value. So these dictionaries
+call the value. So these dictionaries
+call the value. So these dictionaries are structured in what we call these key
+are structured in what we call these key
+are structured in what we call these key value pairs. Um and they're really
+value pairs. Um and they're really
+value pairs. Um and they're really really great way of storing information
+really great way of storing information
+really great way of storing information with a bit more data um than a a
+with a bit more data um than a a
+with a bit more data um than a a traditional list. List is very
+traditional list. List is very
+traditional list. List is very one-dimensional, isn't it? This is kind
+one-dimensional, isn't it? This is kind
+one-dimensional, isn't it? This is kind of two-dimensional really. Um, so I can
+of two-dimensional really. Um, so I can
+of two-dimensional really. Um, so I can find um the which protein I need for any
+find um the which protein I need for any
+find um the which protein I need for any triplet of DNA bases by looking up the
+triplet of DNA bases by looking up the
+triplet of DNA bases by looking up the triplet. Okay, let me show you um how
+triplet. Okay, let me show you um how
+triplet. Okay, let me show you um how that works. Um let's look up a codon.
+that works. Um let's look up a codon.
+that works. Um let's look up a codon. Okay. Um
+Okay. Um
+Okay. Um let's look up look
+let's look up look
+let's look up look look up a code on. Um, so
+look up a code on. Um, so
+look up a code on. Um, so I'm going to
+I'm going to
+I'm going to use codons.
+use codons.
+use codons. Codons. Let me spell a different word
+Codons. Let me spell a different word
+Codons. Let me spell a different word alto together then. Um,
+alto together then. Um,
+alto together then. Um, and I'm going to I'm going to get that.
+and I'm going to I'm going to get that.
+and I'm going to I'm going to get that. Um, where was it?
+Uh, ATG. That's what I want. And
+Uh, ATG. That's what I want. And
+Uh, ATG. That's what I want. And actually, I want a code. Good grief. I
+actually, I want a code. Good grief. I
+actually, I want a code. Good grief. I actually want to wrap this in print
+actually want to wrap this in print
+actually want to wrap this in print statement. Print
+statement. Print
+statement. Print um I'll put something in here. Amino
+um I'll put something in here. Amino
+um I'll put something in here. Amino amino
+amino
+amino um acid.
+um acid.
+um acid. I said protein earlier but I meant amino
+I said protein earlier but I meant amino
+I said protein earlier but I meant amino acid for uh ATG. Okay.
+Okay. Fantastic.
+And let's run it. see what happens.
+And let's run it. see what happens.
+And let's run it. see what happens. Okay, so what's happened here is it's
+Okay, so what's happened here is it's
+Okay, so what's happened here is it's printed out amino acids for ATG and it's
+printed out amino acids for ATG and it's
+printed out amino acids for ATG and it's printed out the correct value. So this
+printed out the correct value. So this
+printed out the correct value. So this bit is the important bit, this codons
+bit is the important bit, this codons
+bit is the important bit, this codons ATG. So that is an immediate
+ATG. So that is an immediate
+ATG. So that is an immediate um kind of think of it like a an
+um kind of think of it like a an
+um kind of think of it like a an immediate function although it's got
+immediate function although it's got
+immediate function although it's got square brackets that will simply return
+square brackets that will simply return
+square brackets that will simply return the value associated with that key. So
+the value associated with that key. So
+the value associated with that key. So ever if ever you want to look up any
+ever if ever you want to look up any
+ever if ever you want to look up any value from a dictionary, you can do code
+value from a dictionary, you can do code
+value from a dictionary, you can do code on or dictionary square bracket give it
+on or dictionary square bracket give it
+on or dictionary square bracket give it the key and it will return to you what
+the key and it will return to you what
+the key and it will return to you what is stored in this value. Okay. Right. Um
+is stored in this value. Okay. Right. Um
+is stored in this value. Okay. Right. Um there was another part of this question
+there was another part of this question
+there was another part of this question and I wanted to I want to create
+and I wanted to I want to create
+and I wanted to I want to create um or add add a new codon
+um or add add a new codon
+um or add add a new codon amino
+amino
+amino um acid pair. Right? So the great thing
+um acid pair. Right? So the great thing
+um acid pair. Right? So the great thing about dictionaries is they are what we
+about dictionaries is they are what we
+about dictionaries is they are what we call mutable in Python. That means I can
+call mutable in Python. That means I can
+call mutable in Python. That means I can add stuff or take stuff away or change
+add stuff or take stuff away or change
+add stuff or take stuff away or change it. Um, so I can I can add something in
+it. Um, so I can I can add something in
+it. Um, so I can I can add something in to a to a dictionary in a really really
+to a to a dictionary in a really really
+to a to a dictionary in a really really simple way. In fact, it's easier than I
+simple way. In fact, it's easier than I
+simple way. In fact, it's easier than I would do this for a list. For a list, I
+would do this for a list. For a list, I
+would do this for a list. For a list, I would do append new item. I don't need
+would do append new item. I don't need
+would do append new item. I don't need don't even need to do that here. So I
+don't even need to do that here. So I
+don't even need to do that here. So I can just do codeons.
+can just do codeons.
+can just do codeons. And I can use that um that key lookup
+And I can use that um that key lookup
+And I can use that um that key lookup again, but instead of calling what I've
+again, but instead of calling what I've
+again, but instead of calling what I've already got, I'm going to create a
+already got, I'm going to create a
+already got, I'm going to create a completely new one. TG and I'm going to
+completely new one. TG and I'm going to
+completely new one. TG and I'm going to assign to it using the equal sign a W.
+assign to it using the equal sign a W.
+assign to it using the equal sign a W. Okay. And what that will do if I were to
+Okay. And what that will do if I were to
+Okay. And what that will do if I were to run this it would print out oh actually
+run this it would print out oh actually
+run this it would print out oh actually it won't it will create a new row in my
+it won't it will create a new row in my
+it won't it will create a new row in my codeon codeons dictionary and it'll be
+codeon codeons dictionary and it'll be
+codeon codeons dictionary and it'll be there. So just to prove that that's
+there. So just to prove that that's
+there. So just to prove that that's working I'm going to I'm going to create
+working I'm going to I'm going to create
+working I'm going to I'm going to create I'm going to do the last part of the
+I'm going to do the last part of the
+I'm going to do the last part of the task which is to print them out. So I
+task which is to print them out. So I
+task which is to print them out. So I want to loop through dictionary
+want to loop through dictionary
+want to loop through dictionary and print all key value pairs. That's
+and print all key value pairs. That's
+and print all key value pairs. That's the last thing of this problem. Um so
+the last thing of this problem. Um so
+the last thing of this problem. Um so I'm going to use I'm I'm going to keep
+I'm going to use I'm I'm going to keep
+I'm going to use I'm I'm going to keep this straightforward. I'm going to use a
+this straightforward. I'm going to use a
+this straightforward. I'm going to use a for loop, but I'm going to use slightly
+for loop, but I'm going to use slightly
+for loop, but I'm going to use slightly something slightly different here. Now
+something slightly different here. Now
+something slightly different here. Now because I'm I'm not looping over a list.
+because I'm I'm not looping over a list.
+because I'm I'm not looping over a list. If it was a list, I could just do for
+If it was a list, I could just do for
+If it was a list, I could just do for item in um list and print that out. But
+item in um list and print that out. But
+item in um list and print that out. But because I've got these key value pairs,
+because I've got these key value pairs,
+because I've got these key value pairs, I actually want to loop over both the
+I actually want to loop over both the
+I actually want to loop over both the keys and the values at the same time.
+keys and the values at the same time.
+keys and the values at the same time. Okay. So, um I could I could have done
+Okay. So, um I could I could have done
+Okay. So, um I could I could have done it with a single variable um and used
+it with a single variable um and used
+it with a single variable um and used this notation to call it each time, but
+this notation to call it each time, but
+this notation to call it each time, but a much easier way to do that is to use a
+a much easier way to do that is to use a
+a much easier way to do that is to use a combination of um temporary variables
+combination of um temporary variables
+combination of um temporary variables here. So, codon,
+here. So, codon,
+here. So, codon, aa. So, I'm going to get the codon,
+aa. So, I'm going to get the codon,
+aa. So, I'm going to get the codon, that's the key, and the amino acid,
+that's the key, and the amino acid,
+that's the key, and the amino acid, that's the value in um codons. Now, it
+that's the value in um codons. Now, it
+that's the value in um codons. Now, it wouldn't work if I just use codons. I
+wouldn't work if I just use codons. I
+wouldn't work if I just use codons. I have to do a dot items at the end here.
+have to do a dot items at the end here.
+have to do a dot items at the end here. Just trust me on that. And then I'm
+Just trust me on that. And then I'm
+Just trust me on that. And then I'm going to print um codon.
+going to print um codon.
+going to print um codon. And then I'm going to just add a little
+And then I'm going to just add a little
+And then I'm going to just add a little hyphen there so I know it. And I'm going
+hyphen there so I know it. And I'm going
+hyphen there so I know it. And I'm going to print that out. And if I do that,
+to print that out. And if I do that,
+to print that out. And if I do that, there we go. I get my table out. And you
+there we go. I get my table out. And you
+there we go. I get my table out. And you can see I've got an extra code on at the
+can see I've got an extra code on at the
+can see I've got an extra code on at the end there. Um, in addition to the the
+end there. Um, in addition to the the
+end there. Um, in addition to the the one that I' ones that I've defined
+one that I' ones that I've defined
+one that I' ones that I've defined manually with I that's why I did it
+manually with I that's why I did it
+manually with I that's why I did it here. And you can see I can run that as
+here. And you can see I can run that as
+here. And you can see I can run that as many times as I want and it won't just
+many times as I want and it won't just
+many times as I want and it won't just keep adding TGS. It will override the
+keep adding TGS. It will override the
+keep adding TGS. It will override the one I've got. So I'll always have four
+one I've got. So I'll always have four
+one I've got. So I'll always have four colons in that dictionary. Okay. Um,
+colons in that dictionary. Okay. Um,
+colons in that dictionary. Okay. Um, that's question one. Uh, let's move on.

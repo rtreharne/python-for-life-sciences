@@ -1,0 +1,370 @@
+Kind: captions Language: en
+Okay, question five. Boolean logic. H.
+Okay, question five. Boolean logic. H.
+Okay, question five. Boolean logic. H. Now, this this one kind of it's perhaps
+Now, this this one kind of it's perhaps
+Now, this this one kind of it's perhaps steps up the difficulty a little bit.
+steps up the difficulty a little bit.
+steps up the difficulty a little bit. So, we got a few interesting concepts to
+So, we got a few interesting concepts to
+So, we got a few interesting concepts to discuss here. First of all, what the
+discuss here. First of all, what the
+discuss here. First of all, what the hell is a boolean? That's a simple
+hell is a boolean? That's a simple
+hell is a boolean? That's a simple answer. It's either true or false. So,
+answer. It's either true or false. So,
+answer. It's either true or false. So, there's a a native data type in Python
+there's a a native data type in Python
+there's a a native data type in Python called boolean. And it will it will take
+called boolean. And it will it will take
+called boolean. And it will it will take one of two values which is true or
+one of two values which is true or
+one of two values which is true or false. Now Python typically
+false. Now Python typically
+false. Now Python typically if you ask it to print out a bool it
+if you ask it to print out a bool it
+if you ask it to print out a bool it will give you a true or a false value.
+will give you a true or a false value.
+will give you a true or a false value. But actually what it's storing
+But actually what it's storing
+But actually what it's storing underneath is a one or a zero which of
+underneath is a one or a zero which of
+underneath is a one or a zero which of course really is how your entire
+course really is how your entire
+course really is how your entire computer works on ones and zeros.
+computer works on ones and zeros.
+computer works on ones and zeros. Everything's either true or false. Okay.
+Everything's either true or false. Okay.
+Everything's either true or false. Okay. And you can actually build up um
+And you can actually build up um
+And you can actually build up um representations of anything else using
+representations of anything else using
+representations of anything else using boolean. It could be, you know, um it
+boolean. It could be, you know, um it
+boolean. It could be, you know, um it could be a number. It could be a string.
+could be a number. It could be a string.
+could be a number. It could be a string. And there are way complex ways of doing
+And there are way complex ways of doing
+And there are way complex ways of doing that we're not going to discuss today.
+that we're not going to discuss today.
+that we're not going to discuss today. Um the objective here is to take two
+Um the objective here is to take two
+Um the objective here is to take two boolean inputs. Actually, actually not
+boolean inputs. Actually, actually not
+boolean inputs. Actually, actually not even that. It's going to take two inputs
+even that. It's going to take two inputs
+even that. It's going to take two inputs as strings.
+as strings.
+as strings. And those strings can either be yes or
+And those strings can either be yes or
+And those strings can either be yes or no. And then convert them into true or
+no. And then convert them into true or
+no. And then convert them into true or false where yes is true and no is false.
+false where yes is true and no is false.
+false where yes is true and no is false. and then do some conditional statement
+and then do some conditional statement
+and then do some conditional statement where if both of them are true, do this.
+where if both of them are true, do this.
+where if both of them are true, do this. If only one of them is true or none of
+If only one of them is true or none of
+If only one of them is true or none of them are true, do this. Okay, so let's
+them are true, do this. Okay, so let's
+them are true, do this. Okay, so let's think about this as we go along. The
+think about this as we go along. The
+think about this as we go along. The first thing of course I've got to do is
+first thing of course I've got to do is
+first thing of course I've got to do is I've got to take in those inputs from
+I've got to take in those inputs from
+I've got to take in those inputs from the user. So I'm asking the user two for
+the user. So I'm asking the user two for
+the user. So I'm asking the user two for two things. One, do they have a lab
+two things. One, do they have a lab
+two things. One, do they have a lab coat? So sorry, sorry, start with the ID
+coat? So sorry, sorry, start with the ID
+coat? So sorry, sorry, start with the ID card. Um, do they have an ID card? So,
+card. Um, do they have an ID card? So,
+card. Um, do they have an ID card? So, I'm going to create a variable called ID
+I'm going to create a variable called ID
+I'm going to create a variable called ID card. Uh, input,
+card. Uh, input,
+card. Uh, input, and I'm going to put, do you have an ID
+and I'm going to put, do you have an ID
+and I'm going to put, do you have an ID card?
+card?
+card? Uh, and I'm going to help them out a
+Uh, and I'm going to help them out a
+Uh, and I'm going to help them out a little bit
+little bit
+little bit by saying by giving them their options,
+by saying by giving them their options,
+by saying by giving them their options, yes or no. Okay.
+yes or no. Okay.
+yes or no. Okay. Colon space.
+Colon space.
+Colon space. Um, I also want to know if they have a
+Um, I also want to know if they have a
+Um, I also want to know if they have a lab code
+lab code
+lab code input.
+input.
+input. Do you have a lab code?
+Do you have a lab code?
+Do you have a lab code? Yes or no?
+Okay, so I can get those inputs. Um, my
+Okay, so I can get those inputs. Um, my
+Okay, so I can get those inputs. Um, my problem now is how do I convert those
+problem now is how do I convert those
+problem now is how do I convert those yes or no responses into
+yes or no responses into
+yes or no responses into boolean H. Now, I've actually forgotten
+boolean H. Now, I've actually forgotten
+boolean H. Now, I've actually forgotten how to do this. So,
+how to do this. So,
+how to do this. So, I'm going to do something a little
+I'm going to do something a little
+I'm going to do something a little different this time. This is this is
+different this time. This is this is
+different this time. This is this is just so I can understand what I'm doing.
+just so I can understand what I'm doing.
+just so I can understand what I'm doing. If ever you want to just type a line of
+If ever you want to just type a line of
+If ever you want to just type a line of Python, then you can go down to your
+Python, then you can go down to your
+Python, then you can go down to your your terminal down here and just type
+your terminal down here and just type
+your terminal down here and just type Python in. Okay? And that will open up a
+Python in. Okay? And that will open up a
+Python in. Okay? And that will open up a Python terminal. So I can I can just
+Python terminal. So I can I can just
+Python terminal. So I can I can just type any line of code in here. So for
+type any line of code in here. So for
+type any line of code in here. So for example,
+example,
+example, um
+um
+um if I go ID card
+if I go ID card
+if I go ID card equals um I'm just going to put yes for
+equals um I'm just going to put yes for
+equals um I'm just going to put yes for now, that will create a variable called
+now, that will create a variable called
+now, that will create a variable called ID card. It will store a string yes in
+ID card. It will store a string yes in
+ID card. It will store a string yes in it. Okay. Now I want to convert that
+it. Okay. Now I want to convert that
+it. Okay. Now I want to convert that into boolean. So I don't want it to say
+into boolean. So I don't want it to say
+into boolean. So I don't want it to say yes. I want it to be true or false. So I
+yes. I want it to be true or false. So I
+yes. I want it to be true or false. So I think I remember if I do this I'm going
+think I remember if I do this I'm going
+think I remember if I do this I'm going to reuse my variable ID card and I'm
+to reuse my variable ID card and I'm
+to reuse my variable ID card and I'm going to assign to that the following
+going to assign to that the following
+going to assign to that the following statements. Okay. And that is going to
+statements. Okay. And that is going to
+statements. Okay. And that is going to be ID card
+be ID card
+be ID card is equal to yes.
+is equal to yes.
+is equal to yes. Okay. And I'll hit enter. Oh, that
+Okay. And I'll hit enter. Oh, that
+Okay. And I'll hit enter. Oh, that worked. Let me just output ID card now.
+worked. Let me just output ID card now.
+worked. Let me just output ID card now. See what happens. Oh, now I've got true.
+See what happens. Oh, now I've got true.
+See what happens. Oh, now I've got true. So now I've converted that yes into a
+So now I've converted that yes into a
+So now I've converted that yes into a true. So this is how I'm going to do it.
+true. So this is how I'm going to do it.
+true. So this is how I'm going to do it. Now let's explain what's gone on here. I
+Now let's explain what's gone on here. I
+Now let's explain what's gone on here. I have taken my existing
+have taken my existing
+have taken my existing variable which at that point was the
+variable which at that point was the
+variable which at that point was the word yes stored as a string and I've
+word yes stored as a string and I've
+word yes stored as a string and I've compared it to an identical string. Yes.
+compared it to an identical string. Yes.
+compared it to an identical string. Yes. Now in that case if something is equal
+Now in that case if something is equal
+Now in that case if something is equal to something
+to something
+to something then that is true. So then it is
+then that is true. So then it is
+then that is true. So then it is returned a true
+returned a true
+returned a true value to my ID card. It's overwritten
+value to my ID card. It's overwritten
+value to my ID card. It's overwritten that yes that was stored in that
+that yes that was stored in that
+that yes that was stored in that variable originally. So that's what I'm
+variable originally. So that's what I'm
+variable originally. So that's what I'm going to do here. So I'm going to put in
+going to do here. So I'm going to put in
+going to do here. So I'm going to put in a little note convert input into
+a little note convert input into
+a little note convert input into boolean. Okay. So I'm going to use the
+boolean. Okay. So I'm going to use the
+boolean. Okay. So I'm going to use the ID card and I'm going to do exactly what
+ID card and I'm going to do exactly what
+ID card and I'm going to do exactly what I did below. ID card equals
+I did below. ID card equals
+I did below. ID card equals or double equals
+or double equals
+or double equals yes
+yes
+yes and lab coat
+and lab coat
+and lab coat equals ID card equals
+equals ID card equals
+equals ID card equals no. Oops, sorry. Yes, it's always yes.
+no. Oops, sorry. Yes, it's always yes.
+no. Oops, sorry. Yes, it's always yes. Now, let me let me show you what would
+Now, let me let me show you what would
+Now, let me let me show you what would have happened if I'd run um
+have happened if I'd run um
+have happened if I'd run um let's do this again, right? ID card
+let's do this again, right? ID card
+let's do this again, right? ID card equals yes. So I'm going to give an
+equals yes. So I'm going to give an
+equals yes. So I'm going to give an input of yes. If I
+input of yes. If I
+input of yes. If I let's actually sorry let's do ID card
+let's actually sorry let's do ID card
+let's actually sorry let's do ID card equal no this time.
+equal no this time.
+equal no this time. Okay. If I had done a no
+then what will happen? Oops.
+Is this time I'll get a false. So if I
+Is this time I'll get a false. So if I
+Is this time I'll get a false. So if I make a comparison between
+make a comparison between
+make a comparison between the input string and the yes, if it is
+the input string and the yes, if it is
+the input string and the yes, if it is not yes, it's no in this case, then it
+not yes, it's no in this case, then it
+not yes, it's no in this case, then it will return false. So anytime the user
+will return false. So anytime the user
+will return false. So anytime the user inputs a no instead of a yes, I will
+inputs a no instead of a yes, I will
+inputs a no instead of a yes, I will store a variable false to those original
+store a variable false to those original
+store a variable false to those original variables. Okay, now I've just got to do
+variables. Okay, now I've just got to do
+variables. Okay, now I've just got to do some logic to make sure that the user
+some logic to make sure that the user
+some logic to make sure that the user has both things. So that's pretty
+has both things. So that's pretty
+has both things. So that's pretty straightforward actually. if ID card
+straightforward actually. if ID card
+straightforward actually. if ID card um and so I've used an and statement
+um and so I've used an and statement
+um and so I've used an and statement there and lab coat.
+there and lab coat.
+there and lab coat. So if they have both of those things if
+So if they have both of those things if
+So if they have both of those things if both of those things are true
+both of those things are true
+both of those things are true then print
+then print
+then print access granted.
+access granted.
+access granted. Oops that'll do.
+Oops that'll do.
+Oops that'll do. Otherwise, else print access denies.
+Okay, I'm just going to exit my
+Okay, I'm just going to exit my
+Okay, I'm just going to exit my terminal, my Python terminal, sorry, and
+terminal, my Python terminal, sorry, and
+terminal, my Python terminal, sorry, and come back to my command line. And this
+come back to my command line. And this
+come back to my command line. And this time when I run this,
+time when I run this,
+time when I run this, okay, do I have an ID card? Yes. Do I
+okay, do I have an ID card? Yes. Do I
+okay, do I have an ID card? Yes. Do I have a lab code? Yes. Access denied. Hm,
+have a lab code? Yes. Access denied. Hm,
+have a lab code? Yes. Access denied. Hm, interesting. So, something has happened
+interesting. So, something has happened
+interesting. So, something has happened there. Aha, I can see what's happened.
+there. Aha, I can see what's happened.
+there. Aha, I can see what's happened. I've accidentally used the ID card
+I've accidentally used the ID card
+I've accidentally used the ID card again.
+again.
+again. And the reason why this has returned a
+And the reason why this has returned a
+And the reason why this has returned a false to lab coat is because I've
+false to lab coat is because I've
+false to lab coat is because I've already written overritten the ID card
+already written overritten the ID card
+already written overritten the ID card with a true and true the boolean is not
+with a true and true the boolean is not
+with a true and true the boolean is not equal to yes the string. So I've got to
+equal to yes the string. So I've got to
+equal to yes the string. So I've got to make sure I'm consistent with my
+make sure I'm consistent with my
+make sure I'm consistent with my variables lab coat. Oops.
+variables lab coat. Oops.
+variables lab coat. Oops. This time when I run it,
+This time when I run it,
+This time when I run it, yes. Yes, access is granted. Uh, let's
+yes. Yes, access is granted. Uh, let's
+yes. Yes, access is granted. Uh, let's try yes and no.
+try yes and no.
+try yes and no. Access denied. And let's also try no and
+Access denied. And let's also try no and
+Access denied. And let's also try no and yes. Now, I put a sneaky space at the
+yes. Now, I put a sneaky space at the
+yes. Now, I put a sneaky space at the end of no there.
+end of no there.
+end of no there. Well, that's okay. It shouldn't matter.
+Well, that's okay. It shouldn't matter.
+Well, that's okay. It shouldn't matter. I could have done something like yes
+I could have done something like yes
+I could have done something like yes space and then yes space and access is
+space and then yes space and access is
+space and then yes space and access is denied. And that's because there's
+denied. And that's because there's
+denied. And that's because there's actually a hidden space at the end of my
+actually a hidden space at the end of my
+actually a hidden space at the end of my inputs here. So, if you want to tidy up
+inputs here. So, if you want to tidy up
+inputs here. So, if you want to tidy up your inputs so that it is definitely a
+your inputs so that it is definitely a
+your inputs so that it is definitely a yes or no in here, there's a couple of
+yes or no in here, there's a couple of
+yes or no in here, there's a couple of things you can do to your input. I can
+things you can do to your input. I can
+things you can do to your input. I can do uh strip and that'll take all of the
+do uh strip and that'll take all of the
+do uh strip and that'll take all of the white space either size side of that.
+white space either size side of that.
+white space either size side of that. Also, you might put capitals in there or
+Also, you might put capitals in there or
+Also, you might put capitals in there or the user might put capitals. So, I'm
+the user might put capitals. So, I'm
+the user might put capitals. So, I'm going to make that lower as well. So,
+going to make that lower as well. So,
+going to make that lower as well. So, I'm just going to daisy chain those
+I'm just going to daisy chain those
+I'm just going to daisy chain those methods together. Dot strip
+methods together. Dot strip
+methods together. Dot strip lower. Okay. So, get used to doing
+lower. Okay. So, get used to doing
+lower. Okay. So, get used to doing things like this for your error
+things like this for your error
+things like this for your error trapping. It's not it's not foolproof.
+trapping. It's not it's not foolproof.
+trapping. It's not it's not foolproof. If you could still type any other word
+If you could still type any other word
+If you could still type any other word in there then it would it would fail. Um
+in there then it would it would fail. Um
+in there then it would it would fail. Um but if I now type yes space yes yes
+but if I now type yes space yes yes
+but if I now type yes space yes yes space access is still granted. Okay.
+space access is still granted. Okay.
+space access is still granted. Okay. Run.

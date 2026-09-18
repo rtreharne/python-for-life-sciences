@@ -1,0 +1,26 @@
+version: 1
+project:
+  id: life733-python-book
+  title: Python for Life Sciences
+  description: A practical introduction to Python through biological data
+  authors:
+    - Robert Treharne
+  github: rtreharne/python-for-life-sciences
+  toc:
+    - file: index.md
+    - title: Week-by-week chapters
+      children:
+        - file: chapters/week-1.md
+        - file: chapters/week-2.md
+        - file: chapters/week-3.md
+        - file: chapters/week-4.md
+        - file: chapters/week-5.md
+    - title: Extended practice projects
+      children:
+        - file: projects.md
+    - file: solutions.md
+site:
+  template: book-theme
+  options:
+    logo_text: Python for Life Sciences
+    folders: true
