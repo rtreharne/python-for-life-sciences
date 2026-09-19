@@ -121,22 +121,142 @@ Lowercase input works because the working copy is uppercased before replacement.
 
 ## Week 2
 
-```{code-cell} python
-mark = 65
-if not 0 <= mark <= 100:
-    grade = "Invalid mark"
-elif mark >= 70:
-    grade = "Distinction"
-elif mark >= 60:
-    grade = "Merit"
-elif mark >= 50:
-    grade = "Pass"
-else:
-    grade = "Fail"
-print(grade)
+These answers match the eight questions in [Week 2](chapters/week-2.md). Try each question first, then compare how your script collects input, calculates values, and chooses its output. Save the interactive examples in your own `week-2` folder and run them in the VS Code terminal.
+
+### Question 1 — Simple Calculator
+
+```python
+first = float(input("Enter first number: "))    # Convert the first response.
+second = float(input("Enter second number: "))  # Convert the second response.
+print("Sum:", first + second)
+print("Difference:", first - second)  # Keep the order in which numbers were entered.
+print("Product:", first * second)
+print("Quotient:", first / second)   # Initially assume second is nonzero.
 ```
 
-Convert an input string before comparing it with numeric values. For lab access, normalize yes/no responses with `.strip().lower()` and require both conditions with `and`.
+The inner `input` call returns text, and the outer `float` call converts it before assignment. Inputs `10` and `4` give `14.0`, `6.0`, `40.0`, and `2.5`. Inputs `7.5` and `2.5` give `10.0`, `5.0`, `18.75`, and `3.0`.
+
+After learning conditionals, replace the final line with this check. It belongs after the other calculations in the same script:
+
+```python
+if second == 0:                     # Compare the divisor with zero first.
+    print("Cannot divide by zero.")
+else:
+    print("Quotient:", first / second)  # Only divide when second is nonzero.
+```
+
+The colon and indentation mark each branch. For inputs `10` and `0`, the sum, difference, and product still print, followed by the message instead of a division error.
+
+### Question 2 — Temperature Converter
+
+```python
+celsius = float(input("Enter temperature in Celsius: "))  # Allow decimals.
+fahrenheit = celsius * 9 / 5 + 32                          # Apply the formula.
+print(f"Fahrenheit: {fahrenheit:.1f}")                     # Show one decimal place.
+```
+
+Multiplication and division happen before adding 32. Inside the f-string, `.1f` formats the result with one decimal place. Inputs `20`, `0`, and `-40` give `68.0`, `32.0`, and `-40.0` respectively.
+
+### Question 3 — Even or Odd?
+
+```python
+number = int(input("Enter a number: "))  # Request a whole number.
+if number % 2 == 0:                      # Zero remainder means even.
+    print(f"{number} is even")
+else:
+    print(f"{number} is odd")
+```
+
+`%` finds the remainder; `== 0` turns that result into a Boolean comparison. The `if` and `else` branches cover the two possibilities. Inputs `8` and `0` are even; `7` is odd.
+
+### Question 4 — Grade Classifier
+
+```python
+mark = float(input("Enter mark: "))  # Allow decimal marks.
+if mark < 0:                         # Reject values below the allowed range.
+    print("Invalid mark")
+elif mark > 100:                     # Reject values above the allowed range.
+    print("Invalid mark")
+elif mark >= 70:                     # Check the highest valid band first.
+    print("Grade: Distinction")
+elif mark >= 60:
+    print("Grade: Merit")
+elif mark >= 50:
+    print("Grade: Pass")
+else:                               # Valid marks below 50 reach this branch.
+    print("Grade: Fail")
+```
+
+Only the first matching branch runs. That makes `69.9` a Merit and `70` a Distinction. Check `0`, `49.9`, `50`, `59.9`, `60`, `69.9`, `70`, and `100`, plus invalid values `-1` and `101`. Once you have learned `or`, the first two branches can be combined into one condition, `mark < 0 or mark > 100`.
+
+### Question 5 — Boolean Logic
+
+```python
+id_answer = input("Has ID card? ").strip().lower()    # Normalise the first response.
+coat_answer = input("Has lab coat? ").strip().lower()  # Normalise the second.
+has_id = id_answer == "yes"           # Store Boolean comparison results.
+has_coat = coat_answer == "yes"
+if has_id and has_coat:               # Both confirmations are required.
+    print("Access granted.")
+else:
+    print("Access denied.")
+```
+
+The methods run on the string returned by `input`. `and` requires both comparisons to be true. Only yes/yes grants access; yes/no, no/yes, and no/no deny it. Input such as ` YES ` also counts as yes. Any other response counts as no under this exercise's rule.
+
+### Question 6 — Faulty Conditional
+
+```python
+num = float(input("Enter a number: "))  # Convert text before comparing it.
+if num > 0:
+    print("Positive")
+elif num == 0:                          # Use comparison, not assignment.
+    print("Zero")
+else:                                  # End the header with a colon.
+    print("Negative")
+```
+
+The original script needed three repairs: numeric conversion, `==` in the equality test, and a colon after `else`. Test `7`, `0`, `-3`, and a decimal such as `-0.5`. Python checks syntax first, so the type problem becomes visible only after the syntax errors are fixed.
+
+### Question 7 — Leap Year Checker
+
+```python
+year = int(input("Enter a year: "))  # Assume a positive Gregorian year.
+divisible_by_4 = year % 4 == 0       # Calculate each part of the rule.
+divisible_by_100 = year % 100 == 0
+divisible_by_400 = year % 400 == 0
+is_leap_year = (divisible_by_4 and not divisible_by_100) or divisible_by_400
+if is_leap_year:                      # Use the combined Boolean directly.
+    print("Leap year!")
+else:
+    print("Not a leap year.")
+```
+
+The parenthesised rule accepts multiples of four that are not centuries. The `or` also accepts multiples of 400. Thus `1900` and `2023` are not leap years; `2000` and `2020` are leap years.
+
+### Question 8 — Lab Equipment Monitor
+
+```python
+temperature = float(input("Enter temperature: "))  # Read both measurements.
+ph = float(input("Enter pH: "))
+temperature_ok = temperature >= 36 and temperature <= 38  # Include both limits.
+ph_ok = ph >= 6.8 and ph <= 7.2                            # Include both limits.
+if temperature_ok and ph_ok:               # Both ranges must be satisfied.
+    print("Incubator status: SAFE")
+else:
+    print("Incubator status: UNSAFE")
+
+# Extension: independent checks can print both warnings.
+if not temperature_ok:
+    print("Warning: temperature is outside 36–38 °C.")
+if not ph_ok:
+    print("Warning: pH is outside 6.8–7.2.")
+```
+
+`>=` and `<=` include the endpoints. Each named Boolean records one range check. The first decision produces one status, and the two independent warning checks may produce zero, one, or two messages. For `39` and `7.4`, the status is `UNSAFE` and both warnings appear. Using `elif` for the second warning would hide it whenever the temperature warning had already matched.
+
+For `37` and `7.0`, the status is `SAFE` with no warnings. Test all endpoint pairs `(36, 6.8)`, `(36, 7.2)`, `(38, 6.8)`, and `(38, 7.2)`; each is safe under the exercise's rules. Then change one value at a time to just outside its range.
+
 
 ## Week 3
 
