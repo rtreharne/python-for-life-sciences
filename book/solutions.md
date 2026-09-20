@@ -397,17 +397,9 @@ while True:                         # Keep asking until the correct guess breaks
 
 The target is set outside the loop and stays fixed. `while True` repeats until `break` is reached; the input call collects a fresh guess on each pass. During testing, replace the target line with `target = 7`: guesses `3`, `9`, and `7` should give low, high, correct and then stop. A correct first guess must also stop immediately. Restore the random target when you finish testing.
 
-### Question 9 — Mystery Script: The Prize Message
+### Question 9 — Another DNA Mystery Message
 
-The program visits starting positions `0`, `3`, `6`, and so on. Each three-character slice adds a dot for `ATG`, a dash for `TAA`, or a space for `TGA`. The original sequence has 831 characters and therefore 277 groups. It contains only those three recognised groups, so the output has 277 characters too.
-
-Read the output as Morse code: one space separates letters and three spaces separate words. The first `..` is I, then `-- --- ...- .` spells MOVE. Continuing with the chapter's key gives:
-
-> I MOVE WITHOUT MOTION I SPEAK WITHOUT VOICE I GROW WHEN YOU ERR I DIE WHEN YOU REJOICE
-
-The decoded wording is the checkable result. The riddle invites interpretation; for example, worry or self-doubt could grow after mistakes and lessen with joy. The course export does not supply an official riddle answer, so justify your suggestion against the lines rather than treating one interpretation as the only correct answer.
-
-The variable name `codon` does not make this biological translation: the mapping in the program defines a custom code. If you change a group to an unrecognised value, the final `else` appends an empty string and that group disappears from the output. That is a reason to check assumptions about the input when adapting the script.
+This is one of the few times I really want you to work out the answer on your own, so there is no solution here. Take your time and enjoy investigating the puzzle. If you think you've cracked it, speak to me during a workshop!
 
 ### Question 10 — Debugging Challenge
 
@@ -634,42 +626,306 @@ print("Errors found:", count)
 
 For the downloadable course log, `errors.txt` contains six matching lines and the returned count is six. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way; no additional line breaks are introduced. Always pass different input and output paths.
 
-### Question 10 — Mystery Script Revisited
-
-The original function counts whitespace-separated words, preserving their case and punctuation. For the sample file it returns `{'red': 2, 'blue': 2, 'Red': 1}`. Its `.strip()` removes whitespace at the ends of each line, and `.split()` separates the remaining text into words. It does not call `.lower()`, so `Red` and `red` are distinct keys.
-
-Here is the same approach with descriptive names and a docstring:
-
-```python
-def count_exact_words(filename):
-    """Return case-sensitive word counts, splitting on whitespace."""
-    with open(filename, "r", encoding="utf-8") as handle:
-        lines = handle.readlines()           # Keep the original list-of-lines approach.
-    counts = {}
-    for line in lines:
-        for word in line.strip().split():
-            counts[word] = counts.get(word, 0) + 1
-    return counts                            # Finish counting before returning.
-
-print(count_exact_words("mystery.txt"))
-```
-
-`readlines()` loads all lines into a list, allowing the file to close before the loops run. Question 7 instead loops directly over the open file. Both approaches work for these small inputs; the direct file loop avoids keeping every line in memory. The return belongs outside both loops so all lines are counted. Empty input returns an empty dictionary.
-
-
 ## Week 5
 
-```{code-cell} python
-import re
+Work through each question before consulting its answer. Keep reusable functions in `sequtils.py` and run them from the named answer scripts in your `week-5` folder. The file examples use the data created in Question 6.
 
-is_dna = re.compile(r"[ACGT]+").fullmatch
-for sequence in ["ATCGTT", "AXTG", ""]:
-    print(sequence, bool(is_dna(sequence)))
+### Question 1 — Dictionary basics
+
+```{code-cell} python
+codons = {"ATG": "M", "GCT": "A", "TAA": "*"}  # Three initial pairs.
+print(codons["ATG"])                          # Look up a known key.
+codons["TTT"] = "F"                           # Add a fourth pair.
+for codon, amino_acid in codons.items():       # Unpack each key/value pair.
+    print(codon, amino_acid)
+print(codons.get("CCC", "Unknown"))           # Return a fallback without inserting it.
+print(len(codons))                            # There are still four entries.
 ```
 
-`fullmatch` is appropriate for validation because it checks the complete string. A substring search could return a match even if invalid characters appeared elsewhere.
+The lookup gives `M`; the final two lines are `Unknown` and `4`. Using square brackets for the missing `CCC` key would raise `KeyError`.
+
+### Question 2 — Validate a DNA sequence
+
+```{code-cell} python
+import re                                   # Use Python's regular-expression module.
+
+def is_dna(sequence):
+    """Accept nonempty DNA containing only A, C, G, and T, ignoring case."""
+    return bool(re.fullmatch(r"[ACGT]+", sequence.upper()))
+
+for sequence in ["ATCGTT", "AXTG", "atgc", "", "NNN"]:
+    print(repr(sequence), is_dna(sequence))   # repr makes the empty string visible.
+```
+
+The results are `True`, `False`, `True`, `False`, and `False`. `repr()` displays a string with quotation marks so an empty input is easy to see. The function returns a Boolean; the calling loop decides how to display it.
+
+### Question 3 — Explore `math`
+
+```{code-cell} python
+import math                                  # All three names belong to this module.
+print("Square root:", math.sqrt(144))          # A function call.
+print("Pi:", math.pi)                         # A constant, with no call parentheses.
+print("Factorial:", math.factorial(10))       # Multiply integers from 1 through 10.
+```
+
+Expect `12.0`, approximately `3.14159`, and `3628800`. A useful readability change adds clear labels without changing the calculations.
+
+### Question 4 — Build `sequtils.py`
+
+Save these definitions in `sequtils.py`:
+
+```python
+# sequtils.py: these functions assume an A/C/G/T alphabet.
+def transcribe(sequence):
+    """Return uppercase RNA."""
+    return sequence.upper().replace("T", "U")  # Return a new string.
+
+
+def rev_comp(sequence):
+    """Return the uppercase reverse complement."""
+    complements = {"A": "T", "T": "A", "C": "G", "G": "C"}
+    result = ""
+    for base in sequence.upper():             # Complement each base in order.
+        result += complements[base]
+    return result[::-1]                       # Reverse the complete complement.
+```
+
+In `main.py`:
+
+```python
+import sequtils                              # Load the module beside this script.
+print(sequtils.transcribe("atgc"))            # AUGC
+print(sequtils.rev_comp("atgc"))              # GCAT
+print(sequtils.rev_comp("A"))                 # T
+print(repr(sequtils.rev_comp("")))            # An empty string, shown with quotes.
+```
+
+For an empty string, the loop runs zero times and the result stays empty. An unexpected base causes `KeyError` in this version; validate inputs before calling it in an analysis.
+
+### Question 5 — Explain a regex
+
+`[ACGT]` matches one listed base and `{3}` requires three such characters. With `fullmatch`, `ATG` passes while `ATGC`, `AXG`, and the empty string fail. With `findall`, `ATGC` contains one matching substring, `ATG`. The pattern describes the match; the operation determines whether other text may surround it.
+
+### Question 6 — Create and inspect your example files
+
+Run `make_examples.py` from the chapter, then inspect both saved files. There are three FASTA records: `gene_A` has 12 bases, `gene_B` has 9, and `gene_bad` has 6. `gene_bad` contains `N`, which the exercise's validator rejects.
+
+The GFF extract has five feature rows: one exon and four CDS rows. Its `seqid` values match FASTA keys. CDS rows are not all in coordinate order, so later assembly must sort them.
+
+### Question 7 — Write a FASTA reader
+
+Add this definition to `sequtils.py`:
+
+```python
+def read_fasta(filename):
+    """Read wrapped records; reject missing, empty, or duplicate headers and empty records."""
+    records = {}
+    header = None                            # No record has begun yet.
+    sequence = ""
+    with open(filename, "r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()              # Remove surrounding whitespace.
+            if not line:
+                continue                     # Blank lines do not end a record.
+            if line.startswith(">"):
+                if header is not None:
+                    if not sequence:
+                        raise ValueError("Empty sequence for " + header)
+                    records[header] = sequence  # Save before beginning the next record.
+                header = line[1:].strip()
+                if not header or header in records:
+                    raise ValueError("Empty or repeated FASTA header: " + header)
+                sequence = ""                # Start collecting the new record.
+            else:
+                if header is None:
+                    raise ValueError("Sequence before the first FASTA header")
+                sequence += line.upper()     # Preserve bases for separate validation.
+    if header is not None:
+        if not sequence:
+            raise ValueError("Empty sequence for " + header)
+        records[header] = sequence           # Save the final record as well.
+    return records
+```
+
+In `q7.py`:
+
+```python
+import sequtils
+records = sequtils.read_fasta("examples.fasta")  # Return a dictionary, not printed text.
+print("Records:", len(records))
+for name, sequence in records.items():
+    print(f"{name}: {len(sequence)}")           # Report every record, including invalid DNA.
+```
+
+Expect three records with lengths `12`, `9`, and `6`. The reader accepts sequence letters without interpreting them; validation is a separate task. An empty file returns `{}`. Repeated headers are rejected, including adjacent duplicates, because the previous record is saved before checking the next header. A header followed by no sequence raises `ValueError`.
+
+### Question 8 — Inspect GFF features (optional)
+
+To reuse the parser in Question 9, add this function to `sequtils.py`. It handles the chapter's small feature extract, with simple attributes and one parent per CDS.
+
+```python
+def read_features(filename):
+    """Return CDS and exon rows from the teaching dataset as dictionaries."""
+    features = []
+    with open(filename, "r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue                       # Skip blanks and format/comment lines.
+            fields = line.split("\t")
+            if len(fields) != 9:
+                raise ValueError("Expected nine GFF columns")
+            if fields[2] not in ("CDS", "exon"):
+                continue                       # Ignore feature types outside this task.
+            attributes = {}
+            for item in fields[8].split(";"):
+                key, value = item.split("=", 1) # Split only at the first equals sign.
+                attributes[key] = value
+            features.append({
+                "seqid": fields[0], "type": fields[2],
+                "start": int(fields[3]), "end": int(fields[4]),
+                "strand": fields[6], "phase": fields[7],
+                "attributes": attributes,
+            })                                 # Keep related fields together.
+    return features
+```
+
+`features` is a list; each of its items is a dictionary describing one row. In `q8.py`:
+
+```python
+import sequtils
+for feature in sequtils.read_features("examples.gff"):
+    print(feature["type"], feature["start"], feature["end"],
+          feature["strand"], feature["attributes"]["ID"])  # Look inside the attributes dict.
+```
+
+Expect `exon 1 12 + exon_A`, followed by CDS rows `7 12 + cds_A2`, `1 6 + cds_A1`, `1 3 - cds_B1`, and `7 9 - cds_B2`. Feature types precede those coordinates in the output. No sorting is needed just to inspect the rows.
+
+### Question 9 — Build coding sequences (optional)
+
+In `q9.py`:
+
+```python
+import sequtils
+
+def build_coding_sequences(fasta_file, gff_file):
+    """Join non-overlapping, phase-zero CDS fragments from the teaching dataset."""
+    records = sequtils.read_fasta(fasta_file)
+    groups = {}
+    for feature in sequtils.read_features(gff_file):
+        if feature["type"] != "CDS":
+            continue                          # Do not duplicate DNA by including exon rows.
+        parent = feature["attributes"]["Parent"]
+        seqid, strand = feature["seqid"], feature["strand"]
+        if feature["phase"] != "0" or strand not in ("+", "-"):
+            raise ValueError("This exercise requires phase zero and a known strand")
+        sequence = records[seqid]             # Require a matching FASTA identifier.
+        start, end = feature["start"], feature["end"]
+        if not 1 <= start <= end <= len(sequence):
+            raise ValueError("Coordinates outside the sequence")
+        if (end - start + 1) % 3 != 0:
+            raise ValueError("This exercise requires complete codons in each fragment")
+        if parent not in groups:
+            groups[parent] = {"seqid": seqid, "strand": strand, "pieces": []}
+        group = groups[parent]
+        if group["seqid"] != seqid or group["strand"] != strand:
+            raise ValueError("Inconsistent sequence or strand for " + parent)
+        group["pieces"].append((start, end, sequence[start - 1:end]))
+
+    coding = {}
+    for parent, group in groups.items():
+        joined = ""
+        previous_end = 0
+        for start, end, fragment in sorted(group["pieces"]):  # Sort by coordinate first.
+            if start <= previous_end:
+                raise ValueError("Overlapping fragments for " + parent)
+            joined += fragment
+            previous_end = end
+        if group["strand"] == "-":
+            joined = sequtils.rev_comp(joined)  # Reverse both bases and fragment order.
+        coding[parent] = joined
+    return coding
+
+for parent, sequence in build_coding_sequences("examples.fasta", "examples.gff").items():
+    print(parent, sequence[:100])              # Short examples display in full.
+```
+
+Expect `tx_A ATGAACTCTTAA` and `tx_B ATGTAA`. For `gene_B`, the selected genomic fragments join as `TTA` + `CAT`, giving `TTACAT`; its reverse complement is `ATGTAA`. Sorting makes the result independent of input row order. These are coding sequences assembled under the chapter's simplified assumptions, not a general GFF-to-transcript converter.
+
+### Question 10 — Translate and search for a motif
+
+Add the chapter's `CODONS` dictionary and this function to `sequtils.py`. Put `import re` at the top of that file:
+
+```python
+import re                                    # Used for whole-sequence validation.
+CODONS = {"ATG": "M", "AAC": "N", "TCT": "S", "TAA": "*"}  # Teaching subset.
+
+def translate_dna(sequence):
+    """Translate complete triplets from base one, stopping before the first stop."""
+    sequence = sequence.upper()
+    if not re.fullmatch(r"[ACGT]+", sequence):
+        raise ValueError("Expected nonempty A/C/G/T DNA")
+    if len(sequence) % 3 != 0:
+        raise ValueError("Sequence length must be divisible by three")
+    protein = ""
+    for start in range(0, len(sequence), 3):
+        codon = sequence[start:start + 3]     # Extract one complete triplet.
+        if codon not in CODONS:
+            raise ValueError("Codon absent from the teaching table: " + codon)
+        amino_acid = CODONS[codon]
+        if amino_acid == "*":
+            break                            # Do not include the stop marker in the protein.
+        protein += amino_acid
+    return protein
+```
+
+The full sequence is checked for alphabet and length before translation. Dictionary lookups stop at the first stop codon; later triplets are not translated. Missing mappings in this small table are errors, not evidence that the codon is biologically invalid.
+
+In `q10.py`:
+
+```python
+import re
+import sequtils
+records = sequtils.read_fasta("examples.fasta")
+protein = sequtils.translate_dna(records["gene_A"])  # Use the named coding sequence.
+header = "gene_A_protein"
+with open("protein_1.fasta", "w", encoding="utf-8") as handle:
+    handle.write(f">{header}\n{protein}\n")          # One complete FASTA record.
+
+pattern = r"N[ST]"                                  # N followed by S or T.
+print("Protein:", protein)
+print("Matches:", re.findall(pattern, protein))      # List non-overlapping matches.
+with open("motif_hits.fasta", "w", encoding="utf-8") as handle:
+    if re.search(pattern, protein):                 # Save a record only if a hit exists.
+        handle.write(f">{header}\n{protein}\n")
+```
+
+Expect `MNS` and `['NS']`; both files contain the same protein record. With protein `M`, the hit list is empty and `motif_hits.fasta` is empty. Opening it before the condition ensures an earlier hit is not left behind. `ATGTAA` translates to `M`; lowercase gives the same result. Empty DNA, invalid bases, an incomplete final triplet, and an unmapped codon such as `CCC` each raise an informative error.
+
+### Extra practice — A sequence summary
+
+Use your Question 2 `is_dna` function in `sequtils.py`, then run this from a separate script:
+
+```python
+import sequtils
+records = sequtils.read_fasta("examples.fasta")
+with open("summary.tsv", "w", encoding="utf-8") as handle:
+    handle.write("identifier\tlength\tgc_percent\n")   # A tab-separated header.
+    for name, sequence in records.items():
+        if not sequtils.is_dna(sequence):
+            print("Invalid DNA:", name)              # Name records that cannot be analysed.
+            continue
+        sequence = sequence.upper()
+        gc = 100 * (sequence.count("G") + sequence.count("C")) / len(sequence)
+        handle.write(f"{name}\t{len(sequence)}\t{gc:.2f}\n")
+```
+
+The rows are `gene_A`, `12`, `25.00` and `gene_B`, `9`, `33.33`, separated by tabs. The terminal reports `Invalid DNA: gene_bad`. Validation rejects empty strings before the calculation, preventing division by zero.
+
 
 ## Project solutions
+
+These worked examples use the shared practice data for the required Portfolio Projects. Use them to check your approach, then adapt your solution to read and analyse your individual dataset. The small translation table below is only for demonstrating the practice case; load the supplied codon table for your individual run.
 
 ### Project 1A: transform DNA
 
@@ -832,7 +1088,9 @@ import re
 
 motif = re.compile(r"N[^P][ST]")
 protein = "MNNSTAPNPS"
-matches = motif.findall(protein)
+matches = []
+for segment in protein.split("*"):  # Never match a motif across a stop symbol.
+    matches.extend(motif.findall(segment))
 print(matches, len(matches))
 ```
 

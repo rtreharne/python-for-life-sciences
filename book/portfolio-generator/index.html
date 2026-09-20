@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIFE733 portfolio dataset generator</title>
+<style>
+:root {color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.5}
+body {margin:0;padding:1rem;max-width:45rem} form {display:flex;flex-wrap:wrap;gap:.65rem;align-items:end}
+label {display:block;font-weight:600} input,button {font:inherit;padding:.6rem;border:1px solid #777;border-radius:.3rem}
+button {background:#185b93;color:white;cursor:pointer} input {max-width:14rem} a {color:light-dark(#155890,#8bcaff)}
+a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #dd9200;outline-offset:3px}
+p {margin:.65rem 0} #error {color:light-dark(#a11919,#ffaaaa)} ul {padding-left:1.3rem} li {margin:.4rem 0;overflow-wrap:anywhere}
+</style>
+<script src="generator.js" defer></script>
+<script src="interface.js" defer></script>
+</head>
+<body>
+<h2 id="title">Generate your portfolio dataset</h2>
+<p>Enter your nine-digit student ID. The same ID always gives the same files for this dataset version.</p>
+<form id="generator" novalidate>
+<div><label for="student-id">Student ID</label><input id="student-id" name="student-id" type="text" inputmode="numeric" pattern="[1-9][0-9]{8}" maxlength="9" autocomplete="off" aria-describedby="privacy error" required></div>
+<button type="submit">Generate dataset</button>
+</form>
+<p id="privacy">Your ID stays in this page: it is not sent to a server or saved in browser storage. Downloaded filenames include your ID.</p>
+<p id="error" role="alert"></p>
+<section id="results" aria-live="polite"></section>
+<noscript>Enable JavaScript in your browser to generate your files. The shared practice downloads remain available in the book.</noscript>
+</body>
+</html>

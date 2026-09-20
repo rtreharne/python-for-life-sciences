@@ -23,16 +23,15 @@ LIFE733/
 ├── week-3/
 └── week-4/             ← Open this folder in VS Code
     ├── practice.py    ← Try worked examples here
-    ├── q1.py … q10.py ← Save your answers separately as needed
+    ├── q1.py … q9.py ← Save your answers separately as needed
     ├── quotes.txt     ← Downloadable input for Question 4
     ├── dna.txt        ← Downloadable input for Question 6
     ├── perfect_sunday.txt ← Downloadable input for Question 7
     ├── grades.txt     ← Input for Question 8
-    ├── system.log     ← Input for Question 9
-    └── mystery.txt    ← Input for Question 10
+    └── system.log     ← Input for Question 9
 ```
 
-This is a folder diagram. Create each named file in Explorer; do not create a file literally named `q1.py … q10.py`. Question 5 is an explanation activity and does not require another script.
+This is a folder diagram. Create each named file in Explorer; do not create a file literally named `q1.py … q9.py`. Question 5 is an explanation activity and does not require another script.
 
 Run your scripts using the approach from earlier weeks. Relative filenames such as `"dna.txt"` refer to the terminal's current directory, which should be `week-4`. Opening a script in the editor does not necessarily change that directory. Check with `pwd` and `ls` if Python cannot find a file.
 
@@ -136,7 +135,7 @@ The local assignment to `sequence` does not change a string variable in the call
 
 ### Question 2 — GC Content
 
-Create `q2.py`. Define `gc_content(seq)` to return a percentage, using the formula above. Give it one parameter, `seq`. The original worksheet's heading mentions multiple arguments, but this particular function needs only one.
+Create `q2.py`. Define `gc_content(seq)` to return a percentage, using the formula above. Give it one parameter, `seq`, for the DNA sequence.
 
 Normalise case and reject empty or invalid DNA. You can place these checks inside `gc_content`, or copy `normalise_dna` above it in the same file and call that helper. To count bases, use a loop or the string method `seq.count("G")`, which returns the number of occurrences of `G`. Add the G and C counts before dividing.
 
@@ -265,7 +264,7 @@ GC content: 50.00%
 
 Test lowercase DNA, blank lines between sequence lines, an empty file, and an unexpected character such as `N`. The first two should work; the latter two should raise the validation errors from your GC function. A FASTA header beginning with `>` is also invalid for this plain-sequence format. You will handle FASTA explicitly in Week 5.
 
-This function writes a report rather than returning a value. Call it with `"dna.txt"` and inspect the output file. The walkthrough follows the original exercise; use the checks above to strengthen your version.
+This function writes a report rather than returning a value. Call it with `"dna.txt"` and inspect the output file. After watching the walkthrough, use the checks above to test your version.
 
 <iframe title="Question 6 walkthrough: DNA file analyser" width="560" height="315" src="https://www.youtube-nocookie.com/embed/-Aty0lYQltM" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -323,7 +322,7 @@ for word in ordered_words[:10]:             # At most ten keys.
 
 `sorted` returns a new list. Here it takes dictionary keys and uses `counts.get` to look up the value used for ordering. There are no parentheses after `counts.get` because you pass the method for `sorted` to call. `reverse=True` puts larger counts first. Equal counts retain the words' first-appearance order, so tied results are predictable. The slice `[:10]` works even when fewer than ten words exist.
 
-Test an empty file too: the function should return `{}` and the display loop should print no rows. With the downloaded transcript and this simple whitespace rule, the ten most common tokens begin with `the`, `i`, and `a`; speaker labels such as `[interviewer]:` are counted as tokens. The walkthrough demonstrates the original word-counting task; use the sample and rules above for your checks.
+Test an empty file too: the function should return `{}` and the display loop should print no rows. With the downloaded transcript and this simple whitespace rule, the ten most common tokens begin with `the`, `i`, and `a`; speaker labels such as `[interviewer]:` are counted as tokens. After watching the walkthrough, use the sample and rules above to check your results.
 
 <iframe title="Question 7 walkthrough: word counter" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9m9zz61dDxw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -393,38 +392,6 @@ Start a counter before the loop, increase it for each copied line, and return th
 
 Test a file with no matches and an empty file. Both should produce an empty output file and return zero. Test lowercase `error` as well: it should not match this rule. Rerunning the script should replace the output instead of duplicating its lines.
 
-You have now combined most of this week's ideas. The final task asks you to recognise them in a function with names that offer very little help.
-
-## Explain a mystery function
-
-### Question 10 — Mystery Script Revisited
-
-Create `mystery.txt` containing:
-
-```text
-red blue red
-Red blue
-```
-
-Copy this script into `q10.py`. Its structure follows the original worksheet; the comments identify Python operations without giving away the complete explanation.
-
-```python
-def m(file):
-    with open(file, "r", encoding="utf-8") as f:
-        lines = f.readlines()          # Read the lines into a list.
-    d = {}                             # Start an empty dictionary.
-    for line in lines:
-        for w in line.strip().split(): # Visit words within each line.
-            d[w] = d.get(w, 0) + 1     # Update the value associated with this key.
-    return d                           # Return after all lines are processed.
-
-print(m("mystery.txt"))                # Call the function and display its result.
-```
-
-Predict the returned dictionary before running the script. Compare this code with your Question 7 function. Does it normalise case? Does it remove punctuation? Why is `return d` outside both loops? What changes if the file is empty?
-
-Then rename `m`, `file`, `f`, `d`, and `w` to explain their purposes and add a docstring. Check that the results are unchanged. You may compare explanations with a partner or an AI tool after making your own attempt. For an extra challenge, swap a short function with a classmate and explain its inputs, processing, and output.
-
 You have moved from calculating one value to reading and summarising files. Before moving on, use the checks below to resolve problems with paths, types, and where a function returns.
 
 ## When a function or file operation does not work
@@ -449,6 +416,6 @@ Test a function first with a small value you can check by hand. For file tasks, 
 
 Choose one function and explain its parameters, return value or file-writing action, and input assumptions. Then run it twice with different data. Can the calling code use its result without changing the function?
 
-Compare your work with the [Week 4 solutions](../solutions.md#week-4). The sample files and answers are small enough to inspect line by line; use them to check your approach before trying larger data. You can also return to [the optional projects](../projects.md) and organise repeated calculations into functions.
+Compare your work with the [Week 4 solutions](../solutions.md#week-4). The sample files and answers are small enough to inspect line by line; use them to check your approach before trying larger data. You can also return to [the Portfolio Projects](../projects.md) and organise repeated calculations into functions.
 
 In Week 5, you will develop the dictionary and module ideas introduced here and work with biological file formats such as FASTA. Reading a file, checking its contents, and returning a useful result will remain the core steps.

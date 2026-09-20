@@ -78,3 +78,27 @@ Build and check all examples and internal references:
 ```
 
 The static site is written to `book/_build/html/`. GitHub Actions builds and deploys it to GitHub Pages when changes are pushed to `main`. In the repository settings, configure Pages to use **GitHub Actions** as its source.
+
+## Portfolio datasets
+
+The Portfolio Projects page embeds two local browser forms from
+`book/portfolio-generator/`. MyST copies that directory into the static build via
+`project.static_files`; the existing Pages workflow publishes it with the rest of
+the book. No backend service or additional production dependency is required.
+Shared practice downloads live in `book/portfolio-generator/practice/`.
+
+The generator accepts decimal student IDs from `100000000` to `999999999`.
+It does not transmit or persist IDs; IDs appear in downloaded filenames and the
+README. Generation is deterministic. Dataset version 1 guarantees distinct DNA
+for distinct accepted IDs: Project 1 uses a fixed-width base-4 sequence tag,
+and Project 2 uses a 30-bit tag encoded as synonymous alanine codons. Other
+features vary deterministically while keeping the same types of exercise.
+Individual measurements or translated proteins need not be unique.
+
+Run `node tests/portfolio-generator.cjs` to verify validation, repeatability,
+the sequence encodings, classification coverage, translation-table coverage,
+and a pinned version-1 example. Preserve version-1 generation for existing
+students if introducing a new dataset version; do not silently change their
+inputs. The embedded URLs use the current Pages base path
+`/python-for-life-sciences`, matching the build workflow; update both if the
+repository's deployment path changes.

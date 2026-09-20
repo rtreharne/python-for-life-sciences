@@ -415,7 +415,7 @@ Errors are part of working out a program. Keep the input small enough to check b
 
 ## Optional practice: explain and test your understanding
 
-After checking your scripts against the [Week 2 solutions](../solutions.md#week-2), try explaining a condition without looking at the code. The following activities adapt the original worksheet's Questions 9 and 10. You can use a conversational AI tool, work with a partner, or practise alone.
+After checking your scripts against the [Week 2 solutions](../solutions.md#week-2), try explaining a condition without looking at the code. You can use a conversational AI tool, work with a partner, or practise alone.
 
 ### Activity 9 — A quiz, one question at a time
 

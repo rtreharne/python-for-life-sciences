@@ -340,67 +340,40 @@ You can now control both the items a loop visits and when it stops. The next act
 
 ## Investigate a mystery message
 
-### Question 9 — Mystery Script: The Prize Message
+### Question 9 — Another DNA Mystery Message
 
-The original workshop called this “The Prize Message”. Here it is a puzzle to practise tracing code, with no competition or submission required. The text looks like DNA, but the program treats groups of three characters as symbols in a made-up encoding.
+A secret message is hidden in the DNA-like sequence below. Your task is to write a program that converts it into symbols, then investigate what those symbols mean. You will combine a `for` loop, slicing, and the decisions you learned in Week 2.
 
-Before tackling the full puzzle, see how stepping by three selects those groups:
+Create `q9.py` and copy this starting data into it. Keep the whole sequence inside the quotation marks, without adding spaces or line breaks.
 
-```{code-cell} python
-sequence = "ATGTAATGA"             # Three groups of three characters.
-for start in range(0, len(sequence), 3):  # Visit starting positions 0, 3, and 6.
-    group = sequence[start:start + 3]    # Select three characters each time.
-    print(start, group)
-```
-
-The output pairs positions `0`, `3`, and `6` with `ATG`, `TAA`, and `TGA`. The slice stops before `start + 3`, so it includes exactly three characters here. A final incomplete group would produce a shorter slice rather than an indexing error. The supplied puzzle has a length divisible by three.
-
-**Try it:** add another `ATG` to `sequence` and predict the next position and group. Then copy the following puzzle into `q9.py`.
-
-```{code-cell} python
-# The original puzzle sequence: copy the full quoted string.
+```python
+# Store the encoded message as one string.
 dna = "ATGATGTGATGATGATAATAATGATAATAATAATGAATGATGATGTAATGAATGTGATGATGAATGTAATAATGAATGATGTGATAATGAATGATGATGATGTGATAATAATAATGAATGATGTAATGATAATGATGATGATAATAATGATAATAATAATGATAATGAATGATGTGATAATAATAATGATAAATGTGATGATGAATGATGTGATGATGAATGATGATGTGAATGTAATAAATGTGAATGTGAATGTAATGATAAATGTAATGATGATGAATGTAATAATGAATGATGTGATAATGAATGATGATGATGTGATAATAATAATGAATGATGTAATGATAATGATGATGAATGATGATGTAATGATAATAATAATGAATGATGTGATAAATGTAAATGTGAATGTGATGATGAATGATGTGATGATGATAATAAATGTGAATGTAAATGTGATAATAATAATGAATGTAATAATGATGATGAATGTAATAATGAATGATGATGATGTGAATGTGATAAATGTGATGATGATAAATGTAATAATGATAATAATAATGAATGATGTAATGATGATGAATGTGAATGTAAATGTGAATGTAAATGTGATGATGAATGATGTGATGATGATAAATGATGTGAATGATGTGAATGTGATGATGAATGTAATAATGAATGATGATGATGTGAATGTGATAAATGTGATGATGATAAATGTAATAATGATAATAATAATGAATGATGTAATGATGATGAATGTAAATGTGAATGTGAATGTAATAATAATGATAATAATAATGAATGATGTGATAAATGTAAATGTGAATG"
-message = ""  # Build the output one symbol at a time.
-
-for i in range(0, len(dna), 3):  # Move to the next group of three.
-    codon = dna[i:i + 3]
-    if codon == "ATG":
-        message += "."         # ATG represents a dot.
-    elif codon == "TAA":
-        message += "-"         # TAA represents a dash.
-    elif codon == "TGA":
-        message += " "         # TGA separates parts of the message.
-    else:
-        message += ""          # Other groups add nothing.
-
-print("Message:", message)
 ```
 
-The variable `i` holds each starting position; `codon` holds the slice at that position. The `if`/`elif` chain chooses a symbol, and `message += ...` appends that symbol to the growing string. The name `codon` refers to a three-character group here; this program does not translate DNA into a protein.
+Read the sequence in groups of **three characters**, starting at the beginning. We will call each group a *codon* here, but these rules belong to the puzzle rather than biological translation:
 
-Run it and investigate the output. What do the dots and dashes suggest? Which groups produce spaces, and where do longer gaps appear? Trace the first few groups by hand before attempting the whole message.
+| Codon | Add to your message |
+| --- | --- |
+| `ATG` | A dot: `"."` |
+| `TAA` | A dash: `"-"` |
+| `TGA` | One space: `" "` |
+| Any other group | Nothing; move on to the next group. |
 
-If you need a hint, the output uses Morse code. A single space separates letters, and three spaces separate words in this puzzle. Use the reference below to decode it on paper; you do not need another Python program to finish the activity.
+Build your program one step at a time:
 
-| Letter | Code | Letter | Code |
-| --- | --- | --- | --- |
-| A | `.-` | N | `-.` |
-| B | `-...` | O | `---` |
-| C | `-.-.` | P | `.--.` |
-| D | `-..` | Q | `--.-` |
-| E | `.` | R | `.-.` |
-| F | `..-.` | S | `...` |
-| G | `--.` | T | `-` |
-| H | `....` | U | `..-` |
-| I | `..` | V | `...-` |
-| J | `.---` | W | `.--` |
-| K | `-.-` | X | `-..-` |
-| L | `.-..` | Y | `-.--` |
-| M | `--` | Z | `--..` |
+1. Create a variable called `message` containing an empty string. This will hold the symbols as you collect them.
+2. Use a `for` loop to visit starting positions `0`, `3`, `6`, and so on. Use `range` with a start of `0`, a stop of `len(dna)`, and a step of `3`. Each iteration should process one group.
+3. Inside the loop, slice out the three characters beginning at the current position and store them in `codon`. Remember that a slice includes its start position and stops just before its end position, so the end must be the current position plus three.
+4. Use `if` and `elif` to compare `codon` with the groups in the table. Use `==` for each comparison. Add the matching symbol to `message` using string concatenation or `+=`. Keep these decisions inside the loop so they run for every group.
+5. Leave `message` unchanged if a group does not match. Preserve every space the rules produce, including consecutive spaces. Do not use `.strip()` or otherwise remove spaces from the result.
+6. After the loop, print `message` once. Put this instruction outside the loop by removing its indentation.
 
-Write down the decoded message and suggest an answer to its riddle. Explain how your interpretation fits the wording. If working with a partner or an AI tool, ask for a hint about one step after trying it yourself. Automatic decoding can wait until you have learned dictionaries; for now, focus on explaining the loop.
+Before running the full puzzle, test your program with a short sequence containing one of each recognised group. Work out the expected symbols from the table and compare them with your output. Add an unrecognised group such as `CCC` and check that it adds nothing. Then restore the full sequence above.
 
-The puzzle builds its output correctly. The final original question gives you a loop that does not. Before repairing it, meet one more control statement that can affect whether a loop makes progress.
+Save and run `q9.py` in VS Code. Once your program follows the replacement rules correctly, investigate the message it produces. Write down your interpretation and explain how you reached it.
+
+If you think you've cracked the message then speak to me during a workshop. I'll tell you if you've cracked it. If you're the first then you might win a prize!
 
 ## Skip an item carefully with `continue`
 
