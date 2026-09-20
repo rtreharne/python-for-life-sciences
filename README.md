@@ -36,6 +36,14 @@ The default output is `canvas_export/<course ID> - <course name>/`. Each module 
 
 Canvas rich text and links are preserved in HTML. Linked Canvas files and external resources remain links and are not downloaded.
 
+Download the text files used by the Week 4 chapter into the book's data folder with the Canvas API credentials in `.env`:
+
+```powershell
+python download_canvas_files.py
+```
+
+The script reads `CANVAS_API_URL` (or `CANVAS_URL`), `CANVAS_API_TOKEN`, and `COURSE_ID` from `.env`. It searches the course Files API for `quotes.txt`, `dna.txt`, `grades.txt`, `perfect_sunday.txt`, and `system.log`, then writes exact copies to `book/data/week-4/`. The chapter links to those committed copies through GitHub's raw file URLs.
+
 ## Extract YouTube captions
 
 Install the caption extraction dependencies inside the virtual environment:

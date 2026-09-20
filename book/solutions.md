@@ -542,7 +542,7 @@ def analyse_dna_file(filename):
     sequence = ""
     with open(filename, "r", encoding="utf-8") as handle:
         for line in handle:
-            sequence += line.strip()   # Join cleaned lines; blanks add no characters.
+            sequence += "".join(line.split())  # Remove all whitespace, including group spaces.
     gc_percent = gc_content(sequence)   # Validate and calculate before opening output.
     length = len(sequence)
     with open("report.txt", "w", encoding="utf-8") as report:
@@ -566,13 +566,13 @@ def count_words(filename):
                 counts[word] = counts.get(word, 0) + 1  # Start unseen words at zero.
     return counts                         # Return after every line has been processed.
 
-counts = count_words("words.txt")
+counts = count_words("perfect_sunday.txt")
 ordered_words = sorted(counts, key=counts.get, reverse=True)  # Order by count.
 for word in ordered_words[:10]:            # Display at most ten words.
     print(f"{word}: {counts[word]}")
 ```
 
-The sample produces `red: 3`, `blue: 2`, and `green: 1`. `sorted` orders keys using their associated counts, and equal counts stay in first-appearance order. An empty or whitespace-only file returns `{}` and prints no rows. Under this rule, `Red` and `red` share a count, but `red,` is a separate word.
+On the small check file, the output includes `red: 3`, `blue: 2`, and `green: 1`. On the downloadable transcript, the ten most common tokens begin `the`, `i`, and `a`. `sorted` orders keys using their associated counts, and equal counts stay in first-appearance order. An empty or whitespace-only file returns `{}` and prints no rows. Under this rule, `Red` and `red` share a count, but `red,` is a separate word.
 
 ### Question 8 — Student Gradebook
 
@@ -583,7 +583,7 @@ with open("grades.txt", "r", encoding="utf-8") as handle:
         line = line.strip()
         if line == "":
             continue                      # Skip blank records.
-        name, score_text = line.split(",") # Require exactly one comma.
+        name, score_text = line.split()   # Require exactly two whitespace-separated fields.
         name = name.strip()
         score = float(score_text)
         if name == "":
@@ -610,7 +610,7 @@ with open("grade_summary.txt", "w", encoding="utf-8") as report:
                 report.write(f"{name}: {score:.2f}\n")
 ```
 
-The sample report has mean `75.00`, minimum `60.00`, maximum `90.00`, then Blair at `80.00` and Drew at `90.00` under `Above mean:`. A single student's score equals the mean, so no student line follows that heading. Empty input produces the no-grades message. Invalid numbers, malformed comma-separated records, empty names, out-of-range scores, and duplicate names stop processing before the report is opened.
+The downloadable sample has mean `75.12`, minimum `47.00`, maximum `95.00`, followed by the names scoring above the mean in input order. A single student's score equals the mean, so no student line follows that heading. Empty input produces the no-grades message. Invalid numbers, malformed records, empty names, out-of-range scores, and duplicate names stop processing before the report is opened.
 
 `not (score >= 0 and score <= 100)` rejects a score unless it satisfies both limits. `grades.values()` supplies scores; `grades.items()` supplies name–score pairs. These operations avoid confusing a dictionary's keys with the numeric values needed for calculations.
 
@@ -632,7 +632,7 @@ count = extract_errors("system.log", "errors.txt")  # Use distinct input/output 
 print("Errors found:", count)
 ```
 
-For the sample, `errors.txt` contains `ERROR Sensor unavailable` and `ERROR Timeout`, and the returned count is two. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way; no additional line breaks are introduced. Always pass different input and output paths.
+For the downloadable course log, `errors.txt` contains six matching lines and the returned count is six. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way; no additional line breaks are introduced. Always pass different input and output paths.
 
 ### Question 10 — Mystery Script Revisited
 

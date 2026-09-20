@@ -1,0 +1,10 @@
+Every great program begins with a single print statement.
+Code is like poetry — clarity is beauty.
+Bugs are teachers in disguise.
+Understanding why something works is better than making it work by accident.
+The best debugger is curiosity.
+Progress, not perfection, is how every coder grows.
+Learn to explain your code to your future self — that’s real mastery.
+The hardest part of programming is often believing you can.
+Python rewards those who think before they type.
+Teaching others what you’ve just learned locks it into your brain forever.

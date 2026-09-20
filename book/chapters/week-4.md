@@ -24,9 +24,9 @@ LIFE733/
 └── week-4/             ← Open this folder in VS Code
     ├── practice.py    ← Try worked examples here
     ├── q1.py … q10.py ← Save your answers separately as needed
-    ├── quotes.txt     ← Input for Question 4
-    ├── dna.txt        ← Input for Question 6
-    ├── words.txt      ← Input for Question 7
+    ├── quotes.txt     ← Downloadable input for Question 4
+    ├── dna.txt        ← Downloadable input for Question 6
+    ├── perfect_sunday.txt ← Downloadable input for Question 7
     ├── grades.txt     ← Input for Question 8
     ├── system.log     ← Input for Question 9
     └── mystery.txt    ← Input for Question 10
@@ -36,7 +36,7 @@ This is a folder diagram. Create each named file in Explorer; do not create a fi
 
 Run your scripts using the approach from earlier weeks. Relative filenames such as `"dna.txt"` refer to the terminal's current directory, which should be `week-4`. Opening a script in the editor does not necessarily change that directory. Check with `pwd` and `ls` if Python cannot find a file.
 
-Keep input and output filenames distinct. The exercises create outputs such as `message.txt`, `report.txt`, `grade_summary.txt`, and `errors.txt` in this same folder. You will learn what happens when you rerun a script that writes to an existing file.
+Keep input and output filenames distinct. The exercises create outputs such as `message.txt`, `report.txt`, `grade_summary.txt`, and `errors.txt` in this same folder. You will learn what happens when you rerun a script that writes to an existing file. Downloadable course files are linked at the point where they are used.
 
 The introductory video gives an overview of functions and file handling. You can watch it now or return to it after trying the first examples.
 
@@ -190,7 +190,9 @@ You have saved text. Reading it back will let your scripts work with data prepar
 
 ## Read a file one line at a time
 
-Create `quotes.txt` in the same folder and paste in these three practice sentences, one per line:
+Download the course example [quotes.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/quotes.txt) into your `week-4` folder. You can also create your own short file to practise with. The downloaded file contains ten lines, so it gives the numbering function more data to process.
+
+If you want to understand the file format before downloading it, a small example looks like this:
 
 ```text
 Small steps make progress.
@@ -198,7 +200,7 @@ Check one example at a time.
 Keep asking why the result changed.
 ```
 
-Save it as plain text. These sentences are sample input, so they need neither Python quotes nor commas. Now try:
+Save any file you create as plain text. These sentences need neither Python quotes nor commas. Now try:
 
 ```python
 with open("quotes.txt", "r", encoding="utf-8") as handle:
@@ -217,7 +219,7 @@ A missing filename raises `FileNotFoundError`. Check its spelling and the termin
 
 Create `q4.py`. Define `read_quotes(filename)` to open a text file and print each line with a number starting at one. Use a counter initialised before the loop and increase it after printing each line.
 
-With the sample file, the first output should be `1: Small steps make progress.` and the last `3: Keep asking why the result changed.`. Number every physical line, including a blank line if one is present. An empty file should print nothing. Call your function with `"quotes.txt"`, then compare with the walkthrough.
+With the downloadable course file, the first output should be `1: Every great program begins with a single print statement.` and the last nonblank line should be numbered 10. Number every physical line, including a blank line if one is present. An empty file should print nothing. Call your function with `"quotes.txt"`, then compare with the walkthrough.
 
 <iframe title="Question 4 walkthrough: reading and numbering file lines" width="560" height="315" src="https://www.youtube-nocookie.com/embed/0CKYPzSQLRc" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -235,7 +237,9 @@ Next, put those skills together: read a DNA sequence, calculate a result with a 
 
 ### Question 6 — DNA File Analyser
 
-Create `dna.txt` with the following content. It holds one DNA sequence split across lines; it has no FASTA header or other metadata:
+Download the course example [dna.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/dna.txt) into your `week-4` folder. It holds one DNA sequence split across lines, with spaces used to make the long example easier to inspect. Your function should remove whitespace from each line before joining the sequence; it has no FASTA header or other metadata.
+
+For a small local test, you can instead create `dna.txt` with:
 
 ```text
 ATGC
@@ -246,7 +250,7 @@ Create `q6.py`. Copy your tested `gc_content` function into it, together with an
 
 Then define `analyse_dna_file(filename)` to:
 
-1. Read the file, strip whitespace from the ends of each line, and join the lines into one sequence. Ignore blank lines.
+1. Remove whitespace from each line and join the lines into one sequence. Ignore blank lines. The downloadable file uses spaces between groups of bases, so remove internal spaces too.
 2. Calculate the sequence length and call `gc_content` to obtain the percentage.
 3. Write both results to a new file named `report.txt` using write mode.
 
@@ -299,14 +303,14 @@ The result is `{'red': 2, 'blue': 1}`. `.split()` without an argument separates 
 
 ### Question 7 — Word Counter
 
-Create `words.txt` with this short synthetic sample:
+Download the course's [perfect_sunday.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/perfect_sunday.txt) into your `week-4` folder. It is a short interview transcript. For a quick check before using it, test your function on a small file containing `red blue red` and `green blue red`.
 
 ```text
 red blue red
 green blue red
 ```
 
-In `q7.py`, define `count_words(filename)` to read the file and return a dictionary of word counts. Lowercase the text and split on whitespace, retaining punctuation as part of a word. You may loop over file lines and then over the words in each line. For this sample, expect red: 3, blue: 2, green: 1.
+In `q7.py`, define `count_words(filename)` to read the file and return a dictionary of word counts. Lowercase the text and split on whitespace, retaining punctuation as part of a word. You may loop over file lines and then over the words in each line. The small check file should count red: 3, blue: 2, green: 1. The transcript contains punctuation and speaker labels, so its exact counts are different.
 
 Outside the function, display up to ten words in descending count order. To see how to order dictionary keys by their values, try this small example:
 
@@ -319,7 +323,7 @@ for word in ordered_words[:10]:             # At most ten keys.
 
 `sorted` returns a new list. Here it takes dictionary keys and uses `counts.get` to look up the value used for ordering. There are no parentheses after `counts.get` because you pass the method for `sorted` to call. `reverse=True` puts larger counts first. Equal counts retain the words' first-appearance order, so tied results are predictable. The slice `[:10]` works even when fewer than ten words exist.
 
-Test an empty file too: the function should return `{}` and the display loop should print no rows. The walkthrough demonstrates the original word-counting task; use the sample and rules above for your checks.
+Test an empty file too: the function should return `{}` and the display loop should print no rows. With the downloaded transcript and this simple whitespace rule, the ten most common tokens begin with `the`, `i`, and `a`; speaker labels such as `[interviewer]:` are counted as tokens. The walkthrough demonstrates the original word-counting task; use the sample and rules above for your checks.
 
 <iframe title="Question 7 walkthrough: word counter" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9m9zz61dDxw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -329,29 +333,29 @@ You have used dictionary keys to remember words. The same structure can associat
 
 ### Question 8 — Student Gradebook
 
-Create `grades.txt` with these fictional records and no header line:
+Download the course's [grades.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/grades.txt) into your `week-4` folder. Each line contains a student name followed by whitespace and a score. It has no header line:
 
 ```text
-Alex,60
-Blair,80
-Casey,70
-Drew,90
+Alice 78
+Ben 65
+Charlie 92
+Diana 88
 ```
 
-Each line contains a unique name, a comma, and a score between 0 and 100. Assume names contain no commas. The scores may have decimals. In `q8.py`, read the records into a dictionary that maps names to numeric scores.
+Each line contains a unique name and a score between 0 and 100. Assume names contain no spaces. The scores may have decimals. In `q8.py`, read the records into a dictionary that maps names to numeric scores.
 
 Here is the parsing step for one record:
 
 ```{code-cell} python
-line = "Alex,60"                    # One record from the sample format.
-name, score_text = line.split(",")  # Split into exactly two pieces and unpack them.
-name = name.strip()                 # Remove spaces around the name.
+line = "Alice 78"                   # One record from the sample format.
+name, score_text = line.split()     # Split whitespace and unpack two pieces.
+name = name.strip()                 # Remove any surrounding whitespace.
 score = float(score_text)           # Convert numeric text for calculations.
 grades = {name: score}              # Use the variable's value as the key.
 print(grades)
 ```
 
-`.split(",")` returns two strings for this format. Assigning them to two names is called **unpacking**; Python expects exactly two pieces here. A missing or extra comma causes a `ValueError`, helping you spot a malformed record. In `{name: score}`, the names are variables; quotes around `name` would instead create a key literally called `name`.
+`.split()` returns two strings for this format. Assigning them to two names is called **unpacking**; Python expects exactly two pieces here. A missing or extra field causes a `ValueError`, helping you spot a malformed record. In `{name: score}`, the names are variables; quotes around `name` would instead create a key literally called `name`.
 
 Build the full script in stages:
 
@@ -363,7 +367,7 @@ Build the full script in stages:
 
 Loop over `grades.items()` to visit name–score pairs: `for name, score in grades.items():` unpacks one pair on each iteration. Validate all input before opening the output file. If no records remain after skipping blank lines, write `No grades to summarise.` instead of calculating statistics.
 
-For the sample, expect mean `75.00`, minimum `60.00`, maximum `90.00`, and Blair and Drew above the mean. List those names in input order. Test one student, an empty file, a duplicate name, and scores outside the allowed range. A student exactly at the mean should not appear in the above-mean list.
+For the downloaded sample, expect mean `75.12`, minimum `47.00`, maximum `95.00`, and the students whose scores exceed that mean listed in input order. Test one student, an empty file, a duplicate name, and scores outside the allowed range. A student exactly at the mean should not appear in the above-mean list.
 
 Your gradebook reads structured lines and writes a new summary. Sometimes you only need to keep selected lines exactly as they appeared. That is the purpose of a file filter.
 
@@ -371,7 +375,7 @@ Your gradebook reads structured lines and writes a new summary. Sometimes you on
 
 ### Question 9 — Log File Filter
 
-Create `system.log` with:
+Download the course's [system.log](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/system.log) into your `week-4` folder. It contains INFO, WARNING, and ERROR entries. For a small local test, you can create:
 
 ```text
 INFO Run started
@@ -385,7 +389,7 @@ In `q9.py`, define `extract_errors(filename, outname)` to copy every line contai
 
 The function needs both files open at once. You can put one `with open(...)` block inside another: open the input in read mode, then the output in write mode, and put the loop inside both blocks. Pass different paths for input and output so you preserve the original log.
 
-Start a counter before the loop, increase it for each copied line, and return the count after the loop finishes. Call `extract_errors("system.log", "errors.txt")` and print the returned count. For the sample, expect two matching lines in `errors.txt` and a count of `2`.
+Start a counter before the loop, increase it for each copied line, and return the count after the loop finishes. Call `extract_errors("system.log", "errors.txt")` and print the returned count. For the downloaded course file, expect six matching lines in `errors.txt` and a count of `6`.
 
 Test a file with no matches and an empty file. Both should produce an empty output file and return zero. Test lowercase `error` as well: it should not match this rule. Rerunning the script should replace the output instead of duplicating its lines.
 
