@@ -260,31 +260,402 @@ For `37` and `7.0`, the status is `SAFE` with no warnings. Test all endpoint pai
 
 ## Week 3
 
+These answers match the original ten questions in [Week 3](chapters/week-3.md), followed by the optional sensor summary. Try each task before reading its answer. Save interactive scripts in your `week-3` folder and run them in the VS Code terminal. Change the test data and trace the loop as well as checking its final output.
+
+### Question 1 — Sum a List
+
 ```{code-cell} python
-counts = [3, 7, 2, 9, 5]
-total = 0
-for count in counts:
-    total += count
-print(total, total / len(counts))
+numbers = [3, 7, 2, 9, 5]
+total = 0                      # Initialise once, before the loop.
+for number in numbers:
+    total += number            # Add the current item to the running total.
+print("Total:", total)         # Report once, after all items have been added.
 ```
 
-For a base count, initialize a dictionary of zero counts and increment the matching base inside a loop. Check unexpected symbols explicitly if the input must be valid DNA.
+The total passes through `3`, `10`, `12`, `21`, and `26`. Moving the initialisation inside the loop would erase earlier additions. An empty list would leave the total at zero because the loop would run zero times.
+
+### Question 2 — Average of Numbers
+
+```{code-cell} python
+numbers = [3, 7, 2, 9, 5]
+total = 0
+for number in numbers:
+    total += number               # Complete the sum before calculating the mean.
+print("Total:", total)
+if len(numbers) > 0:              # Avoid division by zero for an empty list.
+    mean = total / len(numbers)
+    print("Mean:", mean)
+else:
+    print("No numbers to average.")
+```
+
+The total is `26` and the mean is `26 / 5`, or `5.2`. The condition is outside the loop, so it checks the completed collection once. For `[8]`, the mean is `8.0`; for `[]`, the total is zero and the script prints the no-numbers message.
+
+### Question 3 — Find the Maximum
+
+```python
+numbers = []                            # Build the list from the responses.
+for position in range(1, 6):             # Ask five times: 1 through 5.
+    number = float(input(f"Number {position}: "))  # Convert before storing.
+    numbers.append(number)
+print("Largest:", max(numbers))          # All five items are available now.
+```
+
+`range(1, 6)` stops before 6. After the loop, the list contains five numeric values, so `max` has a nonempty collection to inspect. Inputs `2`, `9`, `4`, `1`, `7` give `Largest: 9.0`. Inputs `-8`, `-3`, `-12`, `-5`, `-9` give `Largest: -3.0`.
+
+To practise finding a maximum yourself, replace the final line with the following code in the same script:
+
+```python
+largest = numbers[0]            # Start with a real item, which may be negative.
+for number in numbers[1:]:      # Compare each remaining value.
+    if number > largest:
+        largest = number       # Keep the largest value found so far.
+print("Largest:", largest)
+```
+
+Using the first item avoids incorrectly reporting zero for a list of negative numbers. This version assumes the list is nonempty, as guaranteed by the five-input task. The slice starts at index 1 because the first item has already been used.
+
+### Question 4 — Even or Odd
+
+```python
+for position in range(1, 6):                   # Process five responses.
+    number = int(input(f"Integer {position}: "))  # Request a whole number.
+    if number % 2 == 0:                        # Test the current response.
+        print(f"{number} is even")
+    else:
+        print(f"{number} is odd")
+```
+
+The decision sits inside the loop, so each response gets a message immediately. Inputs `7`, `8`, `0`, `-3`, and `-2` produce odd, even, even, odd, and even respectively. A list is unnecessary when you do not need the responses after classifying them.
+
+### Question 5 — DNA Base Count
+
+```python
+dna = input("Enter DNA: ").upper()  # Normalise before comparing letters.
+count_a = 0                        # Initialise every counter before the loop.
+count_t = 0
+count_c = 0
+count_g = 0
+unexpected = 0
+for base in dna:
+    if base == "A":
+        count_a += 1               # Increase only the matching counter.
+    elif base == "T":
+        count_t += 1
+    elif base == "C":
+        count_c += 1
+    elif base == "G":
+        count_g += 1
+    else:
+        unexpected += 1            # Account for every other character.
+print("A:", count_a)
+print("T:", count_t)
+print("C:", count_c)
+print("G:", count_g)
+print("Unexpected:", unexpected)
+```
+
+For `aCgTtG`, the counts are A: 1, T: 2, C: 1, G: 2, Unexpected: 0. For `ATNX`, they are 1, 1, 0, 0, and 2. Every character enters exactly one branch, so the five counts add up to the input length. Empty input leaves every counter at zero. This version counts unexpected characters rather than silently discarding them.
+
+### Question 6 — Reverse a List
+
+```{code-cell} python
+words = ["cat", "dog", "rabbit", "tiger"]
+for index in range(len(words) - 1, -1, -1):  # Visit the last index down to zero.
+    print(words[index])                     # Print each whole word.
+print("Original:", words)                   # Confirm that the list was not changed.
+```
+
+The indices are `3`, `2`, `1`, and `0`, giving tiger, rabbit, dog, cat. The `-1` stop is excluded. With an empty list, the range is empty too and no word is selected. Looping over `words[::-1]` is another valid answer: it visits a reversed copy of the list.
+
+### Question 7 — Multiplication Table
+
+```python
+number = int(input("Enter a number: "))  # Keep one input for the whole table.
+for multiplier in range(1, 11):           # Include 1 through 10.
+    product = number * multiplier        # Calculate a new product on each pass.
+    print(f"{number} x {multiplier} = {product}")
+```
+
+For `5`, this prints ten rows from `5 x 1 = 5` to `5 x 10 = 50`. The stop is 11 because `range` excludes it. Zero and negative integers also work; the number of rows remains ten.
+
+### Question 8 — Guess the Number
+
+```python
+import random                       # Use Python's standard random-number module.
+target = random.randint(1, 20)       # Choose once, including either endpoint.
+while True:                         # Keep asking until the correct guess breaks out.
+    guess = int(input("Guess 1–20: "))
+    if guess < target:
+        print("Too low")
+    elif guess > target:
+        print("Too high")
+    else:
+        print("Correct")
+        break                       # Exit the loop as soon as the guess matches.
+```
+
+The target is set outside the loop and stays fixed. `while True` repeats until `break` is reached; the input call collects a fresh guess on each pass. During testing, replace the target line with `target = 7`: guesses `3`, `9`, and `7` should give low, high, correct and then stop. A correct first guess must also stop immediately. Restore the random target when you finish testing.
+
+### Question 9 — Mystery Script: The Prize Message
+
+The program visits starting positions `0`, `3`, `6`, and so on. Each three-character slice adds a dot for `ATG`, a dash for `TAA`, or a space for `TGA`. The original sequence has 831 characters and therefore 277 groups. It contains only those three recognised groups, so the output has 277 characters too.
+
+Read the output as Morse code: one space separates letters and three spaces separate words. The first `..` is I, then `-- --- ...- .` spells MOVE. Continuing with the chapter's key gives:
+
+> I MOVE WITHOUT MOTION I SPEAK WITHOUT VOICE I GROW WHEN YOU ERR I DIE WHEN YOU REJOICE
+
+The decoded wording is the checkable result. The riddle invites interpretation; for example, worry or self-doubt could grow after mistakes and lessen with joy. The course export does not supply an official riddle answer, so justify your suggestion against the lines rather than treating one interpretation as the only correct answer.
+
+The variable name `codon` does not make this biological translation: the mapping in the program defines a custom code. If you change a group to an unrecognised value, the final `else` appends an empty string and that group disappears from the output. That is a reason to check assumptions about the input when adapting the script.
+
+### Question 10 — Debugging Challenge
+
+```{code-cell} python
+numbers = [5, -3, 0, 7, -1, 0, 9]
+i = 0                          # Begin at the first valid position.
+positives = negatives = zeros = 0  # Initialise all three integer counters.
+while i < len(numbers):        # Stop before the invalid index len(numbers).
+    n = numbers[i]
+    if n > 0:
+        positives += 1         # Add one instead of assigning positive one.
+    elif n == 0:
+        zeros += 1
+    else:
+        negatives += 1
+    i += 1                     # Advance for every item, including zero.
+print("Positives:", positives)
+print("Negatives:", negatives)
+print("Zeros:", zeros)
+```
+
+There are three repairs. Use `<` instead of `<=` so the index stays below the length. Use `+= 1` rather than `=+ 1`: the latter assigns `+1` each time. Finally, remove the `continue` branch and advance `i` after every classification, so zeros cannot trap the loop at one position.
+
+The result is three positives, two negatives, and two zeros. `[0]` gives 0, 0, 1; `[1, 2]` gives 2, 0, 0; `[-1, -2]` gives 0, 2, 0; and `[]` gives three zeros. In each case, the counts add up to the list length.
+
+### Optional mini-project — Sensor summary
+
+```{code-cell} python
+readings = [36.5, 37.0, 38.5, 39.0]
+threshold = 38.0                 # Count only readings strictly above this value.
+if len(readings) == 0:
+    print("No readings to summarise.")
+else:
+    total = 0.0
+    above_threshold = 0
+    for reading in readings:
+        total += reading        # Accumulate the sum across all readings.
+        if reading > threshold:
+            above_threshold += 1
+    mean = total / len(readings) # Calculate once the loop is complete.
+    print("Total:", total)
+    print("Mean:", mean)
+    print("Minimum:", min(readings))
+    print("Maximum:", max(readings))
+    print("Above threshold:", above_threshold)
+```
+
+The results are total `151.0`, mean `37.75`, minimum `36.5`, maximum `39.0`, and above-threshold count `2`. The empty-list branch prevents invalid summary calculations. Adding `38.0` changes the total, mean, and number of readings but leaves the above-threshold count at two, because the test uses `>`.
+
 
 ## Week 4
 
-```{code-cell} python
-def gc_content(sequence):
-    sequence = sequence.upper()
-    if not sequence:
-        raise ValueError("sequence must not be empty")
-    if any(base not in "ACGT" for base in sequence):
-        raise ValueError("sequence contains a non-DNA character")
-    return 100 * (sequence.count("G") + sequence.count("C")) / len(sequence)
+These answers match the ten questions in [Week 4](chapters/week-4.md). Create the sample input files from the chapter in your `week-4` folder. Keep each answer in its own script and run it from that folder. For file tasks, inspect the saved output as well as the terminal.
 
-print(gc_content("ATGC"))
+### Question 1 — Write Your First Function
+
+```{code-cell} python
+def triple_number(x):
+    """Return three times a numeric value."""
+    return x * 3                         # Return a result for the caller to use.
+
+for value in [4, 0, -2, 1.5]:             # Try several independent calls.
+    print(value, "->", triple_number(value))
+answer = triple_number(4)
+print("Result plus one:", answer + 1)    # Use the returned value in another calculation.
 ```
 
-Return the percentage so the caller can print it, compare it, or write it to a report. Raising a clear error makes the function's input assumptions explicit.
+The calls return `12`, `0`, `-6`, and `4.5`. The last line prints `Result plus one: 13`. Replacing `return` with `print` would display the product but leave `answer` as `None`, so the addition would fail.
+
+### Question 2 — GC Content
+
+```{code-cell} python
+def gc_content(seq):
+    """Return GC percentage for nonempty DNA containing only A, C, G, and T."""
+    seq = seq.upper()                   # Accept either input case.
+    if seq == "":
+        raise ValueError("DNA must not be empty.")
+    for base in seq:
+        if base not in "ACGT":         # Check every character before calculating.
+            raise ValueError("DNA must contain only A, C, G, and T.")
+    gc_count = seq.count("G") + seq.count("C")
+    return 100 * gc_count / len(seq)    # Return a number, not a formatted string.
+
+for sequence in ["ATGC", "GGCC", "ATAT", "aGc"]:
+    print(f"{sequence}: {gc_content(sequence):.2f}%")  # Format only for display.
+```
+
+The displayed percentages are `50.00%`, `100.00%`, `0.00%`, and `66.67%`. The function retains the full calculated result. Calling it with an empty string or `ATNX` raises `ValueError`. The `return` is outside the validation loop, so every character is checked.
+
+### Question 3 — Writing to a File
+
+```python
+def save_message(msg, filename):
+    """Replace the file's contents with the supplied message."""
+    with open(filename, "w", encoding="utf-8") as handle:
+        handle.write(msg)               # Save the text exactly as supplied.
+
+save_message("Hello from Week 4.\n", "message.txt")
+save_message("A different message.\n", "second_message.txt")
+```
+
+`msg` receives the first argument and `filename` receives the second. Write mode creates or replaces the file. The caller supplies the newline; `.write` does not add one. This function returns `None` because its purpose is to save a file, and it has no explicit `return`.
+
+### Question 4 — Number the Quotes
+
+```python
+def read_quotes(filename):
+    """Print every file line with a number starting from one."""
+    line_number = 1                     # Reset the counter for each function call.
+    with open(filename, "r", encoding="utf-8") as handle:
+        for line in handle:
+            text = line.rstrip("\n")   # Let print add the displayed newline.
+            print(f"{line_number}: {text}")
+            line_number += 1            # Count every physical line, including blanks.
+
+read_quotes("quotes.txt")
+```
+
+With the supplied three-line file, the numbers are 1 through 3. An empty file gives no output. A blank second line produces `2: ` and still increases the counter. Defining the counter inside the function means a second call starts at one again.
+
+### Question 5 — Explanation Practice
+
+There is no single correct explanation for this activity because you choose the function. A useful explanation identifies what arguments it accepts, which steps it performs, what it returns or writes, and what assumptions it makes. Check claims against actual calls, particularly the difference between output shown by `print` and a returned value. Keep any useful comments in your own script.
+
+### Question 6 — DNA File Analyser
+
+Copy the `gc_content` definition from Question 2 above the following code in `q6.py`. You need the function definition, not its demonstration loop. This keeps the script self-contained.
+
+```python
+def analyse_dna_file(filename):
+    """Read one plain DNA sequence and write its length and GC percentage."""
+    sequence = ""
+    with open(filename, "r", encoding="utf-8") as handle:
+        for line in handle:
+            sequence += line.strip()   # Join cleaned lines; blanks add no characters.
+    gc_percent = gc_content(sequence)   # Validate and calculate before opening output.
+    length = len(sequence)
+    with open("report.txt", "w", encoding="utf-8") as report:
+        report.write(f"Length: {length}\n")
+        report.write(f"GC content: {gc_percent:.2f}%\n")
+
+analyse_dna_file("dna.txt")
+```
+
+For `ATGC` followed by `GGAA`, the report has length `8` and GC content `50.00%`. Case and blank lines do not affect the result. An empty file or an invalid sequence raises `ValueError` before the report is opened, preserving any existing report. If validation fails, an old report describes an earlier run; it is not a result for the rejected input. This reads plain sequence text, so a FASTA header is rejected too.
+
+### Question 7 — Word Counter
+
+```python
+def count_words(filename):
+    """Return lowercase word counts, splitting on whitespace and retaining punctuation."""
+    counts = {}
+    with open(filename, "r", encoding="utf-8") as handle:
+        for line in handle:
+            for word in line.lower().split():
+                counts[word] = counts.get(word, 0) + 1  # Start unseen words at zero.
+    return counts                         # Return after every line has been processed.
+
+counts = count_words("words.txt")
+ordered_words = sorted(counts, key=counts.get, reverse=True)  # Order by count.
+for word in ordered_words[:10]:            # Display at most ten words.
+    print(f"{word}: {counts[word]}")
+```
+
+The sample produces `red: 3`, `blue: 2`, and `green: 1`. `sorted` orders keys using their associated counts, and equal counts stay in first-appearance order. An empty or whitespace-only file returns `{}` and prints no rows. Under this rule, `Red` and `red` share a count, but `red,` is a separate word.
+
+### Question 8 — Student Gradebook
+
+```python
+grades = {}                               # Map each unique name to its numeric score.
+with open("grades.txt", "r", encoding="utf-8") as handle:
+    for line in handle:
+        line = line.strip()
+        if line == "":
+            continue                      # Skip blank records.
+        name, score_text = line.split(",") # Require exactly one comma.
+        name = name.strip()
+        score = float(score_text)
+        if name == "":
+            raise ValueError("Student name must not be empty.")
+        if not (score >= 0 and score <= 100):  # Both inclusive limits must hold.
+            raise ValueError("Score must be between 0 and 100.")
+        if name in grades:
+            raise ValueError(f"Duplicate student name: {name}")
+        grades[name] = score
+
+# All records have been checked before an existing report can be replaced.
+with open("grade_summary.txt", "w", encoding="utf-8") as report:
+    if len(grades) == 0:
+        report.write("No grades to summarise.\n")
+    else:
+        scores = list(grades.values())     # Collect the numeric values for statistics.
+        mean = sum(scores) / len(scores)
+        report.write(f"Mean: {mean:.2f}\n")
+        report.write(f"Minimum: {min(scores):.2f}\n")
+        report.write(f"Maximum: {max(scores):.2f}\n")
+        report.write("Above mean:\n")
+        for name, score in grades.items(): # Visit name–score pairs in input order.
+            if score > mean:
+                report.write(f"{name}: {score:.2f}\n")
+```
+
+The sample report has mean `75.00`, minimum `60.00`, maximum `90.00`, then Blair at `80.00` and Drew at `90.00` under `Above mean:`. A single student's score equals the mean, so no student line follows that heading. Empty input produces the no-grades message. Invalid numbers, malformed comma-separated records, empty names, out-of-range scores, and duplicate names stop processing before the report is opened.
+
+`not (score >= 0 and score <= 100)` rejects a score unless it satisfies both limits. `grades.values()` supplies scores; `grades.items()` supplies name–score pairs. These operations avoid confusing a dictionary's keys with the numeric values needed for calculations.
+
+### Question 9 — Log File Filter
+
+```python
+def extract_errors(filename, outname):
+    """Copy lines containing uppercase ERROR to a different file; return their count."""
+    error_count = 0
+    with open(filename, "r", encoding="utf-8") as source:
+        with open(outname, "w", encoding="utf-8") as destination:
+            for line in source:
+                if "ERROR" in line:       # Match this exact uppercase text anywhere.
+                    destination.write(line) # Preserve the original line ending.
+                    error_count += 1
+    return error_count                     # Return after all lines and both with blocks.
+
+count = extract_errors("system.log", "errors.txt")  # Use distinct input/output paths.
+print("Errors found:", count)
+```
+
+For the sample, `errors.txt` contains `ERROR Sensor unavailable` and `ERROR Timeout`, and the returned count is two. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way; no additional line breaks are introduced. Always pass different input and output paths.
+
+### Question 10 — Mystery Script Revisited
+
+The original function counts whitespace-separated words, preserving their case and punctuation. For the sample file it returns `{'red': 2, 'blue': 2, 'Red': 1}`. Its `.strip()` removes whitespace at the ends of each line, and `.split()` separates the remaining text into words. It does not call `.lower()`, so `Red` and `red` are distinct keys.
+
+Here is the same approach with descriptive names and a docstring:
+
+```python
+def count_exact_words(filename):
+    """Return case-sensitive word counts, splitting on whitespace."""
+    with open(filename, "r", encoding="utf-8") as handle:
+        lines = handle.readlines()           # Keep the original list-of-lines approach.
+    counts = {}
+    for line in lines:
+        for word in line.strip().split():
+            counts[word] = counts.get(word, 0) + 1
+    return counts                            # Finish counting before returning.
+
+print(count_exact_words("mystery.txt"))
+```
+
+`readlines()` loads all lines into a list, allowing the file to close before the loops run. Question 7 instead loops directly over the open file. Both approaches work for these small inputs; the direct file loop avoids keeping every line in memory. The return belongs outside both loops so all lines are counted. Empty input returns an empty dictionary.
+
 
 ## Week 5
 
