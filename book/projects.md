@@ -6,45 +6,50 @@ Use the shared practice files first. Their small size and known results let you 
 
 Your individual files are reproducible: the same ID produces the same version of each dataset. Different IDs produce different DNA data, with the same task structure. The generator runs in your browser without sending your ID to a server. Keep the downloaded README with your inputs so you retain the dataset version.
 
-## Set up your portfolio folders
+## Set up Project 1
 
-Create a `portfolio` folder alongside your weekly work. Give each project its own folder with `practice`, `input`, and `output` subfolders. Keep the downloaded input files unchanged and save your results under `output`.
+Create a `portfolio` folder alongside your weekly work. Give Project 1 a folder for each part. The generated ZIP places one script and one generated data file directly in each part folder.
 
 ```text
 portfolio/
 ├── project-1/
-│   ├── main.py       ← Your project script
-│   ├── practice/     ← Shared files for checking your solution
-│   ├── input/        ← Your individual dataset and README
-│   └── output/       ← Results from your individual run
-└── project-2/
-    ├── main.py       ← Driver script
-    ├── fasta_tools.py ← Reusable functions
-    ├── practice/
-    ├── input/
-    └── output/
+│   ├── part-a-dna/
+│   │   ├── part_a.py
+│   │   ├── portfolio1_<student-id>_part-a_fragments.txt
+│   │   └── (save your results separately)
+│   ├── part-b-counts/
+│   │   ├── part_b.py
+│   │   ├── portfolio1_<student-id>_part-b_counts.txt
+│   │   └── (save your results separately)
+│   ├── part-c-replicates/
+│   │   ├── part_c.py
+│   │   ├── portfolio1_<student-id>_part-c_replicates.tsv
+│   │   └── (save your results separately)
+│   └── part-d-sequences/
+│       ├── part_d.py
+│       ├── portfolio1_<student-id>_part-d_sequences.fasta
+│       └── (save your results separately)
 ```
 
-Open the project folder in VS Code and check the terminal location before running your script. Use relative paths such as `practice/project1_counts.txt` while testing, then switch to the downloaded filenames under `input`. Change the input paths rather than hard-coding the expected answers. Keep your practice test results separate from your individual results.
+Open one part folder in VS Code at a time and check the terminal location before running its script. Use the practice snippets shown in this chapter for initial checks, then run the finished script against the generated `portfolio1_<student-id>_...` filename beside it. Save any result files separately from the extracted project folder. The angle-bracketed `<student-id>` is a placeholder: use the nine digits in the downloaded filename, without the angle brackets.
 
-The [project solutions](solutions.md#project-solutions) demonstrate the shared practice cases. Attempt each stage yourself before consulting them. Follow the course's portfolio submission and AI-use instructions; this page does not replace those instructions.
+Attempt each part yourself before checking the expected practice output shown below. Follow the course's portfolio submission and AI-use instructions; this page does not replace those instructions.
 
 ## Project 1: DNA sequences and cell counts
 
-This project combines string transformations, numerical summaries, decisions, and validation. Start with the four practice files:
-
-- {download}`DNA fragments <portfolio-generator/practice/project1_fragments.txt>`
-- {download}`Cell counts <portfolio-generator/practice/project1_counts.txt>`
-- {download}`Replicate measurements <portfolio-generator/practice/project1_replicates.tsv>`
-- {download}`DNA records <portfolio-generator/practice/project1_sequences.fasta>`
+This project combines string transformations, numerical summaries, decisions, and validation. Each part below includes a small practice snippet and an exact expected output.
 
 ### Generate your Project 1 dataset
 
-<iframe title="Generate a Project 1 portfolio dataset" src="/python-for-life-sciences/portfolio-generator/index.html?project=1" width="100%" height="650" loading="lazy"></iframe>
+<iframe title="Generate a Project 1 portfolio dataset" src="../portfolio-generator/index.html?project=1" width="100%" height="650" loading="lazy"></iframe>
 
-Download all five generated files, including the README. The fragments file has two DNA strings, one per line. The counts file has one integer per line. The replicate table has a header followed by a sample identifier and three tab-separated measurements per row. The FASTA file contains multiple named records.
+Download the generated ZIP, which includes the README and all four part datasets. Each data filename identifies Project 1 and its part: Part A contains two DNA strings, Part B one integer per line, Part C a replicate table, and Part D multiple named FASTA records. Use the practice snippets below to check your script first, then use your extracted generated files and produce the same fields and formatting with your own values.
 
-If the embedded form is too small, [open the Project 1 generator in a separate tab](/python-for-life-sciences/portfolio-generator/index.html?project=1).
+The generator now provides one ZIP file containing the complete Project 1 folder structure. Download it, create a new empty folder such as `LIFE733/portfolio/project-1`, and extract the ZIP into that folder. Do not open individual files from the browser and do not rearrange the extracted folders.
+
+In VS Code, choose **File → Open Folder**, select the extracted `project-1` folder, and open **Terminal → New Terminal**. Check the location with `pwd` and list the contents with `ls`. Open one of the `part-a-dna`, `part-b-counts`, `part-c-replicates`, or `part-d-sequences` folders when you work on that part. Each folder already contains its recommended script, practice input, generated input, and `output/practice_expected.txt` file. Keep the generated input unchanged and save your own results in `output`.
+
+If the embedded form is too small, [open the Project 1 generator in a separate tab](../portfolio-generator/index.html?project=1).
 
 ### Part A: DNA string transformations
 
@@ -57,9 +62,21 @@ fragment_2 = "tcagttttgg"  # Second shared practice fragment.
 
 Join the fragments and normalize the result to uppercase. Print its length. Then calculate the reverse complement, transcribe DNA to RNA, append seven `A` characters, and print the final RNA length.
 
-**Check:** the combined DNA is `ACTGTGTCAGTCAGTTTTGG`, with length 20. Its reverse complement is `CCAAAACTGACTGACACAGT`; its RNA with the tail is `ACUGUGUCAGUCAGUUUUGGAAAAAAA`.
+**Expected practice output:** the combined DNA is `ACTGTGTCAGTCAGTTTTGG`, with length `20`. Its reverse complement is `CCAAAACTGACTGACACAGT`. The final RNA is `ACUGUGUCAGUCAGUUUUGGAAAAAAA`, with length `27` after adding seven `A` characters.
 
-For your individual run, read the two lines from your downloaded fragments file. Strip surrounding whitespace and perform the same operations on those values. Both individual fragments have 24 bases, so their combined length is 48 and the RNA length after adding the tail is 55. The sequence itself depends on your ID.
+Your Part A script must print exactly this for the practice snippet (including labels and decimal-free length):
+
+```text
+DNA: ACTGTGTCAGTCAGTTTTGG
+DNA length: 20
+Reverse complement: CCAAAACTGACTGACACAGT
+RNA: ACUGUGUCAGUCAGUUUUGGAAAAAAA
+RNA length: 27
+```
+
+When you switch to your generated Part A file, keep this exact five-line format but replace the values with results from your own two fragments.
+
+For your individual run, read the two lines from the downloaded Part A file. Strip surrounding whitespace and perform the same operations on those values. Both individual fragments have 24 bases, so their combined length is 48 and the RNA length after adding the tail is 55. The sequence itself depends on your ID.
 
 ### Part B: replicate statistics
 
@@ -69,6 +86,25 @@ For population variance, calculate the mean squared difference from the mean. Th
 
 **Practice check:** total `100.0`, mean `20.0`, population variance `2.0`, population standard deviation `1.4`, median `20.0`, and range `4.0`.
 
+Use this practice snippet before reading your generated Part B file:
+
+```python
+counts = [18, 21, 19, 22, 20]
+```
+
+Your script must print exactly:
+
+```text
+Total: 100.0
+Mean: 20.0
+Population variance: 2.0
+Population standard deviation: 1.4
+Median: 20.0
+Range: 4.0
+```
+
+For your generated counts, keep these six labels and one decimal place exactly. Do not print a hard-coded `100.0` or assume that there are five values.
+
 For your individual run, load the integers from the counts file rather than embedding the practice list in your code. There are seven counts; use the list length in your calculations instead of assuming five.
 
 ### Part C: classify replicate measurements
@@ -77,7 +113,15 @@ Classify these protein concentration replicates, measured in mg/L: `[104, 112, 1
 
 Write a function that accepts a list and returns a classification string. Test at least one case for every classification and explain which branch should take precedence when conditions overlap.
 
-The practice sample is consistent. For your individual run, skip the header row in the replicate table, convert its three measurements to numbers, and apply your function to every sample. Print or save each sample identifier with its classification. Do not apply one classification to the whole file.
+**Expected practice output:** the sample `[104, 112, 108]` is `consistent`. For your individual run, skip the header row in the downloaded Part C file, convert its three measurements to numbers, and apply your function to every sample. Print or save each sample identifier with its classification. Do not apply one classification to the whole file.
+
+For the practice sample, your classification function must produce:
+
+```text
+sample_practice: Consistent assay
+```
+
+For the generated Part C table, print one line per sample in the form `sample_name: classification`, preserving the six classification names `Invalid`, `Failed assay`, `Uniform replicates`, `Duplicate replicates`, `Consistent assay`, and `Outlier replicate`.
 
 ### Part D: validate sequences
 
@@ -94,11 +138,36 @@ GCGCGC
 
 Parse complete records and join wrapped sequence lines before validation; keep each header so you can identify its result. A sequence is valid only if it contains A, C, G, or T and its length is divisible by three. For valid records, calculate GC percentage and classify it as AT-rich (<40%), balanced (40–60% inclusive), or GC-rich (>60%). Report counts of valid and invalid records.
 
-**Practice check:** two valid records and one invalid record. `sample_1` has GC `44.44%` (balanced); `sample_3` has GC `100.00%` (GC-rich). Validate a nonempty complete sequence, not each wrapped line independently.
+**Expected practice output:** two valid records and one invalid record. `sample_1` has GC `55.56%` (balanced); `sample_3` has GC `100.00%` (GC-rich). Validate a nonempty complete sequence, not each wrapped line independently.
+
+For the practice FASTA, your script must print exactly:
+
+```text
+sample_1: valid, length=9, GC=55.56%, category=Balanced
+sample_2: invalid
+sample_3: valid, length=6, GC=100.00%, category=GC-rich
+Summary: 2 valid, 1 invalid
+```
+
+When you use your generated Part D file, keep this line structure, two decimal places, and final summary, replacing the identifiers and values with your own results.
 
 Run the same analysis on your individual FASTA file. Save each record's identifier, validity, and, where valid, length, GC percentage, and GC category. Report the totals alongside your other Project 1 results.
 
 ## Project 2: A small FASTA analysis pipeline
+
+Submit Project 2 separately from Project 1. Set up a new folder and keep its scripts, inputs, and outputs separate:
+
+```text
+portfolio/
+└── project-2/
+    ├── main.py          ← Driver script
+    ├── fasta_tools.py   ← Reusable functions
+    ├── practice/        ← Shared practice inputs
+    ├── input/           ← Your generated dataset and README
+    └── output/          ← Results from your individual run
+```
+
+Open `project-2` in VS Code before starting this project. Do not reuse the Project 1 scripts or output folder. Test the practice files first, then generate and run against the Project 2 dataset.
 
 This project joins file handling, dictionaries, functions, loops, validation, and regular expressions. Download the {download}`practice FASTA file <portfolio-generator/practice/project2_practice.fasta>` and {download}`codon lookup table <portfolio-generator/practice/project2_codons.tsv>` into your `practice` folder. The FASTA contains:
 
@@ -113,9 +182,9 @@ ATGNAA
 
 ### Generate your Project 2 dataset
 
-<iframe title="Generate a Project 2 portfolio dataset" src="/python-for-life-sciences/portfolio-generator/index.html?project=2" width="100%" height="590" loading="lazy"></iframe>
+<iframe title="Generate a Project 2 portfolio dataset" src="../portfolio-generator/index.html?project=2" width="100%" height="590" loading="lazy"></iframe>
 
-Download the FASTA, codon table, and README into your Project 2 `input` folder. [Open the Project 2 generator in a separate tab](/python-for-life-sciences/portfolio-generator/index.html?project=2) if needed.
+Download the FASTA, codon table, and README into your Project 2 `input` folder. [Open the Project 2 generator in a separate tab](../portfolio-generator/index.html?project=2) if needed.
 
 The individual FASTA includes wrapped lines, invalid records, multiple candidate starts, and proteins with and without motif matches. Use the supplied codon table for both practice and individual data: the six-codon demonstration table in the solutions is too small for the individual sequences. The downloaded table covers all codons used in the valid supplied sequences; it is a teaching subset, not the complete genetic code.
 

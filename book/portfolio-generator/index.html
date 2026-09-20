@@ -5,12 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LIFE733 portfolio dataset generator</title>
 <style>
-:root {color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.5}
-body {margin:0;padding:1rem;max-width:45rem} form {display:flex;flex-wrap:wrap;gap:.65rem;align-items:end}
+:root {color-scheme:light dark;font-family:system-ui,sans-serif;line-height:1.5;background:#fff;color:#202124}
+body {margin:0;padding:1rem;max-width:45rem;background:#fff;color:#202124} form {display:flex;flex-wrap:wrap;gap:.65rem;align-items:end}
 label {display:block;font-weight:600} input,button {font:inherit;padding:.6rem;border:1px solid #777;border-radius:.3rem}
-button {background:#185b93;color:white;cursor:pointer} input {max-width:14rem} a {color:light-dark(#155890,#8bcaff)}
+input {max-width:14rem;background:#fff;color:#202124} button {background:#185b93;color:#fff;cursor:pointer} a {color:#155890}
 a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #dd9200;outline-offset:3px}
-p {margin:.65rem 0} #error {color:light-dark(#a11919,#ffaaaa)} ul {padding-left:1.3rem} li {margin:.4rem 0;overflow-wrap:anywhere}
+p {margin:.65rem 0} #error {color:#a11919} ul {padding-left:1.3rem} li {margin:.4rem 0;overflow-wrap:anywhere}
+@media (prefers-color-scheme: dark) {
+  :root, body {background:#16181d;color:#e6e8eb}
+  input {background:#252a32;color:#e6e8eb;border-color:#7d8794}
+  button {background:#3c8dcc;color:#07111a}
+  a {color:#8bcaff}
+  #error {color:#ffaaa6}
+}
 </style>
 <script src="generator.js" defer></script>
 <script src="interface.js" defer></script>

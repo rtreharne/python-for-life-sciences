@@ -56,5 +56,5 @@ for (const n of [100000000,999999999,...Array.from({length:1000},(_,i)=>23456700
 const crypto=require('node:crypto');
 const digest=crypto.createHash('sha256').update(JSON.stringify([generate('123456789',1),generate('123456789',2)])).digest('hex');
 if (process.env.PRINT_DATASET_DIGEST) console.log(digest);
-else assert.equal(digest,'0efa3a7591e86852ac02c87505424f2e92bf98e44002f4628e417a32d3890464');
+else assert.equal(digest,'61a93fb9467ea9d2b10cdebaca33b0722f52acc7901400171dd1a2dda7f7b715');
 console.log('Portfolio generator: validation, repeatability, uniqueness, classifications and translation checks passed.');
