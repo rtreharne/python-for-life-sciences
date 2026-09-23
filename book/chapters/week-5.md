@@ -108,7 +108,7 @@ This pattern accepts only the four DNA bases. Some biological files use ambiguit
 
 Re-write the script above as a `is_dna(sequence)` function in `q2.py`. Return a Boolean using `re.fullmatch()` after converting the input to uppercase. Test `"ATCGTT"`, `"AXTG"`, `"atgc"`, and `""`. Expect `True`, `False`, `True`, and `False` respectively.
 
-Keep the function's return separate from printing. Use a loop outside the function to display each test input and its result. Add `"NNN"` to show that your rule rejects ambiguity codes. Later, this check will help you decide which FASTA records can be analysed.
+Keep the function's return separate from printing. Use a loop outside the function to display each test input and its result. Later, this function will be useful in helping you to decide which FASTA records can be analysed.
 
 <iframe title="Question 2 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/gBAfQFRxjhw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
