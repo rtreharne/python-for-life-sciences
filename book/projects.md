@@ -60,7 +60,7 @@ fragment_1 = "actgtgtcag"  # First shared practice fragment.
 fragment_2 = "tcagttttgg"  # Second shared practice fragment.
 ```
 
-Join the fragments and normalize the result to uppercase. Print its length. Then calculate the reverse complement, transcribe DNA to RNA, append seven `A` characters, and print the final RNA length.
+Join the fragments and convert the result to uppercase. Print its length. Then calculate the reverse complement, transcribe DNA to RNA, append seven `A` characters, and print the final RNA length.
 
 **Expected practice output:** the combined DNA is `ACTGTGTCAGTCAGTTTTGG`, with length `20`. Its reverse complement is `CCAAAACTGACTGACACAGT`. The final RNA is `ACUGUGUCAGUCAGUUUUGGAAAAAAA`, with length `27` after adding seven `A` characters.
 
@@ -125,7 +125,7 @@ For the generated Part C table, print one line per sample in the form `sample_na
 
 ### Part D: validate sequences
 
-Analyze these synthetic FASTA records:
+Analyse these synthetic FASTA records:
 
 ```text
 >sample_1
@@ -214,7 +214,7 @@ Use the regular expression `N[^P][ST]` to find candidate N-linked glycosylation-
 
 The practice proteins have zero hits, so also test `NAT` (one hit), `NPS` (no hit), and `N*S` (no hit across a stop). Save matching protein records to `output/motif_hits.fasta`; create an empty file if no proteins match.
 
-### Stage 5: organize your program
+### Stage 5: organise your program
 
 Move reusable functions into `sequtils.py` or `fasta_tools.py`, then import them from a short driver script. Write `output/summary.tsv` with a header row and columns for record identifier, DNA length, validity, ORF count, protein length, stop-symbol count, and motif-hit count. Use `NA` for analyses not performed on invalid records. Include brief tests for an empty FASTA file, a wrapped sequence, and an invalid base.
 

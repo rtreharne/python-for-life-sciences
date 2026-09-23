@@ -922,6 +922,111 @@ with open("summary.tsv", "w", encoding="utf-8") as handle:
 
 The rows are `gene_A`, `12`, `25.00` and `gene_B`, `9`, `33.33`, separated by tabs. The terminal reports `Invalid DNA: gene_bad`. Validation rejects empty strings before the calculation, preventing division by zero.
 
+## Week 6: Command-line arguments
+
+These solutions use `sys.argv`, which holds the script name followed by the arguments typed in the terminal. Run them from the folder containing the script.
+
+### Question 1 — Print a named sample
+
+```python
+"""Print the supplied sample name.
+
+Usage:
+    python q1.py SAMPLE_NAME
+"""
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python q1.py SAMPLE_NAME")
+    raise SystemExit(1)
+
+sample_name = sys.argv[1]
+print(f"Working with: {sample_name}")
+```
+
+`python q1.py sample_A` prints `Working with: sample_A`. The length check prevents an `IndexError` if the script is run with too few or too many arguments.
+
+### Question 2 — Summarise a DNA sequence
+
+```python
+"""Print a summary of one DNA sequence.
+
+Usage:
+    python q2.py SEQUENCE
+Example:
+    python q2.py atgca
+"""
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python q2.py SEQUENCE")
+    raise SystemExit(1)
+
+sequence = sys.argv[1].upper()
+print(f"Sequence: {sequence}")
+print(f"Length: {len(sequence)}")
+for base in "ACGT":
+    print(f"{base}: {sequence.count(base)}")
+```
+
+For `python q2.py atgca`, the sequence is `ATGCA`, its length is `5`, and the counts are A: 2, C: 1, G: 1, and T: 1.
+
+### Question 3 — Calculate a mean
+
+```python
+"""Calculate the mean of command-line measurements.
+
+Usage:
+    python q3.py NUMBER [NUMBER ...]
+"""
+
+import sys
+
+if len(sys.argv) < 2:
+    print("Usage: python q3.py NUMBER [NUMBER ...]")
+    raise SystemExit(1)
+
+values = [float(value) for value in sys.argv[1:]]
+mean = sum(values) / len(values)
+print(f"Mean: {mean:.2f}")
+```
+
+`python q3.py 4 8 6` prints `Mean: 6.00`. The slice `sys.argv[1:]` excludes the script name and keeps every measurement.
+
+### Question 4 — Count bases from a file
+
+```python
+"""Count DNA bases from an input file and write a report.
+
+Usage:
+    python q4.py INPUT_FILE OUTPUT_FILE
+Example:
+    python q4.py sequences.txt base_counts.txt
+"""
+
+import sys
+
+if len(sys.argv) != 3:
+    print("Usage: python q4.py INPUT_FILE OUTPUT_FILE")
+    raise SystemExit(1)
+
+input_filename = sys.argv[1]
+output_filename = sys.argv[2]
+
+with open(input_filename, encoding="utf-8") as handle:
+    sequence = ""
+    for line in handle:
+        sequence += line.strip().upper()
+
+with open(output_filename, "w", encoding="utf-8") as handle:
+    for base in "ACGT":
+        handle.write(f"{base}: {sequence.count(base)}\n")
+```
+
+With the supplied `sequences.txt`, `base_counts.txt` contains A: 2, C: 1, G: 3, and T: 3. Changing the input or output file only changes the terminal command, not the script.
+
 
 ## Project solutions
 

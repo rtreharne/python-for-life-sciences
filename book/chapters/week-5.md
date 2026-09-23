@@ -6,13 +6,13 @@ kernelspec:
 
 # Week 5: Dictionaries, patterns, and modules
 
-In Week 4, you wrote functions that read files and return useful results. This week, you will connect those functions into a small sequence-analysis program. You will store sequences under meaningful names, check their contents, and reuse your own code across several scripts.
+In Week 4, you wrote functions that read files and return useful results. This week, you will use dictionaries to store named data, regular expressions to check text, and modules to reuse functions across scripts.
 
-This is the final chapter covering the first five weeks of LIFE733. Keep VS Code open and work through it in stages. You do not need to understand the whole program before you begin: first make one lookup work, then one pattern check, then one file reader. Each of those pieces will have a job in the finished analysis.
+Work through the questions in order. Start with a small lookup, then check a sequence, then read a file. By the end of the chapter, you will combine these steps in a small sequence-analysis program.
 
 ## Organise your Week 5 work
 
-Create `week-5` alongside your earlier weekly folders and open it in VS Code. Use `practice.py` for the short examples. Save answers separately so experimenting with one example does not erase your previous work.
+Create `week-5` alongside your earlier weekly folders and open it in VS Code. Use `practice.py` for the short examples. Create a separate answer file for each question.
 
 ```text
 LIFE733/
@@ -26,15 +26,15 @@ LIFE733/
     └── examples.gff    ← Created by make_examples.py
 ```
 
-This is a folder diagram: do not create a file literally named `q1.py … q10.py`. Question 5 is an explanation activity. Create the other files when you reach them. All starter data appears below; you do not need a student ID or an extra download.
+This is a folder diagram. Do not create a file literally named `q1.py … q10.py`. Question 5 is an explanation activity. Create the other files when you reach them. All starter data appears below, so you do not need a student ID or an extra download.
 
 Run scripts with the Python command that worked in earlier weeks, such as `python practice.py` or `python3 practice.py`. If a file cannot be found, use `pwd` and `ls` in the integrated terminal to check that you are in `week-5` and that the file has been saved there. Keep imported files in this folder too.
 
-For each example, **predict → edit → save → run → check**. Change one value and explain why the output changes. Start by giving a sequence a name you can use to find it again.
+For each example, **predict → edit → save → run → check**. Change one value and explain why the output changes.
 
 ## Look up values by name with a dictionary
 
-A list lets you retrieve an item by its position. A **dictionary** lets you retrieve a value by a **key**, such as a sample name. You met dictionaries while counting words in Week 4; now you will use them to connect biological identifiers with data.
+A list stores items in order. A **dictionary** stores values under **keys**, such as sample names. You met dictionaries while counting words in Week 4. Here, you will use them to connect biological identifiers with data.
 
 ```{code-cell} python
 lengths = {"sample_A": 12, "sample_B": 9}  # Connect each name to a length.
@@ -46,7 +46,7 @@ print(lengths)
 
 Curly braces `{}` create the dictionary. Each colon separates a key from its value; commas separate the pairs. Here the keys are strings and the values are integers. Square brackets look up a key, so `lengths["sample_A"]` returns `12` on the first line of output. After the assignments, the dictionary contains lengths `18`, `9`, and `15` for samples A, B, and C.
 
-A key appears only once. Assigning to the same key updates its value, which is useful when correcting a record but can accidentally overwrite data if two samples share a name.
+A key can appear only once. Assigning to an existing key changes its value. This is useful when correcting a record, but it can overwrite data if two samples have the same name.
 
 **Try it:** add `sample_D`, then change its length. Predict whether the dictionary will have four entries or five. Use `len(lengths)` to check.
 
@@ -72,7 +72,7 @@ In `q1.py`, create a dictionary containing `ATG` → `M`, `GCT` → `A`, and `TA
 1. Look up `ATG` and print its value. Expect `M`.
 2. Add `TTT` → `F` and check that the dictionary now has four entries.
 3. Loop over all key/value pairs and print one pair per line.
-4. Try looking up `CCC` using `.get()` with `"Unknown"` as the fallback. Explain why the dictionary still has four entries afterward.
+4. Try looking up `CCC` using `.get()` with `"Unknown"` as the fallback. Explain why the dictionary still has four entries afterwards.
 
 Attempt the question before watching the walkthrough.
 
@@ -82,7 +82,7 @@ A dictionary answers “What value belongs to this key?” Next, ask a different
 
 ## Check text with a regular expression
 
-A **regular expression**, often shortened to *regex*, describes a text pattern. Python's `re` module provides operations for applying these patterns. A module is a collection of reusable code; `import re` makes this one available in your script.
+A **regular expression**, often shortened to *regex*, describes a text pattern. Python's `re` module provides functions for using these patterns. A module is a file of reusable code. `import re` makes its functions available in your script.
 
 ```{code-cell} python
 import re                                   # Load Python's pattern-matching module.
@@ -100,7 +100,7 @@ Read `r"[ACGT]+"` in parts:
 - `+` repeats that choice **one or more times**. It therefore rejects an empty string.
 - The quotation marks delimit the Python string; they are not part of the pattern being matched.
 
-These rules deliberately accept only the four DNA bases. Some biological files use ambiguity codes such as `N`; for this exercise, flag them rather than silently deleting them.
+This pattern accepts only the four DNA bases. Some biological files use ambiguity codes such as `N`. For this exercise, report them rather than deleting them.
 
 **Try it:** change `sequence` to `"AXTG"`, then `""`, then `"AT GC"`. All three should fail. Calling `.upper()` changes case; it does not remove invalid characters or internal spaces.
 
@@ -116,7 +116,7 @@ You have already imported a module to avoid writing your own pattern matcher. Py
 
 ## Use code from a standard library module
 
-The **standard library** comes with Python. Its `math` module provides mathematical functions and constants, so no extra package installation is needed.
+The **standard library** comes with Python. Its `math` module provides mathematical functions and constants. You do not need to install anything extra.
 
 ```{code-cell} python
 import math                        # Make the module available by name.
@@ -137,7 +137,7 @@ Give the printed results labels. Then ask a partner or an AI tool to suggest one
 
 <iframe title="Question 3 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/sBE8iQAbe9g" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Imported code does not have to come from Python's standard library. Your own Week 4 functions can also live in a module, ready for several scripts to use.
+You can also put your own functions in a module. This lets several scripts use the same code.
 
 ## Put your own functions in a module
 
@@ -150,7 +150,7 @@ def transcribe(sequence):
     return sequence.upper().replace("T", "U")  # Normalise case, then replace T.
 ```
 
-This file defines a function but does not call it. The triple-quoted first line inside the function is a **docstring**, a description of what the function does. For now, the function assumes its input is valid DNA.
+This file defines a function but does not run it. The triple-quoted line inside the function is a **docstring**. It describes what the function does. For now, the function assumes its input is valid DNA.
 
 Next, create a separate `main.py` in the same folder:
 
@@ -160,7 +160,7 @@ import sequtils                           # Import the file without the .py exte
 print(sequtils.transcribe("atgc"))        # Call the function through its module name.
 ```
 
-Run `main.py`; expect `AUGC`. Python finds `sequtils.py` beside the running script. The expression `sequtils.transcribe` means “the function named `transcribe` inside `sequtils`”. Keep the two files separate and save both before running again.
+Run `main.py`. Expect `AUGC`. Python finds `sequtils.py` because it is beside the running script. `sequtils.transcribe` means “the function named `transcribe` inside `sequtils`”. Keep the two files separate and save both before running again.
 
 Avoid naming your own files `re.py`, `math.py`, or `random.py`: Python might import your file when you intended to use the standard library. Also keep demonstration calls in `main.py`; top-level statements in a module run when it is first imported.
 
@@ -174,11 +174,11 @@ Call both functions from `main.py`. For `"atgc"`, expect RNA `AUGC` and reverse 
 
 <iframe title="Question 4 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/iek0ZhnYm2s" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Keep that module: you will extend it with a file reader shortly. First, practise interpreting a pattern precisely enough to explain what it will and will not match.
+Keep `sequtils.py` open. You will add a file reader to it later. First, practise explaining what a pattern will and will not match.
 
 ## Find a pattern within a longer string
 
-Validation and searching answer different questions. `fullmatch` checks an entire input; `findall` returns non-overlapping matches within it.
+Validation and searching do different jobs. `fullmatch` checks an entire input. `findall` returns non-overlapping matches within it.
 
 ```{code-cell} python
 import re                              # Use the same module for a different operation.
@@ -199,7 +199,7 @@ Ask a partner or an AI tool to explain the same pattern, then compare the explan
 
 <iframe title="Question 5 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/5h3cdH7A6jI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-You can now store named values, test text, and share functions. The remaining activities bring those skills together using files with recognisable biological structures.
+You can now store named values, check text, and share functions. The remaining questions use those skills with biological file formats.
 
 ## Meet FASTA and GFF files
 
@@ -213,7 +213,7 @@ TCTTAA
 GGCC
 ```
 
-The header identifies the sequence; it is not part of the sequence itself. The two lines for `gene_A` join to make `ATGAACTCTTAA`, with length `12`. Keep headers as dictionary keys and join sequence lines as values. Our examples use unique identifiers without descriptions to keep the connection between files clear.
+The header identifies the sequence. It is not part of the sequence itself. The two lines for `gene_A` join to make `ATGAACTCTTAA`, with length `12`. Use headers as dictionary keys and join the sequence lines as values.
 
 A **GFF3** file describes features at positions along those sequences. Its nine columns are separated by tabs. Start and end positions are 1-based and both endpoints are included. The strand is `+` or `-`; a CDS row also has a phase describing where the next complete codon begins. These conventions are defined in the [GFF3 specification](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md).
 
@@ -229,7 +229,7 @@ A **GFF3** file describes features at positions along those sequences. Its nine 
 | phase | `7` | CDS phase `0`, `1`, or `2`; `.` for other features |
 | attributes | `8` | Named details such as `ID` and `Parent` |
 
-FASTA gives you the letters; GFF tells you where a feature lies among those letters. Questions 8 and 9 are optional background practice. You can complete the FASTA work and go straight from Question 7 to Question 10.
+FASTA gives you the sequence. GFF tells you where a feature lies in that sequence. Questions 8 and 9 are optional. You can move from Question 7 straight to Question 10.
 
 ### Question 6 — Create and inspect your example files
 
@@ -263,11 +263,11 @@ The walkthrough below demonstrates dataset preparation with a different generato
 
 <iframe title="Question 6 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/8n3jBd--AnM" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Now that you can inspect the files yourself, teach Python to collect the same records. Start with the point at which one FASTA record ends and another begins.
+You can inspect the files yourself. Next, write code to collect the same records.
 
 ## Read one FASTA record at a time
 
-A reader must remember the current header and the sequence collected so far. When a new header arrives, save the previous record before starting the next one. There is no new header after the final sequence, so save that record once more after the loop.
+A FASTA reader needs a current header and a sequence collected so far. When it finds a new header, it saves the previous record before starting the next one. After the loop, it must save the final record too.
 
 Try this small demonstration in `practice.py`:
 
@@ -306,7 +306,7 @@ Use these rules so your function has predictable behaviour:
 
 Print the number of records, then each identifier and length. Expect `3`, followed by `gene_A: 12`, `gene_B: 9`, and `gene_bad: 6`. Test a one-record file and a file containing blank lines. Make separate test files for the rejected cases so you keep your main dataset intact.
 
-You now have sequences available by name. For the optional GFF activities, use those names to look up a sequence and extract a specified region.
+You can now retrieve sequences by name. The optional GFF questions use those names to extract specified regions.
 
 ## Optional: connect coordinates to sequences
 
@@ -319,7 +319,7 @@ fragment = sequence[start - 1:end]   # Shift the start, keeping the excluded Pyt
 print(fragment)                     # Positions 2, 3, 4, and 5 give CGTA.
 ```
 
-Only subtract one from `start`. Subtracting one from `end` as well loses the final base. Check the length with `end - start + 1`.
+Subtract one from `start` only. Subtracting one from `end` loses the final base. Check the length with `end - start + 1`.
 
 ### Question 8 — Inspect GFF features (optional)
 
@@ -329,7 +329,7 @@ Select rows whose type is `CDS` or `exon`. Print the type, integer start and end
 
 Expect five selected rows: one exon and four CDS features. The first has ID `exon_A`, coordinates `1`–`12`, and strand `+`. Add a comment line and confirm it does not change the result. Keep this exercise separate from FASTA reading: you are inspecting annotations, not changing any sequences yet.
 
-Once the coordinates are available, several CDS fragments can be joined into a coding sequence. Their order matters just as much as their contents.
+Several CDS fragments can be joined into a coding sequence. Their order matters as much as their contents.
 
 ### Question 9 — Build coding sequences (optional)
 
@@ -349,11 +349,11 @@ Check `tx_A` against `ATGAACTCTTAA` and `tx_B` against `ATGTAA`. Reorder the row
 
 These are joined **coding regions**, not full RNA transcripts: untranslated regions are omitted. This exercise assumes one sequence and one strand per parent, non-overlapping intervals, one parent per CDS, and phase zero with complete codons. General GFF processing needs additional handling for other annotations; use these small files to understand the core operation first.
 
-Whether or not you tried GFF, you can now return to the FASTA data and translate one complete coding sequence. The final question uses `gene_A` directly, so it does not depend on Questions 8 or 9.
+Whether or not you tried the GFF questions, you can now return to the FASTA data and translate one complete coding sequence. The final question uses `gene_A` directly, so it does not depend on Questions 8 or 9.
 
 ## Translate a sequence, then search the protein
 
-Translation combines the dictionary lookup from Question 1 with the three-character steps from Week 3. For this exercise, begin at the first base, read consecutive triplets, and stop at the first stop codon. This is a supplied reading frame, not a program for discovering genes.
+Translation uses the dictionary lookup from Question 1 and the three-character steps from Week 3. For this exercise, begin at the first base, read consecutive triplets, and stop at the first stop codon. The reading frame is supplied. This is not a program for finding genes.
 
 Save this small table at the top of `sequtils.py`, outside any function:
 
@@ -374,9 +374,9 @@ In `q10.py`, read `examples.fasta`, select `gene_A`, and translate it. Expect `M
 
 **Part B: search the protein.** Start with the pattern `r"N[ST]"`, meaning N immediately followed by S or T. Use `re.findall` to list matches and `re.search` to decide whether any match exists. For `MNS`, expect one match, `NS`.
 
-Write the protein record to `motif_hits.fasta` only when a match exists. Open the output in write mode even if there are no hits, so a previous run's results do not remain in the file. Test the no-hit case with `M` and check that the file is empty afterward.
+Write the protein record to `motif_hits.fasta` only when a match exists. Open the output in write mode even if there are no hits, so a previous run's results do not remain in the file. Test the no-hit case with `M` and check that the file is empty afterwards.
 
-This short motif is a text-search exercise. A matching string alone does not establish a protein's biological function. As an extension, make the pattern a function argument so you can change the search without changing the file-writing code.
+This short motif activity is a text-search exercise. A matching string alone does not establish a protein's biological function. As an extension, make the pattern a function argument so you can change the search without changing the file-writing code.
 
 ## When the pieces do not work together
 
@@ -392,12 +392,12 @@ This short motif is a text-search exercise. A matching string alone does not est
 | Reverse-strand fragments appear in the wrong order | Sort, concatenate, then reverse-complement the joined sequence. |
 | Old motif hits remain after a no-hit run | Open the output in write mode on every run. |
 
-Test each function with one small input before connecting it to a file. When an error appears, identify which stage failed: reading, validation, transformation, or writing. That makes the next check much more specific than changing several functions at once.
+Test each function with one small input before connecting it to a file. When an error appears, identify the stage that failed: reading, validation, transformation, or writing. Then change one part at a time.
 
 ## Bring the first five weeks together
 
-Compare your attempts with the [Week 5 solutions](../solutions.md#week-5), then choose one function and explain its input, return value, and error cases without looking at the code.
+Compare your attempts with the [Week 5 solutions](../solutions.md#week-5). Then choose one function and explain its input, return value, and error cases without looking at the code.
 
 For extra practice, combine `read_fasta`, your DNA validator, and the GC calculation from Week 4. Write a tab-separated summary containing each valid record's identifier, length, and GC percentage to two decimal places. Report invalid records by name instead of silently deleting them. For these files, valid lengths are `12` and `9`, with GC percentages `25.00` and `33.33`; flag `gene_bad`.
 
-You began with strings and simple calculations. You can now read named sequences, validate them, reuse functions, and save a result another program can read. Continue with the [Portfolio Projects](../projects.md) to practise choosing and connecting these tools for a larger task.
+You began with strings and simple calculations. You can now read named sequences, validate them, reuse functions, and save a result another program can read. Continue with the [Portfolio Projects](../projects.md) to practise combining these tools in a larger task.

@@ -14,13 +14,19 @@ Personal or public accounts on other GAI platforms can have different terms, pri
 
 University approval is not permission to upload sensitive information without thought. Use Copilot responsibly, follow the instructions for each assessment, and remove identifying or confidential details from prompts unless the teaching team has explicitly said that their use is permitted.
 
+## A note about the videos
+
+You may notice that I use ChatGPT at several points in the videos rather than the recommended Microsoft Copilot. Those videos were recorded before the University developed its policy and guidance on student GAI use.
+
+Use Copilot for the same learning activities shown in the videos, such as asking for an explanation, discussing an error, or suggesting tests. The wording and screen layout may differ, but you can use Copilot in the same way to support your learning.
+
 ## The rule: understand, then use
 
 Before using GAI to help with a programming task, make a genuine attempt yourself. You should be able to explain:
 
-- the Python syntax you used or plan to use;
-- the logic: what the program needs to do, step by step; and
-- the structure: which variables, conditions, loops, functions, files, or data structures are needed and why.
+- the Python syntax you used or plan to use
+- the logic: what the program needs to do, step by step
+- the structure: which variables, conditions, loops, functions, files, or data structures are needed and why
 
 Use GAI as a tutor, reviewer, or debugging partner. Do not use it as a replacement for your own thinking or allow it to write a complete solution for you. Follow any task-specific instructions on permitted use of GAI, especially for assessed work.
 
@@ -62,20 +68,20 @@ For each portfolio task, save GAI records in that task's `GAI_documentation` fol
 
 Create one Markdown or text file for each meaningful interaction, for example `2026-10-14_loop-debugging.md`. Include:
 
-- the date and the GAI tool used;
-- the task and the problem you were trying to solve;
-- your own attempt before asking for help;
-- the prompt you gave GAI;
-- a brief summary of its response, rather than a large copied transcript;
-- what you used, changed, or rejected; and
-- how you checked the result.
+- the date and the GAI tool used
+- the task and the problem you were trying to solve
+- your own attempt before asking for help
+- the prompt you gave GAI
+- a brief summary of its response, rather than a large copied transcript
+- what you used, changed, or rejected
+- how you checked the result
 
 Use this template:
 
 ```text
 Date: 2026-10-14
 Tool: [name and version of GAI tool]
-Task: Task 1 — count bases in a DNA sequence
+Task: Task 1: count bases in a DNA sequence
 
 My attempt before using GAI:
 I used a for loop and a counter, but my counter did not change.

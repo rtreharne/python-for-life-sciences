@@ -10,7 +10,7 @@ Keep your work in a folder you can find again, for example `Documents/LIFE733`. 
 
 If you are working on your own computer, create the main `LIFE733` folder in Documents (or another location that is backed up). Open this main folder in VS Code. In the **Explorer** panel, use the **New Folder** button to create the folders shown below. Do this at the start of the module, even though many will be empty at first.
 
-Use the exact folder names and keep all work for a teaching week in its matching `week-*` folder. There are no `week-6` or `week-7` folders: these weeks are not part of this folder structure. Do not store coursework only in Downloads, on the Desktop, or in a collection of unrelated folders.
+Use the exact folder names and keep all work for a teaching week in its matching `week-*` folder. There is no `week-7` folder. Do not store coursework only in Downloads, on the Desktop, or in a collection of unrelated folders.
 
 By the end of the module, your folder should look like this:
 
@@ -21,6 +21,7 @@ LIFE733/
 ├── week-3/
 ├── week-4/
 ├── week-5/
+├── week-6/
 ├── week-8/
 ├── week-9/
 ├── week-10/
@@ -38,7 +39,7 @@ LIFE733/
         └── GAI_documentation/
 ```
 
-Put each task's Python files, input data, notes, and other working files inside its own `task-*` folder. Put files produced by your code in that task's `output` folder. Put the required record of your use of generative AI in that task's `GAI_documentation` folder. Keep these folders with their task; do not combine all outputs or all GAI records in one place.
+Put each task's Python files, input data, notes, and other working files inside its own `task-*` folder. Put files produced by your code in that task's `output` folder. Put the required record of your use of generative AI in that task's `GAI_documentation` folder. Keep these folders with their task. Do not combine all outputs or all GAI records in one place.
 
 At the end of each practical, save your work, check that it is in the right folder, and make a backup (for example, to university storage or another approved location). In Week 10 or 11 you will submit the whole `LIFE733` folder as a `.zip` file. **Following this structure throughout the module is essential:** it makes the submission complete, organised, and straightforward to mark.
 
@@ -56,7 +57,7 @@ Python and VS Code should already be available. Use your M: drive for all LIFE73
    python --version
    ```
 
-   It should print `Python 3...`. If it does not, try `py --version`. Ask a demonstrator or IT support if neither command works; do not attempt to install Python on an MWS PC.
+   It should print `Python 3...`. If it does not, try `py --version`. Ask a demonstrator or IT support if neither command works. Do not attempt to install Python on an MWS PC.
 
 ## Your own Windows computer
 
@@ -99,7 +100,7 @@ If it prints Python 3.9 or later, Python is suitable. If the command is not foun
 
 ### 2. Install or update Python
 
-1. Download the macOS installer from [python.org/downloads](https://www.python.org/downloads/macos/). Choose the **universal2** installer; it works on both Apple Silicon and Intel Macs.
+1. Download the macOS installer from [python.org/downloads](https://www.python.org/downloads/macos/). Choose the **universal2** installer. It works on both Apple Silicon and Intel Macs.
 2. Open the downloaded `.pkg` file and complete the installation.
 3. Close and reopen Terminal, then run `python3 --version` again. It must show Python 3.9 or later.
 
@@ -111,7 +112,7 @@ If it prints Python 3.9 or later, Python is suitable. If the command is not foun
 
 ## Chromebook
 
-VS Code needs ChromeOS's Linux development environment. This is available on many personal Chromebooks, but may be disabled by a school or organisation. If you cannot enable it, use an MWS PC or ask the teaching team for an alternative; the browser version of VS Code alone cannot run Python locally.
+VS Code needs ChromeOS's Linux development environment. This is available on many personal Chromebooks, but may be disabled by a school or organisation. If you cannot enable it, use an MWS PC or ask the teaching team for an alternative. The browser version of VS Code alone cannot run Python locally.
 
 ### 1. Enable Linux and install Python
 
@@ -128,7 +129,7 @@ VS Code needs ChromeOS's Linux development environment. This is available on man
 
 ### 2. Install and configure VS Code
 
-1. In Chrome, download the **.deb** version of VS Code for Debian/Ubuntu from [code.visualstudio.com](https://code.visualstudio.com/Download). Choose the build that matches your Chromebook's Linux architecture (normally 64-bit x86; some newer models use ARM64).
+1. In Chrome, download the **.deb** version of VS Code for Debian/Ubuntu from [code.visualstudio.com](https://code.visualstudio.com/Download). Choose the build that matches your Chromebook's Linux architecture. This is normally 64-bit x86, but some newer models use ARM64.
 2. Open the downloaded `.deb` file and choose **Install**. Then open VS Code from the Launcher.
 3. Install the **Python** and **Pylance** extensions by Microsoft. Open your `LIFE733` folder, press **Ctrl+Shift+P**, run **Python: Select Interpreter**, and choose `/usr/bin/python3`.
 

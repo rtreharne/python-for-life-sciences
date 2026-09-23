@@ -93,7 +93,7 @@ First, `show_double` prints `6`. The next lines show that `shown` is `None`, `ca
 
 Names created inside a function, including its parameters, are **local** to that call. Use parameters to bring data in and `return` to send results out. For example, the calling code above uses `calculated`; it does not try to read the function's local name `value`.
 
-**Try it:** change the argument from `3` to `5`. Then temporarily remove `return` from `calculate_double`, leaving just `value * 2`. Run the script and explain why the final addition now fails. Restore `return` afterward.
+**Try it:** change the argument from `3` to `5`. Then temporarily remove `return` from `calculate_double`, leaving just `value * 2`. Run the script and explain why the final addition now fails. Restore `return` afterwards.
 
 ### Question 1 — Write Your First Function
 

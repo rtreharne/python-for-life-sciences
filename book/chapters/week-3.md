@@ -87,7 +87,7 @@ The loop prints one processing message for each value: `2.0`, `3.5`, then `4.0`.
 
 Read `for volume in volumes:` as “for each item in `volumes`, call the current item `volume` and run the indented instructions”. `volume` is a variable name you choose. The colon starts the block, and the four spaces show which lines belong to it. One pass through that block is called an **iteration**.
 
-**Try it:** add another volume. You should get another processing message without changing the loop itself. Then indent the final `print` so it is inside the loop, run the script, and explain why the message now repeats. Move it back afterward.
+**Try it:** add another volume. You should get another processing message without changing the loop itself. Then indent the final `print` so it is inside the loop, run the script, and explain why the message now repeats. Move it back afterwards.
 
 Printing each value is useful for checking what a loop visits. Next, keep a running total so the loop produces one result from all the values.
 
@@ -270,7 +270,7 @@ You could also loop over `samples[::-1]`, a reversed slice. That creates a new l
 
 Create `q6.py` with `["cat", "dog", "rabbit", "tiger"]`. Use a loop to print the words in reverse order, one per line: tiger, rabbit, dog, cat. Keep each word's letters in their original order.
 
-Do not use `list.reverse()`. Use either backwards indices or a reversed slice with a loop. Print the original list afterward to check that it is unchanged. Try the question before watching its walkthrough.
+Do not use `list.reverse()`. Use either backwards indices or a reversed slice with a loop. Print the original list afterwards to check that it is unchanged. Try the question before watching its walkthrough.
 
 <iframe title="Question 6 walkthrough: reverse a list" width="560" height="315" src="https://www.youtube-nocookie.com/embed/e0k5wEjU8k8" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -332,7 +332,7 @@ A **module** provides code you can reuse. `import random` makes this standard Py
 
 Inside a `while` loop, ask for an integer guess. Print `Too low` when it is below the target and `Too high` when it is above. When it equals the target, print `Correct` and finish. Use `while True` with `break`, or a condition that changes when the right answer is entered.
 
-For testing, temporarily replace the random target with `target = 7`. Enter `3`, `9`, then `7`; expect `Too low`, `Too high`, then `Correct`, and no fourth prompt. Also test a correct first guess. Restore the random choice afterward. Keep the target assignment outside the loop so it does not change after every guess. Assume valid integer input for this exercise.
+For testing, temporarily replace the random target with `target = 7`. Enter `3`, `9`, then `7`; expect `Too low`, `Too high`, then `Correct`, and no fourth prompt. Also test a correct first guess. Restore the random choice afterwards. Keep the target assignment outside the loop so it does not change after every guess. Assume valid integer input for this exercise.
 
 <iframe title="Question 8 walkthrough: guess the number" width="560" height="315" src="https://www.youtube-nocookie.com/embed/sZX6PiBaQJ4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

@@ -1,8 +1,8 @@
 # Coding for Life Sciences
 
-Welcome to Coding for Life Sciences. This book accompanies the first five weeks of LIFE733 and introduces Python through examples drawn from biological data. It is written for students who are new to programming, so you can begin without previous coding experience.
+Welcome to Coding for Life Sciences. This book accompanies the first six weeks of LIFE733 and introduces Python through examples drawn from biological data. It is written for students who are new to programming, so you can begin without previous coding experience.
 
-The book is organized week by week. Follow one chapter each week alongside the course: each chapter introduces the ideas for that stage, explains them with worked examples, and gives you activities to practise. The topics build gradually, from strings and variables to small programs that read and analyse sequence files.
+The book is organised week by week. Follow one chapter each week alongside the course: each chapter introduces the ideas for that stage, explains them with worked examples, and gives you activities to practise. The topics build gradually, from strings and variables to small programs that read and analyse sequence files.
 
 You will get the most from the book by writing and testing code as you go. Read each explanation, study the worked example, and try the activities yourself before looking at the solutions. Once you have completed the weekly chapters, complete both Portfolio Projects to bring several skills together. These projects are required for the LIFE733 portfolio, in addition to the BioBoost knowledge checks. Instructions for those knowledge checks will be introduced separately.
 
@@ -10,14 +10,15 @@ The code examples run when the book is built, so their output is shown on the pa
 
 ## How to use the book
 
-1. Complete the [Course setup](setup.md) before beginning Week 1.
+1. Complete the [Course setup](setup.md) during the first workshop in Week 1. This is required.
 2. Work through the chapter for the current week.
 3. Read the explanation and trace each line in the worked examples.
 4. Before checking the displayed output, predict what the code will do.
 5. Attempt the chapter activities, then use the [solutions](solutions.md) to review your approach.
-6. After Week 5, complete the [Portfolio Projects](projects.md).
+6. Work on the [Portfolio Projects](projects.md) throughout the module, alongside the weekly chapters. Aim to complete Project 1 after Week 3 and Project 2 after Week 5.
+7. You may return to a completed project and improve it when you learn a new skill. Do this before the submission deadline shown in Canvas.
 
-The five chapters cover strings and variables (Week 1), decisions and numbers (Week 2), lists and loops (Week 3), functions and files (Week 4), then dictionaries, regular expressions, and modules (Week 5).
+The six chapters cover strings and variables (Week 1), decisions and numbers (Week 2), lists and loops (Week 3), functions and files (Week 4), dictionaries, regular expressions, and modules (Week 5), then command-line arguments (Week 6).
 
 ## Responsible use of generative AI
 

@@ -33,7 +33,7 @@ A **shell** (Bash or PowerShell) interprets commands you type in the terminal. W
 
 The terminal always works from a **current directory**. When you give it a filename, it looks in that folder. Opening a file in the editor does not always change the terminal's directory, so check it before running a script.
 
-**Bash — macOS/Linux:**
+**Bash (macOS/Linux):**
 
 ```bash
 pwd                 # Print the full path of the current directory.
@@ -42,7 +42,7 @@ ls                  # List the files and folders in that directory.
 
 `pwd` shows the current directory. `ls` lists its contents; an empty folder may show nothing. The path should end in `LIFE733/week-1`.
 
-**PowerShell — Windows/MWS:**
+**PowerShell (Windows/MWS):**
 
 ```powershell
 Get-Location        # Show the current directory's full path.

@@ -17,6 +17,7 @@ project:
     - file: chapters/week-3.md
     - file: chapters/week-4.md
     - file: chapters/week-5.md
+    - file: chapters/week-6.md
     - file: projects.md
     - file: solutions.md
 site:
