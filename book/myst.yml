@@ -1,7 +1,7 @@
 version: 1
 project:
   id: life733-python-book
-  title: Python for Life Sciences
+  title: Coding for Life Sciences
   description: A practical introduction to Python through biological data
   authors:
     - Robert Treharne
@@ -10,6 +10,8 @@ project:
     - portfolio-generator
   toc:
     - file: index.md
+    - file: setup.md
+    - file: gai.md
     - file: chapters/week-1.md
     - file: chapters/week-2.md
     - file: chapters/week-3.md
@@ -20,5 +22,5 @@ project:
 site:
   template: book-theme
   options:
-    logo_text: Python for Life Sciences
+    logo_text: Coding for Life Sciences
     folders: true

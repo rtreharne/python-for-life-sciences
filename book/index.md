@@ -1,6 +1,6 @@
-# Python for Life Sciences
+# Coding for Life Sciences
 
-Welcome to Python for Life Sciences. This book accompanies the first five weeks of LIFE733 and introduces Python through examples drawn from biological data. It is written for students who are new to programming, so you can begin without previous coding experience.
+Welcome to Coding for Life Sciences. This book accompanies the first five weeks of LIFE733 and introduces Python through examples drawn from biological data. It is written for students who are new to programming, so you can begin without previous coding experience.
 
 The book is organized week by week. Follow one chapter each week alongside the course: each chapter introduces the ideas for that stage, explains them with worked examples, and gives you activities to practise. The topics build gradually, from strings and variables to small programs that read and analyse sequence files.
 
@@ -10,23 +10,18 @@ The code examples run when the book is built, so their output is shown on the pa
 
 ## How to use the book
 
-1. Work through the chapter for the current week.
-2. Read the explanation and trace each line in the worked examples.
-3. Before checking the displayed output, predict what the code will do.
-4. Attempt the chapter activities, then use the [solutions](solutions.md) to review your approach.
-5. After Week 5, complete the [Portfolio Projects](projects.md).
+1. Complete the [Course setup](setup.md) before beginning Week 1.
+2. Work through the chapter for the current week.
+3. Read the explanation and trace each line in the worked examples.
+4. Before checking the displayed output, predict what the code will do.
+5. Attempt the chapter activities, then use the [solutions](solutions.md) to review your approach.
+6. After Week 5, complete the [Portfolio Projects](projects.md).
 
 The five chapters cover strings and variables (Week 1), decisions and numbers (Week 2), lists and loops (Week 3), functions and files (Week 4), then dictionaries, regular expressions, and modules (Week 5).
 
-## Course setup
-
-Use Python 3 with a code editor such as VS Code. You can use a university-managed computer or install Python locally. Keep your work in a folder that you can find again. A terminal command such as `python --version` (or `python3 --version`) checks that Python is available.
-
-These chapters use only Python's standard library. Some optional examples use files that you create yourself. The chapter examples need no private course account. For the Portfolio Projects, first test with the shared practice files, then generate individual datasets in the book using your nine-digit student ID and run your solutions on those files.
-
 ## Responsible use of generative AI
 
-Use an AI assistant to ask for explanations, interpret an error, or suggest tests after you have made an attempt. Check every suggestion by running it and explaining it in your own words. Follow the course rules for AI use in assessed work, including the Portfolio Projects. Make sure you can explain and test the code you submit.
+Read [Using Generative Artificial Intelligence (GAI)](gai.md) before beginning Week 1. Use GAI to ask for explanations, interpret an error, or suggest tests after you have made an attempt. Check every suggestion by running it and explaining it in your own words. Follow the course rules for AI use in assessed work, including the Portfolio Projects. Make sure you can explain and test the code you submit.
 
 ## Portfolio Projects
 
