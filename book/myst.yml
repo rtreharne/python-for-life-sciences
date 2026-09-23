@@ -21,6 +21,8 @@ project:
     - file: solutions.md
 site:
   template: book-theme
+  parts:
+    footer: footer.md
   options:
     logo_text: Coding for Life Sciences
     folders: true
