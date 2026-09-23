@@ -48,7 +48,7 @@ print("Last:", counts[-1])     # Index -1 selects the last item.
 print("Samples:", len(counts)) # Count items, not characters or their sum.
 ```
 
-The first item is `4`, the last is `10`, and there are four samples. As with strings in Week 1, indexing starts at zero. Square brackets create a list when they enclose values; after a variable name, as in `counts[0]`, they select an item.
+The first item is `4`, the last is `10`, and there are four samples. As with strings in Week 1, indexing starts at zero. Square brackets create a list when they enclose values. After a variable name, as in `counts[0]`, they select an item.
 
 `len(counts)` returns the number of items. It is a function, so write `len(counts)`, not `counts.len()`. The last nonnegative index in a list of four items is `3`. Asking for `counts[4]` raises `IndexError` because that item does not exist.
 
@@ -112,7 +112,7 @@ Set the starting value before the loop. If you put `total = 0.0` inside the loop
 
 Create `q1.py` with the list `[3, 7, 2, 9, 5]`. Use a `for` loop to add the numbers and print `Total: 26`. For this exercise, build the total yourself rather than using Python's `sum` function.
 
-Test your loop with `[1, 2, 3]` too; it should give `6`. Keep the final output outside the loop. Try the question before watching its walkthrough.
+Test your loop with `[1, 2, 3]` too. It should give `6`. Keep the final output outside the loop. Try the question before watching its walkthrough.
 
 <iframe title="Question 1 walkthrough: sum a list" width="560" height="315" src="https://www.youtube-nocookie.com/embed/2Ypp0C9OjeQ" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -134,9 +134,9 @@ else:
     print("No readings to average.")
 ```
 
-The total is `27.0`, so the mean is `9.0`. The `if` statement is aligned with `for`, which puts it after the loop. Its own indented block runs only if the list contains at least one item. An empty list is written `[]`; its length is zero, so dividing by its length would fail.
+The total is `27.0`, so the mean is `9.0`. The `if` statement is aligned with `for`, which puts it after the loop. Its own indented block runs only if the list contains at least one item. An empty list is written `[]`. Its length is zero, so dividing by its length would fail.
 
-**Try it:** change `readings` to `[]`. The loop performs no iterations and the script prints `No readings to average.`. Then restore the list and add `15.0`; the mean should become `10.5`.
+**Try it:** change `readings` to `[]`. The loop performs no iterations and the script prints `No readings to average.`. Then restore the list and add `15.0`. The mean should become `10.5`.
 
 ### Question 2 — Average of Numbers
 
@@ -160,9 +160,9 @@ print(readings)
 print("Largest:", max(readings))  # Find the largest item in this nonempty list.
 ```
 
-The list becomes `[4.5, 7.0]`, and the largest value is `7.0`. `.append(value)` changes the existing list; you do not need to assign its result. Avoid `readings = readings.append(4.5)`: the method returns `None`, so that assignment would replace your list with `None`.
+The list becomes `[4.5, 7.0]`, and the largest value is `7.0`. `.append(value)` changes the existing list. You do not need to assign its result. Avoid `readings = readings.append(4.5)`: the method returns `None`, so that assignment would replace your list with `None`.
 
-`max(readings)` finds the largest item; `min(readings)` finds the smallest. Both need at least one item when used this way. These are functions, like `len`, so the list goes inside their parentheses.
+`max(readings)` finds the largest item. `min(readings)` finds the smallest. Both need at least one item when used this way. These are functions, like `len`, so the list goes inside their parentheses.
 
 **Try it:** append `-2.0` and print the list, minimum, and maximum. The list length should become three, the minimum should be `-2.0`, and the maximum should remain `7.0`.
 
@@ -181,7 +181,7 @@ print("Readings:", readings)          # Display the completed list once.
 
 Save this example in `practice.py` and run it in the terminal. It asks for three readings. `range(1, 4)` starts at `1` and stops before `4`, so `sample_number` takes the values `1`, `2`, and `3`. For responses `4`, `8`, and `6`, the final list is `[4.0, 8.0, 6.0]`.
 
-`range(3)` also gives three iterations, but starts at zero: `0`, `1`, `2`. Use the two-argument form when you want the prompt numbering to begin at one. Enter valid numeric text for these exercises; handling conversion errors can come later.
+`range(3)` also gives three iterations, but starts at zero: `0`, `1`, `2`. Use the two-argument form when you want the prompt numbering to begin at one. Enter valid numeric text for these exercises. Handling conversion errors can come later.
 
 **Try it:** collect four readings instead. Decide what the stop value must be before editing the code. Check that you get exactly four prompts and four list items.
 
@@ -189,7 +189,7 @@ Save this example in `practice.py` and run it in the terminal. It asks for three
 
 Create `q3.py`. Ask for five numbers using `input` inside a loop. Convert each response to `float`, append it to a list, and print the largest value after all five have been collected. You may use `max` on the completed list.
 
-Test inputs `2`, `9`, `4`, `1`, `7`; expect `Largest: 9.0`. Then test `-8`, `-3`, `-12`, `-5`, `-9`; expect `Largest: -3.0`. This second test catches the mistake of assuming the maximum starts at zero. Watch the walkthrough after your own attempt.
+Test inputs `2`, `9`, `4`, `1`, `7`. Expect `Largest: 9.0`. Then test `-8`, `-3`, `-12`, `-5`, `-9`. Expect `Largest: -3.0`. This second test catches the mistake of assuming the maximum starts at zero. Watch the walkthrough after your own attempt.
 
 <iframe title="Question 3 walkthrough: find the maximum" width="560" height="315" src="https://www.youtube-nocookie.com/embed/AJqHT-ch-Nk" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -206,7 +206,7 @@ for temperature in readings:
         print(temperature, "is not above the threshold")
 ```
 
-Python finishes the `if`/`else` decision for one temperature before moving to the next. The `if` and `else` lines are four spaces inside the loop; their `print` lines are a further four spaces inside the branches. Both `37.0` and `36.5` take the `else` branch, while `39.0` takes the `if` branch.
+Python finishes the `if`/`else` decision for one temperature before moving to the next. The `if` and `else` lines are four spaces inside the loop. Their `print` lines are a further four spaces inside the branches. Both `37.0` and `36.5` take the `else` branch, while `39.0` takes the `if` branch.
 
 **Try it:** add `38.0` to the list. Predict which message it receives. The comparison is strictly greater than 38, so a value equal to 38 does not pass it.
 
@@ -262,9 +262,9 @@ print("Original:", samples)                  # The stored list is unchanged.
 
 `len(samples) - 1` gives the last valid index, `2`. The stop value is `-1`, which is excluded, so the loop still visits index `0`. The final `-1` is the step. The output order is gamma, beta, alpha, while the original list remains in its original order.
 
-You could also loop over `samples[::-1]`, a reversed slice. That creates a new list to visit. Both approaches preserve the original list; the index version gives you practice reading `range` arguments.
+You could also loop over `samples[::-1]`, a reversed slice. That creates a new list to visit. Both approaches preserve the original list. The index version gives you practice reading `range` arguments.
 
-**Try it:** add a fourth sample and rerun without changing the loop. Then set `samples` to `[]`; there should be no item output and no indexing error.
+**Try it:** add a fourth sample and rerun without changing the loop. Then set `samples` to `[]`. There should be no item output and no indexing error.
 
 ### Question 6 — Reverse a List
 
@@ -328,11 +328,11 @@ import random                    # Load Python's built-in random-number module.
 target = random.randint(1, 20)    # Pick an integer; both endpoints are included.
 ```
 
-A **module** provides code you can reuse. `import random` makes this standard Python module available; no extra installation is needed. `random.randint(1, 20)` calls its integer-selection function. Modules receive fuller treatment in Week 5; these two lines are enough for this game.
+A **module** provides code you can reuse. `import random` makes this standard Python module available. No extra installation is needed. `random.randint(1, 20)` calls its integer-selection function. Modules receive fuller treatment in Week 5. These two lines are enough for this game.
 
 Inside a `while` loop, ask for an integer guess. Print `Too low` when it is below the target and `Too high` when it is above. When it equals the target, print `Correct` and finish. Use `while True` with `break`, or a condition that changes when the right answer is entered.
 
-For testing, temporarily replace the random target with `target = 7`. Enter `3`, `9`, then `7`; expect `Too low`, `Too high`, then `Correct`, and no fourth prompt. Also test a correct first guess. Restore the random choice afterwards. Keep the target assignment outside the loop so it does not change after every guess. Assume valid integer input for this exercise.
+For testing, temporarily replace the random target with `target = 7`. Enter `3`, `9`, then `7`. Expect `Too low`, `Too high`, then `Correct`, and no fourth prompt. Also test a correct first guess. Restore the random choice afterwards. Keep the target assignment outside the loop so it does not change after every guess. Assume valid integer input for this exercise.
 
 <iframe title="Question 8 walkthrough: guess the number" width="560" height="315" src="https://www.youtube-nocookie.com/embed/sZX6PiBaQJ4" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -358,7 +358,7 @@ Read the sequence in groups of **three characters**, starting at the beginning. 
 | `ATG` | A dot: `"."` |
 | `TAA` | A dash: `"-"` |
 | `TGA` | One space: `" "` |
-| Any other group | Nothing; move on to the next group. |
+| Any other group | Nothing. Move on to the next group. |
 
 Build your program one step at a time:
 
@@ -428,7 +428,7 @@ You have practised visiting items, updating results, and stopping correctly. The
 
 ## Optional mini-project: summarise sensor readings
 
-Create `sensor_summary.py` in your `week-3` folder. Use `[36.5, 37.0, 38.5, 39.0]` as simulated temperature readings and `38.0` as a threshold. This exercise summarises a fixed list; it does not connect to hardware.
+Create `sensor_summary.py` in your `week-3` folder. Use `[36.5, 37.0, 38.5, 39.0]` as simulated temperature readings and `38.0` as a threshold. This exercise summarises a fixed list. It does not connect to hardware.
 
 Use a loop to calculate the total and count how many readings are strictly above the threshold. After the loop, report the total, mean, minimum, maximum, and count above the threshold. You may use `min` and `max` once you have checked that the list is nonempty.
 
@@ -440,12 +440,12 @@ If you want more practice, ask a partner or an AI tool for one challenge at a ti
 
 | Symptom | What to check |
 | --- | --- |
-| Python cannot find your script | Use `pwd` and `ls`; check that you saved it in `week-3` and used the correct filename. |
+| Python cannot find your script | Use `pwd` and `ls`. Check that you saved it in `week-3` and used the correct filename. |
 | The total contains only the last value | Initialise it before the loop so it is not reset on each iteration. |
-| `IndexError` | The last valid nonnegative index is `len(items) - 1`; a position equal to the length is too large. |
+| `IndexError` | The last valid nonnegative index is `len(items) - 1`. A position equal to the length is too large. |
 | One item or multiplication row is missing | `range` excludes its stop value. Trace the first and last values it supplies. |
 | The loop will not finish | Press Ctrl+C, then check what changes the `while` condition and whether `continue` skips that change. |
-| The list has become `None` | Call `items.append(value)` on its own; do not assign its return value to `items`. |
+| The list has become `None` | Call `items.append(value)` on its own. Do not assign its return value to `items`. |
 | A numeric calculation raises `TypeError` | Convert each response before appending it to your list. |
 | A counter stays at one | Check `+=` versus `=+`. The latter assigns positive one each time. |
 | The mean, minimum, or maximum fails | Check for an empty list before calculating the summary. |

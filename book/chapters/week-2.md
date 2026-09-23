@@ -62,7 +62,7 @@ On Windows MWS, use:
 python practice.py   # Windows: run the saved script.
 ```
 
-Use whichever Python command worked in Week 1; if you used `py`, keep using it. Replace `practice.py` with the question's filename when running an answer. Each script starts afresh, so it needs its own input and variables.
+Use whichever Python command worked in Week 1. If you used `py`, keep using it. Replace `practice.py` with the question's filename when running an answer. Each script starts afresh, so it needs its own input and variables.
 
 Use this routine throughout: **predict → edit → save → run → check**. The examples with displayed outputs use fixed values. Examples containing `input()` need to be run in your terminal, where you can type a response and press Enter.
 
@@ -83,7 +83,7 @@ print(count * 2)              # Multiply the integer by two.
 print(volume * 2)             # Multiply the float by two.
 ```
 
-The results are `1212`, `24`, and `5.0`. The operator `*` repeats a string but multiplies a number. `int(...)` and `float(...)` return converted values; assigning those results to variables lets you use them later.
+The results are `1212`, `24`, and `5.0`. The operator `*` repeats a string but multiplies a number. `int(...)` and `float(...)` return converted values. Assigning those results to variables lets you use them later.
 
 Use `int` for a count or whole-number position and `float` for input that may include decimals. For example, `int("2.5")` raises a `ValueError` because the string does not represent an integer. `float("2.5")` works. Floating-point arithmetic approximates many decimal values, so long decimal results are sometimes expected.
 
@@ -149,9 +149,9 @@ print("Mean:", mean)
 print("Without grouping:", without_grouping)
 ```
 
-The mean is `6.0`. Without the parentheses, Python calculates `8.0 / 2` first and then adds `4.0`, giving `8.0`. Write the calculation on paper before translating it into code; the placement of parentheses can change the answer.
+The mean is `6.0`. Without the parentheses, Python calculates `8.0 / 2` first and then adds `4.0`, giving `8.0`. Write the calculation on paper before translating it into code. The placement of parentheses can change the answer.
 
-**Try it:** use readings `3.0` and `9.0`. Predict both results, then check them. The correct mean is still `6.0`; the ungrouped calculation gives `7.5`.
+**Try it:** use readings `3.0` and `9.0`. Predict both results, then check them. The correct mean is still `6.0`. The ungrouped calculation gives `7.5`.
 
 When displaying a result, you can choose how many decimal places to show:
 
@@ -186,7 +186,7 @@ print(is_high)
 print(temperature == 37)         # Test whether the value equals 37.
 ```
 
-The outputs are `True` and `False`. `>` asks whether the left value is greater than the right value. `==` tests equality. One `=` assigns a value; two equals signs compare values.
+The outputs are `True` and `False`. `>` asks whether the left value is greater than the right value. `==` tests equality. One `=` assigns a value. Two equals signs compare values.
 
 | Comparison | Meaning |
 | --- | --- |
@@ -214,7 +214,7 @@ print("Check complete.")  # This line runs after either path.
 
 For `39.0`, Python prints `Check the temperature.` and then `Check complete.`. The colon ends the `if` condition. The four spaces before the next line show that it belongs to that branch. `else` has no condition: it handles the case where the `if` condition is false. Align `else` with `if`.
 
-The final `print` has no indentation, so it runs whichever branch was chosen. Use four spaces consistently; moving a line in or out of a block changes when it runs.
+The final `print` has no indentation, so it runs whichever branch was chosen. Use four spaces consistently. Moving a line in or out of a block changes when it runs.
 
 **Try it:** use `37.0`, then `38.0`. Both should take the `else` branch. Explain why the final message appears every time.
 
@@ -262,7 +262,7 @@ The result is `Medium sample`. Python runs the first matching branch and skips t
 
 ### Question 4 — Grade Classifier
 
-Create `q4.py`. Ask for a mark and convert it to `float` so decimal marks work too. First check whether it is outside 0–100; if so, print `Invalid mark`. You can use one branch for a mark below zero and another for a mark above 100. Otherwise, apply these bands:
+Create `q4.py`. Ask for a mark and convert it to `float` so decimal marks work too. First check whether it is outside 0–100. If so, print `Invalid mark`. You can use one branch for a mark below zero and another for a mark above 100. Otherwise, apply these bands:
 
 | Mark | Output |
 | --- | --- |
@@ -271,7 +271,7 @@ Create `q4.py`. Ask for a mark and convert it to `float` so decimal marks work t
 | 50 up to, but not including, 60 | `Grade: Pass` |
 | 0 up to, but not including, 50 | `Grade: Fail` |
 
-Use one `if`/`elif`/`else` chain, with invalid values checked before grade thresholds. Test `49.9`, `50`, `59.9`, `60`, `69.9`, `70`, and `100`, as well as `-1` and `101`. Input `65` should print `Grade: Merit`. Then compare your approach with the walkthrough; your version also checks invalid marks.
+Use one `if`/`elif`/`else` chain, with invalid values checked before grade thresholds. Test `49.9`, `50`, `59.9`, `60`, `69.9`, `70`, and `100`, as well as `-1` and `101`. Input `65` should print `Grade: Merit`. Then compare your approach with the walkthrough. Your version also checks invalid marks.
 
 <iframe title="Question 4 walkthrough: grade classifier" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Cq4EZXdrxx0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -306,13 +306,13 @@ has_label = answer == "yes"                 # Convert the comparison to a Boolea
 print("Label confirmed:", has_label)
 ```
 
-`.strip()` removes whitespace from the start and end; `.lower()` then changes the remaining text to lowercase. Typing ` YES ` therefore gives `True`. Typing `no` gives `False`. The text `"False"` itself is still a nonempty string, so use a comparison to obtain a Boolean rather than treating a typed word as one.
+`.strip()` removes whitespace from the start and end. `.lower()` then changes the remaining text to lowercase. Typing ` YES ` therefore gives `True`. Typing `no` gives `False`. The text `"False"` itself is still a nonempty string, so use a comparison to obtain a Boolean rather than treating a typed word as one.
 
 ### Question 5 — Boolean Logic
 
 Create `q5.py`. Ask `Has ID card? ` and `Has lab coat? `. Normalise both responses with `.strip().lower()`, then compare each with `"yes"`. Grant access only when both comparisons are true. Print `Access granted.` or `Access denied.`.
 
-For this exercise, only a normalised `yes` counts as confirmation; any other answer counts as no. Test all four combinations: yes/yes grants access, while yes/no, no/yes, and no/no deny it. Also try ` YES ` to check your text handling. This is a practice rule for the exercise. Watch the walkthrough after testing your answer.
+For this exercise, only a normalised `yes` counts as confirmation. Any other answer counts as no. Test all four combinations: yes/yes grants access, while yes/no, no/yes, and no/no deny it. Also try ` YES ` to check your text handling. This is a practice rule for the exercise. Watch the walkthrough after testing your answer.
 
 <iframe title="Question 5 walkthrough: Boolean logic" width="560" height="315" src="https://www.youtube-nocookie.com/embed/rKW7KjgDePI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -357,7 +357,7 @@ print("Divisible by 400:", divisible_by_400)
 print("Leap year:", is_leap_year)
 ```
 
-The first three results are `True`, `True`, and `False`; the final result is `False`. The parentheses group the ordinary rule: divisible by four and not a century. The final `or` allows a year divisible by 400 to qualify. For `1900`, neither route qualifies; for `2000`, the second route does.
+The first three results are `True`, `True`, and `False`. The final result is `False`. The parentheses group the ordinary rule: divisible by four and not a century. The final `or` allows a year divisible by 400 to qualify. For `1900`, neither route qualifies. For `2000`, the second route does.
 
 **Try it:** change the year to `2000`, then `2020`, then `2023`. Inspect the three intermediate Booleans before the final answer. Giving each test a name makes the rule easier to trace than putting everything into one long line.
 
@@ -390,7 +390,7 @@ These are the rules of this exercise, not general operating limits for laborator
 
 For example, input `37` and `7.0` should give `Incubator status: SAFE`. Input `39` and `7.0` should give `Incubator status: UNSAFE`.
 
-Check the limits as well as the middle of each range. Temperatures `36` and `38` should pass with pH `7.0`; pH values `6.8` and `7.2` should pass with temperature `37`. Then try `35.9`, `38.1`, `6.7`, and `7.3` as values just outside the limits. Print your intermediate Booleans while testing if you need to see which check failed.
+Check the limits as well as the middle of each range. Temperatures `36` and `38` should pass with pH `7.0`. PH values `6.8` and `7.2` should pass with temperature `37`. Then try `35.9`, `38.1`, `6.7`, and `7.3` as values just outside the limits. Print your intermediate Booleans while testing if you need to see which check failed.
 
 **Extension:** print a specific warning for each measurement outside its range. When both are wrong, print both warnings. Use two independent `if` statements here: an `if`/`elif` chain would stop after the first match and hide the second warning. You can use `not temperature_ok` and `not ph_ok` to test the Booleans you already calculated.
 
@@ -400,13 +400,13 @@ You have now written scripts that calculate values and make decisions from them.
 
 | Symptom | What to check |
 | --- | --- |
-| Python cannot find the file | Use `pwd` and `ls`; confirm that you saved the file in `week-2` and used its correct name. |
+| Python cannot find the file | Use `pwd` and `ls`. Confirm that you saved the file in `week-2` and used its correct name. |
 | The old result still appears | Save the file and run the script you edited. |
 | `SyntaxError` at a condition | Check for `==` when comparing, and a colon at the end of `if`, `elif`, or `else`. |
 | `IndentationError` | Align branch headers and use four spaces for their contents. |
 | Text repeats instead of multiplying | Convert input to `int` or `float` before arithmetic. |
-| `TypeError` during a comparison | Check that both sides are suitable types; an input string cannot be ordered against a number. |
-| `ValueError` during conversion | Use numeric input; `int("3.5")` fails while `float("3.5")` works. |
+| `TypeError` during a comparison | Check that both sides are suitable types. An input string cannot be ordered against a number. |
+| `ValueError` during conversion | Use numeric input. `int("3.5")` fails while `float("3.5")` works. |
 | `ZeroDivisionError` | Check the divisor before performing division. |
 | A threshold gives the wrong label | Check `<` versus `<=`, the order of branches, and the exact boundary value. |
 | Only one warning appears | Use separate `if` statements when multiple messages may be needed. |
@@ -433,12 +433,12 @@ For solo practice, choose ten small changes to this chapter's examples. Write do
 
 Ask a partner or an AI tool to play a beginner who asks questions about the week's code. If using an AI tool, you can give it this prompt:
 
-> Act as a beginner learning Python strings, numbers, comparisons, conditionals, and Boolean logic. Ask me one question at a time. Occasionally offer a mistaken explanation or a short incorrect example for me to correct. Wait while I explain and demonstrate a working example in VS Code. Cover eight questions, then ask which ideas I found hardest to explain. Stay within Weeks 1 and 2; avoid loops and functions.
+> Act as a beginner learning Python strings, numbers, comparisons, conditionals, and Boolean logic. Ask me one question at a time. Occasionally offer a mistaken explanation or a short incorrect example for me to correct. Wait while I explain and demonstrate a working example in VS Code. Cover eight questions, then ask which ideas I found hardest to explain. Stay within Weeks 1 and 2. Avoid loops and functions.
 
-Check suggested answers by running small examples; feedback can be mistaken. If working alone, take the bug hunt and explain each correction aloud, then deliberately change one grade boundary and explain which test reveals the mistake.
+Check suggested answers by running small examples. Feedback can be mistaken. If working alone, take the bug hunt and explain each correction aloud, then deliberately change one grade boundary and explain which test reveals the mistake.
 
 ## What comes next
 
 Before moving on, check that your `week-2` folder contains eight saved answers that you can run again. Pick a script and explain its inputs, calculations, conditions, and possible outputs. You should be able to say what happens at a boundary, not just for the first example you tried.
 
-You can now attempt more of [Project 1](../projects.md), especially its calculations and classification tasks. In Week 3, loops and collections will let you repeat this week's checks across groups of measurements. The decisions stay familiar; you will learn how to apply them without writing the same code for every item.
+You can now attempt more of [Project 1](../projects.md), especially its calculations and classification tasks. In Week 3, loops and collections will let you repeat this week's checks across groups of measurements. The decisions stay familiar. You will learn how to apply them without writing the same code for every item.

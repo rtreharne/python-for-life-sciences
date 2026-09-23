@@ -8,13 +8,13 @@ kernelspec:
 
 In Week 3, you used loops to repeat calculations across lists and DNA strings. This week, you will give useful pieces of code their own names as **functions**. You will also read data from files and save results, so your work can continue after a script finishes.
 
-These two ideas fit together. A function can calculate a result for one sequence; a file can hold the sequence you want to analyse. By the end of the chapter, you will combine functions, loops, and decisions to produce reports from small datasets.
+These two ideas fit together. A function can calculate a result for one sequence. A file can hold the sequence you want to analyse. By the end of the chapter, you will combine functions, loops, and decisions to produce reports from small datasets.
 
 Keep VS Code open as you read. Run an example, change one input, and predict the result before running it again. For file exercises, inspect the output file as well as the terminal: a script can finish successfully without printing anything.
 
 ## Organise your Week 4 work
 
-Create `week-4` inside `LIFE733`, alongside your earlier folders, and open it with **File → Open Folder** in VS Code. Use `practice.py` for examples and a separate file for each coding question. The text files below will be created as you reach their exercises; all sample data is provided in this chapter.
+Create `week-4` inside `LIFE733`, alongside your earlier folders, and open it with **File → Open Folder** in VS Code. Use `practice.py` for examples and a separate file for each coding question. The text files below will be created as you reach their exercises. All sample data is provided in this chapter.
 
 ```text
 LIFE733/
@@ -31,7 +31,7 @@ LIFE733/
     └── system.log     ← Input for Question 9
 ```
 
-This is a folder diagram. Create each named file in Explorer; do not create a file literally named `q1.py … q9.py`. Question 5 is an explanation activity and does not require another script.
+This is a folder diagram. Create each named file in Explorer. Do not create a file literally named `q1.py … q9.py`. Question 5 is an explanation activity and does not require another script.
 
 Run your scripts using the approach from earlier weeks. Relative filenames such as `"dna.txt"` refer to the terminal's current directory, which should be `week-4`. Opening a script in the editor does not necessarily change that directory. Check with `pwd` and `ls` if Python cannot find a file.
 
@@ -59,11 +59,11 @@ print("Doubled volume:", answer)
 print("Another result:", double_volume(4.0))  # Reuse it with a different value.
 ```
 
-The outputs are `Doubled volume: 5.0` and `Another result: 8.0`. The definition begins with `def`, followed by a name, parentheses, and a colon. The indented lines belong to the function. Defining it makes it available; the body runs only when you call it.
+The outputs are `Doubled volume: 5.0` and `Another result: 8.0`. The definition begins with `def`, followed by a name, parentheses, and a colon. The indented lines belong to the function. Defining it makes it available. The body runs only when you call it.
 
 `volume` is a **parameter**: the name used for incoming data inside the function. `2.5` is an **argument**: the actual value supplied in this call. The call gives `volume` that value, evaluates `volume * 2`, and returns the result. The assignment then stores it in `answer`.
 
-The triple-quoted text immediately after the definition is a **docstring**. It describes the function's purpose. It is not printed when the function runs. Comments explain particular lines; the docstring explains what the function does overall.
+The triple-quoted text immediately after the definition is a **docstring**. It describes the function's purpose. It is not printed when the function runs. Comments explain particular lines. The docstring explains what the function does overall.
 
 **Try it:** call `double_volume(0)` and `double_volume(1.25)`. Predict `0` and `2.5`, then check. You can add calls without copying the function's body.
 
@@ -91,13 +91,13 @@ First, `show_double` prints `6`. The next lines show that `shown` is `None`, `ca
 
 `return` also ends the current function call. Instructions placed after it in the same path do not run. Put a return outside a loop when you need the loop to finish processing every item before returning the result.
 
-Names created inside a function, including its parameters, are **local** to that call. Use parameters to bring data in and `return` to send results out. For example, the calling code above uses `calculated`; it does not try to read the function's local name `value`.
+Names created inside a function, including its parameters, are **local** to that call. Use parameters to bring data in and `return` to send results out. For example, the calling code above uses `calculated`. It does not try to read the function's local name `value`.
 
 **Try it:** change the argument from `3` to `5`. Then temporarily remove `return` from `calculate_double`, leaving just `value * 2`. Run the script and explain why the final addition now fails. Restore `return` afterwards.
 
 ### Question 1 — Write Your First Function
 
-Create `q1.py`. Define `triple_number(x)` to return three times its numeric argument. Call it with `4`, `0`, `-2`, and `1.5`; the returned values should be `12`, `0`, `-6`, and `4.5`.
+Create `q1.py`. Define `triple_number(x)` to return three times its numeric argument. Call it with `4`, `0`, `-2`, and `1.5`. The returned values should be `12`, `0`, `-6`, and `4.5`.
 
 Store at least one returned value in a variable and use it in a further calculation. Keep the output statements outside the function so you can explain which line calculates, which returns, and which displays. Try the question before watching its walkthrough.
 
@@ -139,7 +139,7 @@ Create `q2.py`. Define `gc_content(seq)` to return a percentage, using the formu
 
 Normalise case and reject empty or invalid DNA. You can place these checks inside `gc_content`, or copy `normalise_dna` above it in the same file and call that helper. To count bases, use a loop or the string method `seq.count("G")`, which returns the number of occurrences of `G`. Add the G and C counts before dividing.
 
-Check `ATGC` → `50.0`, `GGCC` → `100.0`, `ATAT` → `0.0`, and `aGc` → approximately `66.6667`. Keep the full numeric result in the function; format it to two decimal places when printing with an f-string. Empty input and `ATNX` should raise a clear `ValueError`. Then compare your calculation with the walkthrough; this version also makes the input checks explicit.
+Check `ATGC` → `50.0`, `GGCC` → `100.0`, `ATAT` → `0.0`, and `aGc` → approximately `66.6667`. Keep the full numeric result in the function. Format it to two decimal places when printing with an f-string. Empty input and `ATNX` should raise a clear `ValueError`. Then compare your calculation with the walkthrough. This version also makes the input checks explicit.
 
 <iframe title="Question 2 walkthrough: GC content function" width="560" height="315" src="https://www.youtube-nocookie.com/embed/R2GyHuk_of8" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -173,13 +173,13 @@ print("Saved practice_message.txt")         # This runs after the file is closed
 
 `open` takes a path and a mode. `"w"` means write: create the file if it does not exist, or replace its contents if it does. `encoding="utf-8"` specifies how text is stored. This is a **keyword argument**, supplied by name rather than only by position.
 
-`with ... as handle:` gives the open file a name within the indented block. Python closes it when the block ends, even if a problem interrupts the block. `.write(message)` writes the text but does not add a newline automatically. The `\n` in the string supplies that newline; it is one character representing a line break.
+`with ... as handle:` gives the open file a name within the indented block. Python closes it when the block ends, even if a problem interrupts the block. `.write(message)` writes the text but does not add a newline automatically. The `\n` in the string supplies that newline. It is one character representing a line break.
 
 **Try it:** run the script and open `practice_message.txt` in VS Code. Change the message and rerun. The new text should replace the old text. Keep this output separate from any input you want to preserve.
 
 ### Question 3 — Writing to a File
 
-Create `q3.py`. Define `save_message(msg, filename)` to write the supplied string to the supplied file using `with open(...)`. Let the caller decide whether the message ends with `\n`; the function should save the text exactly as provided.
+Create `q3.py`. Define `save_message(msg, filename)` to write the supplied string to the supplied file using `with open(...)`. Let the caller decide whether the message ends with `\n`. The function should save the text exactly as provided.
 
 Call it once with `"Hello from Week 4.\n"` and `"message.txt"`, then with a different message and `"second_message.txt"`. Open both files to check their contents. This function performs an action and does not need to return a calculated value. Rerunning it for the same filename should replace that file's contents. Watch the walkthrough after your attempt.
 
@@ -208,7 +208,7 @@ with open("quotes.txt", "r", encoding="utf-8") as handle:
         print(text)              # print supplies its own newline.
 ```
 
-`"r"` means read. A loop over the file gives you one line at a time, usually including its newline. Removing that newline avoids an extra blank line when `print` adds its own. `.rstrip("\n")` removes newline characters from the end; `.strip()` would also remove spaces at both ends. Choose according to whether those spaces matter.
+`"r"` means read. A loop over the file gives you one line at a time, usually including its newline. Removing that newline avoids an extra blank line when `print` adds its own. `.rstrip("\n")` removes newline characters from the end. `.strip()` would also remove spaces at both ends. Choose according to whether those spaces matter.
 
 A missing filename raises `FileNotFoundError`. Check its spelling and the terminal's current directory. Python uses the directory from which you run the script, not automatically the folder containing the script.
 
@@ -236,7 +236,7 @@ Next, put those skills together: read a DNA sequence, calculate a result with a 
 
 ### Question 6 — DNA File Analyser
 
-Download the course example [dna.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/dna.txt) into your `week-4` folder. It holds one DNA sequence split across lines, with spaces used to make the long example easier to inspect. Your function should remove whitespace from each line before joining the sequence; it has no FASTA header or other metadata.
+Download the course example [dna.txt](https://raw.githubusercontent.com/rtreharne/python-for-life-sciences/main/book/data/week-4/dna.txt) into your `week-4` folder. It holds one DNA sequence split across lines, with spaces used to make the long example easier to inspect. Your function should remove whitespace from each line before joining the sequence. It has no FASTA header or other metadata.
 
 For a small local test, you can instead create `dna.txt` with:
 
@@ -262,7 +262,7 @@ Length: 8
 GC content: 50.00%
 ```
 
-Test lowercase DNA, blank lines between sequence lines, an empty file, and an unexpected character such as `N`. The first two should work; the latter two should raise the validation errors from your GC function. A FASTA header beginning with `>` is also invalid for this plain-sequence format. You will handle FASTA explicitly in Week 5.
+Test lowercase DNA, blank lines between sequence lines, an empty file, and an unexpected character such as `N`. The first two should work. The latter two should raise the validation errors from your GC function. A FASTA header beginning with `>` is also invalid for this plain-sequence format. You will handle FASTA explicitly in Week 5.
 
 This function writes a report rather than returning a value. Call it with `"dna.txt"` and inspect the output file. After watching the walkthrough, use the checks above to test your version.
 
@@ -322,7 +322,7 @@ for word in ordered_words[:10]:             # At most ten keys.
 
 `sorted` returns a new list. Here it takes dictionary keys and uses `counts.get` to look up the value used for ordering. There are no parentheses after `counts.get` because you pass the method for `sorted` to call. `reverse=True` puts larger counts first. Equal counts retain the words' first-appearance order, so tied results are predictable. The slice `[:10]` works even when fewer than ten words exist.
 
-Test an empty file too: the function should return `{}` and the display loop should print no rows. With the downloaded transcript and this simple whitespace rule, the ten most common tokens begin with `the`, `i`, and `a`; speaker labels such as `[interviewer]:` are counted as tokens. After watching the walkthrough, use the sample and rules above to check your results.
+Test an empty file too: the function should return `{}` and the display loop should print no rows. With the downloaded transcript and this simple whitespace rule, the ten most common tokens begin with `the`, `i`, and `a`. Speaker labels such as `[interviewer]:` are counted as tokens. After watching the walkthrough, use the sample and rules above to check your results.
 
 <iframe title="Question 7 walkthrough: word counter" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9m9zz61dDxw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -354,7 +354,7 @@ grades = {name: score}              # Use the variable's value as the key.
 print(grades)
 ```
 
-`.split()` returns two strings for this format. Assigning them to two names is called **unpacking**; Python expects exactly two pieces here. A missing or extra field causes a `ValueError`, helping you spot a malformed record. In `{name: score}`, the names are variables; quotes around `name` would instead create a key literally called `name`.
+`.split()` returns two strings for this format. Assigning them to two names is called **unpacking**. Python expects exactly two pieces here. A missing or extra field causes a `ValueError`, helping you spot a malformed record. In `{name: score}`, the names are variables. Quotes around `name` would instead create a key literally called `name`.
 
 Build the full script in stages:
 
@@ -398,14 +398,14 @@ You have moved from calculating one value to reading and summarising files. Befo
 
 | Symptom | What to check |
 | --- | --- |
-| Nothing happens after defining a function | Add a call below its definition; defining it does not run its body. |
+| Nothing happens after defining a function | Add a call below its definition. Defining it does not run its body. |
 | A result is `None` | Check that the function returns the value rather than only printing it. |
 | Only the first item is processed | A `return` may be indented inside a loop and ending the call too soon. |
 | `NameError` for a local variable | Use a parameter to pass data in or return a result for the calling code to store. |
 | `TypeError` about arguments | Count the parameters and arguments, and check their order and types. |
 | `FileNotFoundError` | Check the filename, saved extension, and terminal directory using `pwd` and `ls`. |
-| An output file replaces old content | Write mode `"w"` replaces contents each time; use a separate output path. |
-| Blank lines appear between printed lines | The file line may already contain a newline; remove it before using `print`. |
+| An output file replaces old content | Write mode `"w"` replaces contents each time. Use a separate output path. |
+| Blank lines appear between printed lines | The file line may already contain a newline. Remove it before using `print`. |
 | `KeyError` during counting | Use `.get(key, 0)` when a key might not exist yet. |
 | `ValueError` when reading a grade record | Check comma placement, numeric scores, validation rules, and duplicate names. |
 | Empty data causes a summary to fail | Check for no values before dividing or using `min` or `max`. |
@@ -416,6 +416,6 @@ Test a function first with a small value you can check by hand. For file tasks, 
 
 Choose one function and explain its parameters, return value or file-writing action, and input assumptions. Then run it twice with different data. Can the calling code use its result without changing the function?
 
-Compare your work with the [Week 4 solutions](../solutions.md#week-4). The sample files and answers are small enough to inspect line by line; use them to check your approach before trying larger data. You can also return to [the Portfolio Projects](../projects.md) and organise repeated calculations into functions.
+Compare your work with the [Week 4 solutions](../solutions.md#week-4). The sample files and answers are small enough to inspect line by line. Use them to check your approach before trying larger data. You can also return to [the Portfolio Projects](../projects.md) and organise repeated calculations into functions.
 
 In Week 5, you will develop the dictionary and module ideas introduced here and work with biological file formats such as FASTA. Reading a file, checking its contents, and returning a useful result will remain the core steps.

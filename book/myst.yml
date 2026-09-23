@@ -20,6 +20,7 @@ project:
     - file: chapters/week-6.md
     - file: projects.md
     - file: solutions.md
+    - file: appendix.md
 site:
   template: book-theme
   parts:

@@ -44,7 +44,7 @@ lengths["sample_A"] = 18                  # Replace the value for an existing ke
 print(lengths)
 ```
 
-Curly braces `{}` create the dictionary. Each colon separates a key from its value; commas separate the pairs. Here the keys are strings and the values are integers. Square brackets look up a key, so `lengths["sample_A"]` returns `12` on the first line of output. After the assignments, the dictionary contains lengths `18`, `9`, and `15` for samples A, B, and C.
+Curly braces `{}` create the dictionary. Each colon separates a key from its value. Commas separate the pairs. Here the keys are strings and the values are integers. Square brackets look up a key, so `lengths["sample_A"]` returns `12` on the first line of output. After the assignments, the dictionary contains lengths `18`, `9`, and `15` for samples A, B, and C.
 
 A key can appear only once. Assigning to an existing key changes its value. This is useful when correcting a record, but it can overwrite data if two samples have the same name.
 
@@ -52,7 +52,7 @@ A key can appear only once. Assigning to an existing key changes its value. This
 
 ### Handle missing keys and visit every pair
 
-Looking up a missing key with square brackets raises `KeyError`. Sometimes that is a useful signal; sometimes you want a fallback value instead.
+Looking up a missing key with square brackets raises `KeyError`. Sometimes that is a useful signal. Sometimes you want a fallback value instead.
 
 ```{code-cell} python
 lengths = {"sample_A": 12, "sample_B": 9}  # Start with two known samples.
@@ -61,13 +61,13 @@ for name, length in lengths.items():     # Retrieve one key/value pair per itera
     print(f"{name}: {length} bases")     # Display both parts of the pair.
 ```
 
-`.get(key, fallback)` returns the fallback when the key is absent; it does not add that key. `.items()` supplies pairs, and `name, length` assigns their two parts to separate variables. The output is `Not found`, followed by `sample_A: 12 bases` and `sample_B: 9 bases`.
+`.get(key, fallback)` returns the fallback when the key is absent. It does not add that key. `.items()` supplies pairs, and `name, length` assigns their two parts to separate variables. The output is `Not found`, followed by `sample_A: 12 bases` and `sample_B: 9 bases`.
 
 That same lookup can connect a three-base codon to an amino-acid symbol. Try building a small translation table before you use a larger one.
 
 ### Question 1 — Dictionary basics
 
-In `q1.py`, create a dictionary containing `ATG` → `M`, `GCT` → `A`, and `TAA` → `*`. The letters are amino-acid symbols; `*` marks a stop codon.
+In `q1.py`, create a dictionary containing `ATG` → `M`, `GCT` → `A`, and `TAA` → `*`. The letters are amino-acid symbols. `*` marks a stop codon.
 
 1. Look up `ATG` and print its value. Expect `M`.
 2. Add `TTT` → `F` and check that the dictionary now has four entries.
@@ -98,21 +98,21 @@ Read `r"[ACGT]+"` in parts:
 - `r` marks a raw Python string. It keeps backslashes available for regex syntax rather than Python escape sequences. This pattern has no backslashes, but the convention is useful as patterns grow.
 - `[ACGT]` allows **one** character chosen from A, C, G, or T.
 - `+` repeats that choice **one or more times**. It therefore rejects an empty string.
-- The quotation marks delimit the Python string; they are not part of the pattern being matched.
+- The quotation marks delimit the Python string. They are not part of the pattern being matched.
 
 This pattern accepts only the four DNA bases. Some biological files use ambiguity codes such as `N`. For this exercise, report them rather than deleting them.
 
-**Try it:** change `sequence` to `"AXTG"`, then `""`, then `"AT GC"`. All three should fail. Calling `.upper()` changes case; it does not remove invalid characters or internal spaces.
+**Try it:** change `sequence` to `"AXTG"`, then `""`, then `"AT GC"`. All three should fail. Calling `.upper()` changes case. It does not remove invalid characters or internal spaces.
 
 ### Question 2 — Validate a DNA sequence
 
-Write `is_dna(sequence)` in `q2.py`. Return a Boolean using `re.fullmatch()` after converting the input to uppercase. Test `"ATCGTT"`, `"AXTG"`, `"atgc"`, and `""`; expect `True`, `False`, `True`, and `False` respectively.
+Write `is_dna(sequence)` in `q2.py`. Return a Boolean using `re.fullmatch()` after converting the input to uppercase. Test `"ATCGTT"`, `"AXTG"`, `"atgc"`, and `""`. Expect `True`, `False`, `True`, and `False` respectively.
 
 Keep the function's return separate from printing. Use a loop outside the function to display each test input and its result. Add `"NNN"` to show that your rule rejects ambiguity codes. Later, this check will help you decide which FASTA records can be analysed.
 
 <iframe title="Question 2 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/gBAfQFRxjhw" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-You have already imported a module to avoid writing your own pattern matcher. Python supplies many other modules; try one whose results are easy to check by hand.
+You have already imported a module to avoid writing your own pattern matcher. Python supplies many other modules. Try one whose results are easy to check by hand.
 
 ## Use code from a standard library module
 
@@ -131,7 +131,7 @@ The output is `9.0` and `Pi to two places: 3.14`. The dot in `math.sqrt` selects
 
 ### Question 3 — Explore `math`
 
-In `q3.py`, import `math`, calculate the square root of `144`, print π, and calculate `10!` with `math.factorial(10)`. Factorial means `10 × 9 × … × 1`; expect `3628800`. The square root should be `12.0`.
+In `q3.py`, import `math`, calculate the square root of `144`, print π, and calculate `10!` with `math.factorial(10)`. Factorial means `10 × 9 × … × 1`. Expect `3628800`. The square root should be `12.0`.
 
 Give the printed results labels. Then ask a partner or an AI tool to suggest one readability improvement, or review the names and layout yourself. Check that the revised script produces the same numbers.
 
@@ -162,7 +162,7 @@ print(sequtils.transcribe("atgc"))        # Call the function through its module
 
 Run `main.py`. Expect `AUGC`. Python finds `sequtils.py` because it is beside the running script. `sequtils.transcribe` means “the function named `transcribe` inside `sequtils`”. Keep the two files separate and save both before running again.
 
-Avoid naming your own files `re.py`, `math.py`, or `random.py`: Python might import your file when you intended to use the standard library. Also keep demonstration calls in `main.py`; top-level statements in a module run when it is first imported.
+Avoid naming your own files `re.py`, `math.py`, or `random.py`: Python might import your file when you intended to use the standard library. Also keep demonstration calls in `main.py`. Top-level statements in a module run when it is first imported.
 
 **Try it:** change the input in `main.py` to `"TTAC"`. You should get `UUAC` without editing the function. This is the benefit of reusing code: the calculation stays in one place while the input changes.
 
@@ -170,7 +170,7 @@ Avoid naming your own files `re.py`, `math.py`, or `random.py`: Python might imp
 
 Keep `transcribe(sequence)` and add `rev_comp(sequence)`, which returns an uppercase reverse complement. Use the mapping A → T, T → A, C → G, and G → C. Build the complement with a loop and reverse the completed string using `[::-1]`.
 
-Call both functions from `main.py`. For `"atgc"`, expect RNA `AUGC` and reverse complement `GCAT`. Also check `"A"` → `"T"` and `""` → `""` for `rev_comp`. At this stage, assume only A, C, G, and T; later, validate data before calling the function.
+Call both functions from `main.py`. For `"atgc"`, expect RNA `AUGC` and reverse complement `GCAT`. Also check `"A"` → `"T"` and `""` → `""` for `rev_comp`. At this stage, assume only A, C, G, and T. Later, validate data before calling the function.
 
 <iframe title="Question 4 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/iek0ZhnYm2s" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -215,7 +215,7 @@ GGCC
 
 The header identifies the sequence. It is not part of the sequence itself. The two lines for `gene_A` join to make `ATGAACTCTTAA`, with length `12`. Use headers as dictionary keys and join the sequence lines as values.
 
-A **GFF3** file describes features at positions along those sequences. Its nine columns are separated by tabs. Start and end positions are 1-based and both endpoints are included. The strand is `+` or `-`; a CDS row also has a phase describing where the next complete codon begins. These conventions are defined in the [GFF3 specification](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md).
+A **GFF3** file describes features at positions along those sequences. Its nine columns are separated by tabs. Start and end positions are 1-based and both endpoints are included. The strand is `+` or `-`. A CDS row also has a phase describing where the next complete codon begins. These conventions are defined in the [GFF3 specification](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md).
 
 | Column | Python index | Meaning |
 | --- | --- | --- |
@@ -226,14 +226,14 @@ A **GFF3** file describes features at positions along those sequences. Its nine 
 | end | `4` | Last coordinate, inclusive |
 | score | `5` | Numeric score, or `.` when absent |
 | strand | `6` | Forward `+` or reverse `-` strand |
-| phase | `7` | CDS phase `0`, `1`, or `2`; `.` for other features |
+| phase | `7` | CDS phase `0`, `1`, or `2`. `.` for other features |
 | attributes | `8` | Named details such as `ID` and `Parent` |
 
 FASTA gives you the sequence. GFF tells you where a feature lies in that sequence. Questions 8 and 9 are optional. You can move from Question 7 straight to Question 10.
 
 ### Question 6 — Create and inspect your example files
 
-Save the following as `make_examples.py`. This setup script creates small synthetic files for the remaining activities; run it from your `week-5` folder. Rerunning it replaces these two example files.
+Save the following as `make_examples.py`. This setup script creates small synthetic files for the remaining activities. Run it from your `week-5` folder. Rerunning it replaces these two example files.
 
 ```python
 # make_examples.py: write shared practice data without a personalised identifier.
@@ -259,7 +259,7 @@ with open("examples.gff", "w", encoding="utf-8") as handle:
 
 The GFF file is a small feature extract for practising coordinates, not a complete gene annotation. Each CDS has one parent, all phases are zero, and each fragment contains complete codons. The rows are deliberately not all in coordinate order. These choices let you practise sorting and strand handling without needing a general annotation parser.
 
-The walkthrough below demonstrates dataset preparation with a different generator. Use the self-contained script above for this chapter; its filenames and expected results are the ones used in the following questions.
+The walkthrough below demonstrates dataset preparation with a different generator. Use the self-contained script above for this chapter. Its filenames and expected results are the ones used in the following questions.
 
 <iframe title="Question 6 walkthrough" width="560" height="315" src="https://www.youtube-nocookie.com/embed/8n3jBd--AnM" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -289,7 +289,7 @@ if header is not None:                  # Save the final record after the loop.
 print(records)
 ```
 
-Expect `{'sample_A': 'ATGCCC', 'sample_B': 'TT'}`. `None` means no header has been assigned yet; `is not None` checks for an assigned header. `.startswith(">")` distinguishes headers from sequence lines, and `[1:]` keeps everything after the first character.
+Expect `{'sample_A': 'ATGCCC', 'sample_B': 'TT'}`. `None` means no header has been assigned yet. `is not None` checks for an assigned header. `.startswith(">")` distinguishes headers from sequence lines, and `[1:]` keeps everything after the first character.
 
 **Try it:** temporarily remove the final two lines that save the last record. Notice which dictionary entry disappears. Restore them before continuing. This small check catches a common file-reading bug.
 
@@ -323,7 +323,7 @@ Subtract one from `start` only. Subtracting one from `end` loses the final base.
 
 ### Question 8 — Inspect GFF features (optional)
 
-In `q8.py`, read `examples.gff`. Skip blank lines and lines beginning with `#`. Split each remaining line with `.split("\t")` and check that there are exactly nine fields. A plain `.split()` would treat other whitespace as separators too; this format specifically uses tabs.
+In `q8.py`, read `examples.gff`. Skip blank lines and lines beginning with `#`. Split each remaining line with `.split("\t")` and check that there are exactly nine fields. A plain `.split()` would treat other whitespace as separators too. This format specifically uses tabs.
 
 Select rows whose type is `CDS` or `exon`. Print the type, integer start and end, strand, and the `ID` from the attributes column. To obtain the ID, split the attributes on `;`, then split each part on the first `=` using `.split("=", 1)`. Store those name/value pairs in a dictionary.
 
@@ -347,7 +347,7 @@ One way to organise fragments is as `(start, fragment)` pairs in a list. `sorted
 
 Check `tx_A` against `ATGAACTCTTAA` and `tx_B` against `ATGTAA`. Reorder the rows in the GFF file and confirm the results stay the same. Reverse-complementing individual fragments and leaving them in ascending order would give the wrong reverse-strand result.
 
-These are joined **coding regions**, not full RNA transcripts: untranslated regions are omitted. This exercise assumes one sequence and one strand per parent, non-overlapping intervals, one parent per CDS, and phase zero with complete codons. General GFF processing needs additional handling for other annotations; use these small files to understand the core operation first.
+These are joined **coding regions**, not full RNA transcripts: untranslated regions are omitted. This exercise assumes one sequence and one strand per parent, non-overlapping intervals, one parent per CDS, and phase zero with complete codons. General GFF processing needs additional handling for other annotations. Use these small files to understand the core operation first.
 
 Whether or not you tried the GFF questions, you can now return to the FASTA data and translate one complete coding sequence. The final question uses `gene_A` directly, so it does not depend on Questions 8 or 9.
 
@@ -362,13 +362,13 @@ Save this small table at the top of `sequtils.py`, outside any function:
 CODONS = {"ATG": "M", "AAC": "N", "TCT": "S", "TAA": "*"}
 ```
 
-Capital letters in `CODONS` signal a value intended to stay fixed. For new sequences, extend the table with verified mappings; do not guess what an absent codon means.
+Capital letters in `CODONS` signal a value intended to stay fixed. For new sequences, extend the table with verified mappings. Do not guess what an absent codon means.
 
 ### Question 10 — Translate and search for a motif
 
 **Part A: write a translation function.** Add `translate_dna(sequence)` to `sequtils.py`. Convert the input to uppercase and require a nonempty string of A, C, G, and T. Reject a length that is not divisible by three, rather than silently dropping its final bases.
 
-Loop in steps of three. Look up each codon in `CODONS`; raise a clear `ValueError` if it is missing. If its value is `*`, stop without appending that symbol. Otherwise, add the amino-acid letter to a growing protein string. Return the protein after the loop.
+Loop in steps of three. Look up each codon in `CODONS`. Raise a clear `ValueError` if it is missing. If its value is `*`, stop without appending that symbol. Otherwise, add the amino-acid letter to a growing protein string. Return the protein after the loop.
 
 In `q10.py`, read `examples.fasta`, select `gene_A`, and translate it. Expect `MNS`. Save it to `protein_1.fasta` with header `>gene_A_protein` and the protein on the next line. Check `ATGTAA` → `M`, lowercase input, an incomplete triplet, and the invalid `gene_bad` record. Test errors separately so they do not stop the main script before its output is written.
 
@@ -382,9 +382,9 @@ This short motif activity is a text-search exercise. A matching string alone doe
 
 | Symptom | What to check |
 | --- | --- |
-| `KeyError` | Check the spelling and case of the key; decide whether a fallback or an error is appropriate. |
+| `KeyError` | Check the spelling and case of the key. Decide whether a fallback or an error is appropriate. |
 | A DNA check accepts an invalid sequence | Use `fullmatch`, not a search that accepts a valid substring. |
-| `ModuleNotFoundError` | Save `sequtils.py` beside the script you are running; check the spelling. |
+| `ModuleNotFoundError` | Save `sequtils.py` beside the script you are running. Check the spelling. |
 | Importing a module prints unexpected results | Move demonstration calls out of the module and into `main.py`. |
 | The final FASTA record is missing | Save the current record after the reading loop. |
 | Two records become one | Reject duplicate headers before storing a new record. |
@@ -398,6 +398,6 @@ Test each function with one small input before connecting it to a file. When an 
 
 Compare your attempts with the [Week 5 solutions](../solutions.md#week-5). Then choose one function and explain its input, return value, and error cases without looking at the code.
 
-For extra practice, combine `read_fasta`, your DNA validator, and the GC calculation from Week 4. Write a tab-separated summary containing each valid record's identifier, length, and GC percentage to two decimal places. Report invalid records by name instead of silently deleting them. For these files, valid lengths are `12` and `9`, with GC percentages `25.00` and `33.33`; flag `gene_bad`.
+For extra practice, combine `read_fasta`, your DNA validator, and the GC calculation from Week 4. Write a tab-separated summary containing each valid record's identifier, length, and GC percentage to two decimal places. Report invalid records by name instead of silently deleting them. For these files, valid lengths are `12` and `9`, with GC percentages `25.00` and `33.33`. Flag `gene_bad`.
 
 You began with strings and simple calculations. You can now read named sequences, validate them, reuse functions, and save a result another program can read. Continue with the [Portfolio Projects](../projects.md) to practise combining these tools in a larger task.

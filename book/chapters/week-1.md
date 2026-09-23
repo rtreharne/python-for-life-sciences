@@ -12,9 +12,9 @@ These small tasks are the building blocks of biological data analysis. You will 
 
 ## What you will learn
 
-By the end of the week, you will be able to create and run a Python script, collect input, work with text and numbers, and change strings. You will also practise checking your results against an expected answer. Keep this chapter handy as you work; you do not need to memorise every command.
+By the end of the week, you will be able to create and run a Python script, collect input, work with text and numbers, and change strings. You will also practise checking your results against an expected answer. Keep this chapter handy as you work. You do not need to memorise every command.
 
-Work through Questions 1–8 in order. Each one uses ideas from the section before it. Try the question before watching its video or checking the [Week 1 solutions](../solutions.md#week-1). The examples on this page show their results; run your own copies in VS Code to experiment.
+Work through Questions 1–8 in order. Each one uses ideas from the section before it. Try the question before watching its video or checking the [Week 1 solutions](../solutions.md#week-1). The examples on this page show their results. Run your own copies in VS Code to experiment.
 
 ## Set up your Week 1 project in VS Code
 
@@ -27,7 +27,7 @@ A **project folder** holds the files for your work. A **script** is a text file 
 3. Choose **Terminal → New Terminal**. The integrated terminal opens at the bottom of VS Code. Use it to enter commands and run Python.
 4. Use the menu beside the terminal's **+** button to choose a shell. On Windows MWS, choose **PowerShell**. On macOS or Linux, choose **Bash** if available. The Bash commands also work in the usual macOS **zsh** shell.
 
-A **shell** (Bash or PowerShell) interprets commands you type in the terminal. Write Python in the editor; enter the commands below in the terminal. Type one command at a time and press Enter. The text after `#` explains each command and does not need to be typed.
+A **shell** (Bash or PowerShell) interprets commands you type in the terminal. Write Python in the editor. Enter the commands below in the terminal. Type one command at a time and press Enter. The text after `#` explains each command and does not need to be typed.
 
 ### Check where you are before creating or running files
 
@@ -40,7 +40,7 @@ pwd                 # Print the full path of the current directory.
 ls                  # List the files and folders in that directory.
 ```
 
-`pwd` shows the current directory. `ls` lists its contents; an empty folder may show nothing. The path should end in `LIFE733/week-1`.
+`pwd` shows the current directory. `ls` lists its contents. An empty folder may show nothing. The path should end in `LIFE733/week-1`.
 
 **PowerShell (Windows/MWS):**
 
@@ -65,7 +65,7 @@ Set-Location "week-1"   # PowerShell: enter the child folder.
 Get-Location           # Confirm the new location.
 ```
 
-`Set-Location` changes PowerShell's current directory. If your terminal is somewhere else, use the full path to your folder. The paths below are examples; use the location where you created your project.
+`Set-Location` changes PowerShell's current directory. If your terminal is somewhere else, use the full path to your folder. The paths below are examples. Use the location where you created your project.
 
 ```bash
 cd "$HOME/LIFE733/week-1"  # Example: a project inside your home directory.
@@ -89,7 +89,7 @@ Now check that Python is available. Use the command for your terminal:
 python3 --version    # Bash: ask the Python interpreter for its version.
 ```
 
-`python3` is the Python command on many macOS and Linux computers. `--version` prints the installed version; expect it to start with `Python 3`.
+`python3` is the Python command on many macOS and Linux computers. `--version` prints the installed version. Expect it to start with `Python 3`.
 
 ```powershell
 python --version     # PowerShell: check the Python interpreter.
@@ -108,7 +108,7 @@ In Explorer, choose **New File**, name it `practice.py`, and enter:
 print("My first LIFE733 script")
 ```
 
-The first line is a comment. Python ignores text after `#`. `print` displays a value; its parentheses contain what to display, and the quotes mark that value as text. The quotes are not printed.
+The first line is a comment. Python ignores text after `#`. `print` displays a value. Its parentheses contain what to display, and the quotes mark that value as text. The quotes are not printed.
 
 Save the file with **Ctrl+S** (macOS: **Cmd+S**). Check that Explorer shows `practice.py`, not `practice.py.txt`. Then run it:
 
@@ -130,11 +130,11 @@ In PowerShell, `.\` means “in the current directory”. Both examples should d
 
 You can also choose **Run Python File in Terminal** from the editor's run menu. For now, practise typing the command so you know which file it runs. The [VS Code running guide](https://code.visualstudio.com/docs/python/run) shows the run button.
 
-**Try it:** change the message, save the file, and run it again. If you still see the old message, check that you saved and ran the right file. Use the same cycle throughout the chapter: **edit → save → run → check**. Save your answers as `q1.py`, `q2.py`, and so on; use that filename in the run command.
+**Try it:** change the message, save the file, and run it again. If you still see the old message, check that you saved and ran the right file. Use the same cycle throughout the chapter: **edit → save → run → check**. Save your answers as `q1.py`, `q2.py`, and so on. Use that filename in the run command.
 
 ### Know which prompt is waiting for you
 
-Bash prompts often end in `$`; PowerShell prompts often start with `PS`. Do not type the prompt itself. If you see `>>>`, you are in Python's interactive prompt, not the shell. Type `exit()` and press Enter to return to the shell before running a script command.
+Bash prompts often end in `$`. PowerShell prompts often start with `PS`. Do not type the prompt itself. If you see `>>>`, you are in Python's interactive prompt, not the shell. Type `exit()` and press Enter to return to the shell before running a script command.
 
 When a script asks a question with `input`, type your answer in the terminal and press Enter. The script is waiting for your response, so do not enter another command yet. Press **Ctrl+C** if you need to stop it.
 
@@ -152,9 +152,9 @@ print(sample_name)         # Read the value associated with that name.
 print("sample_name")       # Display these literal characters instead.
 ```
 
-The first line is an **assignment**: Python stores the value on the right of `=` under the name on the left. `sample_name` is a **variable**. The next two lines print `sample_01` and `sample_name`. Without quotes, the name refers to the variable; with quotes, it is printed as literal text.
+The first line is an **assignment**: Python stores the value on the right of `=` under the name on the left. `sample_name` is a **variable**. The next two lines print `sample_01` and `sample_name`. Without quotes, the name refers to the variable. With quotes, it is printed as literal text.
 
-Variable names are case-sensitive: `dna` and `DNA` are different variables. Choose clear names such as `sample_name`; do not use spaces or start a name with a digit. Assign a value before using a variable. One `=` stores a value in a variable.
+Variable names are case-sensitive: `dna` and `DNA` are different variables. Choose clear names such as `sample_name`. Do not use spaces or start a name with a digit. Assign a value before using a variable. One `=` stores a value in a variable.
 
 ### Ask for input and format a message
 
@@ -181,7 +181,7 @@ Now that you can collect and display text, you are ready to work with DNA string
 
 ## Change case and measure a sequence
 
-Store a DNA sequence as a string. Python treats it as text; it does not check whether the characters are valid DNA bases.
+Store a DNA sequence as a string. Python treats it as text. It does not check whether the characters are valid DNA bases.
 
 ```{code-cell} python
 dna = "gAtC"             # Keep the original mixed-case sequence.
@@ -211,7 +211,7 @@ acgttg
 Length: 6
 ```
 
-These lines are the expected output; do not type them into your script. Test another sequence and count its bases by hand. Keep the original input in a variable. Notice that `.upper()` returns a new string and leaves that variable unchanged. In later weeks, consistent case will make comparisons and base counts easier.
+These lines are the expected output. Do not type them into your script. Test another sequence and count its bases by hand. Keep the original input in a variable. Notice that `.upper()` returns a new string and leaves that variable unchanged. In later weeks, consistent case will make comparisons and base counts easier.
 
 Try the question first. Then watch the walkthrough and compare it with your solution.
 
@@ -268,17 +268,17 @@ print(dna[2:])          # Select index 2 through to the end.
 print(dna[::-1])        # Visit every character in reverse order.
 ```
 
-The outputs are `G`, `ATC`, `TCA`, and `ACTAG`. Square brackets select characters. One index selects one character; a **slice** selects a range. The form is `text[start:stop:step]`. Python includes `start`, stops before `stop`, and moves by `step`.
+The outputs are `G`, `ATC`, `TCA`, and `ACTAG`. Square brackets select characters. One index selects one character. A **slice** selects a range. The form is `text[start:stop:step]`. Python includes `start`, stops before `stop`, and moves by `step`.
 
 If you leave out `start`, Python begins at the start of the string. If you leave out `stop`, it continues to the end. The default step is `1`. In `[::-1]`, the step is `-1`, so Python reads the whole string backwards. By contrast, `dna[-1]` selects only the last character.
 
-A slice that starts at index `2` skips the first two characters. This is useful for selecting a region or removing a known prefix. Check whether positions in your data start at zero or one; Python indices start at zero.
+A slice that starts at index `2` skips the first two characters. This is useful for selecting a region or removing a known prefix. Check whether positions in your data start at zero or one. Python indices start at zero.
 
 ### Question 4 — Reverse Sequence
 
-Create `q4.py`. Ask for a DNA sequence and print it backwards. Input `ACTG` should give `GTCA`. Reverse the order only; do not swap the bases.
+Create `q4.py`. Ask for a DNA sequence and print it backwards. Input `ACTG` should give `GTCA`. Reverse the order only. Do not swap the bases.
 
-Also test `A`; reversing one character leaves it unchanged. Explain what `-1` does in the slice. In Question 6, you will reverse the sequence and swap each base for its complement.
+Also test `A`. Reversing one character leaves it unchanged. Explain what `-1` does in the slice. In Question 6, you will reverse the sequence and swap each base for its complement.
 
 Try the question first, then watch the walkthrough to check your slice.
 
@@ -288,7 +288,7 @@ Slicing lets you select or reverse characters without changing them. Next, you w
 
 ## Replace bases and add a repeated tail
 
-The `replace` method returns a string with matching text changed. Here, replace `T` with `U` to make a simple DNA-to-RNA conversion. This example assumes the DNA sequence is already in the correct orientation. It demonstrates text processing; it does not model every step of transcription or RNA processing.
+The `replace` method returns a string with matching text changed. Here, replace `T` with `U` to make a simple DNA-to-RNA conversion. This example assumes the DNA sequence is already in the correct orientation. It demonstrates text processing. It does not model every step of transcription or RNA processing.
 
 ```{code-cell} python
 dna = "GATT"                   # Use uppercase so T matches consistently.
@@ -302,7 +302,7 @@ print("Length:", len(rna_with_tail))
 
 The output is `RNA: GAUU`, `With tail: GAUUAAA`, and `Length: 7`. In `.replace("T", "U")`, the first argument is what to find and the second is what to put in its place. The match is case-sensitive: lowercase `t` stays unchanged. Convert the DNA to uppercase first if needed.
 
-When used with a string and an integer, `*` repeats the string. `"A" * 3` gives `"AAA"`; adding it to the RNA adds three characters. Do not put spaces between bases: Python counts them as characters.
+When used with a string and an integer, `*` repeats the string. `"A" * 3` gives `"AAA"`. Adding it to the RNA adds three characters. Do not put spaces between bases: Python counts them as characters.
 
 ### Question 5 — RNA + polyA
 
@@ -331,9 +331,9 @@ for base in "AC":                           # Visit A, then C.
     print(labels.get(base, "unknown"))      # Look up each base's label.
 ```
 
-The code prints `adenine`, then `cytosine`. In the dictionary, a colon separates each key from its value, and a comma separates the pairs. The loop assigns `"A"` to `base`, runs the indented `print`, then repeats with `"C"`. The colon starts the loop; the four spaces before `print` show that it belongs to the loop.
+The code prints `adenine`, then `cytosine`. In the dictionary, a colon separates each key from its value, and a comma separates the pairs. The loop assigns `"A"` to `base`, runs the indented `print`, then repeats with `"C"`. The colon starts the loop. The four spaces before `print` show that it belongs to the loop.
 
-`labels.get(base, "unknown")` looks up the current key. If the key is missing, it returns `"unknown"`. Braces create a dictionary here; inside an f-string, braces mark a value to insert.
+`labels.get(base, "unknown")` looks up the current key. If the key is missing, it returns `"unknown"`. Braces create a dictionary here. Inside an f-string, braces mark a value to insert.
 
 ### Question 6 — Fix the Reverse Complement (Bug Hunt)
 
@@ -350,7 +350,7 @@ for base in dna:  # Inspect the order in which this visits the bases.
 print(result)  # Display the completed result after the loop.
 ```
 
-`""` is an empty string. On each loop, Python looks up the current base's complement and adds it to `result`. The unindented `print` runs once, after the loop. The fallback `?` marks a character missing from the dictionary; it does not validate the DNA.
+`""` is an empty string. On each loop, Python looks up the current base's complement and adds it to `result`. The unindented `print` runs once, after the loop. The fallback `?` marks a character missing from the dictionary. It does not validate the DNA.
 
 Run the program and note its output. Then change the loop so it visits the bases in reverse order. Check that it gives:
 
@@ -374,7 +374,7 @@ value = float(text)     # Convert the text to a decimal-capable number.
 print(value * 2)        # Numeric multiplication doubles the value.
 ```
 
-The outputs are `2.52.5` and `5.0`. `text * 2` repeats the string; `value * 2` multiplies a number. `float(text)` converts numeric text to a decimal number and leaves `text` unchanged. Use `int` for a whole-number position: `int("4")` gives `4`. `int("3.5")` fails because `3.5` is not a whole number.
+The outputs are `2.52.5` and `5.0`. `text * 2` repeats the string. `value * 2` multiplies a number. `float(text)` converts numeric text to a decimal number and leaves `text` unchanged. Use `int` for a whole-number position: `int("4")` gives `4`. `int("3.5")` fails because `3.5` is not a whole number.
 
 Use `str` to turn a value into text. For display, an f-string converts values for you. This is useful because you cannot join a string and a number with `+`. Later, you will learn how to choose the number of decimal places to display.
 
@@ -382,7 +382,7 @@ Use `str` to turn a value into text. For display, an f-string converts values fo
 
 Create `q7.py`. Ask `Enter a number: `, convert the response with `float`, and double it. Print the result on a line beginning `Result:`. Input `3.5` should give `Result: 7.0`. Also test `3` (`Result: 6.0`) and `-2` (`Result: -4.0`).
 
-Why must you convert the input before multiplying? For now, assume the user enters a valid number. If they type `three`, Python raises a `ValueError`; handling invalid input comes later. You will need numeric input for measurements, counts, and concentrations.
+Why must you convert the input before multiplying? For now, assume the user enters a valid number. If they type `three`, Python raises a `ValueError`. Handling invalid input comes later. You will need numeric input for measurements, counts, and concentrations.
 
 You have now worked with strings and numbers separately. In the final question, you will combine both: collect a DNA sequence and a numeric position, then use that position to select the message.
 
@@ -410,7 +410,7 @@ Poly-A RNA: UUACGGUACAAAAAAAAAA
 Length: 19
 ```
 
-The original sequence has 13 characters. Removing the first four leaves nine; adding ten gives a total length of 19. Check both the RNA letters and the length to catch mistakes.
+The original sequence has 13 characters. Removing the first four leaves nine. Adding ten gives a total length of 19. Check both the RNA letters and the length to catch mistakes.
 
 For now, assume the DNA is valid and the key is from zero to the sequence length. Test a key of `0` to keep the whole sequence. Then use a key equal to the sequence length: the trimmed RNA will be empty, so the result will contain only the ten `A`s. Python allows negative keys and keys beyond the end, but do not use them in this exercise.
 
@@ -432,7 +432,7 @@ When a script fails, read the last line of the error first. Then check the filen
 | `TypeError` when joining values | Check whether you are combining text with a number. Use an f-string for display or convert numeric input before arithmetic. |
 | `ValueError` during conversion | Check whether the typed response is valid for `float` or `int`. |
 | No new output after editing | Save the file, then run the correct file again. |
-| Script seems to pause | Look for an input prompt in the terminal; type the requested data and press Enter. |
+| Script seems to pause | Look for an input prompt in the terminal. Type the requested data and press Enter. |
 
 If you need help, share a small example, the input you tried, the output you expected, and the full error message. Say what you thought the code would do. This makes it easier to find the problem.
 
@@ -442,4 +442,4 @@ Look back at your eight scripts. Choose one line in each and explain what value 
 
 In Week 2, you will make programs respond to input with decisions. In Week 3, you will use loops and collections to process groups of data. In Week 4, you will use functions and files to build reusable analyses. In Week 5, you will work with biological data formats. The string skills from this week will be useful throughout.
 
-Now compare your answers with the [Week 1 solutions](../solutions.md#week-1). When you are ready, try the sequence-transformation section of [Project 1](../projects.md). The extended projects are optional; you can return to later sections as you learn more Python.
+Now compare your answers with the [Week 1 solutions](../solutions.md#week-1). When you are ready, try the sequence-transformation section of [Project 1](../projects.md). The extended projects are optional. You can return to later sections as you learn more Python.

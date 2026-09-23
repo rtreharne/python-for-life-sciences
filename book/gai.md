@@ -20,6 +20,14 @@ You may notice that I use ChatGPT at several points in the videos rather than th
 
 Use Copilot for the same learning activities shown in the videos, such as asking for an explanation, discussing an error, or suggesting tests. The wording and screen layout may differ, but you can use Copilot in the same way to support your learning.
 
+## A full disclosure about this book
+
+I have used GAI extensively to help prepare and maintain this book. The underlying course materials, activities, examples, and teaching approach were developed independently over several years of teaching LIFE733. GAI has then been used as a production and editing aid: for example, to help reorganise explanations, draft alternatives, check consistency, and support technical book-building work.
+
+Please treat this as “do as I say, not as I do”, but with an important distinction. This is a teaching resource produced by a member of staff, not an assessment submitted to demonstrate that I have learned Python. Your portfolio work must show your own understanding, judgement, and ability to explain and test the code you submit. The aim is not to avoid GAI completely. It is to use it openly, critically, and in a way that does not replace the learning you are expected to demonstrate.
+
+All GAI-generated content in this book has been reviewed by a human before publication. See the [appendix on preparing this resource](appendix.md) for a detailed record of how VS Code and Codex were used.
+
 ## The rule: understand, then use
 
 Before using GAI to help with a programming task, make a genuine attempt yourself. You should be able to explain:
