@@ -2,7 +2,13 @@
 
 All three portfolio projects **must be completed as part of your LIFE733 portfolio, in addition to the BioBoost knowledge checks**. Instructions for the BioBoost knowledge checks will be introduced separately.
 
+The video below gives an overview of the portfolio projects and how to approach them.
+
+<iframe title="Portfolio Projects overview" width="560" height="315" src="https://www.youtube.com/embed/M4z868qJyF4?si=OA4bfls0XCTZx2VI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 :::{important}
+:class: mt-8
+
 ## What you must submit to Canvas
 
 Before the deadline stated on Canvas — **before Christmas** — submit **one ZIP file** to the Canvas portfolio submission. The ZIP must contain your complete `LIFE733` folder, including:
