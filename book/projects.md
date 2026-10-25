@@ -269,6 +269,39 @@ The practice proteins have zero hits, so also test `NAT` (one hit), `NPS` (no hi
 
 Move reusable functions into `sequtils.py` or `fasta_tools.py`, then import them from a short driver script. Write `output/summary.tsv` with this exact tab-separated header: `record_identifier`, `dna_length`, `validity`, `orf_count`, `protein_length`, `stop_symbol_count`, and `motif_hit_count`. Write one row per input record in input order. Use lowercase `valid` or `invalid`; for an invalid record, use `NA` in every analysis column after validity. Include brief tests for an empty FASTA file, a wrapped sequence, and an invalid base.
 
+### Expected practice outputs
+
+When you run the shared practice FASTA, your four output files should contain the following. These examples use `source_identifier_orf_number` names for candidate ORFs; keep the same naming pattern for your individual run.
+
+`output/orfs.fasta`
+
+```text
+>gene_alpha_orf_1
+ATGAAACCCGGGTAA
+>gene_beta_orf_1
+ATGCCCTAG
+```
+
+`output/proteins.fasta`
+
+```text
+>gene_alpha
+MKPG*
+>gene_beta
+MP*
+```
+
+`output/motif_hits.fasta` is empty because neither practice protein contains a motif match.
+
+`output/summary.tsv`
+
+```text
+record_identifier	dna_length	validity	orf_count	protein_length	stop_symbol_count	motif_hit_count
+gene_alpha	15	valid	1	5	1	0
+gene_beta	9	valid	1	3	1	0
+gene_gamma	6	invalid	NA	NA	NA	NA
+```
+
 Once the practice checks pass, run all stages against your individual FASTA and codon table. Save the individual-run outputs with these exact paths: `output/orfs.fasta`, `output/proteins.fasta`, `output/motif_hits.fasta`, and `output/summary.tsv`. Keep those results together with your code, dataset README, and `gai_log.txt` for your portfolio.
 
 ## Check your portfolio work
