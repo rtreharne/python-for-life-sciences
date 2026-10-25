@@ -101,10 +101,10 @@ print(f"Working with: {sample_name}")
 
 `SystemExit(1)` stops the script and reports that it was used incorrectly. Keep the usage line accurate if you rename the script or change its arguments.
 
-For portfolio work, save the command you used in your `GAI_documentation` or task notes when it helps explain a result. For example:
+For portfolio work, save the command you used in the project's `gai_log.txt` or your task notes when it helps explain a result. For example:
 
 ```text
-python part_d.py portfolio1_123456789_part-d_sequences.fasta results.txt
+python part_d.py
 ```
 
 This is more useful than writing “I ran the script”: it identifies the script, input, and output.

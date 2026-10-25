@@ -16,22 +16,24 @@ portfolio/
 │   ├── part-a-dna/
 │   │   ├── part_a.py
 │   │   ├── portfolio1_<student-id>_part-a_fragments.txt
-│   │   └── (save your results separately)
+│   │   └── part_a_results.txt       ← created by your script
 │   ├── part-b-counts/
 │   │   ├── part_b.py
 │   │   ├── portfolio1_<student-id>_part-b_counts.txt
-│   │   └── (save your results separately)
+│   │   └── part_b_results.txt       ← created by your script
 │   ├── part-c-replicates/
 │   │   ├── part_c.py
 │   │   ├── portfolio1_<student-id>_part-c_replicates.tsv
-│   │   └── (save your results separately)
+│   │   └── part_c_results.txt       ← created by your script
 │   └── part-d-sequences/
 │       ├── part_d.py
 │       ├── portfolio1_<student-id>_part-d_sequences.fasta
-│       └── (save your results separately)
+│       └── part_d_results.txt       ← created by your script
+├── gai_log.txt                       ← record meaningful GAI use
+└── portfolio_test_transcript.txt     ← created by test_project1.py
 ```
 
-Open one part folder in VS Code at a time and check the terminal location before running its script. Use the practice snippets shown in this chapter for initial checks, then run the finished script against the generated `portfolio1_<student-id>_...` filename beside it. Save any result files separately from the extracted project folder. The angle-bracketed `<student-id>` is a placeholder: use the nine digits in the downloaded filename, without the angle brackets.
+Open one part folder in VS Code at a time and check the terminal location before running its script. Use the practice snippets shown in this chapter for initial checks, then run the finished script against the generated `portfolio1_<student-id>_...` filename beside it. Each script must print its result and save it in that same part folder with the exact filename shown above. Do not use a generic `results.txt`, move the file to another folder, or rename it: `test_project1.py` checks these exact paths. The angle-bracketed `<student-id>` is a placeholder: use the nine digits in the downloaded filename, without the angle brackets.
 
 Attempt each part yourself before checking the expected practice output shown below. Follow the course's portfolio submission and AI-use instructions. This page does not replace those instructions.
 
@@ -47,7 +49,7 @@ Download the generated ZIP, which includes the README and all four part datasets
 
 The generator now provides one ZIP file containing the complete Project 1 folder structure. Download it, create a new empty folder such as `LIFE733/portfolio/project-1`, and extract the ZIP into that folder. Do not open individual files from the browser and do not rearrange the extracted folders.
 
-In VS Code, choose **File → Open Folder**, select the extracted `project-1` folder, and open **Terminal → New Terminal**. Check the location with `pwd` and list the contents with `ls`. Open one of the `part-a-dna`, `part-b-counts`, `part-c-replicates`, or `part-d-sequences` folders when you work on that part. Each folder already contains its recommended script, practice input, generated input, and `output/practice_expected.txt` file. Keep the generated input unchanged and save your own results in `output`.
+In VS Code, choose **File → Open Folder**, select the extracted `project-1` folder, and open **Terminal → New Terminal**. Check the location with `pwd` and list the contents with `ls`. Open one of the `part-a-dna`, `part-b-counts`, `part-c-replicates`, or `part-d-sequences` folders when you work on that part. Each folder contains its recommended script and generated input. Keep the generated input unchanged. Follow the save instruction at the top of each script, then run `test_project1.py` from the `project-1` folder.
 
 If the embedded form is too small, [open the Project 1 generator in a separate tab](../portfolio-generator/index.html?project=1).
 
@@ -164,7 +166,8 @@ portfolio/
     ├── fasta_tools.py   ← Reusable functions
     ├── practice/        ← Shared practice inputs
     ├── input/           ← Your generated dataset and README
-    └── output/          ← Results from your individual run
+    ├── output/          ← Results from your individual run
+    └── gai_log.txt      ← Record meaningful GAI use
 ```
 
 Open `project-2` in VS Code before starting this project. Do not reuse the Project 1 scripts or output folder. Test the practice files first, then generate and run against the Project 2 dataset.
@@ -184,7 +187,7 @@ ATGNAA
 
 <iframe title="Generate a Project 2 portfolio dataset" src="../portfolio-generator/index.html?project=2" width="100%" height="590" loading="lazy"></iframe>
 
-Download the FASTA, codon table, and README into your Project 2 `input` folder. [Open the Project 2 generator in a separate tab](../portfolio-generator/index.html?project=2) if needed.
+Download the FASTA, codon table, and README into your Project 2 `input` folder. Save the supplied `gai_log.txt` in the `project-2` folder, alongside `main.py`. [Open the Project 2 generator in a separate tab](../portfolio-generator/index.html?project=2) if needed.
 
 The individual FASTA includes wrapped lines, invalid records, multiple candidate starts, and proteins with and without motif matches. Use the supplied codon table for both practice and individual data: the six-codon demonstration table in the solutions is too small for the individual sequences. The downloaded table covers all codons used in the valid supplied sequences. It is a teaching subset, not the complete genetic code.
 
@@ -218,10 +221,10 @@ The practice proteins have zero hits, so also test `NAT` (one hit), `NPS` (no hi
 
 Move reusable functions into `sequtils.py` or `fasta_tools.py`, then import them from a short driver script. Write `output/summary.tsv` with a header row and columns for record identifier, DNA length, validity, ORF count, protein length, stop-symbol count, and motif-hit count. Use `NA` for analyses not performed on invalid records. Include brief tests for an empty FASTA file, a wrapped sequence, and an invalid base.
 
-Once the practice checks pass, run all stages against your individual FASTA and codon table. Keep those results together with your code and dataset README for your portfolio.
+Once the practice checks pass, run all stages against your individual FASTA and codon table. Save the individual-run outputs with these exact paths: `output/orfs.fasta`, `output/proteins.fasta`, `output/motif_hits.fasta`, and `output/summary.tsv`. Keep those results together with your code, dataset README, and `gai_log.txt` for your portfolio.
 
 ## Check your portfolio work
 
-Before following the course submission instructions, check that you have completed **both** projects and run each on the dataset generated with your own student ID. Keep your code, your checks against the shared practice data, the unchanged individual inputs and README, and the output from your individual runs together.
+Before following the course submission instructions, check that you have completed **both** projects and run each on the dataset generated with your own student ID. Keep your code, your checks against the shared practice data, the unchanged individual inputs and README, the output from your individual runs, and the supplied `gai_log.txt` together. Do not use generative AI to generate your project code directly; it may support your learning, but the code you submit must be your own.
 
 Be ready to explain how your program reads, validates, transforms, and reports the data. The BioBoost knowledge checks are an additional required part of the LIFE733 portfolio. Instructions for them will follow separately.

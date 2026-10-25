@@ -21,6 +21,14 @@ for (const id of ['', '123', '1234567890', '012345678', ' 123456789', '123456789
   assert.throws(() => validateId(id));
 }
 assert.throws(() => generate('123456789', 3));
+const projectOneArchive = new TextDecoder().decode(generate('123456789', 1).zip.bytes);
+assert(projectOneArchive.includes('project-1/gai_log.txt'));
+assert(projectOneArchive.includes('save exactly this filename'));
+const projectTwoLog = generate('123456789', 2).files.find(file => file.name === 'gai_log.txt');
+assert(projectTwoLog);
+assert(projectTwoLog.text.includes('Example — Microsoft Copilot'));
+assert(projectTwoLog.text.includes('Example — ChatGPT'));
+assert(projectTwoLog.text.includes('Do not ask it to generate your code'));
 const seen1 = new Set(), seen2 = new Set();
 for (const n of [100000000,999999999,...Array.from({length:1000},(_,i)=>234567000+i)]) {
   const id = String(n), one = generate(id,1), two = generate(id,2);
@@ -56,5 +64,5 @@ for (const n of [100000000,999999999,...Array.from({length:1000},(_,i)=>23456700
 const crypto=require('node:crypto');
 const digest=crypto.createHash('sha256').update(JSON.stringify([generate('123456789',1),generate('123456789',2)])).digest('hex');
 if (process.env.PRINT_DATASET_DIGEST) console.log(digest);
-else assert.equal(digest,'61a93fb9467ea9d2b10cdebaca33b0722f52acc7901400171dd1a2dda7f7b715');
+else assert.equal(digest,'a3b52b085687ecde725fc889ea5c2b991c69b07fc171aa06670133982388a4bd');
 console.log('Portfolio generator: validation, repeatability, uniqueness, classifications and translation checks passed.');
