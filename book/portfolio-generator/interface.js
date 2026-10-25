@@ -1,5 +1,5 @@
 'use strict';
-const project = Number(new URLSearchParams(location.search).get('project') || '1');
+const project = Number(document.documentElement.dataset.project || new URLSearchParams(location.search).get('project') || '1');
 const form = document.getElementById('generator');
 const input = document.getElementById('student-id');
 const results = document.getElementById('results');
@@ -16,13 +16,15 @@ form.addEventListener('submit', event => {
   try {
     const dataset = PortfolioDatasets.generate(input.value, project);
     const message = document.createElement('p');
-    message.textContent = 'Dataset ready (version ' + dataset.version + '). Download the ZIP, open it, and keep the folder structure unchanged.';
+    message.textContent = dataset.zip
+      ? 'Project ' + project + ' dataset ready (version ' + dataset.version + '). Download the ZIP, open it, and keep the folder structure unchanged.'
+      : 'Project ' + project + ' dataset ready (version ' + dataset.version + '). Download all of the files below and save them in the folders described in the book.';
     results.append(message);
     const list = document.createElement('ul');
     if (dataset.zip) {
       const zipUrl = URL.createObjectURL(new Blob([dataset.zip.bytes], {type:'application/zip'}));
       urls.push(zipUrl);
-      const zipLink = document.createElement('a'); zipLink.href = zipUrl; zipLink.download = dataset.zip.name; zipLink.textContent = dataset.zip.name + ' (complete Project 1 folder)';
+      const zipLink = document.createElement('a'); zipLink.href = zipUrl; zipLink.download = dataset.zip.name; zipLink.textContent = dataset.zip.name + ' (complete Project ' + project + ' folder)';
       const zipItem = document.createElement('li'); zipItem.append(zipLink); list.append(zipItem);
     }
     if (!dataset.zip) for (const file of dataset.files) {

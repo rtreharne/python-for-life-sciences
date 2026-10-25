@@ -28,20 +28,14 @@ LIFE733/
 ├── week-11/
 ├── week-12/
 └── portfolio/
-    ├── task-1/
-    │   ├── output/
-    │   └── GAI_documentation/
-    ├── task-2/
-    │   ├── output/
-    │   └── GAI_documentation/
-    └── task-3/
-        ├── output/
-        └── GAI_documentation/
+    ├── project-1/
+    ├── project-2/
+    └── project-3/
 ```
 
-Put each task's Python files, input data, notes, and other working files inside its own `task-*` folder. Put files produced by your code in that task's `output` folder. Put the required record of your use of generative AI in that task's `GAI_documentation` folder. Keep these folders with their task. Do not combine all outputs or all GAI records in one place.
+Put your weekly problem solutions and their input data in the matching `week-*` folder. Keep each portfolio project's code, generated inputs, outputs, README, and `gai_log.txt` in its own `project-*` folder. The exact required portfolio layout is shown in the [Portfolio Projects](projects.md) chapter.
 
-At the end of each practical, save your work, check that it is in the right folder, and make a backup (for example, to university storage or another approved location). In Week 10 or 11 you will submit the whole `LIFE733` folder as a `.zip` file. **Following this structure throughout the module is essential:** it makes the submission complete, organised, and straightforward to mark.
+At the end of each practical, save your work, check that it is in the right folder, and make a backup (for example, to university storage or another approved location). Before the deadline stated on Canvas, create one ZIP of the complete `LIFE733` folder and submit that single ZIP to Canvas. It must include your weekly problem solutions and all three portfolio projects. **Following this structure throughout the module is essential:** it makes the submission complete, organised, and straightforward to mark.
 
 ## University-managed (MWS) PCs
 
