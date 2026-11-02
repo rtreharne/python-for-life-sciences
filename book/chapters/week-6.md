@@ -6,6 +6,22 @@ kernelspec:
 
 # Week 6: Command-line arguments
 
+:::{warning} Stop using the play button!
+If you have been using the play button so far, that is completely fine: it was a handy way to get started. Now you are ready to give a script extra information when you run it, so it is time to practise using the terminal.
+
+The **Run Python File** play button can feel slow because VS Code has to work out which Python interpreter to use and prepare the run environment before starting your script. Python is not compiling your whole script first: it runs the code when you launch it. That setup can add a pause, and the button can hide which folder, interpreter, and arguments were used.
+
+For this chapter, run scripts directly in the integrated terminal. First make sure the terminal is in the folder containing your script, then type the command yourself:
+
+```bash
+python script.py
+```
+
+On Windows, `python script.py` is the usual command. If that is not recognised, try `py script.py`. On macOS or Linux, use `python3 script.py` if that is the command configured on your computer. A terminal command starts the chosen Python directly, makes any arguments visible, and is easy to repeat when you test a different input. It also makes it clearer which folder Python uses to find your files.
+
+There is also a less technical benefit: typing `python script.py` into a terminal makes you look about 40% more serious about programming. (The percentage is not scientifically verified.)
+:::
+
 A command-line argument is extra information supplied when you run a script. Instead of changing a filename or sequence inside your code every time, you give it to the script in the terminal. This makes your work easier to repeat, test, and explain.
 
 Command-line arguments are especially useful for the Portfolio Projects. Your finished script can work with a practice file, an individual dataset, or a new test file without being edited. The command you ran records exactly which input and output you used.
@@ -33,19 +49,19 @@ Open **Terminal > New Terminal** in VS Code. Check that the terminal is in `week
 ```bash
 pwd
 ls
-python3 practice.py
+python practice.py
 ```
 
-On Windows or MWS PCs, use `python practice.py` or `py practice.py` if that is the command you used earlier.
+On Windows, use `python practice.py` or `py practice.py` if that is the command you used earlier. On macOS or Linux, use `python3 practice.py` if needed.
 
 ## Supply information when you run a script
 
-The **Run Python File** play button is useful for a quick check, but it normally runs only the active file. It does not ask which sequence, input file, or output file your program should use. You can configure arguments for debugging later, but typing the command in the terminal is simpler and makes the complete command visible.
+Run each example from the integrated terminal. The **Run Python File** button normally starts only the active file and does not ask which sequence, input file, or output file your program should use. Typing the full command in the terminal makes the script and its arguments clear.
 
 For example, this command runs `practice.py` and gives it one argument, `sample_A`:
 
 ```bash
-python3 practice.py sample_A
+python practice.py sample_A
 ```
 
 Python stores command-line arguments in the list `sys.argv`. The first item is always the script name. The remaining items are the values typed after it:
@@ -59,7 +75,7 @@ print(sys.argv)
 Run the script with:
 
 ```bash
-python3 practice.py sample_A
+python practice.py sample_A
 ```
 
 The output is similar to:
@@ -122,7 +138,7 @@ Working with: sample_A
 when you run:
 
 ```bash
-python3 q1.py sample_A
+python q1.py sample_A
 ```
 
 Run the script with no argument and with two arguments. In both cases, it should print a clear usage message and stop. This question checks your understanding of strings, lists, and conditions from Weeks 1–3.
@@ -136,7 +152,7 @@ Create `q2.py`. It should accept one DNA sequence, convert it to uppercase, then
 For this command:
 
 ```bash
-python3 q2.py atgca
+python q2.py atgca
 ```
 
 expect:
@@ -161,7 +177,7 @@ Create `q3.py`. It should accept one or more measurements, convert them to `floa
 For this command:
 
 ```bash
-python3 q3.py 4 8 6
+python q3.py 4 8 6
 ```
 
 expect:
@@ -194,7 +210,7 @@ for value in sys.argv[1:]:
 
 Both versions take each text argument after the script name, convert it to a `float`, and add the result to `values`. The list comprehension saves two lines, but it does not do anything different. You may use the longer `for` loop in this question and in your portfolio work if it is clearer to you.
 
-If no measurements are given, print `Usage: python q3.py NUMBER [NUMBER ...]` and stop. Test the command `python3 q3.py 2.5 3.0 4.5` as well.
+If no measurements are given, print `Usage: python q3.py NUMBER [NUMBER ...]` and stop. Test the command `python q3.py 2.5 3.0 4.5` as well.
 
 ## Supply an input file and an output file
 
@@ -212,7 +228,7 @@ Create `q4.py`. It should accept an input filename and an output filename. Read 
 Run it with:
 
 ```bash
-python3 q4.py sequences.txt base_counts.txt
+python q4.py sequences.txt base_counts.txt
 ```
 
 `base_counts.txt` should contain:
