@@ -54,7 +54,7 @@ reversed_dna = dna[::-1]                # Traverse the entire string backwards.
 print(reversed_dna)
 ```
 
-The slice's step is `-1`. Its omitted endpoints select the full string in that direction. Input `ACTG` produces `GTCA`; no base substitution is performed.
+The slice's step is `-1`. Its omitted endpoints select the full string in that direction. Input `ACTG` produces `GTCA`. No base substitution is performed.
 
 ### Question 5 — RNA + polyA
 
@@ -83,7 +83,7 @@ for base in dna[::-1]:  # Visit the original bases from right to left.
 print(result)  # Print once, after all bases have been processed.
 ```
 
-The repair is to iterate over `dna[::-1]`. For `ACTG`, the loop visits `G`, `T`, `C`, `A`, whose complements are `C`, `A`, `G`, `T`. Thus the result is `CAGT`. Changing the test sequence to `AATTCC` gives `GGAATT`. The dictionary describes pairing; the slice determines visiting order. Neither operation alone performs both jobs.
+The repair is to iterate over `dna[::-1]`. For `ACTG`, the loop visits `G`, `T`, `C`, `A`, whose complements are `C`, `A`, `G`, `T`. Thus the result is `CAGT`. Changing the test sequence to `AATTCC` gives `GGAATT`. The dictionary describes pairing. The slice determines visiting order. Neither operation alone performs both jobs.
 
 ### Question 7 — Numeric Input
 
@@ -94,7 +94,7 @@ result = value * 2                # Multiply numerically, rather than repeat tex
 print("Result:", result)
 ```
 
-For `3.5`, the output is `Result: 7.0`. For `3`, it is `Result: 6.0`; for `-2`, it is `Result: -4.0`. Conversion determines which meaning of `*` applies. These examples assume valid numeric input.
+For `3.5`, the output is `Result: 7.0`. For `3`, it is `Result: 6.0`. For `-2`, it is `Result: -4.0`. Conversion determines which meaning of `*` applies. These examples assume valid numeric input.
 
 ### Question 8 — DNA Mystery Message
 
@@ -114,9 +114,9 @@ print("Poly-A RNA:", poly_a_rna)
 print("Length:", len(poly_a_rna))      # Include the tail in the reported length.
 ```
 
-The integer key uses zero-based indexing. For `ATGCTTACGGTAC` and key `4`, the trimmed DNA is `TTACGGTAC`, the trimmed RNA is `UUACGGUAC`, and the final RNA is `UUACGGUACAAAAAAAAAA`. Its length is **19**: nine selected bases plus ten added As. The original worksheet's displayed trimmed RNA and total length were inconsistent with these operations; the values here follow the code.
+The integer key uses zero-based indexing. For `ATGCTTACGGTAC` and key `4`, the trimmed DNA is `TTACGGTAC`, the trimmed RNA is `UUACGGUAC`, and the final RNA is `UUACGGUACAAAAAAAAAA`. Its length is **19**: nine selected bases plus ten added As. The original worksheet's displayed trimmed RNA and total length were inconsistent with these operations. The values here follow the code.
 
-Lowercase input works because the working copy is uppercased before replacement. The original report preserves the entered case. A key of zero keeps the full sequence; a key equal to the sequence length leaves only the ten-base tail. This version assumes valid DNA and a key within that range. For the extension, plan checks that every character is an allowed base and that the integer key lies between zero and the sequence length, then implement those checks as you learn decisions and loops.
+Lowercase input works because the working copy is uppercased before replacement. The original report preserves the entered case. A key of zero keeps the full sequence. A key equal to the sequence length leaves only the ten-base tail. This version assumes valid DNA and a key within that range. For the extension, plan checks that every character is an allowed base and that the integer key lies between zero and the sequence length, then implement those checks as you learn decisions and loops.
 
 
 ## Week 2
@@ -167,7 +167,7 @@ else:
     print(f"{number} is odd")
 ```
 
-`%` finds the remainder; `== 0` turns that result into a Boolean comparison. The `if` and `else` branches cover the two possibilities. Inputs `8` and `0` are even; `7` is odd.
+`%` finds the remainder. `== 0` turns that result into a Boolean comparison. The `if` and `else` branches cover the two possibilities. Inputs `8` and `0` are even. `7` is odd.
 
 ### Question 4 — Grade Classifier
 
@@ -202,7 +202,7 @@ else:
     print("Access denied.")
 ```
 
-The methods run on the string returned by `input`. `and` requires both comparisons to be true. Only yes/yes grants access; yes/no, no/yes, and no/no deny it. Input such as ` YES ` also counts as yes. Any other response counts as no under this exercise's rule.
+The methods run on the string returned by `input`. `and` requires both comparisons to be true. Only yes/yes grants access. Yes/no, no/yes, and no/no deny it. Input such as ` YES ` also counts as yes. Any other response counts as no under this exercise's rule.
 
 ### Question 6 — Faulty Conditional
 
@@ -232,7 +232,7 @@ else:
     print("Not a leap year.")
 ```
 
-The parenthesised rule accepts multiples of four that are not centuries. The `or` also accepts multiples of 400. Thus `1900` and `2023` are not leap years; `2000` and `2020` are leap years.
+The parenthesised rule accepts multiples of four that are not centuries. The `or` also accepts multiples of 400. Thus `1900` and `2023` are not leap years. `2000` and `2020` are leap years.
 
 ### Question 8 — Lab Equipment Monitor
 
@@ -255,7 +255,7 @@ if not ph_ok:
 
 `>=` and `<=` include the endpoints. Each named Boolean records one range check. The first decision produces one status, and the two independent warning checks may produce zero, one, or two messages. For `39` and `7.4`, the status is `UNSAFE` and both warnings appear. Using `elif` for the second warning would hide it whenever the temperature warning had already matched.
 
-For `37` and `7.0`, the status is `SAFE` with no warnings. Test all endpoint pairs `(36, 6.8)`, `(36, 7.2)`, `(38, 6.8)`, and `(38, 7.2)`; each is safe under the exercise's rules. Then change one value at a time to just outside its range.
+For `37` and `7.0`, the status is `SAFE` with no warnings. Test all endpoint pairs `(36, 6.8)`, `(36, 7.2)`, `(38, 6.8)`, and `(38, 7.2)`. Each is safe under the exercise's rules. Then change one value at a time to just outside its range.
 
 
 ## Week 3
@@ -289,7 +289,7 @@ else:
     print("No numbers to average.")
 ```
 
-The total is `26` and the mean is `26 / 5`, or `5.2`. The condition is outside the loop, so it checks the completed collection once. For `[8]`, the mean is `8.0`; for `[]`, the total is zero and the script prints the no-numbers message.
+The total is `26` and the mean is `26 / 5`, or `5.2`. The condition is outside the loop, so it checks the completed collection once. For `[8]`, the mean is `8.0`. For `[]`, the total is zero and the script prints the no-numbers message.
 
 ### Question 3 — Find the Maximum
 
@@ -377,7 +377,7 @@ for multiplier in range(1, 11):           # Include 1 through 10.
     print(f"{number} x {multiplier} = {product}")
 ```
 
-For `5`, this prints ten rows from `5 x 1 = 5` to `5 x 10 = 50`. The stop is 11 because `range` excludes it. Zero and negative integers also work; the number of rows remains ten.
+For `5`, this prints ten rows from `5 x 1 = 5` to `5 x 10 = 50`. The stop is 11 because `range` excludes it. Zero and negative integers also work. The number of rows remains ten.
 
 ### Question 8 — Guess the Number
 
@@ -395,7 +395,7 @@ while True:                         # Keep asking until the correct guess breaks
         break                       # Exit the loop as soon as the guess matches.
 ```
 
-The target is set outside the loop and stays fixed. `while True` repeats until `break` is reached; the input call collects a fresh guess on each pass. During testing, replace the target line with `target = 7`: guesses `3`, `9`, and `7` should give low, high, correct and then stop. A correct first guess must also stop immediately. Restore the random target when you finish testing.
+The target is set outside the loop and stays fixed. `while True` repeats until `break` is reached. The input call collects a fresh guess on each pass. During testing, replace the target line with `target = 7`: guesses `3`, `9`, and `7` should give low, high, correct and then stop. A correct first guess must also stop immediately. Restore the random target when you finish testing.
 
 ### Question 9 — Another DNA Mystery Message
 
@@ -423,7 +423,7 @@ print("Zeros:", zeros)
 
 There are three repairs. Use `<` instead of `<=` so the index stays below the length. Use `+= 1` rather than `=+ 1`: the latter assigns `+1` each time. Finally, remove the `continue` branch and advance `i` after every classification, so zeros cannot trap the loop at one position.
 
-The result is three positives, two negatives, and two zeros. `[0]` gives 0, 0, 1; `[1, 2]` gives 2, 0, 0; `[-1, -2]` gives 0, 2, 0; and `[]` gives three zeros. In each case, the counts add up to the list length.
+The result is three positives, two negatives, and two zeros. `[0]` gives 0, 0, 1. `[1, 2]` gives 2, 0, 0. `[-1, -2]` gives 0, 2, 0. And `[]` gives three zeros. In each case, the counts add up to the list length.
 
 ### Optional mini-project — Sensor summary
 
@@ -501,7 +501,7 @@ save_message("Hello from Week 4.\n", "message.txt")
 save_message("A different message.\n", "second_message.txt")
 ```
 
-`msg` receives the first argument and `filename` receives the second. Write mode creates or replaces the file. The caller supplies the newline; `.write` does not add one. This function returns `None` because its purpose is to save a file, and it has no explicit `return`.
+`msg` receives the first argument and `filename` receives the second. Write mode creates or replaces the file. The caller supplies the newline. `.write` does not add one. This function returns `None` because its purpose is to save a file, and it has no explicit `return`.
 
 ### Question 4 — Number the Quotes
 
@@ -544,7 +544,7 @@ def analyse_dna_file(filename):
 analyse_dna_file("dna.txt")
 ```
 
-For `ATGC` followed by `GGAA`, the report has length `8` and GC content `50.00%`. Case and blank lines do not affect the result. An empty file or an invalid sequence raises `ValueError` before the report is opened, preserving any existing report. If validation fails, an old report describes an earlier run; it is not a result for the rejected input. This reads plain sequence text, so a FASTA header is rejected too.
+For `ATGC` followed by `GGAA`, the report has length `8` and GC content `50.00%`. Case and blank lines do not affect the result. An empty file or an invalid sequence raises `ValueError` before the report is opened, preserving any existing report. If validation fails, an old report describes an earlier run. It is not a result for the rejected input. This reads plain sequence text, so a FASTA header is rejected too.
 
 ### Question 7 — Word Counter
 
@@ -604,7 +604,7 @@ with open("grade_summary.txt", "w", encoding="utf-8") as report:
 
 The downloadable sample has mean `75.12`, minimum `47.00`, maximum `95.00`, followed by the names scoring above the mean in input order. A single student's score equals the mean, so no student line follows that heading. Empty input produces the no-grades message. Invalid numbers, malformed records, empty names, out-of-range scores, and duplicate names stop processing before the report is opened.
 
-`not (score >= 0 and score <= 100)` rejects a score unless it satisfies both limits. `grades.values()` supplies scores; `grades.items()` supplies name–score pairs. These operations avoid confusing a dictionary's keys with the numeric values needed for calculations.
+`not (score >= 0 and score <= 100)` rejects a score unless it satisfies both limits. `grades.values()` supplies scores. `grades.items()` supplies name–score pairs. These operations avoid confusing a dictionary's keys with the numeric values needed for calculations.
 
 ### Question 9 — Log File Filter
 
@@ -624,7 +624,7 @@ count = extract_errors("system.log", "errors.txt")  # Use distinct input/output 
 print("Errors found:", count)
 ```
 
-For the downloadable course log, `errors.txt` contains six matching lines and the returned count is six. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way; no additional line breaks are introduced. Always pass different input and output paths.
+For the downloadable course log, `errors.txt` contains six matching lines and the returned count is six. With no matches, the output file is empty and the count is zero. Lowercase `error` does not match. Because you write `line` directly, a final matching line without a newline stays that way. No additional line breaks are introduced. Always pass different input and output paths.
 
 ## Week 5
 
@@ -642,7 +642,7 @@ print(codons.get("CCC", "Unknown"))           # Return a fallback without insert
 print(len(codons))                            # There are still four entries.
 ```
 
-The lookup gives `M`; the final two lines are `Unknown` and `4`. Using square brackets for the missing `CCC` key would raise `KeyError`.
+The lookup gives `M`. The final two lines are `Unknown` and `4`. Using square brackets for the missing `CCC` key would raise `KeyError`.
 
 ### Question 2 — Validate a DNA sequence
 
@@ -657,7 +657,7 @@ for sequence in ["ATCGTT", "AXTG", "atgc", "", "NNN"]:
     print(repr(sequence), is_dna(sequence))   # repr makes the empty string visible.
 ```
 
-The results are `True`, `False`, `True`, `False`, and `False`. `repr()` displays a string with quotation marks so an empty input is easy to see. The function returns a Boolean; the calling loop decides how to display it.
+The results are `True`, `False`, `True`, `False`, and `False`. `repr()` displays a string with quotation marks so an empty input is easy to see. The function returns a Boolean. The calling loop decides how to display it.
 
 ### Question 3 — Explore `math`
 
@@ -700,11 +700,11 @@ print(sequtils.rev_comp("A"))                 # T
 print(repr(sequtils.rev_comp("")))            # An empty string, shown with quotes.
 ```
 
-For an empty string, the loop runs zero times and the result stays empty. An unexpected base causes `KeyError` in this version; validate inputs before calling it in an analysis.
+For an empty string, the loop runs zero times and the result stays empty. An unexpected base causes `KeyError` in this version. Validate inputs before calling it in an analysis.
 
 ### Question 5 — Explain a regex
 
-`[ACGT]` matches one listed base and `{3}` requires three such characters. With `fullmatch`, `ATG` passes while `ATGC`, `AXG`, and the empty string fail. With `findall`, `ATGC` contains one matching substring, `ATG`. The pattern describes the match; the operation determines whether other text may surround it.
+`[ACGT]` matches one listed base and `{3}` requires three such characters. With `fullmatch`, `ATG` passes while `ATGC`, `AXG`, and the empty string fail. With `findall`, `ATGC` contains one matching substring, `ATG`. The pattern describes the match. The operation determines whether other text may surround it.
 
 ### Question 6 — Create and inspect your example files
 
@@ -757,7 +757,7 @@ for name, sequence in records.items():
     print(f"{name}: {len(sequence)}")           # Report every record, including invalid DNA.
 ```
 
-Expect three records with lengths `12`, `9`, and `6`. The reader accepts sequence letters without interpreting them; validation is a separate task. An empty file returns `{}`. Repeated headers are rejected, including adjacent duplicates, because the previous record is saved before checking the next header. A header followed by no sequence raises `ValueError`.
+Expect three records with lengths `12`, `9`, and `6`. The reader accepts sequence letters without interpreting them. Validation is a separate task. An empty file returns `{}`. Repeated headers are rejected, including adjacent duplicates, because the previous record is saved before checking the next header. A header followed by no sequence raises `ValueError`.
 
 ### Question 8 — Inspect GFF features (optional)
 
@@ -790,7 +790,7 @@ def read_features(filename):
     return features
 ```
 
-`features` is a list; each of its items is a dictionary describing one row. In `q8.py`:
+`features` is a list. Each of its items is a dictionary describing one row. In `q8.py`:
 
 ```python
 import sequtils
@@ -850,7 +850,7 @@ for parent, sequence in build_coding_sequences("examples.fasta", "examples.gff")
     print(parent, sequence[:100])              # Short examples display in full.
 ```
 
-Expect `tx_A ATGAACTCTTAA` and `tx_B ATGTAA`. For `gene_B`, the selected genomic fragments join as `TTA` + `CAT`, giving `TTACAT`; its reverse complement is `ATGTAA`. Sorting makes the result independent of input row order. These are coding sequences assembled under the chapter's simplified assumptions, not a general GFF-to-transcript converter.
+Expect `tx_A ATGAACTCTTAA` and `tx_B ATGTAA`. For `gene_B`, the selected genomic fragments join as `TTA` + `CAT`, giving `TTACAT`. Its reverse complement is `ATGTAA`. Sorting makes the result independent of input row order. These are coding sequences assembled under the chapter's simplified assumptions, not a general GFF-to-transcript converter.
 
 ### Question 10 — Translate and search for a motif
 
@@ -879,7 +879,7 @@ def translate_dna(sequence):
     return protein
 ```
 
-The full sequence is checked for alphabet and length before translation. Dictionary lookups stop at the first stop codon; later triplets are not translated. Missing mappings in this small table are errors, not evidence that the codon is biologically invalid.
+The full sequence is checked for alphabet and length before translation. Dictionary lookups stop at the first stop codon. Later triplets are not translated. Missing mappings in this small table are errors, not evidence that the codon is biologically invalid.
 
 In `q10.py`:
 
@@ -900,7 +900,7 @@ with open("motif_hits.fasta", "w", encoding="utf-8") as handle:
         handle.write(f">{header}\n{protein}\n")
 ```
 
-Expect `MNS` and `['NS']`; both files contain the same protein record. With protein `M`, the hit list is empty and `motif_hits.fasta` is empty. Opening it before the condition ensures an earlier hit is not left behind. `ATGTAA` translates to `M`; lowercase gives the same result. Empty DNA, invalid bases, an incomplete final triplet, and an unmapped codon such as `CCC` each raise an informative error.
+Expect `MNS` and `['NS']`. Both files contain the same protein record. With protein `M`, the hit list is empty and `motif_hits.fasta` is empty. Opening it before the condition ensures an earlier hit is not left behind. `ATGTAA` translates to `M`. Lowercase gives the same result. Empty DNA, invalid bases, an incomplete final triplet, and an unmapped codon such as `CCC` each raise an informative error.
 
 ### Extra practice — A sequence summary
 
@@ -922,93 +922,107 @@ with open("summary.tsv", "w", encoding="utf-8") as handle:
 
 The rows are `gene_A`, `12`, `25.00` and `gene_B`, `9`, `33.33`, separated by tabs. The terminal reports `Invalid DNA: gene_bad`. Validation rejects empty strings before the calculation, preventing division by zero.
 
+## Week 6: Command-line arguments
 
-## Project solutions
+These solutions use `sys.argv`, which holds the script name followed by the arguments typed in the terminal. Run them from the folder containing the script.
 
-These worked examples use the shared practice data for the required Portfolio Projects. Use them to check your approach, then adapt your solution to read and analyse your individual dataset. The small translation table below is only for demonstrating the practice case; load the supplied codon table for your individual run.
+### Question 1 — Print a named sample
 
-### Project 2: FASTA parsing and validation
+```python
+"""Print the supplied sample name.
 
-```{code-cell} python
-def parse_fasta(text):
-    records = {}
-    header = None
-    parts = []
-    for raw_line in text.splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-        if line.startswith(">"):
-            if header is not None:
-                records[header] = "".join(parts).upper()
-            header = line[1:]
-            parts = []
-        elif header is None:
-            raise ValueError("sequence data found before a FASTA header")
-        else:
-            parts.append(line)
-    if header is not None:
-        records[header] = "".join(parts).upper()
-    return records
+Usage:
+    python q1.py SAMPLE_NAME
+"""
 
-sample = ">gene_alpha\nATGAAACCCGGGTAA\n>gene_beta\nATGCCCTAG\n>gene_gamma\nATGNAA\n"
-records = parse_fasta(sample)
-valid = {name: seq for name, seq in records.items() if seq and all(base in "ACGT" for base in seq)}
-print("records:", len(records), "valid:", len(valid), "invalid:", len(records) - len(valid))
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python q1.py SAMPLE_NAME")
+    raise SystemExit(1)
+
+sample_name = sys.argv[1]
+print(f"Working with: {sample_name}")
 ```
 
-### Project 2: ORFs and translation
+`python q1.py sample_A` prints `Working with: sample_A`. The length check prevents an `IndexError` if the script is run with too few or too many arguments.
 
-This version reports an ORF for each start codon, ending at its first downstream in-frame stop codon. If starts are nested before a stop, each start gets its own candidate ORF.
+### Question 2 — Summarise a DNA sequence
 
-```{code-cell} python
-def find_orfs(sequence):
-    stops = {"TAA", "TAG", "TGA"}
-    found = []
-    sequence = sequence.upper()
-    for frame in range(3):
-        for start in range(frame, len(sequence) - 2, 3):
-            if sequence[start:start + 3] != "ATG":
-                continue
-            for stop in range(start + 3, len(sequence) - 2, 3):
-                if sequence[stop:stop + 3] in stops:
-                    found.append(sequence[start:stop + 3])
-                    break
-    return found
+```python
+"""Print a summary of one DNA sequence.
 
-print(find_orfs("ATGAAACCCGGGTAA"))
-print(find_orfs("ATGCCCTAG"))
+Usage:
+    python q2.py SEQUENCE
+Example:
+    python q2.py atgca
+"""
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python q2.py SEQUENCE")
+    raise SystemExit(1)
+
+sequence = sys.argv[1].upper()
+print(f"Sequence: {sequence}")
+print(f"Length: {len(sequence)}")
+for base in "ACGT":
+    print(f"{base}: {sequence.count(base)}")
 ```
 
-The supplied short sequences require only these codons for a demonstration translation:
+For `python q2.py atgca`, the sequence is `ATGCA`, its length is `5`, and the counts are A: 2, C: 1, G: 1, and T: 1.
 
-```{code-cell} python
-codon_table = {"ATG": "M", "AAA": "K", "CCC": "P", "GGG": "G", "TAA": "*", "TAG": "*"}
+### Question 3 — Calculate a mean
 
-def translate(sequence):
-    protein = ""
-    for start in range(0, len(sequence) - 2, 3):
-        codon = sequence[start:start + 3]
-        protein += codon_table.get(codon, "X")
-    return protein
+```python
+"""Calculate the mean of command-line measurements.
 
-print(translate("ATGAAACCCGGGTAA"))
-print(translate("ATGCCCTAG"))
+Usage:
+    python q3.py NUMBER [NUMBER ...]
+"""
+
+import sys
+
+if len(sys.argv) < 2:
+    print("Usage: python q3.py NUMBER [NUMBER ...]")
+    raise SystemExit(1)
+
+values = [float(value) for value in sys.argv[1:]]
+mean = sum(values) / len(values)
+print(f"Mean: {mean:.2f}")
 ```
 
-`X` here marks a codon absent from this intentionally small dictionary. A complete translation task needs all 64 codons and a stated policy for incomplete trailing bases.
+`python q3.py 4 8 6` prints `Mean: 6.00`. The slice `sys.argv[1:]` excludes the script name and keeps every measurement.
 
-### Project 2: motif search
+### Question 4 — Count bases from a file
 
-```{code-cell} python
-import re
+```python
+"""Count DNA bases from an input file and write a report.
 
-motif = re.compile(r"N[^P][ST]")
-protein = "MNNSTAPNPS"
-matches = []
-for segment in protein.split("*"):  # Never match a motif across a stop symbol.
-    matches.extend(motif.findall(segment))
-print(matches, len(matches))
+Usage:
+    python q4.py INPUT_FILE OUTPUT_FILE
+Example:
+    python q4.py sequences.txt base_counts.txt
+"""
+
+import sys
+
+if len(sys.argv) != 3:
+    print("Usage: python q4.py INPUT_FILE OUTPUT_FILE")
+    raise SystemExit(1)
+
+input_filename = sys.argv[1]
+output_filename = sys.argv[2]
+
+with open(input_filename, encoding="utf-8") as handle:
+    sequence = ""
+    for line in handle:
+        sequence += line.strip().upper()
+
+with open(output_filename, "w", encoding="utf-8") as handle:
+    for base in "ACGT":
+        handle.write(f"{base}: {sequence.count(base)}\n")
 ```
 
-The pattern matches an asparagine (`N`), any amino acid other than proline (`[^P]`), then serine or threonine (`[ST]`). `findall` reports non-overlapping matches.
+With the supplied `sequences.txt`, `base_counts.txt` contains A: 2, C: 1, G: 3, and T: 3. Changing the input or output file only changes the terminal command, not the script.

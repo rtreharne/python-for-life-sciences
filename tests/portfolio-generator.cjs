@@ -21,6 +21,20 @@ for (const id of ['', '123', '1234567890', '012345678', ' 123456789', '123456789
   assert.throws(() => validateId(id));
 }
 assert.throws(() => generate('123456789', 3));
+const projectOneArchive = new TextDecoder().decode(generate('123456789', 1).zip.bytes);
+assert(projectOneArchive.includes('project-1/gai_log.txt'));
+assert(projectOneArchive.includes('save exactly this filename'));
+assert(projectOneArchive.includes('project1_123456789_part-a_fragments.txt'));
+assert(!projectOneArchive.includes('portfolio1_'));
+const projectTwoArchive = new TextDecoder().decode(generate('123456789', 2).zip.bytes);
+assert(projectTwoArchive.includes('project-2/gai_log.txt'));
+assert(projectTwoArchive.includes('project2_123456789_sequences.fasta'));
+assert(!projectTwoArchive.includes('portfolio2_'));
+assert(projectTwoArchive.includes('Example — Microsoft Copilot'));
+assert(projectTwoArchive.includes('Example — ChatGPT'));
+assert(projectTwoArchive.includes('Do not ask it to generate your code'));
+assert(projectTwoArchive.includes('project-2/test_project2.py'));
+assert(projectTwoArchive.includes('project-2/practice/project2_practice.fasta'));
 const seen1 = new Set(), seen2 = new Set();
 for (const n of [100000000,999999999,...Array.from({length:1000},(_,i)=>234567000+i)]) {
   const id = String(n), one = generate(id,1), two = generate(id,2);
@@ -56,5 +70,5 @@ for (const n of [100000000,999999999,...Array.from({length:1000},(_,i)=>23456700
 const crypto=require('node:crypto');
 const digest=crypto.createHash('sha256').update(JSON.stringify([generate('123456789',1),generate('123456789',2)])).digest('hex');
 if (process.env.PRINT_DATASET_DIGEST) console.log(digest);
-else assert.equal(digest,'61a93fb9467ea9d2b10cdebaca33b0722f52acc7901400171dd1a2dda7f7b715');
+else assert.equal(digest,'8c353c3e6056558aad5792f9f53923b0a4f2bddc4b2f758e0f3e0147b6bc62a0');
 console.log('Portfolio generator: validation, repeatability, uniqueness, classifications and translation checks passed.');
