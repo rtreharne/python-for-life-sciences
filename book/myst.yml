@@ -8,6 +8,7 @@ project:
   github: rtreharne/python-for-life-sciences
   static_files:
     - portfolio-generator
+    - data/week-8
   toc:
     - file: index.md
     - file: chapters/week-1.md
@@ -15,6 +16,7 @@ project:
     - file: chapters/week-3.md
     - file: chapters/week-4.md
     - file: chapters/week-5.md
+    - file: chapters/week-8.md
     - file: projects.md
     - file: solutions.md
 site:
