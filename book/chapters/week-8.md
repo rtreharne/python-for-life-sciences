@@ -1,5 +1,5 @@
 ---
-title: Week 8: External programs and BioPython
+title: "Week 8: External programs and BioPython"
 ---
 
 # Week 8: External programs and BioPython
