@@ -275,7 +275,7 @@ the input file, settings, and output filename are all visible in the command.
 > to 19. It also illustrates the sequence-search results that the commands
 > below create.
 
-<iframe title="Week 8 walkthrough: external programs and BLAST" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tfnkqI_sj1M" loading="lazy" style="display: block; width: min(560px, 100%); height: auto; aspect-ratio: 16 / 9; margin: 1rem 0 1.5rem; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe title="Week 8 walkthrough: external programs and BLAST" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tfnkqI_sj1M" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Before calling BLAST from Python, make sure the command works in the terminal.
 For example, check the installation with:
@@ -435,7 +435,7 @@ python -m pip install biopython
 > for diagrams of `Seq` and `SeqRecord` objects, plus additional examples of
 > FASTA parsing and motif searches.
 
-<iframe title="Week 8 walkthrough: Biopython sequences and FASTA" width="560" height="315" src="https://www.youtube-nocookie.com/embed/i2Wjr81B4Mo" loading="lazy" style="display: block; width: min(560px, 100%); height: auto; aspect-ratio: 16 / 9; margin: 1rem 0 1.5rem; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe title="Week 8 walkthrough: Biopython sequences and FASTA" width="560" height="315" src="https://www.youtube-nocookie.com/embed/i2Wjr81B4Mo" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### What an object is
 
@@ -783,7 +783,7 @@ sudo apt install ncbi-blast+
 ```
 
 Enter your Ubuntu password if prompted. The terminal does not show characters
-while you type the password; this is normal. Check that the commands are
+while you type the password. This is normal. Check that the commands are
 available:
 
 ```bash
