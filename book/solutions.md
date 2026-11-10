@@ -1026,3 +1026,284 @@ with open(output_filename, "w", encoding="utf-8") as handle:
 ```
 
 With the supplied `sequences.txt`, `base_counts.txt` contains A: 2, C: 1, G: 3, and T: 3. Changing the input or output file only changes the terminal command, not the script.
+
+## Week 8: External programs and Biopython
+
+These answers follow the activities in the [Week 8 chapter](chapters/week-8.md)
+and the Week 8 workshop materials in Canvas. Install Biopython before running
+Questions 4–9. Questions 2 and 3 also require BLAST+ to be installed and
+available on your command line.
+
+### Question 1 — Directory listing and file discovery
+
+```python
+from pathlib import Path
+
+folder = Path(".")
+files = sorted(path for path in folder.iterdir() if path.is_file())
+
+print("Files in the current directory:")
+for path in files:
+    print(path.name)
+
+print("\nFASTA files and sizes:")
+for path in files:
+    if path.suffix.lower() in {".fasta", ".fa"}:
+        print(f"{path.name}: {path.stat().st_size} bytes")
+```
+
+`Path.iterdir()` lists the current folder, and `is_file()` skips subfolders.
+The suffix check accepts `.fasta` and `.fa` regardless of letter case. File
+sizes are measured in bytes. This uses Python's file tools directly, so the
+same script works on Windows, macOS, and Linux.
+
+### Question 2 — Create a BLAST database
+
+```python
+import os
+
+fasta_file = "ToxoDB-68_TgondiiME49_AnnotatedProteins.fasta"
+database = "tgondii_proteins"
+command = (
+    "makeblastdb -in " + fasta_file
+    + " -dbtype prot -out " + database
+)
+
+print(command)                         # Show the command before running it.
+result = os.system(command)
+extensions = (".phr", ".pin", ".psq")
+created = [os.path.exists(database + ext) for ext in extensions]
+
+if result == 0 and all(created):
+    print("Successfully created BLAST database:", database)
+else:
+    print("BLAST database creation failed or an index file is missing.")
+    for extension, exists in zip(extensions, created):
+        print(database + extension, "created" if exists else "missing")
+```
+
+The `-dbtype prot` option tells BLAST that the input contains proteins. The
+database name is a prefix for the index files, not a single output file. The
+program reports success only when the command succeeds and all three expected
+files exist.
+
+### Question 3 — Filter BLAST results
+
+```python
+hits = 0
+
+print("Query\tSubject\tIdentity (%)\tE-value")
+with open("toxodb_blast.tsv", encoding="utf-8") as file:
+    for line in file:
+        fields = line.rstrip("\n").split("\t")
+        if len(fields) != 12:
+            continue                          # Ignore incomplete result rows.
+
+        percent_identity = float(fields[2])
+        evalue = float(fields[10])
+        if evalue < 1e-10 and percent_identity > 70:
+            print(f"{fields[0]}\t{fields[1]}\t{percent_identity}\t{evalue}")
+            hits += 1
+
+print("Significant hits:", hits)
+```
+
+BLAST format 6 has no heading row, so `fields[2]` is percentage identity and
+`fields[10]` is the E-value. `split("\t")` keeps the tab-separated columns
+separate. The comparisons are strict: a hit equal to either threshold is not
+included.
+
+### Question 4 — Explore a `Seq`
+
+```python
+from Bio.Seq import Seq
+
+dna = Seq("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG")
+rna = dna.transcribe()
+reverse_complement = dna.reverse_complement()
+protein = dna.translate()
+
+for label, sequence, unit in (
+    ("DNA", dna, "bp"),
+    ("RNA", rna, "nt"),
+    ("Reverse complement", reverse_complement, "bp"),
+    ("Protein", protein, "aa"),
+):
+    print(f"{label}: {sequence}")
+    print(f"Length: {len(sequence)} {unit}\n")
+```
+
+The DNA, RNA, and reverse complement each have 39 bases or nucleotides. The
+translated sequence is `MAIVMGR*KGAR*` and has 13 amino-acid symbols; `*`
+marks a stop codon. Translation groups the DNA into codons of three bases, so
+its output has one symbol per complete codon.
+
+### Question 5 — FASTA statistics
+
+```python
+from Bio import SeqIO
+
+fasta_file = "ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta"
+records = list(SeqIO.parse(fasta_file, "fasta"))
+lengths = [len(record.seq) for record in records]
+
+if not records:
+    print("The FASTA file contains no sequences.")
+else:
+    shortest = min(records, key=lambda record: len(record.seq))
+    longest = max(records, key=lambda record: len(record.seq))
+    total_length = sum(lengths)
+    average_length = total_length / len(records)
+
+    print("Sequences:", len(records))
+    print(f"Average length: {average_length:.2f} aa")
+    print("Shortest:", shortest.id, len(shortest.seq), "aa")
+    print("Longest:", longest.id, len(longest.seq), "aa")
+    print("Total amino acids:", total_length)
+```
+
+The supplied file contains protein sequences, so lengths are reported in
+amino acids. Keeping the records in a list makes it straightforward to find
+the shortest and longest records. The empty-file check avoids dividing by
+zero.
+
+### Question 6 — Search for a motif
+
+```python
+import re
+from Bio import SeqIO
+
+fasta_file = "ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta"
+pattern = re.compile(r"K[RK]R")
+sequences_with_motif = 0
+total_occurrences = 0
+
+for record in SeqIO.parse(fasta_file, "fasta"):
+    sequence = str(record.seq)
+    matches = list(pattern.finditer(sequence))
+    if not matches:
+        continue
+
+    sequences_with_motif += 1
+    total_occurrences += len(matches)
+    print(f"\nSequence: {record.id}")
+    for match in matches:
+        start, end = match.span()
+        left = max(0, start - 10)
+        right = min(len(sequence), end + 10)
+        context = sequence[left:right]
+        motif_start = start - left
+        motif_end = motif_start + len(match.group())
+        highlighted = context[:motif_start] + "[" + context[motif_start:motif_end] + "]" + context[motif_end:]
+        print(f"  Position {start}: {match.group()}")
+        print("  Context:", highlighted)
+
+print("\nSequences containing the motif:", sequences_with_motif)
+print("Total motif occurrences:", total_occurrences)
+```
+
+`finditer` finds every occurrence and `match.span()` returns its start and end
+positions. The start is zero-based. `max` and `min` keep the context within the
+sequence boundaries; square brackets mark the matched motif in the output.
+
+### Question 7 — Create custom `SeqRecord` objects
+
+```python
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+
+records = [
+    SeqRecord(
+        Seq("MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQAPILSRVGDGTQDNLSGAEK"),
+        id="PROT001", name="Kinase1", description="Hypothetical protein kinase",
+    ),
+    SeqRecord(
+        Seq("MALTVRQQNPQLESVSQYLQSVQKQHQQEQQQQQQQLQQQQQ"),
+        id="PROT002", name="TransFac2", description="Transcription factor with polyQ domain",
+    ),
+    SeqRecord(
+        Seq("MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVK"),
+        id="PROT003", name="Hemoglobin", description="Oxygen transport protein",
+    ),
+]
+
+annotations = [
+    ("Homo sapiens", "Protein phosphorylation"),
+    ("Mus musculus", "DNA binding"),
+    ("Homo sapiens", "Oxygen binding and transport"),
+]
+for record, (organism, function) in zip(records, annotations):
+    record.annotations["organism"] = organism
+    record.annotations["function"] = function
+
+output_file = "my_proteins.fasta"
+count = SeqIO.write(records, output_file, "fasta")
+print(f"Wrote {count} records to {output_file}")
+for record in SeqIO.parse(output_file, "fasta"):
+    print(record.id, len(record.seq), "aa")
+```
+
+Each `SeqRecord` keeps sequence and metadata together while the program runs.
+FASTA preserves the identifier, description, and sequence, but does not store
+arbitrary `record.annotations` such as organism and function. Use a richer
+format such as GenBank if those annotations must be saved with the records.
+
+### Question 8 — Sort and filter FASTA records
+
+```python
+from Bio import SeqIO
+
+fasta_file = "ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta"
+records_by_id = {}
+for record in SeqIO.parse(fasta_file, "fasta"):
+    records_by_id[record.id] = record
+
+selected = [
+    records_by_id[identifier]
+    for identifier in sorted(records_by_id)
+    if len(records_by_id[identifier].seq) > 100
+]
+output_file = "sorted_long_proteins.fasta"
+written = SeqIO.write(selected, output_file, "fasta")
+print(f"Wrote {written} records to {output_file}")
+```
+
+Sorting the dictionary keys gives a reproducible alphabetical order. The
+length condition is strictly greater than 100, so sequences of exactly 100
+amino acids are left out. This assumes the FASTA identifiers are unique; if
+two records share an ID, a dictionary entry with the later record replaces
+the earlier one.
+
+### Question 9 — Find proteins by gene name
+
+```python
+import re
+from Bio import SeqIO
+
+fasta_file = "UP000005640_9606.fasta"
+gene_pattern = re.compile(r"(?:^|\s)GN=([^\s]+)")
+matching_records = []
+
+with open("tp53_summary.tsv", "w", encoding="utf-8") as report:
+    report.write("Gene name\tProtein ID\tLength (aa)\tFirst 50 amino acids\n")
+    for record in SeqIO.parse(fasta_file, "fasta"):
+        match = gene_pattern.search(record.description)
+        if match and match.group(1).startswith("TP53"):
+            gene_name = match.group(1)
+            sequence = str(record.seq)
+            report.write(
+                f"{gene_name}\t{record.id}\t{len(sequence)}\t{sequence[:50]}\n"
+            )
+            matching_records.append(record)
+
+written = SeqIO.write(matching_records, "tp53_proteins.fasta", "fasta")
+print("Matching proteins:", written)
+print("Wrote tp53_summary.tsv and tp53_proteins.fasta")
+```
+
+The regular expression extracts the value after `GN=` in a UniProt-style
+description. `startswith("TP53")` includes `TP53` and names such as
+`TP53BP1`. The tab-separated report contains the requested gene name, ID,
+length, and sequence prefix; the matching full records are written separately
+to FASTA.

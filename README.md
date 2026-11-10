@@ -79,6 +79,17 @@ Build and check all examples and internal references:
 
 The static site is written to `book/_build/html/`. GitHub Actions builds and deploys it to GitHub Pages when changes are pushed to `main`. In the repository settings, configure Pages to use **GitHub Actions** as its source.
 
+### Preview the book locally
+
+After installing the book tool as described above, start the local book server:
+
+```bash
+(cd book && ../.venv/bin/jupyter book start --port 3001)
+```
+
+Open <http://localhost:3001>. The command builds the book and serves it with
+the correct local paths. Stop the server with `Ctrl+C`.
+
 ## Portfolio datasets
 
 The Portfolio Projects page embeds two local browser forms from

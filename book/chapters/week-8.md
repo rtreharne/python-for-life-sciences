@@ -1,12 +1,14 @@
 ---
-title: "Week 8: External programs and BioPython"
+title: "Week 8: External programs and Biopython"
+authors:
+  - name: Andy Jones
 ---
 
-# Week 8: External programs and BioPython
+# Week 8: External programs and Biopython
 
 Week 8 begins the second half of the module. You will use Python to work with
 programs that were written by somebody else, including the command-line
-program BLAST and the BioPython library. The Python ideas are familiar ones:
+program BLAST and the Biopython library. The Python ideas are familiar ones:
 variables, loops, conditions, functions, dictionaries, regular expressions,
 and files. The new part is learning how to connect those ideas to useful
 bioinformatics tools.
@@ -20,14 +22,15 @@ By the end of this chapter, you should be able to:
 - run a command-line program from Python with `os.system`
 - create a local BLAST database and run a BLAST search
 - read tab-separated BLAST output and filter hits by numerical criteria
-- install and import BioPython
+- install and import Biopython
 - use `Seq`, `SeqRecord`, and `SeqIO` for common sequence tasks
-- combine regular expressions, dictionaries, and BioPython to analyse FASTA files.
+- combine regular expressions, dictionaries, and Biopython to analyse FASTA files.
 
 The commands in this chapter are examples. The exact BLAST executable names
-and installation steps can vary between Windows, macOS, and university-managed
-computers. If a command is not found, check the installation guidance supplied
-with the course before changing your Python code.
+and installation steps can vary between Windows, macOS, Linux, and
+university-managed computers. If a command is not found, see the [BLAST+
+installation appendix](#appendix-install-blast) before changing your Python
+code.
 
 ## Set up your Week 8 folder
 
@@ -72,7 +75,7 @@ relevant question:
 - [Neospora caninum annotated proteins](../week-8/ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta): an additional protein FASTA file for practice (7,115 records).
 - [Neospora BLAST queries](../week-8/Ncaninum_input_for_BLAST.txt): three protein FASTA records to search against the Toxoplasma database. Despite the `.txt` extension, this is a FASTA-formatted file.
 - [Human reference proteome](../week-8/UP000005640_9606.fasta): input for the gene-name exercise (20,659 protein records).
-- [Week 8 slide deck](../week-8/Week8_LIFE733_202526.pptx): optional visual companion to the command-line BLAST and BioPython material. Slides 2 to 19 follow the BLAST workflow. Slides 20 to 38 introduce BioPython objects and FASTA parsing.
+- [Week 8 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725138): optional visual companion to the command-line BLAST and Biopython material. Slides 2 to 19 follow the BLAST workflow. Slides 20 to 38 introduce Biopython objects and FASTA parsing.
 
 These are sizeable files, especially the human proteome. Download them once,
 then work on local copies. When a question below says `proteins.fasta`, replace
@@ -90,6 +93,10 @@ surprising number of apparent Python or BLAST errors are actually caused by
 running a command in the wrong folder.
 
 ## Supply information when you run a script
+
+You learned to use `sys.argv` in Week 6. This section briefly recaps how
+command-line arguments can supply filenames and settings, then introduces
+`argparse` as a way to handle named options.
 
 So far, you may have written filenames and thresholds directly in a script:
 
@@ -263,10 +270,12 @@ sequences. Rather than opening a website and clicking through a form, you can
 run BLAST locally and save its output. The command-line approach is repeatable:
 the input file, settings, and output filename are all visible in the command.
 
-> **Slide companion:** The [Week 8 slide deck](../week-8/Week8_LIFE733_202526.pptx)
+> **Slide companion:** The [Week 8 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725138)
 > gives a visual walkthrough of external commands and local BLAST in slides 2
 > to 19. It also illustrates the sequence-search results that the commands
 > below create.
+
+<iframe title="Week 8 walkthrough: external programs and BLAST" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tfnkqI_sj1M" loading="lazy" style="display: block; width: min(560px, 100%); height: auto; aspect-ratio: 16 / 9; margin: 1rem 0 1.5rem; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Before calling BLAST from Python, make sure the command works in the terminal.
 For example, check the installation with:
@@ -275,55 +284,8 @@ For example, check the installation with:
 blastp -version
 ```
 
-If the command is not recognised, install BLAST+ using the guidance for your
-operating system below.
-
-### Install BLAST on macOS
-
-The simplest method on a personal Mac is Homebrew. In VS Code, open
-**Terminal > New Terminal**. If Homebrew is not already installed, follow the
-installation instructions at [brew.sh](https://brew.sh/). Then install and test
-BLAST+ in VS Code's integrated terminal:
-
-```bash
-brew install blast
-blastp -version
-```
-
-Alternatively, download the current macOS archive from the [NCBI BLAST+
-download directory](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/).
-Extract the archive and add its `bin` directory to your shell PATH. For example,
-if you place the extracted folder in `/usr/local/ncbi-blast`, add this line to
-`~/.zshrc`:
-
-```bash
-export PATH="/usr/local/ncbi-blast/bin:$PATH"
-```
-
-Open a fresh VS Code integrated terminal, or run `source ~/.zshrc`, then use
-`blastp -version` to confirm the installation. macOS may initially block an
-executable from an unidentified developer. If that happens, use **System
-Settings**, then **Privacy & Security**, and approve the blocked application
-before trying the command again. Only approve software downloaded from the
-official NCBI source.
-
-### Install BLAST on Windows
-
-On a University-managed PC, use **Install University Applications** to install
-BLAST+. On a personal Windows computer, download the current `win64.exe`
-installer from the [NCBI BLAST+ download directory](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/),
-then run the installer.
-
-Open **Terminal > New Terminal** in VS Code and test the installation:
-
-```bash
-blastp -version
-```
-
-If VS Code's integrated terminal reports that `blastp` is not recognised,
-locate the BLAST+ installation's `bin` folder and add that folder to your
-Windows `Path` environment variable. Open a fresh integrated terminal and run
-the version command again.
+If the command is not recognised, follow the instructions in the [BLAST+
+installation appendix](#appendix-install-blast) for your operating system.
 
 ### Create a BLAST database
 
@@ -460,24 +422,26 @@ with E-value below `1e-10` and percentage identity above `70`, and reports the
 total number of retained hits. Add a header to your printed report so that
 somebody else can understand the columns.
 
-## Use BioPython sequence objects
+## Use Biopython sequence objects
 
-BioPython is a collection of Python modules for biological computation. Install
+Biopython is a collection of Python modules for biological computation. Install
 it in the environment used for this work, then test the import:
 
 ```bash
 python -m pip install biopython
 ```
 
-> **Slide companion:** Use slides 20 to 38 of the [Week 8 slide deck](../week-8/Week8_LIFE733_202526.pptx)
+> **Slide companion:** Use slides 20 to 38 of the [Week 8 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725138)
 > for diagrams of `Seq` and `SeqRecord` objects, plus additional examples of
 > FASTA parsing and motif searches.
+
+<iframe title="Week 8 walkthrough: Biopython sequences and FASTA" width="560" height="315" src="https://www.youtube-nocookie.com/embed/i2Wjr81B4Mo" loading="lazy" style="display: block; width: min(560px, 100%); height: auto; aspect-ratio: 16 / 9; margin: 1rem 0 1.5rem; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### What an object is
 
 An **object** is a value that keeps related data and useful operations together.
 For example, a number has methods such as `bit_length`, and a string has methods
-such as `upper`. A BioPython `Seq` object holds a sequence and provides
+such as `upper`. A Biopython `Seq` object holds a sequence and provides
 biologically meaningful operations such as transcription, reverse complement,
 and translation. You ask an object to perform one of its operations with a dot:
 
@@ -490,9 +454,9 @@ Here, `sequence` is a string object and `upper()` is one of its methods. The
 same pattern applies to a `Seq` object. Later, a `SeqRecord` will combine a
 sequence with its identifier, description, and other annotations. You do not
 need to design your own object classes this week. The goal is to use the
-well-tested objects supplied by BioPython and understand what data each holds.
+well-tested objects supplied by Biopython and understand what data each holds.
 
-BioPython's `Seq` object represents a biological sequence and provides useful
+Biopython's `Seq` object represents a biological sequence and provides useful
 methods. It behaves much like a string, but its methods make the intended
 biological operation explicit:
 
@@ -521,7 +485,7 @@ print(sequence[1:4])
 print(type(sequence[1:4]))
 ```
 
-The output is `A`, then `GTA`, followed by the BioPython `Seq` type. You can
+The output is `A`, then `GTA`, followed by the Biopython `Seq` type. You can
 also join two compatible `Seq` objects with `+`, just as you join strings.
 
 Transcription replaces the DNA alphabet with the corresponding RNA alphabet.
@@ -542,7 +506,7 @@ FASTA files contain one or more records. A record begins with a line starting
 with `>` followed by an identifier and description. The following lines contain
 the sequence, sometimes wrapped over several lines.
 
-BioPython's `SeqIO.parse` handles those details:
+Biopython's `SeqIO.parse` handles those details:
 
 ```python
 from Bio import SeqIO
@@ -715,7 +679,7 @@ and first 50 amino acids. Also write the matching records to a new FASTA file.
 
 ## When an external analysis does not work
 
-When a script combines Python, files, BioPython, and BLAST, debug one layer at
+When a script combines Python, files, Biopython, and BLAST, debug one layer at
 a time:
 
 1. Check that the terminal is in the folder containing the input file.
@@ -725,7 +689,7 @@ a time:
 5. Check that the expected output file was created and is not empty.
 6. Print the first line of a result file before parsing every line.
 7. Confirm the number and types of fields after `split("\t")`.
-8. Test BioPython with one short, known sequence before opening a large FASTA file.
+8. Test Biopython with one short, known sequence before opening a large FASTA file.
 
 For a missing-file error, inspect the filename and current folder. For an
 `IndexError`, inspect the number of command-line arguments or tab-separated
@@ -740,9 +704,135 @@ This week connects Python to a larger analysis workflow:
 2. `makeblastdb` prepares sequences for searching.
 3. `blastp` produces tab-separated search results.
 4. Python reads and filters those results.
-5. BioPython provides sequence-aware objects and FASTA parsing.
+5. Biopython provides sequence-aware objects and FASTA parsing.
 6. Regular expressions and dictionaries help find and organise records.
 
 The important habit is to treat every stage as data that can be checked. Print
 commands before running them, inspect files after programs create them, and
 verify a few records before trusting a summary of a large dataset.
+
+Compare your attempts with the [Week 8 solutions](../solutions.md#week-8-external-programs-and-biopython).
+
+(appendix-install-blast)=
+## Appendix: Install BLAST+ on your computer
+
+BLAST+ is a set of command-line programs. These instructions install the
+programs needed in this chapter, including `blastp` and `makeblastdb`. Use the
+integrated terminal in VS Code for the commands, and open a new terminal after
+an installation or PATH change.
+
+Download installers and archives from the [NCBI BLAST+ latest download
+directory](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/).
+NCBI lists supported package types and platform guidance in its [BLAST Command
+Line Applications User Manual](https://www.ncbi.nlm.nih.gov/books/NBK569861/).
+
+### Windows
+
+On a University-managed PC, use **Install University Applications** to install
+BLAST+, if it is available. On a personal 64-bit Windows computer:
+
+1. In the NCBI download directory, download the file ending in `win64.exe`.
+2. Run the installer and follow its prompts.
+3. Open a new VS Code terminal and check the installation:
+
+```powershell
+blastp -version
+```
+
+If PowerShell says that `blastp` is not recognised, find the BLAST+
+installation's `bin` folder. Search Windows for **Edit environment variables
+for your account**, select **Path**, add the full path to that `bin` folder,
+and open a new terminal. Run the version command again.
+
+### macOS
+
+If [Homebrew](https://brew.sh/) is installed, open a VS Code terminal and run:
+
+```bash
+brew install blast
+blastp -version
+```
+
+The `blast` formula installs the BLAST+ command-line programs. If you do not
+use Homebrew, download the current macOS package from the [NCBI download
+directory](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) and
+follow the included installer or archive instructions. Choose the package
+that matches your Mac. If you use an archive, extract it and add its `bin`
+folder to your shell PATH. For example, after placing the extracted folder at
+`/usr/local/ncbi-blast`, add this line to `~/.zshrc`:
+
+```bash
+export PATH="/usr/local/ncbi-blast/bin:$PATH"
+```
+
+Open a fresh terminal, or run `source ~/.zshrc`, and check with
+`blastp -version`. If macOS blocks an executable, use **System Settings >
+Privacy & Security** to review the block. Only proceed with software obtained
+from NCBI.
+
+### Linux
+
+#### Ubuntu: install from the VS Code terminal (recommended)
+
+On Ubuntu, you can install BLAST+ directly from the Ubuntu package repository.
+Open **Terminal > New Terminal** in VS Code and run:
+
+```bash
+sudo apt update
+sudo apt install ncbi-blast+
+```
+
+Enter your Ubuntu password if prompted. The terminal does not show characters
+while you type the password; this is normal. Check that the commands are
+available:
+
+```bash
+blastp -version
+makeblastdb -version
+```
+
+Ubuntu provides the `ncbi-blast+` package for supported releases. If `apt`
+reports that it cannot find the package, check that the Ubuntu **Universe**
+repository is enabled or use the NCBI archive instructions below.
+
+#### Other Linux distributions or Ubuntu fallback
+
+For a 64-bit Linux computer, download the archive ending in `x64-linux.tar.gz`
+from the [NCBI download directory](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/).
+In a terminal, go to the directory where the archive was downloaded, extract
+it, and move the resulting `ncbi-blast-...` folder to a location you own, such
+as `~/.local/opt/`:
+
+```bash
+mkdir -p "$HOME/.local/opt"
+tar -xzf ncbi-blast-*-x64-linux.tar.gz -C "$HOME/.local/opt"
+```
+
+The extracted folder name includes the BLAST+ version. Add its `bin` folder
+to PATH, replacing `<extracted-folder>` with that exact folder name:
+
+```bash
+export PATH="$HOME/.local/opt/<extracted-folder>/bin:$PATH"
+```
+
+To make this setting available in future Bash terminals, add the same `export`
+line to `~/.bashrc` and open a new terminal. If you use another shell, add it
+to that shell's startup file. Check the installation:
+
+```bash
+blastp -version
+```
+
+### Check that the programs are available
+
+After installing BLAST+, both commands used in the local search should print
+a version number:
+
+```bash
+blastp -version
+makeblastdb -version
+```
+
+If either command is not found, check that the BLAST+ `bin` folder is on PATH
+and that you opened a new terminal. On a managed computer, ask the course or
+local IT support team for help if you cannot change PATH or install software.
