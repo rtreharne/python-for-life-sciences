@@ -37,7 +37,19 @@ jobs:
           BASE_URL: /python-for-life-sciences
           JB_ALLOW_NODEENV: "yes"
         working-directory: book
-        run: jupyter-book build --html --strict --execute
+        run: |
+          set -o pipefail
+          jupyter-book --debug build --html --strict --execute 2>&1 | tee build.log
+      - name: Publish build diagnostics
+        if: failure()
+        working-directory: book
+        run: |
+          {
+            echo "### Jupyter Book build failure"
+            echo '```text'
+            tail -n 200 build.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
