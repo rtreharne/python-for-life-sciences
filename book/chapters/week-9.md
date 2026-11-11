@@ -40,7 +40,7 @@ LIFE733/
 ```
 
 The supplied FASTA file contains 13 human MAPK protein sequences. [Download
-the file](../week-9/human_mapk_prots.fasta) into your `week-9` folder. The
+the file](/week-9/human_mapk_prots.fasta) into your `week-9` folder. The
 [Week 9 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725146)
 is an optional companion.
 

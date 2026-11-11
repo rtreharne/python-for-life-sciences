@@ -71,10 +71,10 @@ All required sequence data is available here. You do not need to retrieve it
 from Canvas. Download each file into your `week-8` folder before you reach the
 relevant question:
 
-- [Toxoplasma gondii annotated proteins](../week-8/ToxoDB-68_TgondiiME49_AnnotatedProteins.fasta): database for the BLAST exercises (8,204 protein records).
-- [Neospora caninum annotated proteins](../week-8/ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta): an additional protein FASTA file for practice (7,115 records).
-- [Neospora BLAST queries](../week-8/Ncaninum_input_for_BLAST.txt): three protein FASTA records to search against the Toxoplasma database. Despite the `.txt` extension, this is a FASTA-formatted file.
-- [Human reference proteome](../week-8/UP000005640_9606.fasta): input for the gene-name exercise (20,659 protein records).
+- [Toxoplasma gondii annotated proteins](/week-8/ToxoDB-68_TgondiiME49_AnnotatedProteins.fasta): database for the BLAST exercises (8,204 protein records).
+- [Neospora caninum annotated proteins](/week-8/ToxoDB-68_NcaninumLIV_AnnotatedProteins.fasta): an additional protein FASTA file for practice (7,115 records).
+- [Neospora BLAST queries](/week-8/Ncaninum_input_for_BLAST.txt): three protein FASTA records to search against the Toxoplasma database. Despite the `.txt` extension, this is a FASTA-formatted file.
+- [Human reference proteome](/week-8/UP000005640_9606.fasta): input for the gene-name exercise (20,659 protein records).
 - [Week 8 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725138): optional visual companion to the command-line BLAST and Biopython material. Slides 2 to 19 follow the BLAST workflow. Slides 20 to 38 introduce Biopython objects and FASTA parsing.
 
 These are sizeable files, especially the human proteome. Download them once,
