@@ -50,12 +50,18 @@ jobs:
             tail -n 200 build.log
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+      - name: Add downloadable course files to the site
+        working-directory: book
+        run: |
+          cp -R _build/site/public/portfolio-generator _build/html/
+          cp -R _build/site/public/week-8 _build/html/
+          cp -R _build/site/public/week-9 _build/html/
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book/_build/site/public
+          path: book/_build/html
 
   deploy:
     environment:
