@@ -33,7 +33,7 @@ jobs:
           BASE_URL: /python-for-life-sciences
           JB_ALLOW_NODEENV: "yes"
         working-directory: book
-        run: jupyter book build --html --strict --execute
+        run: jupyter-book build --html --strict --execute
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
