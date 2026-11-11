@@ -9,6 +9,7 @@ project:
   static_files:
     - portfolio-generator
     - data/week-8
+    - data/week-9
   toc:
     - file: index.md
     - file: setup.md
@@ -20,6 +21,7 @@ project:
     - file: chapters/week-5.md
     - file: chapters/week-6.md
     - file: chapters/week-8.md
+    - file: chapters/week-9.md
     - file: projects.md
     - file: solutions.md
     - file: appendix.md
