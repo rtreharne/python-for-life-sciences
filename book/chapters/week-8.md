@@ -13,13 +13,24 @@ variables, loops, conditions, functions, dictionaries, regular expressions,
 and files. The new part is learning how to connect those ideas to useful
 bioinformatics tools.
 
+In Weeks 8 and 9, you will use Biopython for common bioinformatics tasks and
+run external applications such as BLAST and MUSCLE for sequence search and
+alignment. This chapter focuses on BLAST searches and Biopython sequence
+handling; Week 9 covers MUSCLE and alignment. If biology is new to you, terms
+such as DNA, proteins, sequence similarity, and phylogenetics may be
+unfamiliar. For background, see
+[Applied Bioinformatics](https://link.springer.com/book/10.1007/978-3-319-68301-0)
+by Selzer et al. The book is published by Springer; a PDF is available at no
+charge when you sign in through the University network.
+
 ## What you will learn
 
 By the end of this chapter, you should be able to:
 
 - work confidently in a terminal and identify files in the current folder
 - supply command-line arguments with `sys.argv` or `argparse`
-- run a command-line program from Python with `os.system`
+- run a command-line program from Python with `os.system` and understand that
+  `subprocess.run` is recommended for new code
 - create a local BLAST database and run a BLAST search
 - read tab-separated BLAST output and filter hits by numerical criteria
 - install and import Biopython
@@ -48,7 +59,7 @@ Use whichever command successfully ran your earlier Python programs.
 
 Your folder will eventually contain your programs, the supplied data, a local
 BLAST database, and output files. Keep the supplied input files unchanged.
-write databases and results to new names.
+Write databases and results to new names.
 
 ```text
 week-8/
@@ -118,6 +129,8 @@ complete command also records exactly what was analysed.
 
 ### Read simple arguments with `sys.argv`
 
+<iframe title="w8 1 argv python" width="560" height="315" src="https://www.youtube-nocookie.com/embed/nGKoCysF2K8" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Python stores command-line arguments in a list called `sys.argv`. The first
 item is the script name, so the arguments you supply begin at position `1`:
 
@@ -150,6 +163,8 @@ Always check the number of arguments before accessing the list. Otherwise,
 running a script without enough information causes an `IndexError`.
 
 ### Use `argparse` for named options
+
+<iframe title="w8 2 argparse" width="560" height="315" src="https://www.youtube-nocookie.com/embed/_1AfsRAsWq0" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For a script with several settings, Python's standard-library `argparse`
 module gives users named options, sensible defaults, validation, and an
@@ -202,9 +217,19 @@ python fasta_report.py --help
 
 ## Find files from Python
 
+<iframe title="w8 3 os system subprocess" width="560" height="315" src="https://www.youtube-nocookie.com/embed/e2T_KYm78I0" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Python can inspect the contents of a folder. The `os` module also lets a
 program ask the operating system to run a command. Start with a directory
 listing:
+
+:::{admonition} Note on `os.system`
+`os.system` is soft-deprecated in Python 3.14 and later. These examples keep
+it to illustrate how Python can call an external command; for new code, use
+`subprocess.run`, which gives you more control over the process and its result.
+Soft-deprecated means that `os.system` still works, but Python marks it as an
+older option and recommends using something else. It has not been removed.
+:::
 
 ```python
 import os
@@ -265,6 +290,8 @@ at least two files with different extensions.
 
 ## Run an external program
 
+<iframe title="w8 4 blast basics" width="560" height="315" src="https://www.youtube-nocookie.com/embed/_hY6eTRe7s4" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 BLAST is a collection of command-line programs for comparing biological
 sequences. Rather than opening a website and clicking through a form, you can
 run BLAST locally and save its output. The command-line approach is repeatable:
@@ -274,8 +301,6 @@ the input file, settings, and output filename are all visible in the command.
 > gives a visual walkthrough of external commands and local BLAST in slides 2
 > to 19. It also illustrates the sequence-search results that the commands
 > below create.
-
-<iframe title="Week 8 walkthrough: external programs and BLAST" width="560" height="315" src="https://www.youtube-nocookie.com/embed/tfnkqI_sj1M" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Before calling BLAST from Python, make sure the command works in the terminal.
 For example, check the installation with:
@@ -356,6 +381,8 @@ failure message.
 
 ## Run BLAST and read tab-separated output
 
+<iframe title="w8 5 doing blast from python" width="560" height="315" src="https://www.youtube-nocookie.com/embed/IV_QQLSaGKU" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Use the supplied Neospora query file and the database you just created. A
 protein search can be run with `blastp`:
 
@@ -424,6 +451,8 @@ somebody else can understand the columns.
 
 ## Use Biopython sequence objects
 
+<iframe title="w8 6 biopython sequence basics" width="560" height="315" src="https://www.youtube-nocookie.com/embed/k5Kyx7mG9n4" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Biopython is a collection of Python modules for biological computation. Install
 it in the environment used for this work, then test the import:
 
@@ -434,8 +463,6 @@ python -m pip install biopython
 > **Slide companion:** Use slides 20 to 38 of the [Week 8 slide deck](https://canvas.liverpool.ac.uk/courses/95131/modules/items/2725138)
 > for diagrams of `Seq` and `SeqRecord` objects, plus additional examples of
 > FASTA parsing and motif searches.
-
-<iframe title="Week 8 walkthrough: Biopython sequences and FASTA" width="560" height="315" src="https://www.youtube-nocookie.com/embed/i2Wjr81B4Mo" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### What an object is
 
@@ -502,6 +529,8 @@ the translated sequence is shorter than the DNA sequence.
 
 ## Read FASTA files with `SeqIO`
 
+<iframe title="w8 7 biopython seqIO" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YQX21i6G1_M" loading="lazy" allow="accelerometer, autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 FASTA files contain one or more records. A record begins with a line starting
 with `>` followed by an identifier and description. The following lines contain
 the sequence, sometimes wrapped over several lines.
@@ -531,7 +560,7 @@ Write a program that reads
 - the average sequence length
 - the shortest sequence and its ID
 - the longest sequence and its ID
-- the total number of amino acids or nucleotides.
+- the total number of amino acids.
 
 Remember to handle an empty FASTA file without dividing by zero.
 
@@ -605,6 +634,8 @@ SeqIO.write(record, "one_protein.fasta", "fasta")
 
 To write several records, put them in a list and pass the list to
 `SeqIO.write`. Read the file back afterwards to verify what was written.
+FASTA stores the sequence and its header, but it does not preserve annotations
+such as the organism and function fields above.
 
 ### Question 7: Create custom records
 
@@ -660,7 +691,7 @@ from Bio import SeqIO
 
 gene_pattern = re.compile(r"GN=([^ ]+)")
 
-for record in SeqIO.parse("human_proteome.fasta", "fasta"):
+for record in SeqIO.parse("UP000005640_9606.fasta", "fasta"):
     match = gene_pattern.search(record.description)
     if match and match.group(1).startswith("TP53"):
         print(match.group(1), record.id, len(record.seq))
