@@ -26,4 +26,4 @@ Read [Using Generative Artificial Intelligence (GAI)](gai.md) before beginning W
 
 ## Portfolio Projects
 
-After the weekly chapters, work through the [DNA and cell-count project](projects.md#project-1-dna-sequences-and-cell-counts) and the [FASTA analysis project](projects.md#project-2-a-small-fasta-analysis-pipeline). Both are required portfolio work. Use the practice files to check your solutions, then run them on your individual datasets..
+After the weekly chapters, work through the [DNA and cell-count project](projects.md#project-1-dna-sequences-and-cell-counts) and the [FASTA analysis project](projects.md#project-2-a-small-fasta-analysis-pipeline). Both are required portfolio work. Use the practice files to check your solutions, then run them on your individual datasets.
