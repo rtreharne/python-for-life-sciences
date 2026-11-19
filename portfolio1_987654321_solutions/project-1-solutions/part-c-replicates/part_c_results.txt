@@ -1,0 +1,6 @@
+sample_1: Uniform replicates
+sample_2: Invalid
+sample_3: Failed assay
+sample_4: Consistent assay
+sample_5: Outlier replicate
+sample_6: Duplicate replicates

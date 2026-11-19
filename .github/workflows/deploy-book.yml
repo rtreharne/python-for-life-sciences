@@ -38,8 +38,25 @@ jobs:
           JB_ALLOW_NODEENV: "yes"
         working-directory: book
         run: |
+          # The MyST theme runs `npm ci` while it is prepared.  This can
+          # occasionally fail on GitHub-hosted runners with a transient
+          # ECONNRESET, even when the book sources are valid. Retry only that
+          # whole build a small, bounded number of times.
           set -o pipefail
-          jupyter-book --debug build --html --strict --execute 2>&1 | tee build.log
+          for attempt in 1 2 3; do
+            rm -f build.log
+            if jupyter-book --debug build --html --strict --execute 2>&1 | tee build.log; then
+              exit 0
+            fi
+
+            if ! grep -q 'npm error.*ECONNRESET' build.log || [ "$attempt" -eq 3 ]; then
+              exit 1
+            fi
+
+            echo "Transient npm network failure; retrying build ($attempt/3)."
+            rm -rf _build/templates/site
+            sleep $((attempt * 15))
+          done
       - name: Publish build diagnostics
         if: failure()
         working-directory: book

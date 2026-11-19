@@ -1,0 +1,6 @@
+>gene_alpha synthetic example
+ATGAAACCCGGGTAA
+>gene_beta synthetic example
+ATGCCCTAG
+>gene_gamma contains invalid symbol
+ATGNAA

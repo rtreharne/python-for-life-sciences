@@ -1,0 +1,13 @@
+codon	amino_acid
+ATG	M
+AAA	K
+CCC	P
+GGG	G
+AAC	N
+TCT	S
+ACT	T
+GCT	A
+GCC	A
+TAA	*
+TAG	*
+TGA	*

@@ -1,0 +1,7 @@
+sequence_1: valid, length=48, GC=45.83%, category=Balanced
+sequence_2: valid, length=24, GC=0.00%, category=AT-rich
+sequence_3: valid, length=24, GC=100.00%, category=GC-rich
+sequence_4: valid, length=24, GC=50.00%, category=Balanced
+sequence_5: invalid
+sequence_6: invalid
+Summary: 4 valid, 2 invalid

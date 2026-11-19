@@ -1,0 +1,38 @@
+LIFE733 Portfolio Project 2 — GAI use log
+
+Complete this file honestly if you use generative AI (GAI) while working on this project. Keep it with your project files. If you do not use GAI, write: No GAI used for this project.
+
+GAI may help you understand an error, explain a concept, suggest small tests, or review code that you have already written. Do not ask it to generate your code, pseudocode, algorithm, or a solution for any part of this project. Your submitted code must be written by you, and you must be able to explain and test it.
+
+For each meaningful interaction, add an entry using this format:
+
+Date:
+Tool and account:
+Task and problem:
+My attempt before using GAI:
+Prompt I used:
+Summary of the response:
+What I wrote, changed, or rejected myself:
+How I checked my work:
+
+Example — Microsoft Copilot
+Date: 2026-10-25
+Tool and account: Microsoft Copilot, University account
+Task and problem: Project 2; my program raises FileNotFoundError.
+My attempt before using GAI: I checked the filename in my script and used ls in the terminal.
+Prompt I used: I have already written this Python file-reading code. Do not write or rewrite code for me. Explain what FileNotFoundError usually means and give me a checklist for checking my working folder and filename.
+Summary of the response: It suggested checking the terminal folder, exact spelling, and file extension.
+What I wrote, changed, or rejected myself: I corrected the filename after comparing it with ls output.
+How I checked my work: I ran the script again and confirmed that it read my generated input.
+
+Example — ChatGPT
+Date: 2026-10-25
+Tool and account: ChatGPT, personal account
+Task and problem: Project 2; I was unsure how to test a condition in my own function.
+My attempt before using GAI: I wrote the function and tested one normal input.
+Prompt I used: Do not generate code or pseudocode. I have written a function that validates a DNA sequence. Suggest a few small edge cases I can use to test it, and explain what each test should reveal.
+Summary of the response: It suggested an empty sequence, an invalid base, and a valid sequence.
+What I wrote, changed, or rejected myself: I chose appropriate tests and wrote the test calls myself.
+How I checked my work: I compared the results with the project requirements and traced my code.
+
+Do not enter confidential, personal, patient, assessment, or other sensitive data into a GAI tool. Microsoft Copilot with your University account is the University-sanctioned option; follow current University and course guidance when using any other service.

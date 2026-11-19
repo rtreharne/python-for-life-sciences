@@ -1,0 +1,6 @@
+Total: 212.0
+Mean: 30.3
+Population variance: 150.2
+Population standard deviation: 12.3
+Median: 28.0
+Range: 41.0
