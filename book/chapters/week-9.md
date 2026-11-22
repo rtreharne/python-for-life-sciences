@@ -34,9 +34,13 @@ LIFE733/
 └── week-9/
     ├── human_mapk_prots.fasta
     ├── q1.py … q9.py
-    ├── human_mapk_aligned.fasta      ← Created by MUSCLE
+    ├── human_mapk_aligned.fasta      ← Created by MUSCLE (Question 1)
     ├── alignment_region.txt          ← Created in Question 2
-    └── custom_tree.png               ← Created in Question 6
+    ├── custom_tree.png               ← Created in Question 6
+    ├── nj_tree.png                   ← Created in Question 7
+    ├── upgma_tree.png                ← Created in Question 7
+    ├── ncbi_proteins.fasta           ← Created in Question 8
+    └── pubmed_bibliography.txt       ← Created in Question 9
 ```
 
 The supplied FASTA file contains 13 human MAPK protein sequences. [Download
@@ -54,16 +58,17 @@ pwd
 ls
 ```
 
-On Windows, use `cd` to check the current folder and `dir` to list its files.
-If the file is missing, download it again before running the examples.
+These commands work in the macOS and Linux terminals and in Windows
+PowerShell. In the older Windows Command Prompt (`cmd`), use `cd` on its own
+to show the current folder and `dir` to list its files. If the file is
+missing, download it again before running the examples.
 
 ## Align proteins with MUSCLE
 
-This chapter includes three videos. They refer to this material as “Lecture 7,”
-which reflects the course organisation in previous years. The book has since been updated:
-interpret “Lecture 7” in these videos as Week 9 content.
+The videos in this chapter were recorded in previous years. Where a video
+refers to “Lecture 7,” read this as Week 9 content.
 
-<iframe title="Align proteins with MUSCLE" width="560" height="315" src="https://www.youtube.com/embed/noMxZwOYIqc?si=gkew2YG6tzW2zn6E" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe title="Align proteins with MUSCLE" width="560" height="315" src="https://www.youtube.com/embed/-hGTD9bSr2E" loading="lazy" allow="accelerometer, autoplay, clipboard-write, encrypted-media, gyroscope, picture-in-picture, web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 A **multiple sequence alignment** arranges two or more sequences so that
 corresponding regions appear in the same columns. An alignment program inserts
@@ -87,9 +92,13 @@ muscle -align human_mapk_prots.fasta -output human_mapk_aligned.fasta
 ```
 
 If you use Windows and the executable is named `muscle.exe`, substitute that
-name in the command. Check that `human_mapk_aligned.fasta` exists before
-continuing. Running the external command in the terminal first helps separate
-installation problems from Python problems.
+name in the command. If you need the full path and it contains spaces, put the
+path in double quotes, for example
+`"C:\Program Files\muscle\muscle.exe" -align human_mapk_prots.fasta -output human_mapk_aligned.fasta`.
+Check that `human_mapk_aligned.fasta` exists before continuing. Running the
+external command in the terminal first helps separate installation problems
+from Python problems. MUSCLE prints its progress while it runs; this is
+normal.
 
 You can run the same command from Python with `os.system`, which you used in
 Week 8:
@@ -114,8 +123,11 @@ else:
 ```
 
 Replace `muscle` with the executable name or path that worked in your
-terminal. As in Week 8, `os.system` returns a status value. Check both that
-the command succeeded and that the expected output file was created.
+terminal. If that path contains spaces, keep the double quotes inside the
+Python string, for example
+`'"C:\\Program Files\\muscle\\muscle.exe" -align human_mapk_prots.fasta '`.
+As in Week 8, `os.system` returns a status value. Check both that the command
+succeeded and that the expected output file was created.
 
 ## Read the alignment with `AlignIO`
 
@@ -140,16 +152,24 @@ Each `record.seq` is a sequence with gap characters included. The sequences
 in an alignment all have the same length, even though the original proteins
 have different lengths. In the supplied dataset, the input records range from
 360 to 816 amino acids. The alignment can be longer because it includes gap
-columns.
+columns. MUSCLE may also list the sequences in a different order from the
+input file.
 
 To calculate the gap percentage in the first aligned sequence, count its gaps
-and divide by its aligned length:
+and divide by its aligned length. This script reads the alignment again so it
+can run on its own; you can also add the last five lines to the end of the
+previous script:
 
 ```python
+from Bio import AlignIO
+
+alignment = AlignIO.read("human_mapk_aligned.fasta", "fasta")
+
 # Convert the sequence to text so its gap characters can be counted.
 first_sequence = str(alignment[0].seq)
 gap_count = first_sequence.count("-")
 gap_percentage = gap_count / len(first_sequence) * 100
+print("First sequence:", alignment[0].id)
 print(f"Gaps in first sequence: {gap_percentage:.2f}%")
 ```
 
@@ -202,11 +222,16 @@ Keep the position convention visible in comments. This makes it easier to
 check a Python result against a viewer such as Jalview, which labels columns
 starting at one.
 
+A total of zero gaps is a valid answer: with MUSCLE 5.3, columns 150–160 fall
+in a well-aligned region. To see gaps being counted, change `start` and `stop`
+to select columns 161–171, and update the header text to match.
+
 ### Question 2: Extract alignment positions
 
 Print the amino acid at position 150 for every sequence. Write columns 150–160
 to `alignment_region.txt` and report the total number of gaps in that region.
 In your comments, explain how the biological positions map to Python indices.
+Then repeat the gap count for columns 161–171.
 
 ## Find conserved positions
 
@@ -235,37 +260,69 @@ print("Perfectly conserved positions:", perfect_positions)
 ```
 
 This counts an all-gap column as perfectly conserved because the activity asks
-you to include gaps. For a percentage such as 90%, exclude gaps from the
-denominator and from the amino-acid counts. If a column contains only gaps,
-there are no residues to compare, so skip it:
+you to include gaps. (MUSCLE does not normally produce all-gap columns, so in
+practice every perfectly conserved column here is an amino acid.)
+
+For a looser test, such as “at least 90% of residues agree,” exclude gaps from
+the denominator and from the amino-acid counts. Take care with gap-rich
+columns. In this alignment, hundreds of columns contain a residue from only
+one sequence, inside insertions found in just one or two of the proteins. With
+gaps excluded, a single residue always “agrees with itself” and scores 100%.
+The script below therefore only tests columns where at least half of the
+sequences have a residue:
 
 ```python
-residues = [character for character in column if character != "-"]
-if residues:
-    # Measure agreement among residues only. Gaps do not affect the score.
-    counts = Counter(residues)
-    agreement = max(counts.values()) / len(residues)
-    if agreement >= 0.90:
-        print(position + 1, agreement)
+from collections import Counter
+from Bio import AlignIO
+
+alignment = AlignIO.read("human_mapk_aligned.fasta", "fasta")
+# Require residues from at least half of the sequences before scoring a column.
+min_residues = len(alignment) / 2
+high_agreement = 0
+
+for position in range(alignment.get_alignment_length()):
+    column = [str(record.seq[position]) for record in alignment]
+    residues = [character for character in column if character != "-"]
+    if len(residues) >= min_residues:
+        # Measure agreement among residues only. Gaps do not affect the score.
+        counts = Counter(residues)
+        agreement = max(counts.values()) / len(residues)
+        if agreement >= 0.90:
+            high_agreement += 1
+            print(position + 1, f"{agreement:.2f}")
+
+print("Positions with at least 90% agreement:", high_agreement)
 ```
+
+Try removing the `min_residues` condition (test `if residues:` instead) and
+compare the count. The difference shows how many columns would pass only
+because they contain one or two residues.
 
 ### Question 3: Find conserved positions
 
 Loop through the complete alignment and print every position where all 13
 sequences have the same character. Count the perfectly conserved positions.
 For an extension, also report positions where at least 90% of the non-gap
-residues agree.
+residues agree, scoring only columns where at least half of the sequences have
+a residue. Explain why that condition is needed.
 
 ## Calculate a conservation score
 
 A conservation score for one alignment column is the frequency of its most
 common non-gap amino acid. The score ranges from `0` to `1`: a score of `1`
 means all non-gap residues agree. Gaps are ignored. An all-gap column has no
-residues to compare, so this function returns `0` for that column:
+residues to compare, so this function returns `0` for that column.
+
+Because gaps are ignored, a column containing a single residue also scores
+`1`. That says nothing about conservation, so the script only ranks columns
+whose **occupancy** (the fraction of sequences with a residue rather than a
+gap) is at least `MIN_OCCUPANCY`:
 
 ```python
 from collections import Counter
 from Bio import AlignIO
+
+MIN_OCCUPANCY = 0.5  # Rank a column only if at least half the rows have a residue.
 
 def calculate_conservation_score(alignment, position):
     """Return the fraction of non-gap residues matching the majority residue."""
@@ -283,16 +340,21 @@ def calculate_conservation_score(alignment, position):
     counts = Counter(residues)
     return max(counts.values()) / len(residues)
 
+def calculate_occupancy(alignment, position):
+    """Return the fraction of sequences with a residue (not a gap) at a position."""
+    residues = sum(1 for record in alignment if str(record.seq[position]) != "-")
+    return residues / len(alignment)
+
 alignment = AlignIO.read("human_mapk_aligned.fasta", "fasta")
 scores = []
 for position in range(alignment.get_alignment_length()):
-    # Skip columns with no amino acids. Their score has no biological meaning.
-    has_residue = any(str(record.seq[position]) != "-" for record in alignment)
-    if has_residue:  # All-gap columns contain no conservation information.
+    # Skip gap-rich columns. One or two residues would score 1.0 automatically.
+    if calculate_occupancy(alignment, position) >= MIN_OCCUPANCY:
         score = calculate_conservation_score(alignment, position)
         scores.append((position, score))
 top_positions = sorted(scores, key=lambda item: (-item[1], item[0]))[:10]
 
+print("Columns scored:", len(scores), "of", alignment.get_alignment_length())
 # Show the ten highest scores, converting indexes to 1-based positions.
 for position, score in top_positions:
     print(f"Position {position + 1}: {score:.3f}")
@@ -300,13 +362,16 @@ for position, score in top_positions:
 
 The sort key orders scores from highest to lowest and uses the position to
 break ties. Positions are stored with zero-based indexes in the calculation
-and displayed with one-based numbering.
+and displayed with one-based numbering. Many columns in the kinase core score
+`1.000`, so the ten printed positions are the first ten of these, in order.
 
 ### Question 4: Write a conservation scoring function
 
 Write `calculate_conservation_score(alignment, position)`. It should ignore
 gaps, return a score between 0 and 1, and handle an all-gap column. Calculate
-the score for every position and print the ten highest-scoring positions.
+the score for every column with an occupancy of at least 0.5 and print the ten
+highest-scoring positions. Then set `MIN_OCCUPANCY` to `0` and explain why the
+top ten changes.
 
 ## Build a phylogenetic tree
 
@@ -366,6 +431,10 @@ Install Matplotlib in the same Python environment you use for Biopython:
 python -m pip install matplotlib
 ```
 
+On a University-managed computer, Matplotlib may already be installed through
+**Install University Applications**. Check with
+`python -c "import matplotlib"` before installing.
+
 Tip labels in the input file are full UniProt IDs. The gene name appears after
 `GN=` in each FASTA description, so build a lookup before shortening the tree
 labels. Internal NJ nodes are automatically named `Inner...`. Those labels can
@@ -424,9 +493,12 @@ tree structure printed to the terminal.
 ### Question 7: Compare NJ and UPGMA trees
 
 Use the same alignment and BLOSUM62 distance matrix to build an NJ tree and an
-UPGMA tree. Print both tree structures and save the figures as `nj_tree.png`
-and `upgma_tree.png`. Note which groups are the same and which differ. UPGMA
-assumes a molecular clock. NJ does not make that same assumption.
+UPGMA tree. `DistanceTreeConstructor` has an `upgma` method that is used in
+the same way as `nj`. `Phylo.draw_ascii(tree)` prints a compact text drawing
+that is easier to compare than `print(tree)`. Print both tree structures and
+save the figures as `nj_tree.png` and `upgma_tree.png`. Note which groups are
+the same and which differ. UPGMA assumes a molecular clock. NJ does not make
+that same assumption.
 
 ## Retrieve protein records from NCBI
 
@@ -439,13 +511,21 @@ requests, and keep requests at a reasonable rate. The example below makes only
 a few individual requests. NCBI asks clients to make no more than three
 requests per second.
 
+The last accession in the list is deliberately invalid, so you can see the
+error handling working:
+
 ```python
 from Bio import Entrez, SeqIO
 from urllib.error import URLError
 
 # NCBI uses this address to identify the person making requests.
 Entrez.email = "your.name@example.edu"  # Replace with your own email address.
-accessions = ["KYF48150.1", "NP_000537.3", "AAH69243.1"]
+accessions = [
+    "KYF48150.1",
+    "NP_000537.3",
+    "AAH69243.1",
+    "NOT_A_REAL_ACC.1",  # Deliberately invalid: tests the error handling.
+]
 records = []
 
 for accession in accessions:
@@ -475,31 +555,39 @@ else:
 ```
 
 This example continues after a retrieval or parsing error so one invalid
-accession does not prevent the other records from being saved. FASTA stores
-the sequence and description, but not all the annotations from the GenBank
+accession does not prevent the other records from being saved. For the
+invalid accession, NCBI returns an empty response, and `SeqIO.read` raises a
+`ValueError` with the message “No records found in handle.” FASTA stores the
+sequence and description, but not all the annotations from the GenBank
 record. See the [Biopython Entrez tutorial](https://biopython.org/docs/latest/Tutorial/chapter_entrez.html)
 and [NCBI E-utilities guidance](https://www.ncbi.nlm.nih.gov/books/NBK25497/)
 for more detail.
 
 ### Question 8: Retrieve protein sequences
 
-Use `Entrez.efetch` to retrieve the three example accessions from the protein
+Use `Entrez.efetch` to retrieve the example accessions from the protein
 database. Print each record's ID, description, organism, and sequence length.
 Write every successfully retrieved sequence to `ncbi_proteins.fasta`, and
-handle an accession that cannot be retrieved.
+check that the invalid accession is reported without stopping the script.
 
 ## Search PubMed and write a bibliography
 
 Use `Entrez.esearch` to find PubMed identifiers, then `Entrez.efetch` and
 `Medline.parse` to retrieve citation fields. This example writes a numbered
-bibliography with the title, authors, publication year, PMID, and journal:
+bibliography with the title, authors, publication year, PMID, and journal.
+
+PubMed treats an untagged word such as `2024` as ordinary search text, not as
+a date. To limit results to a publication year, add the field tag `[dp]`
+(date of publication). Other useful tags include `[ti]` (title) and `[au]`
+(author).
 
 ```python
 from Bio import Entrez, Medline
 
 # Replace this placeholder with your own valid contact email.
 Entrez.email = "your.name@example.edu"  # Replace with your own valid email.
-search_term = "CRISPR gene editing 2024"
+# [dp] limits the search to the publication year 2024.
+search_term = "CRISPR gene editing AND 2024[dp]"
 
 def format_author(author):
     """Format a MEDLINE author as surname and first initial."""
@@ -512,6 +600,7 @@ def format_author(author):
 with Entrez.esearch(db="pubmed", term=search_term, retmax=20) as handle:
     search_results = Entrez.read(handle)
 identifiers = search_results["IdList"]
+print("Total matching records:", search_results["Count"])
 
 if not identifiers:
     print("No PubMed records matched the search.")
@@ -539,16 +628,20 @@ else:
 ```
 
 The query is interpreted by PubMed, so changing its words changes the results.
-The script saves citation metadata, not article full text. If you change the
-search to request many records, retrieve them in batches and avoid sending
-rapid repeated requests.
+`esearch` returns the most recent matches first, and `retmax=20` keeps only
+the first 20 identifiers, while `Count` reports how many records matched in
+total. The script saves citation metadata, not article full text. If you
+change the search to request many records, retrieve them in batches and avoid
+sending rapid repeated requests.
 
 ### Question 9: Search PubMed
 
 Search for up to 20 papers using a term you choose. Retrieve the MEDLINE
 records, then write a numbered bibliography containing each title, all
 authors, year, PMID, and journal when available. Try the example search term
-first, then compare it with a more specific query.
+first. Then remove `[dp]` from it (search for `CRISPR gene editing 2024`) and
+compare the years in the bibliography. Finally, try a more specific query of
+your own using a field tag such as `[ti]`.
 
 ## Bring the week together
 
@@ -572,11 +665,19 @@ For further examples, see the [Biopython Phylo tutorial](https://biopython.org/d
 for working with phylogenetic trees and the [Biopython Entrez tutorial](https://biopython.org/docs/latest/Tutorial/chapter_entrez.html)
 for searching and retrieving database records.
 
-## Extension: combine the week into a pipeline
+## Portfolio Project 3
 
-The Canvas workshop includes a larger challenge that links literature search,
-sequence retrieval, alignment, conservation analysis, and tree construction.
-Start with a small known list of accessions, save each stage's output, and
-check it before moving to the next stage. Only combine the steps after each
-part works on its own. You can also investigate sequence logos, alignment
-quality measures, or approaches for finding possible orthologues.
+**Portfolio Project 3** builds on this week's material and is part of your
+formal LIFE733 assessment. It links literature search, sequence retrieval,
+alignment, conservation analysis, and tree construction into one pipeline.
+Save your work in `LIFE733/portfolio/project-3/`, as shown on the
+[Portfolio Projects](../projects.md) page, and follow the project
+instructions and deadline given there and on Canvas.
+
+Make sure each of this week's examples works on its own before you start the
+project. When you build the pipeline, start with a small known list of
+accessions, save each stage's output, and check it before moving to the next
+stage.
+
+For further independent study, you can also investigate sequence logos,
+alignment quality measures, or approaches for finding possible orthologues.

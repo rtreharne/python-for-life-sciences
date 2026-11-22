@@ -20,13 +20,13 @@ Before the deadline stated on Canvas — **before Christmas** — submit **one Z
 Name the final file clearly, for example `LIFE733_123456789_portfolio.zip`. Do not submit separate weekly files or separate project ZIP files to Canvas. Create one ZIP of the complete `LIFE733` folder and submit it before the Canvas deadline.
 :::
 
-For Project 1, use the small practice examples written in this chapter to develop and test your code. For Project 2, download and use the shared practice files linked in its section. Once your code works with the practice material, generate your individual dataset using your nine-digit student ID and **run your completed solution against that dataset**. Completing only the practice examples does not complete a portfolio project.
+For Project 1, use the small practice examples written in this chapter to develop and test your code. For Project 2, download and use the shared practice files linked in its section. For Project 3, use the supplied human and mammal proteomes and test the pipeline with the three required proteins. Once your code works with the practice material or required test cases, complete the individual run required by that project. Completing only practice examples does not complete a portfolio project.
 
 Your individual files are personal to your student ID. Entering the same ID again creates the same dataset; different IDs create different DNA data with the same task structure. The generator runs in your browser without sending your ID to a server. Keep the downloaded README with your inputs because it records the dataset version you used.
 
 ## Required folder and submission structure
 
-Keep every weekly problem and portfolio project inside one `LIFE733` folder. The final ZIP submitted to Canvas must contain this folder itself, not a loose collection of files. `project-3` is shown now so that you create the correct location; its detailed instructions will be provided later.
+Keep every weekly problem and portfolio project inside one `LIFE733` folder. The final ZIP submitted to Canvas must contain this folder itself, not a loose collection of files.
 
 ```text
 LIFE733/
@@ -74,7 +74,14 @@ LIFE733/
     │       ├── proteins.fasta
     │       ├── motif_hits.fasta
     │       └── summary.tsv
-    └── project-3/                    ← instructions will be provided later
+    └── project-3/
+        ├── project3_<student-id>.py
+        ├── project3_testing_report.pdf
+        ├── gai_log.txt
+        ├── A3_starter.py
+        ├── select_protein.py
+        ├── UP000005640_9606.fasta
+        └── 10_uniprot_mammals.fasta
 
 LIFE733_<student-id>_portfolio.zip     ← ZIP this complete LIFE733 folder for Canvas
 ```
@@ -303,6 +310,214 @@ gene_gamma	6	invalid	NA	NA	NA	NA
 ```
 
 Once the practice checks pass, run all stages against your individual FASTA and codon table. Save the individual-run outputs with these exact paths: `output/orfs.fasta`, `output/proteins.fasta`, `output/motif_hits.fasta`, and `output/summary.tsv`. Keep those results together with your code, dataset README, and `gai_log.txt` for your portfolio.
+
+## Project 3: A Biopython orthologue pipeline
+
+In this project, build a small pipeline that retrieves a protein from the
+human proteome, searches a database of 10 mammal proteomes with BLAST to find
+likely orthologues, aligns the results with MUSCLE, creates phylogenetic trees,
+and produces plots. It builds on Week 8 (BLAST and `SeqIO`) and Week 9
+(MUSCLE, `AlignIO`, conservation, and trees). Make sure those examples work on
+your computer before you start.
+
+:::{important}
+## How you use generative AI is part of the mark
+
+Your `gai_log.txt` is assessed. Keep a clear record of every meaningful GAI
+prompt and what you did with the response. Responsible uses include debugging,
+explaining a concept, and reviewing code you wrote yourself. Giving this brief
+to an AI coding agent or chatbot and submitting its generated pipeline will
+score very poorly. Read [GAI use in Project 3](#project-3-gai) before starting.
+:::
+
+### What you must submit for Project 3
+
+Keep all Project 3 work in `LIFE733/portfolio/project-3/`. Your submission
+must include:
+
+1. One complete pipeline named `project3_<student-id>.py`.
+2. A testing report in PDF or DOCX format, called `project3_testing_report`,
+   with the output images and plots for these three inputs:
+   - `PM34_HUMAN`;
+   - the protein assigned by `select_protein.py`; and
+   - one human protein chosen at random.
+3. `gai_log.txt`, recording GAI use as described below.
+
+The two large FASTA files and the `UP_mammals` BLAST database files are only
+needed to run the pipeline. Delete them before creating the final portfolio
+ZIP so it remains small.
+
+### Set up Project 3
+
+Download these Canvas files into `project-3`:
+
+- [10 mammalian proteomes](https://canvas.liverpool.ac.uk/courses/95131/files/14451743?module_item_id=2725161), saved as `10_uniprot_mammals.fasta`;
+- [human proteome](https://canvas.liverpool.ac.uk/courses/95131/files/14451769?module_item_id=2725162), saved as `UP000005640_9606.fasta`;
+- [the required starter code](https://canvas.liverpool.ac.uk/courses/95131/files/14451748?module_item_id=2725159), saved as `A3_starter.py`; and
+- [the protein-selection script](https://canvas.liverpool.ac.uk/courses/95131/files/14451731?module_item_id=2725160), saved as `select_protein.py`.
+
+Use the Canvas copy of `UP000005640_9606.fasta`, not the Week 8 copy:
+`select_protein.py` assigns a protein by its position in that specific file.
+Find your assigned protein from the `project-3` folder, using your nine-digit
+student ID:
+
+```bash
+python select_protein.py [YOUR_STUDENT_ID]
+```
+
+Before running your pipeline, create the BLAST database once in the terminal,
+not from Python:
+
+```bash
+makeblastdb -in 10_uniprot_mammals.fasta -dbtype prot -out UP_mammals
+```
+
+All students must start their program with the block supplied in
+`A3_starter.py`. You may add imports above it.
+
+```python
+from Bio import SeqIO
+import random
+import os
+from Bio import AlignIO
+from Bio.Phylo.TreeConstruction import *
+from Bio import Phylo
+import matplotlib.pyplot as plt
+import matplotlib
+
+def get_arguments_a3():
+   import argparse
+   parser = argparse.ArgumentParser(description="Assignment 3")
+   parser.add_argument("-protname", type=str, help="Protein name", required=True)
+   parser.add_argument("-blastcom", type=str, help="Blast executable", required=True)
+   parser.add_argument("-musclecom", type=str, help="muscle executable", required=True)
+   parser.add_argument("-fastafile", type=str, help="Source fasta file", required=True)
+   parser.add_argument("-databasefasta", type=str, help="Target database file", required=True)
+   args = parser.parse_args()
+   return [arg for arg in vars(args).values()]
+
+
+if __name__ == "__main__":
+   input_args = get_arguments_a3()
+   protein_name = input_args[0]
+   blast_exe = input_args[1]
+   muscle_exe = input_args[2]
+   human_fasta = input_args[3]
+   database_fasta = input_args[4]
+
+print("Pipeline running with protein name", protein_name)
+print("Running with BLAST as", blast_exe)
+print("Running with muscle as", muscle_exe)
+print("Source fasta:", human_fasta)
+print("Database to search against:", database_fasta)
+
+### Put your code to execute below
+```
+
+Run the program with named arguments. Save your run commands in a text file so
+you can reuse them as a record of each test:
+
+```bash
+python project3_<student-id>.py -protname PM34_HUMAN -blastcom blastp -musclecom muscle.exe -fastafile UP000005640_9606.fasta -databasefasta 10_uniprot_mammals.fasta
+```
+
+`-protname` is a protein identifier such as `PM34_HUMAN`; `-blastcom` and
+`-musclecom` are the exact commands or executable paths that work on your
+computer; `-fastafile` is the human FASTA file; and `-databasefasta` is the
+mammal FASTA file. The protein name is the third part of each UniProt
+identifier: `PM34_HUMAN` in `>sp|O43808|PM34_HUMAN ...`.
+
+### Part 1: BLAST
+
+Use `SeqIO` to find the requested human record in
+`UP000005640_9606.fasta`; you will need to split its record identifier. Define
+`RND` as a random integer from 1 to 10,000, then make these temporary names:
+
+- `blast_input = f"temp_{RND}_blast_input.txt"`
+- `blast_output = f"temp_{RND}_blast_output.tsv"`
+
+Write the human record to `blast_input`, then run BLAST with this exact command:
+
+```python
+command = blast_exe + " -db UP_mammals -query " + blast_input + " -out " + blast_output + " -outfmt 6"
+```
+
+Read the tab-separated output: columns 1 and 2 identify the input and hit,
+column 11 is the E-value, and column 12 is the BLAST score. Write a new FASTA
+file containing hits with E-values below `1E-5`, retaining only the best hit
+(highest score) per target species. BLAST results are already highest-score
+first. A dictionary mapping IDs to `SeqRecord` objects and a set or dictionary
+of species are useful here. Write the selected records to
+`temp_{RND}_msa_input.fasta`, then delete the temporary BLAST files once the
+handles are closed.
+
+### Part 2: Multiple sequence alignment
+
+Using the same random value, set `msa_input` to
+`temp_{RND}_msa_input.fasta` and `msa_output` to
+`temp_{RND}_msa_output.fasta`. Run MUSCLE with:
+
+```python
+muscle_exe + " -align " + msa_input + " -output " + msa_output
+```
+
+Read the alignment using `AlignIO`, plot the conservation of the most common
+amino acid across the alignment, and save `{RND}_consensus_plot.png`. Test
+with several random examples for the report.
+
+![Example consensus plot showing conservation of the most common amino acid along the alignment](images/project-3/consensus_plot_example.png)
+
+### Part 3: Phylogenetics
+
+Using the Part 2 alignment and a `blosum62` distance calculator, create NJ and
+UPGMA trees. Save them as `temp_{RND}_phylo_NJ.png` and
+`temp_{RND}_phylo_UPGMA.png`. Label leaves with protein names and colour each
+clade by `branch_length`: brown below 0.01, orange below 0.02, maroon below
+0.03, and red otherwise.
+
+![Example phylogenetic tree with protein-name labels and branches coloured by length](images/project-3/tree_example.png)
+
+### Part 4: Advanced options
+
+After all required stages work, add some creative, useful improvements. For
+example, add a BLAST-score histogram, annotate the conservation plot, accept
+multiple comma-separated protein names while preserving single-name operation,
+or create a multipage PDF of plots. You do not need every option, but this
+section rewards thoughtful extension and testing.
+
+(project-3-gai)=
+### GAI use in Project 3
+
+The rules on [Using Generative AI](gai.md) apply. Use the University-sanctioned
+platform. Record every meaningful interaction in `gai_log.txt`, including the
+date and tool, project part, your attempt before asking, exact prompt, a brief
+response summary, what you used or rejected and why, and how you checked it.
+Record unhelpful interactions too.
+
+Appropriate uses include asking for an explanation of BLAST output columns,
+requesting small test cases for a species-extraction function, debugging an
+error after making your own attempt, or asking for review suggestions without
+having the code rewritten. Do not paste this brief into a chatbot or submit a
+pipeline generated by an agent. You may be asked to explain any code you
+submit.
+
+If you did not use GAI, write `No GAI used for this project.` at the top of
+`gai_log.txt`, then add three or four dated development-log entries describing
+problems, investigation, fixes, and tests.
+
+### Indicative marking scheme
+
+| Component | Marks |
+| --- | ---: |
+| BLAST: correct output produced | 20 |
+| BLAST: code quality, documentation, and testing | 10 |
+| MSA: correct outputs produced | 20 |
+| MSA: code quality, documentation, and testing | 10 |
+| Phylogenetics: correct outputs and testing | 10 |
+| Phylogenetics: code quality, documentation, and testing | 5 |
+| Advanced options | 10 |
+| GAI log: complete, learning-focused, and checked | 15 |
+| **Total** | **100** |
 
 ## Check your portfolio work
 
