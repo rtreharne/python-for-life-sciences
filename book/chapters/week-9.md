@@ -668,16 +668,18 @@ for searching and retrieving database records.
 ## Portfolio Project 3
 
 **Portfolio Project 3** builds on this week's material and is part of your
-formal LIFE733 assessment. It links literature search, sequence retrieval,
-alignment, conservation analysis, and tree construction into one pipeline.
-Save your work in `LIFE733/portfolio/project-3/`, as shown on the
-[Portfolio Projects](../projects.md) page, and follow the project
-instructions and deadline given there and on Canvas.
+formal LIFE733 assessment. You will build a pipeline that takes one human
+protein, uses BLAST to find likely orthologues in 10 mammal proteomes, aligns
+them with MUSCLE, plots conservation along the alignment, and draws NJ and
+UPGMA trees. It combines Week 8 (BLAST and `SeqIO`) with this week's
+alignment, conservation, and tree-building examples. Save your work in
+`LIFE733/portfolio/project-3/` and follow the
+[Project 3 instructions](../projects.md#project-3-a-biopython-orthologue-pipeline)
+on the Portfolio Projects page. The submission deadline is given on Canvas.
 
 Make sure each of this week's examples works on its own before you start the
-project. When you build the pipeline, start with a small known list of
-accessions, save each stage's output, and check it before moving to the next
-stage.
+project. When you build the pipeline, test it with `PM34_HUMAN` first, keep
+each stage's output file, and check it before moving to the next stage.
 
 For further independent study, you can also investigate sequence logos,
-alignment quality measures, or approaches for finding possible orthologues.
+alignment quality measures, or other tree-building methods.

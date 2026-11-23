@@ -79,9 +79,7 @@ LIFE733/
         ├── project3_testing_report.pdf
         ├── gai_log.txt
         ├── A3_starter.py
-        ├── select_protein.py
-        ├── UP000005640_9606.fasta
-        └── 10_uniprot_mammals.fasta
+        └── select_protein.py
 
 LIFE733_<student-id>_portfolio.zip     ← ZIP this complete LIFE733 folder for Canvas
 ```
@@ -104,7 +102,7 @@ The generator now provides one ZIP file containing the complete Project 1 folder
 
 In VS Code, choose **File → Open Folder**, select the extracted `project-1` folder, and open **Terminal → New Terminal**. Check the location with `pwd` and list the contents with `ls`. Open one of the `part-a-dna`, `part-b-counts`, `part-c-replicates`, or `part-d-sequences` folders when you work on that part. Each folder contains its recommended script and generated input. Keep the generated input unchanged. Follow the save instruction at the top of each script, then run `test_project1.py` from the `project-1` folder.
 
-If the embedded form is too small, [open the Project 1 generator in a separate tab](../portfolio-generator/index.html?project=1).
+If the embedded form is too small, [open the Project 1 generator in a separate tab](https://rtreharne.github.io/python-for-life-sciences/portfolio-generator/index.html?project=1).
 
 ### Part A: DNA string transformations
 
@@ -242,7 +240,7 @@ ATGNAA
 
 <iframe title="Generate a Project 2 portfolio dataset" src="../portfolio-generator/project-2.html" width="100%" height="590" loading="lazy"></iframe>
 
-Download the complete Project 2 ZIP and extract it into `LIFE733/portfolio/`. It includes `main.py`, `fasta_tools.py`, `test_project2.py`, `gai_log.txt`, the practice files, and your generated input files with `README.txt`. Keep the generated files in `input/` unchanged. Run `python test_project2.py` from the `project-2` folder after your program has created its output files. [Open the Project 2 generator in a separate tab](../portfolio-generator/project-2.html) if needed.
+Download the complete Project 2 ZIP and extract it into `LIFE733/portfolio/`. It includes `main.py`, `fasta_tools.py`, `test_project2.py`, `gai_log.txt`, the practice files, and your generated input files with `README.txt`. Keep the generated files in `input/` unchanged. Run `python test_project2.py` from the `project-2` folder after your program has created its output files. [Open the Project 2 generator in a separate tab](https://rtreharne.github.io/python-for-life-sciences/portfolio-generator/project-2.html) if needed.
 
 The individual FASTA includes wrapped lines, invalid records, multiple candidate starts, and proteins with and without motif matches. Use the supplied codon table for both practice and individual data: the six-codon demonstration table in the solutions is too small for the individual sequences. The downloaded table covers all codons used in the valid supplied sequences. It is a teaching subset, not the complete genetic code.
 
@@ -336,7 +334,7 @@ Keep all Project 3 work in `LIFE733/portfolio/project-3/`. Your submission
 must include:
 
 1. One complete pipeline named `project3_<student-id>.py`.
-2. A testing report in PDF or DOCX format, called `project3_testing_report`,
+2. A testing report in PDF format, called `project3_testing_report.pdf`,
    with the output images and plots for these three inputs:
    - `PM34_HUMAN`;
    - the protein assigned by `select_protein.py`; and
