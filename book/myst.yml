@@ -10,6 +10,7 @@ project:
     - portfolio-generator
     - data/week-8
     - data/week-9
+    - data/week-10
   toc:
     - file: index.md
     - file: setup.md
@@ -22,6 +23,7 @@ project:
     - file: chapters/week-6.md
     - file: chapters/week-8.md
     - file: chapters/week-9.md
+    - file: chapters/week-10.md
     - file: projects.md
     - file: solutions.md
     - file: appendix.md

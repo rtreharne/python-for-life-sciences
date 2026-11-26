@@ -73,6 +73,7 @@ jobs:
           cp -R _build/site/public/portfolio-generator _build/html/
           cp -R _build/site/public/week-8 _build/html/
           cp -R _build/site/public/week-9 _build/html/
+          cp -R _build/site/public/week-10 _build/html/
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
